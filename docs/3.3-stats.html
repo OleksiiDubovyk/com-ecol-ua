@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3.3 Початки статистичного аналізу | Вступ до Екології Угруповань</title>
+  <meta name="description" content="Непідручник" />
+  <meta name="generator" content="bookdown 0.33.2 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3.3 Початки статистичного аналізу | Вступ до Екології Угруповань" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Непідручник" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3.3 Початки статистичного аналізу | Вступ до Екології Угруповань" />
+  
+  <meta name="twitter:description" content="Непідручник" />
+  
+
+<meta name="author" content="Олексій Дубовик" />
+
+
+<meta name="date" content="2024-07-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="3.2-matrices.html"/>
+<link rel="next" href="4-popeco.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Вступ до Екології Угруповань</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Передмова</a>
+<ul>
+<li class="chapter" data-level="0.0.1" data-path="index.html"><a href="index.html#about-author"><i class="fa fa-check"></i><b>0.0.1</b> Трішки про автора</a></li>
+<li class="chapter" data-level="0.0.2" data-path="index.html"><a href="index.html#whythiswork"><i class="fa fa-check"></i><b>0.0.2</b> Навіщо ця робота</a></li>
+<li class="chapter" data-level="0.0.3" data-path="index.html"><a href="index.html#more-about-author"><i class="fa fa-check"></i><b>0.0.3</b> Ще трішки про автора</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="1-introduction.html"><a href="1-introduction.html"><i class="fa fa-check"></i><b>1</b> Вступ</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="1-introduction.html"><a href="1-introduction.html#community-def"><i class="fa fa-check"></i><b>1.0.1</b> Екологічне угруповання</a></li>
+<li class="chapter" data-level="1.0.2" data-path="1-introduction.html"><a href="1-introduction.html#comm-ecol-today"><i class="fa fa-check"></i><b>1.0.2</b> Екологія угруповань сьогодні</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="2-about-book.html"><a href="2-about-book.html"><i class="fa fa-check"></i><b>2</b> Про книгу</a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="2-about-book.html"><a href="2-about-book.html#readme"><i class="fa fa-check"></i><b>2.0.1</b> Дисклеймер</a></li>
+<li class="chapter" data-level="2.1" data-path="2.1-how-built.html"><a href="2.1-how-built.html"><i class="fa fa-check"></i><b>2.1</b> Як побудована ця книга</a></li>
+<li class="chapter" data-level="2.2" data-path="2.2-expect.html"><a href="2.2-expect.html"><i class="fa fa-check"></i><b>2.2</b> Чого чекати від цієї книги</a></li>
+<li class="chapter" data-level="2.3" data-path="2.3-expected.html"><a href="2.3-expected.html"><i class="fa fa-check"></i><b>2.3</b> Чого ця книга чекає від читача</a></li>
+<li class="chapter" data-level="2.4" data-path="2.4-notexpect.html"><a href="2.4-notexpect.html"><i class="fa fa-check"></i><b>2.4</b> На що не варто розраховувати</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-numerical-ecology.html"><a href="3-numerical-ecology.html"><i class="fa fa-check"></i><b>3</b> Базові математичні підходи в екології</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="3.1-algebra.html"><a href="3.1-algebra.html"><i class="fa fa-check"></i><b>3.1</b> Математична пам’ятка</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="3.1-algebra.html"><a href="3.1-algebra.html#дроби"><i class="fa fa-check"></i><b>3.1.1</b> Дроби</a></li>
+<li class="chapter" data-level="3.1.2" data-path="3.1-algebra.html"><a href="3.1-algebra.html#математичні-символи"><i class="fa fa-check"></i><b>3.1.2</b> Математичні символи</a></li>
+<li class="chapter" data-level="3.1.3" data-path="3.1-algebra.html"><a href="3.1-algebra.html#нерівності"><i class="fa fa-check"></i><b>3.1.3</b> Нерівності</a></li>
+<li class="chapter" data-level="3.1.4" data-path="3.1-algebra.html"><a href="3.1-algebra.html#ступені"><i class="fa fa-check"></i><b>3.1.4</b> Ступені</a></li>
+<li class="chapter" data-level="3.1.5" data-path="3.1-algebra.html"><a href="3.1-algebra.html#ряди-чисел"><i class="fa fa-check"></i><b>3.1.5</b> Ряди чисел</a></li>
+<li class="chapter" data-level="3.1.6" data-path="3.1-algebra.html"><a href="3.1-algebra.html#ступені-арифметичних-операцій"><i class="fa fa-check"></i><b>3.1.6</b> Ступені арифметичних операцій</a></li>
+<li class="chapter" data-level="3.1.7" data-path="3.1-algebra.html"><a href="3.1-algebra.html#лінійні-та-поліноміальні-функції"><i class="fa fa-check"></i><b>3.1.7</b> Лінійні та поліноміальні функції</a></li>
+<li class="chapter" data-level="3.1.8" data-path="3.1-algebra.html"><a href="3.1-algebra.html#logs"><i class="fa fa-check"></i><b>3.1.8</b> Логарифми</a></li>
+<li class="chapter" data-level="3.1.9" data-path="3.1-algebra.html"><a href="3.1-algebra.html#поширені-математичні-функції"><i class="fa fa-check"></i><b>3.1.9</b> Поширені математичні функції</a></li>
+<li class="chapter" data-level="3.1.10" data-path="3.1-algebra.html"><a href="3.1-algebra.html#властивості-сум"><i class="fa fa-check"></i><b>3.1.10</b> Властивості сум</a></li>
+<li class="chapter" data-level="3.1.11" data-path="3.1-algebra.html"><a href="3.1-algebra.html#властивості-добутків"><i class="fa fa-check"></i><b>3.1.11</b> Властивості добутків</a></li>
+<li class="chapter" data-level="3.1.12" data-path="3.1-algebra.html"><a href="3.1-algebra.html#диференціювання"><i class="fa fa-check"></i><b>3.1.12</b> Диференціювання</a></li>
+<li class="chapter" data-level="3.1.13" data-path="3.1-algebra.html"><a href="3.1-algebra.html#інтегрування"><i class="fa fa-check"></i><b>3.1.13</b> Інтегрування</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="3.2-matrices.html"><a href="3.2-matrices.html"><i class="fa fa-check"></i><b>3.2</b> Теорія матриць</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="3.2-matrices.html"><a href="3.2-matrices.html#визначення-матриці"><i class="fa fa-check"></i><b>3.2.1</b> Визначення матриці</a></li>
+<li class="chapter" data-level="3.2.2" data-path="3.2-matrices.html"><a href="3.2-matrices.html#трансформації-матриць"><i class="fa fa-check"></i><b>3.2.2</b> Трансформації матриць</a></li>
+<li class="chapter" data-level="3.2.3" data-path="3.2-matrices.html"><a href="3.2-matrices.html#операції-над-матрицями"><i class="fa fa-check"></i><b>3.2.3</b> Операції над матрицями</a></li>
+<li class="chapter" data-level="3.2.4" data-path="3.2-matrices.html"><a href="3.2-matrices.html#детермінант-власні-вектори-та-власне-значення"><i class="fa fa-check"></i><b>3.2.4</b> Детермінант, власні вектори, та власне значення</a></li>
+<li class="chapter" data-level="3.2.5" data-path="3.2-matrices.html"><a href="3.2-matrices.html#matrices_art"><i class="fa fa-check"></i><b>3.2.5</b> Геометричний зміст матриць</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="3.3-stats.html"><a href="3.3-stats.html"><i class="fa fa-check"></i><b>3.3</b> Початки статистичного аналізу</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="3.3-stats.html"><a href="3.3-stats.html#ймовірність"><i class="fa fa-check"></i><b>3.3.1</b> Ймовірність</a></li>
+<li class="chapter" data-level="3.3.2" data-path="3.3-stats.html"><a href="3.3-stats.html#теорема-байєса"><i class="fa fa-check"></i><b>3.3.2</b> Теорема Байєса</a></li>
+<li class="chapter" data-level="3.3.3" data-path="3.3-stats.html"><a href="3.3-stats.html#правдоподібність"><i class="fa fa-check"></i><b>3.3.3</b> Правдоподібність</a></li>
+<li class="chapter" data-level="3.3.4" data-path="3.3-stats.html"><a href="3.3-stats.html#функції-розподілу-ймовірності"><i class="fa fa-check"></i><b>3.3.4</b> Функції розподілу ймовірності</a></li>
+<li class="chapter" data-level="3.3.5" data-path="3.3-stats.html"><a href="3.3-stats.html#статистична-гіпотеза"><i class="fa fa-check"></i><b>3.3.5</b> Статистична гіпотеза</a></li>
+<li class="chapter" data-level="3.3.6" data-path="3.3-stats.html"><a href="3.3-stats.html#нульовий-розподіл"><i class="fa fa-check"></i><b>3.3.6</b> Нульовий розподіл</a></li>
+<li class="chapter" data-level="3.3.7" data-path="3.3-stats.html"><a href="3.3-stats.html#тестування-гіпотез"><i class="fa fa-check"></i><b>3.3.7</b> Тестування гіпотез</a></li>
+<li class="chapter" data-level="3.3.8" data-path="3.3-stats.html"><a href="3.3-stats.html#парадигми-статистичного-аналізу"><i class="fa fa-check"></i><b>3.3.8</b> Парадигми статистичного аналізу</a></li>
+<li class="chapter" data-level="3.3.9" data-path="3.3-stats.html"><a href="3.3-stats.html#псевдореплікація"><i class="fa fa-check"></i><b>3.3.9</b> Псевдореплікація</a></li>
+<li class="chapter" data-level="3.3.10" data-path="3.3-stats.html"><a href="3.3-stats.html#проблема-регресії-і-проблема-класифікації"><i class="fa fa-check"></i><b>3.3.10</b> Проблема регресії і проблема класифікації</a></li>
+<li class="chapter" data-level="3.3.11" data-path="3.3-stats.html"><a href="3.3-stats.html#статистичний-умомвивід-і-обґрунтоване-передбачення"><i class="fa fa-check"></i><b>3.3.11</b> Статистичний умомвивід і обґрунтоване передбачення</a></li>
+<li class="chapter" data-level="3.3.12" data-path="3.3-stats.html"><a href="3.3-stats.html#крос-валідація"><i class="fa fa-check"></i><b>3.3.12</b> Крос-валідація</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="4-popeco.html"><a href="4-popeco.html"><i class="fa fa-check"></i><b>4</b> Початки популяційної екології</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="4.1-species.html"><a href="4.1-species.html"><i class="fa fa-check"></i><b>4.1</b> Вид</a></li>
+<li class="chapter" data-level="4.2" data-path="4.2-population.html"><a href="4.2-population.html"><i class="fa fa-check"></i><b>4.2</b> Популяція</a></li>
+<li class="chapter" data-level="4.3" data-path="4.3-metapopulation.html"><a href="4.3-metapopulation.html"><i class="fa fa-check"></i><b>4.3</b> Метапопуляція</a></li>
+<li class="chapter" data-level="4.4" data-path="4.4-pop-factors.html"><a href="4.4-pop-factors.html"><i class="fa fa-check"></i><b>4.4</b> Чинники, що впливають на популяції</a></li>
+<li class="chapter" data-level="4.5" data-path="4.5-intraspecific.html"><a href="4.5-intraspecific.html"><i class="fa fa-check"></i><b>4.5</b> Внутрішньовидові взаємодії</a></li>
+<li class="chapter" data-level="4.6" data-path="4.6-pop-dynamics.html"><a href="4.6-pop-dynamics.html"><i class="fa fa-check"></i><b>4.6</b> Динаміка та стабільність</a></li>
+<li class="chapter" data-level="4.7" data-path="4.7-Leslie-matrix.html"><a href="4.7-Leslie-matrix.html"><i class="fa fa-check"></i><b>4.7</b> Матриці Леслі</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-foundations.html"><a href="5-foundations.html"><i class="fa fa-check"></i><b>5</b> Фундаментальні поняття екології</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="5.1-niche.html"><a href="5.1-niche.html"><i class="fa fa-check"></i><b>5.1</b> Екологічна ніша</a></li>
+<li class="chapter" data-level="5.2" data-path="5.2-food-chain.html"><a href="5.2-food-chain.html"><i class="fa fa-check"></i><b>5.2</b> Трофічні ланцюги</a></li>
+<li class="chapter" data-level="5.3" data-path="5.3-food-webs.html"><a href="5.3-food-webs.html"><i class="fa fa-check"></i><b>5.3</b> Трофічні мережі</a></li>
+<li class="chapter" data-level="5.4" data-path="5.4-keystones.html"><a href="5.4-keystones.html"><i class="fa fa-check"></i><b>5.4</b> Ключові види</a></li>
+<li class="chapter" data-level="5.5" data-path="5.5-succession.html"><a href="5.5-succession.html"><i class="fa fa-check"></i><b>5.5</b> Сукцесія та клімакс</a></li>
+<li class="chapter" data-level="5.6" data-path="5.6-life-history.html"><a href="5.6-life-history.html"><i class="fa fa-check"></i><b>5.6</b> Історія життя</a></li>
+<li class="chapter" data-level="5.7" data-path="5.7-detectability.html"><a href="5.7-detectability.html"><i class="fa fa-check"></i><b>5.7</b> Ймовірність детекції</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="6-interspecific.html"><a href="6-interspecific.html"><i class="fa fa-check"></i><b>6</b> Міжвидові взаємодії</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="6.1-relationships.html"><a href="6.1-relationships.html"><i class="fa fa-check"></i><b>6.1</b> Типи міжвидових зв’язків</a></li>
+<li class="chapter" data-level="6.2" data-path="6.2-rstar.html"><a href="6.2-rstar.html"><i class="fa fa-check"></i><b>6.2</b> Теорія поділу ресурсів</a></li>
+<li class="chapter" data-level="6.3" data-path="6.3-cascade.html"><a href="6.3-cascade.html"><i class="fa fa-check"></i><b>6.3</b> Трофічні каскади</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="7-comecol.html"><a href="7-comecol.html"><i class="fa fa-check"></i><b>7</b> Екологічні угруповання</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="7.1-sad.html"><a href="7.1-sad.html"><i class="fa fa-check"></i><b>7.1</b> Структура угруповання</a></li>
+<li class="chapter" data-level="7.2" data-path="7.2-sad-model.html"><a href="7.2-sad-model.html"><i class="fa fa-check"></i><b>7.2</b> Моделі розподілів чисельності</a></li>
+<li class="chapter" data-level="7.3" data-path="7.3-diversity.html"><a href="7.3-diversity.html"><i class="fa fa-check"></i><b>7.3</b> Різноманіття</a></li>
+<li class="chapter" data-level="7.4" data-path="7.4-fd.html"><a href="7.4-fd.html"><i class="fa fa-check"></i><b>7.4</b> Функціональне й філогенетичне різноманіття</a></li>
+<li class="chapter" data-level="7.5" data-path="7.5-islands.html"><a href="7.5-islands.html"><i class="fa fa-check"></i><b>7.5</b> Острівна біогеографія</a></li>
+<li class="chapter" data-level="7.6" data-path="7.6-env-filter.html"><a href="7.6-env-filter.html"><i class="fa fa-check"></i><b>7.6</b> Середовищне фільтрування</a></li>
+<li class="chapter" data-level="7.7" data-path="7.7-rarefaction.html"><a href="7.7-rarefaction.html"><i class="fa fa-check"></i><b>7.7</b> Рарефакція та екстраполяція</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="післяслово.html"><a href="післяслово.html"><i class="fa fa-check"></i>Післяслово</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Вступ до Екології Угруповань</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="stats" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Початки статистичного аналізу<a href="3.3-stats.html#stats" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Цей розділ не стосуватиметься різноманітних статистичних тестів, адже їх існує безліч. Варто розуміти, що не існує універсального рецепту до статистичного аналізу даних, а формулювання на кшталт “зробити якусь статистику для моїх даних” є ґрунтовно помилковим. Підходи до статистичного аналізу завжди випливають від дослідницького питання і адекватно поставлених гіпотез, і недалеким від правди є твердження, що для кожного дослідження є свій аналіз.</p>
+<p>Натомість, критичним є розуміння понять, котрими оперує статистичний аналіз і котрі використовують всілякі статистичні тести. Цей розділ присвячений таким поняттям.</p>
+<div id="ймовірність" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Ймовірність<a href="3.3-stats.html#ймовірність" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Теорія ймовірності може видатись інтуїтивно зрозумілою до певної міри. Центральним поняттям її є, звісно, <em>ймовірність</em>, для розуміння котрої необхідно окреслити поняття <em>випадкового експерименту</em> і <em>випадкової події</em>.</p>
+<p>Випадковий експеримент є передмовою випадкової події. Наприклад, аби випав аверс, монету необхідно підкинути. Підкидання монети є випадковим експериментом, котрий може призвезти до однієї із двох можливих випадкових подій: (1) випадає аверс, або (2) випадає реверс. Якщо ж монету не підкинути, то не станеться й випадкова подія.</p>
+<p>Приклад монети завжди є доволі зручним, адже він інтуїтивний, простий, і зрозумілий. Очевидно, випадкові експерименти можуть бути набагато складнішими, а кількість альтернативних результуючих подій може бути незліченною.</p>
+<p>У прикладі із монетою питання полягає в тому, яка є ймовірність події (1), тобто випадання аверсу, або події (2), себто випадання реверсу. Інтуїтивною відповіддю буде “50-на-50”, але це не є правильною відповіддю, адже ми не можемо знати це непевне. Що, наприклад, якщо вага монети незбалансована? Аби знайти відповідь на це питання, найпростішим підходом буде підкинути монетку безкінечну кількість разів і порахувати частоту випадання, скажімо, аверсу. Ця частота і буде ймовірністю.</p>
+<p>Звісно, в реальності неможливо підкинути монету безліч разів, тому таке чисельне визначення ймовірності є суто теоретичним. Однак, якщо провести експеримент багато разів, це дозволить знайти приблизне значення шуканої ймовірності. Скоріш за все, воно буде близьким до <span class="math inline">\(P(аверс) \approx 0.5\)</span>. А якщо читач має добре підґрунтя в статистиці, то навіть знайдеться тест для перевірки чесності монети: звісно, що після багатьох підкидань спостережена частота аверсу може відрізнятись від <span class="math inline">\(0.5\)</span> і становити, скажімо, <span class="math inline">\(0.498\)</span>. Так от, різниця <span class="math inline">\(0.5 - 0.498 = 0.002\)</span> за певного розміру вибірки буде значущою (тобто монета нечесна) або ні.</p>
+<p>Очевидно, що ймовірність не може бути від’ємною, а найменше її значення становить <span class="math inline">\(0\)</span>. В такому випадку, випадкова подія не станеться навіть якщо випадковий експеримент буде відтоворено безкінечну кількість разів. З іншого боку, ймовірність <span class="math inline">\(1\)</span> вказує на те, що випадкова подія станеться за кожного експерименту. Зазвичай, значення ймовірності знаходиться десь в інтервалі між цими двома екстремальними значеннями.</p>
+<p>В багатьох випадках, не потрібно мати монету в руках аби зрозуміти ймовірності подій. Щоправда, системи таких подій часто є набагато складнішими. Наприклад, що якщо є дві монетки? Простір можливих подій тоді стає більшим, адже тепер може випасти два аверса, два реверса, або аверс і реверс. Якими є ймовірності цих подій, якщо підкидання монети є незалежним від підкидання іншої монети, і обидві монети є чесними (тобто очікувана ймовірність випадіння аверсу дорівнює <span class="math inline">\(0.5\)</span>)?</p>
+<p>Оскільки монет є дві, існує декілька сценаріїв розвитку подій: (1) монета 1 випадає на аверс і монета 2 випадає на аверс, (2) монета 1 випадає на аверс і монета 2 випадає на реверс, (3) монета 1 випадає на реверс і монета 2 випадає на аверс, або (4) монета 1 випадає на реверс і монета 2 випадає на реверс. То якими є ймовірності трьох випадкових подій згаданих вище?<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a></p>
+<p>Ми бачимо як проста монетка може генерувати доволі складні ймовірнісні ситуації – а що ж тоді буде зі звичайними гральними кубиками? А якщо ми візьмемо до уваги щось складніше на кшталт набору кубиків до Підземелля й Драконів із їх 4-, 6-, 10-, 12-, і 20-гранними зернами? В таких випадках <em>простори ймовірності</em> стають дедалі складнішими. І всі ці випадки є <em>дискретними</em>, в яких будь-яку подію можна описати неподільним одиночним значенням (з підкидання монетки може випасти або аверс, або реверс – ми маємо тільки два можливих значення), на відміну від <em>континуальних</em> змінних (які можна описати дійсними числами).</p>
+<p>Що таке ймовірнісний простір? Строго кажучи, <strong>ймовірнісний простір</strong> – це формальна модель випадкового експерименту. У випадку з одним підкиданням монетки, його можна поділити на наступні елементи (список не є вичерпним для спрощення):</p>
+<ul>
+<li><p><strong>простір елементарних подій</strong> (<span class="math inline">\(\Omega\)</span>) – множина, яка описує всі можливі варіанти випадкової події: <span class="math inline">\(\{аверс, реверс\}\)</span>;</p></li>
+<li><p>асоційована <em>сигма-алегбра</em> (<span class="math inline">\(\sigma\)</span>) – якщо простими словами, то це така множина, яка включає в себе всі можливі підмножини <span class="math inline">\(\Omega\)</span>;</p></li>
+<li><p><strong>ймовірності подій</strong> (<span class="math inline">\(P\)</span>) – визначені для елементарних подій значення ймовірностей, наприклад: <span class="math inline">\(P(аверс) = 0.5, P(реверс) = 0.5\)</span>.</p></li>
+</ul>
+<p>Для прикладу з монеткою асоційована сигма-алгебра <span class="math inline">\(\sigma = \{\{аверс\}, \{реверс\}, \{аверс, реверс\}, \{\emptyset\}\}\)</span>, і в повному вигляді ймовірності подій складатимуть <span class="math inline">\(P(аверс) = 0.5, P(реверс) = 0.5, P({аверс, реверс}), P(\emptyset) = 0\)</span>.</p>
+<p>Аксіоматично, ймовірність можна визначити наступним чином: для простору елементарних подій <span class="math inline">\(S\)</span> й асоційованої сигма-алгебри множин <span class="math inline">\(\mathbb{B}\)</span>, функція ймовірності <span class="math inline">\(P\)</span> із доменом <span class="math inline">\(\mathbb{B}\)</span> задовільняє наступні вимоги:</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(P(A) \geq 0 \text{ } \forall \text{ } A \in \mathbb{B}\)</span> (тобто ймовірність будь-якої події <span class="math inline">\(A\)</span> в просторі елементарних подій більше або дорівнює нулю),</p></li>
+<li><p><span class="math inline">\(P(S) = 1\)</span> (тобто ймовірність цілого простору подій дорівнює одиниці),</p></li>
+<li><p>якщо cкінченні події <span class="math inline">\(A_1, A_2, A_3, \cdots \in \mathbb{B}\)</span> є взаємовиключними (<span class="math inline">\(A_i \cap A_j = \emptyset \forall i \neq j\)</span>), тоді <span class="math inline">\(P(\cup_{i=1}^{\infty} A_i) = \sum_{i=1}^{\infty} P(A_i)\)</span> (тобто ймовірність всіх цих подій дорівнює сумі ймовірностей цих окремих подій).</p></li>
+</ol>
+<p>В такому випадку, уявімо наступне: (1) <span class="math inline">\(S = \{S_1, S_2, \cdots, \S_n\}\)</span>, (2) <span class="math inline">\(\mathbb{B}\)</span> – асоційована із <span class="math inline">\(S\)</span> сигма-алгебра, (3) <span class="math inline">\(p_1, p_2, \cdots, p_n\)</span> – не-негативні числа із сумою <span class="math inline">\(\sum_{i=1}^n p_i = 1\)</span>, і (4) для всякої події <span class="math inline">\(A \in \mathbb{B}\)</span> визначимо <span class="math inline">\(P(A) = \sum_{i:S_i \in A}(p_i)\)</span>. Тоді <span class="math inline">\(P\)</span> можна назвати ймовірнісною функцією визначеною в <span class="math inline">\(\mathbb{B}\)</span> якщо вона відповідає вимогам аксіоматичного визначення ймовірності (див. вище). Із такого визначення випливають наступні наслідки:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(P(\emptyset) = 0\)</span>: ймовірність нульової множини (тобто відсутності події) становить нуль, якщо монетку вже підкинуто, то станеться або аверс, або реверс;</li>
+<li><span class="math inline">\(P(A) \leq 1\)</span>: ймовірність події не може бути більшою за одиницю;</li>
+<li><span class="math inline">\(P(A^c) = 1 - P(A) \Leftrightarrow P(A) + P(A^c) = 1 \Leftrightarrow A \cup A^c = S\)</span>: ймовірність комплементу події зворотно пов’язана із ймовірністю цієї події (якщо ймовірність викинути аверс становить <span class="math inline">\(0.3\)</span>, то ймовірність не викинути аверс становить <span class="math inline">\(1-0.3\)</span>);</li>
+<li><span class="math inline">\(P(B \cap A^c) = P(B) - P(B\cap A)\)</span> (з цього моменту пояснювати вербально стає складніше, читачу варто побавитись із колами Ейлера аби уявити про що йдеться);</li>
+<li><span class="math inline">\(P(B \cup A) = P(B) + P(A) - P(B\cap A)\)</span>;</li>
+<li><span class="math inline">\(A \subset B\)</span>, <span class="math inline">\(P(A) \leq P(B)\)</span>;</li>
+<li><span class="math inline">\(P(B \cap A) \geq P(B) + P(A) - 1\)</span>.</li>
+</ol>
+<p>Коли йдеться про ймовірності, дуже важливим моментом є <strong>незалежність подій</strong> і пов’язані поняття. Дві події, <span class="math inline">\(A\)</span> і <span class="math inline">\(B\)</span>, вважаються незалежними якщо <span class="math inline">\(P(A \cap B) = P(A) P(B)\)</span>. Якщо <span class="math inline">\(A \cap B = \emptyset\)</span>, тобто ці події не мають жодних спільних елементів в просторі елементарних подій, то такі події можна описати як <strong>взаємовиключні</strong> (наприклад, одне підкидання монетки). Скінченна множина подій є <strong>попарно незалежною</strong> якщо для всіх пар справджується наступне: <span class="math inline">\(P(A_i \cap A_j) = P(A_i)P(A_j)\)</span>. Якщо ж кожна подія в множині незалежна від будь-яких перетинів всіх інших подій: <span class="math inline">\(P(\cap_{j=1}^k A_{i_j}) = \prod_{j=1}^k P(A_{i_j})\)</span>, тоді такі події можна назвати <strong>взаємонезалежними</strong>.</p>
+</div>
+<div id="теорема-байєса" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Теорема Байєса<a href="3.3-stats.html#теорема-байєса" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Уявімо дві події, <span class="math inline">\(A\)</span> і <span class="math inline">\(B\)</span>, котрі належать до <span class="math inline">\(S\)</span> (<span class="math inline">\(\{A, B\} \in S\)</span>), і, скажімо, <span class="math inline">\(P(B) &gt; 0\)</span>. Тоді ми можнемо означити <strong>умовну ймовірність</strong> події <span class="math inline">\(A\)</span> за того, що подія <span class="math inline">\(B\)</span> відбулась: <span class="math inline">\(P(A|B) = \frac{P(A \cap B)}{P(B)}\)</span>. Це доволі нескладно осягнути інтуїтивно. Скажімо, ми підкидаємо дві чесні монетки по черзі: <span class="math inline">\(B\)</span> позначає випадіння аверса з першою монеткою, <span class="math inline">\(A\)</span> позначає другий аверс. В цілому експерименті може статись чотири різні варіанти: аверс-аверс, аверс-реверс, реверс-аверс, і реверс-реверс. Ймовірність пари “аверс-аверс” складає <span class="math inline">\(P(A \cap B) = 1/4\)</span>. Ймовірність просто викинути реверс із першою монеткою становить <span class="math inline">\(P(B) = 1/2\)</span>. Тоді якщо ми припустимо, що перша монетка поверне аверс, ймовірність того що й друга монетка випаде на аверс становить <span class="math inline">\(P(A | B) = \frac{1/4}{1/2} = 1/2\)</span>.</p>
+<p>Якщо ми знаємо, що <span class="math inline">\(P(A)&gt;0\)</span>, тоді можна побачити що <span class="math inline">\(P(B|A) = \frac{P(B \cap A)}{P(A)} = \frac{P(A | B)P(B)}{P(A)}\)</span>. Отже, <span class="math inline">\(P(B|A)P(A)=P(A|B)P(B)=P(A \cap B)\)</span>. Якщо продовжувати бавитись із підстановками в цих рівняннях, то вийде що <span class="math inline">\(P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{P(B|A) P(A)}{P(B)} = \frac{P(B|A)P(A}{P(B \cap A) + P(B \cap A^c)} = \frac{P(B|A)P(A)}{P(B|A) P(A) + P(B|A^c)P(A^c)}\)</span>, що зветься Баєсівським правилом умовних ймовірностей і призводить до теореми Баєса.</p>
+<p>Уявімо що <span class="math inline">\(\{A_1, A_2, A_3, \cdots\}\)</span> є поділом простору <span class="math inline">\(S\)</span> (<span class="math inline">\(A_i \cap A_j = \emptyset \forall i \neq j\)</span>, <span class="math inline">\(\cup_{k=1}^{\infty} A_k = S\)</span>). Уявіть будь-яку множину <span class="math inline">\(B\)</span>. Тоді</p>
+<p><span class="math display">\[P(A_i|B) = \frac{P(B|A_i)P(A_i)}{\sum_{k=1}^{\infty}[P(B|A_k)P(A_k)]}\]</span></p>
+<p>Певною мірою, цю теорему нескладно зрозуміти інтуїтивно, але іноді може видаватись навпаки. Для простого прикладу, уявімо що ми маємо список студентів з двох різних груп. В групі <span class="math inline">\(A\)</span> сумарно 80 студентів: 60 жінок і 20 чоловіків; в групі <span class="math inline">\(B\)</span> – 20 студентів, десятеро жінок і десятеро чоловіків. Ви обираєте випадкову особу із цих двох груп і бачите, що це чоловік. Які ймовірності того, що цей студент походить із певної групи? Ми бачимо що ймовірність обрати чоловіка з групи <span class="math inline">\(A\)</span> складає <span class="math inline">\(P(male|A) =  20/(60+20) = 1/4\)</span>, в той час як в групі <span class="math inline">\(B\)</span> – <span class="math inline">\(P(male|B) = 10/(20+20) = 1/2\)</span>. Але в той же час ймовірність обрати випадкову особу із групи <span class="math inline">\(A\)</span> становить <span class="math inline">\(P(A) = 80/(80+20) = 4/5\)</span>, в той час як з групи <span class="math inline">\(B\)</span> – <span class="math inline">\(P(B) = 20/(80+20) = 1/5\)</span>, і ми маємо врахувати ці ймовірності коли оцінюємо шукану ймовірність того, що наш студент походить із групи <span class="math inline">\(A\)</span>. Так, в цій групі небагато чоловіків, але й розмір групи великий, тож випадкова особа набагато ймовірніше потрапила із групи <span class="math inline">\(A\)</span>! Але навіть без оцінки всіх цих дрібних ймовірностей, у цілій вибірці сумарно <span class="math inline">\(30\)</span> чоловіків: <span class="math inline">\(20\)</span> походять із групи <span class="math inline">\(A\)</span>, <span class="math inline">\(10\)</span> - із групи <span class="math inline">\(B\)</span>. Отже, ймовірність обрати чоловіка із групи <span class="math inline">\(A\)</span> становитиме <span class="math inline">\(20/30\)</span>, із групи <span class="math inline">\(B\)</span> – <span class="math inline">\(10/30\)</span>. Ймовірності так само співпадають, наприклад, <span class="math inline">\(P(A|male) = \frac{P(male|A)P(A)}{P(male|A)P(A) + P(male|B)P(B)} = \frac{(20/80) \cdot (80/100)}{(20/80) \cdot (80/100) + (10/20) \cdot (20/100)} = \frac{0.2}{0.2+0.1}=2/3\)</span>.</p>
+</div>
+<div id="правдоподібність" class="section level3 hasAnchor" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> Правдоподібність<a href="3.3-stats.html#правдоподібність" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="функції-розподілу-ймовірності" class="section level3 hasAnchor" number="3.3.4">
+<h3><span class="header-section-number">3.3.4</span> Функції розподілу ймовірності<a href="3.3-stats.html#функції-розподілу-ймовірності" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="статистична-гіпотеза" class="section level3 hasAnchor" number="3.3.5">
+<h3><span class="header-section-number">3.3.5</span> Статистична гіпотеза<a href="3.3-stats.html#статистична-гіпотеза" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="нульовий-розподіл" class="section level3 hasAnchor" number="3.3.6">
+<h3><span class="header-section-number">3.3.6</span> Нульовий розподіл<a href="3.3-stats.html#нульовий-розподіл" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="тестування-гіпотез" class="section level3 hasAnchor" number="3.3.7">
+<h3><span class="header-section-number">3.3.7</span> Тестування гіпотез<a href="3.3-stats.html#тестування-гіпотез" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="парадигми-статистичного-аналізу" class="section level3 hasAnchor" number="3.3.8">
+<h3><span class="header-section-number">3.3.8</span> Парадигми статистичного аналізу<a href="3.3-stats.html#парадигми-статистичного-аналізу" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="псевдореплікація" class="section level3 hasAnchor" number="3.3.9">
+<h3><span class="header-section-number">3.3.9</span> Псевдореплікація<a href="3.3-stats.html#псевдореплікація" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="проблема-регресії-і-проблема-класифікації" class="section level3 hasAnchor" number="3.3.10">
+<h3><span class="header-section-number">3.3.10</span> Проблема регресії і проблема класифікації<a href="3.3-stats.html#проблема-регресії-і-проблема-класифікації" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="статистичний-умомвивід-і-обґрунтоване-передбачення" class="section level3 hasAnchor" number="3.3.11">
+<h3><span class="header-section-number">3.3.11</span> Статистичний умомвивід і обґрунтоване передбачення<a href="3.3-stats.html#статистичний-умомвивід-і-обґрунтоване-передбачення" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="крос-валідація" class="section level3 hasAnchor" number="3.3.12">
+<h3><span class="header-section-number">3.3.12</span> Крос-валідація<a href="3.3-stats.html#крос-валідація" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<!-- </div> -->
+<div class="footnotes">
+<hr />
+<ol start="16">
+<li id="fn16"><p>позначимо ймовірність випадання аверсу (A) або реверсу (R) на першій монеті як <span class="math inline">\(P(C_1 = A) = P(C_1 = R) = 0.5\)</span> і на другій монеті як <span class="math inline">\(P(C_2 = A) = P(C_2 = R) = 0.5\)</span>. Тоді <span class="math inline">\(P(A, A) = P(C_1 = A) \cdot P(C_2 =  A) = 0.5 \cdot 0.5 = 0.25\)</span>, <span class="math inline">\(P(R, R) = P(C_1 = R) \cdot P(C_2 =  R) = 0.5 \cdot 0.5 = 0.25\)</span>, і <span class="math inline">\(P(A, R) = P(C_1 = A) \cdot P(C_2 = R) + P(C_1 = R) \cdot P(C_2 = A) = 0.25 + 0.25 = 0.5\)</span>.<a href="3.3-stats.html#fnref16" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="3.2-matrices.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="4-popeco.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
