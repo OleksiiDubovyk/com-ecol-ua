@@ -10,6 +10,7 @@ fig:fig-3-9
 fig:fig-3-10
 fig:fig-3-11
 fig:fig-3-12
+fig:fig-3-13
 about-author
 whythiswork
 more-about-author
@@ -69,8 +70,12 @@ hypothesis
 nulldistr
 pval
 paradigms
+частотницька-або-фреквентистська-парадигма
+баєсівська-парадигма
+пермутаційний-аналіз
 pseudoreplication
 regression
+aic
 prcomp
 inference
 crossval
@@ -98,6 +103,7 @@ comecol
 sad
 sad-model
 diversity
+similarity
 fd
 islands
 env-filter
