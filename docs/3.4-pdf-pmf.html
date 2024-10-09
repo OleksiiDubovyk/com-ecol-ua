@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3.4 Розподіли ймовірності | Вступ до Екології Угруповань</title>
+  <meta name="description" content="Непідручник" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3.4 Розподіли ймовірності | Вступ до Екології Угруповань" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Непідручник" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3.4 Розподіли ймовірності | Вступ до Екології Угруповань" />
+  
+  <meta name="twitter:description" content="Непідручник" />
+  
+
+<meta name="author" content="Олексій Дубовик" />
+
+
+<meta name="date" content="2024-10-08" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="3.3-stats.html"/>
+<link rel="next" href="3.5-basic-hypotheses.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Вступ до Екології Угруповань</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Передмова</a>
+<ul>
+<li class="chapter" data-level="0.0.1" data-path="index.html"><a href="index.html#about-author"><i class="fa fa-check"></i><b>0.0.1</b> Трішки про автора</a></li>
+<li class="chapter" data-level="0.0.2" data-path="index.html"><a href="index.html#whythiswork"><i class="fa fa-check"></i><b>0.0.2</b> Навіщо ця робота</a></li>
+<li class="chapter" data-level="0.0.3" data-path="index.html"><a href="index.html#more-about-author"><i class="fa fa-check"></i><b>0.0.3</b> Ще трішки про автора</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="подяки.html"><a href="подяки.html"><i class="fa fa-check"></i>Подяки</a></li>
+<li class="chapter" data-level="1" data-path="1-introduction.html"><a href="1-introduction.html"><i class="fa fa-check"></i><b>1</b> Вступ</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="1-introduction.html"><a href="1-introduction.html#community-def"><i class="fa fa-check"></i><b>1.0.1</b> Екологічне угруповання</a></li>
+<li class="chapter" data-level="1.0.2" data-path="1-introduction.html"><a href="1-introduction.html#comm-ecol-today"><i class="fa fa-check"></i><b>1.0.2</b> Екологія угруповань сьогодні</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="2-about-book.html"><a href="2-about-book.html"><i class="fa fa-check"></i><b>2</b> Про книгу</a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="2-about-book.html"><a href="2-about-book.html#readme"><i class="fa fa-check"></i><b>2.0.1</b> Дисклеймер</a></li>
+<li class="chapter" data-level="2.1" data-path="2.1-how-built.html"><a href="2.1-how-built.html"><i class="fa fa-check"></i><b>2.1</b> Як побудована ця книга</a></li>
+<li class="chapter" data-level="2.2" data-path="2.2-expect.html"><a href="2.2-expect.html"><i class="fa fa-check"></i><b>2.2</b> Чого чекати від цієї книги</a></li>
+<li class="chapter" data-level="2.3" data-path="2.3-expected.html"><a href="2.3-expected.html"><i class="fa fa-check"></i><b>2.3</b> Чого ця книга чекає від читача</a></li>
+<li class="chapter" data-level="2.4" data-path="2.4-notexpect.html"><a href="2.4-notexpect.html"><i class="fa fa-check"></i><b>2.4</b> На що не варто розраховувати</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-numerical-ecology.html"><a href="3-numerical-ecology.html"><i class="fa fa-check"></i><b>3</b> Базові математичні підходи в екології</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="3.1-algebra.html"><a href="3.1-algebra.html"><i class="fa fa-check"></i><b>3.1</b> Математична пам’ятка</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="3.1-algebra.html"><a href="3.1-algebra.html#дроби"><i class="fa fa-check"></i><b>3.1.1</b> Дроби</a></li>
+<li class="chapter" data-level="3.1.2" data-path="3.1-algebra.html"><a href="3.1-algebra.html#математичні-символи"><i class="fa fa-check"></i><b>3.1.2</b> Математичні символи</a></li>
+<li class="chapter" data-level="3.1.3" data-path="3.1-algebra.html"><a href="3.1-algebra.html#нерівності"><i class="fa fa-check"></i><b>3.1.3</b> Нерівності</a></li>
+<li class="chapter" data-level="3.1.4" data-path="3.1-algebra.html"><a href="3.1-algebra.html#ступені"><i class="fa fa-check"></i><b>3.1.4</b> Ступені</a></li>
+<li class="chapter" data-level="3.1.5" data-path="3.1-algebra.html"><a href="3.1-algebra.html#ряди-чисел"><i class="fa fa-check"></i><b>3.1.5</b> Ряди чисел</a></li>
+<li class="chapter" data-level="3.1.6" data-path="3.1-algebra.html"><a href="3.1-algebra.html#ступені-арифметичних-операцій"><i class="fa fa-check"></i><b>3.1.6</b> Ступені арифметичних операцій</a></li>
+<li class="chapter" data-level="3.1.7" data-path="3.1-algebra.html"><a href="3.1-algebra.html#лінійні-та-поліноміальні-функції"><i class="fa fa-check"></i><b>3.1.7</b> Лінійні та поліноміальні функції</a></li>
+<li class="chapter" data-level="3.1.8" data-path="3.1-algebra.html"><a href="3.1-algebra.html#logs"><i class="fa fa-check"></i><b>3.1.8</b> Логарифми</a></li>
+<li class="chapter" data-level="3.1.9" data-path="3.1-algebra.html"><a href="3.1-algebra.html#поширені-математичні-функції"><i class="fa fa-check"></i><b>3.1.9</b> Поширені математичні функції</a></li>
+<li class="chapter" data-level="3.1.10" data-path="3.1-algebra.html"><a href="3.1-algebra.html#властивості-сум"><i class="fa fa-check"></i><b>3.1.10</b> Властивості сум</a></li>
+<li class="chapter" data-level="3.1.11" data-path="3.1-algebra.html"><a href="3.1-algebra.html#властивості-добутків"><i class="fa fa-check"></i><b>3.1.11</b> Властивості добутків</a></li>
+<li class="chapter" data-level="3.1.12" data-path="3.1-algebra.html"><a href="3.1-algebra.html#диференціювання"><i class="fa fa-check"></i><b>3.1.12</b> Диференціювання</a></li>
+<li class="chapter" data-level="3.1.13" data-path="3.1-algebra.html"><a href="3.1-algebra.html#інтегрування"><i class="fa fa-check"></i><b>3.1.13</b> Інтегрування</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="3.2-matrices.html"><a href="3.2-matrices.html"><i class="fa fa-check"></i><b>3.2</b> Лінійна алгебра</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="3.2-matrices.html"><a href="3.2-matrices.html#визначення-матриці"><i class="fa fa-check"></i><b>3.2.1</b> Визначення матриці</a></li>
+<li class="chapter" data-level="3.2.2" data-path="3.2-matrices.html"><a href="3.2-matrices.html#трансформації-матриць"><i class="fa fa-check"></i><b>3.2.2</b> Трансформації матриць</a></li>
+<li class="chapter" data-level="3.2.3" data-path="3.2-matrices.html"><a href="3.2-matrices.html#операції-над-матрицями"><i class="fa fa-check"></i><b>3.2.3</b> Операції над матрицями</a></li>
+<li class="chapter" data-level="3.2.4" data-path="3.2-matrices.html"><a href="3.2-matrices.html#детермінант-власні-вектори-та-власне-значення"><i class="fa fa-check"></i><b>3.2.4</b> Детермінант, власні вектори, та власне значення</a></li>
+<li class="chapter" data-level="3.2.5" data-path="3.2-matrices.html"><a href="3.2-matrices.html#matrices_art"><i class="fa fa-check"></i><b>3.2.5</b> Геометричний зміст матриць</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="3.3-stats.html"><a href="3.3-stats.html"><i class="fa fa-check"></i><b>3.3</b> Ймовірність у статистиці</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="3.3-stats.html"><a href="3.3-stats.html#prob"><i class="fa fa-check"></i><b>3.3.1</b> Ймовірність</a></li>
+<li class="chapter" data-level="3.3.2" data-path="3.3-stats.html"><a href="3.3-stats.html#bayes"><i class="fa fa-check"></i><b>3.3.2</b> Теорема Баєса</a></li>
+<li class="chapter" data-level="3.3.3" data-path="3.3-stats.html"><a href="3.3-stats.html#mle"><i class="fa fa-check"></i><b>3.3.3</b> Правдоподібність</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="3.4-pdf-pmf.html"><a href="3.4-pdf-pmf.html"><i class="fa fa-check"></i><b>3.4</b> Розподіли ймовірності</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="3.4-pdf-pmf.html"><a href="3.4-pdf-pmf.html#pdfs"><i class="fa fa-check"></i><b>3.4.1</b> Функції розподілу ймовірності</a></li>
+<li class="chapter" data-level="3.4.2" data-path="3.4-pdf-pmf.html"><a href="3.4-pdf-pmf.html#bars"><i class="fa fa-check"></i><b>3.4.2</b> Опис розподілу змінної (описова статистика)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="3.5-basic-hypotheses.html"><a href="3.5-basic-hypotheses.html"><i class="fa fa-check"></i><b>3.5</b> Тестування гіпотез</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="3.5-basic-hypotheses.html"><a href="3.5-basic-hypotheses.html#hypothesis"><i class="fa fa-check"></i><b>3.5.1</b> Статистична гіпотеза</a></li>
+<li class="chapter" data-level="3.5.2" data-path="3.5-basic-hypotheses.html"><a href="3.5-basic-hypotheses.html#nulldistr"><i class="fa fa-check"></i><b>3.5.2</b> Нульовий розподіл</a></li>
+<li class="chapter" data-level="3.5.3" data-path="3.5-basic-hypotheses.html"><a href="3.5-basic-hypotheses.html#pval"><i class="fa fa-check"></i><b>3.5.3</b> Тестування гіпотез</a></li>
+<li class="chapter" data-level="3.5.4" data-path="3.5-basic-hypotheses.html"><a href="3.5-basic-hypotheses.html#paradigms"><i class="fa fa-check"></i><b>3.5.4</b> Парадигми статистичного аналізу</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html"><i class="fa fa-check"></i><b>3.6</b> Експеримент і модель</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html#pseudoreplication"><i class="fa fa-check"></i><b>3.6.1</b> Псевдореплікація</a></li>
+<li class="chapter" data-level="3.6.2" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html#regression"><i class="fa fa-check"></i><b>3.6.2</b> Регресія чи класифікація?</a></li>
+<li class="chapter" data-level="3.6.3" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html#aic"><i class="fa fa-check"></i><b>3.6.3</b> Парсимонійна модель та вибір моделі</a></li>
+<li class="chapter" data-level="3.6.4" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html#prcomp"><i class="fa fa-check"></i><b>3.6.4</b> Багатовимірна статистика</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="3.7-infer.html"><a href="3.7-infer.html"><i class="fa fa-check"></i><b>3.7</b> Використання статистики для умовиводу</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="3.7-infer.html"><a href="3.7-infer.html#inference"><i class="fa fa-check"></i><b>3.7.1</b> Статистичний умовивід і обґрунтоване передбачення</a></li>
+<li class="chapter" data-level="3.7.2" data-path="3.7-infer.html"><a href="3.7-infer.html#crossval"><i class="fa fa-check"></i><b>3.7.2</b> Крос-валідація</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="4-popeco.html"><a href="4-popeco.html"><i class="fa fa-check"></i><b>4</b> Початки популяційної екології</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="4.1-species.html"><a href="4.1-species.html"><i class="fa fa-check"></i><b>4.1</b> Вид</a></li>
+<li class="chapter" data-level="4.2" data-path="4.2-population.html"><a href="4.2-population.html"><i class="fa fa-check"></i><b>4.2</b> Популяція</a></li>
+<li class="chapter" data-level="4.3" data-path="4.3-metapopulation.html"><a href="4.3-metapopulation.html"><i class="fa fa-check"></i><b>4.3</b> Метапопуляція</a></li>
+<li class="chapter" data-level="4.4" data-path="4.4-pop-factors.html"><a href="4.4-pop-factors.html"><i class="fa fa-check"></i><b>4.4</b> Чинники, що впливають на популяції</a></li>
+<li class="chapter" data-level="4.5" data-path="4.5-intraspecific.html"><a href="4.5-intraspecific.html"><i class="fa fa-check"></i><b>4.5</b> Внутрішньовидові взаємодії</a></li>
+<li class="chapter" data-level="4.6" data-path="4.6-pop-dynamics.html"><a href="4.6-pop-dynamics.html"><i class="fa fa-check"></i><b>4.6</b> Динаміка та стабільність</a></li>
+<li class="chapter" data-level="4.7" data-path="4.7-Leslie-matrix.html"><a href="4.7-Leslie-matrix.html"><i class="fa fa-check"></i><b>4.7</b> Матриці Леслі</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-foundations.html"><a href="5-foundations.html"><i class="fa fa-check"></i><b>5</b> Фундаментальні поняття екології</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="5.1-niche.html"><a href="5.1-niche.html"><i class="fa fa-check"></i><b>5.1</b> Екологічна ніша</a></li>
+<li class="chapter" data-level="5.2" data-path="5.2-food-chain.html"><a href="5.2-food-chain.html"><i class="fa fa-check"></i><b>5.2</b> Трофічні ланцюги</a></li>
+<li class="chapter" data-level="5.3" data-path="5.3-food-webs.html"><a href="5.3-food-webs.html"><i class="fa fa-check"></i><b>5.3</b> Трофічні мережі</a></li>
+<li class="chapter" data-level="5.4" data-path="5.4-keystones.html"><a href="5.4-keystones.html"><i class="fa fa-check"></i><b>5.4</b> Ключові види</a></li>
+<li class="chapter" data-level="5.5" data-path="5.5-succession.html"><a href="5.5-succession.html"><i class="fa fa-check"></i><b>5.5</b> Сукцесія та клімакс</a></li>
+<li class="chapter" data-level="5.6" data-path="5.6-life-history.html"><a href="5.6-life-history.html"><i class="fa fa-check"></i><b>5.6</b> Історія життя</a></li>
+<li class="chapter" data-level="5.7" data-path="5.7-detectability.html"><a href="5.7-detectability.html"><i class="fa fa-check"></i><b>5.7</b> Ймовірність детекції</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="6-interspecific.html"><a href="6-interspecific.html"><i class="fa fa-check"></i><b>6</b> Міжвидові взаємодії</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="6.1-relationships.html"><a href="6.1-relationships.html"><i class="fa fa-check"></i><b>6.1</b> Типи міжвидових зв’язків</a></li>
+<li class="chapter" data-level="6.2" data-path="6.2-rstar.html"><a href="6.2-rstar.html"><i class="fa fa-check"></i><b>6.2</b> Теорія поділу ресурсів</a></li>
+<li class="chapter" data-level="6.3" data-path="6.3-cascade.html"><a href="6.3-cascade.html"><i class="fa fa-check"></i><b>6.3</b> Трофічні каскади</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="7-comecol.html"><a href="7-comecol.html"><i class="fa fa-check"></i><b>7</b> Екологічні угруповання</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="7.1-sad.html"><a href="7.1-sad.html"><i class="fa fa-check"></i><b>7.1</b> Структура угруповання</a></li>
+<li class="chapter" data-level="7.2" data-path="7.2-sad-model.html"><a href="7.2-sad-model.html"><i class="fa fa-check"></i><b>7.2</b> Моделі розподілів чисельності</a></li>
+<li class="chapter" data-level="7.3" data-path="7.3-diversity.html"><a href="7.3-diversity.html"><i class="fa fa-check"></i><b>7.3</b> Різноманіття</a></li>
+<li class="chapter" data-level="7.4" data-path="7.4-similarity.html"><a href="7.4-similarity.html"><i class="fa fa-check"></i><b>7.4</b> Подібність угруповань</a></li>
+<li class="chapter" data-level="7.5" data-path="7.5-fd.html"><a href="7.5-fd.html"><i class="fa fa-check"></i><b>7.5</b> Функціональне й філогенетичне різноманіття</a></li>
+<li class="chapter" data-level="7.6" data-path="7.6-islands.html"><a href="7.6-islands.html"><i class="fa fa-check"></i><b>7.6</b> Острівна біогеографія</a></li>
+<li class="chapter" data-level="7.7" data-path="7.7-env-filter.html"><a href="7.7-env-filter.html"><i class="fa fa-check"></i><b>7.7</b> Середовищне фільтрування</a></li>
+<li class="chapter" data-level="7.8" data-path="7.8-rarefaction.html"><a href="7.8-rarefaction.html"><i class="fa fa-check"></i><b>7.8</b> Рарефакція та екстраполяція</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="післяслово.html"><a href="післяслово.html"><i class="fa fa-check"></i>Післяслово</a></li>
+<li class="chapter" data-level="" data-path="контакти-автора.html"><a href="контакти-автора.html"><i class="fa fa-check"></i>Контакти автора</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Вступ до Екології Угруповань</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="pdf-pmf" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Розподіли ймовірності<a href="3.4-pdf-pmf.html#pdf-pmf" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="pdfs" class="section level3 hasAnchor" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> Функції розподілу ймовірності<a href="3.4-pdf-pmf.html#pdfs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>У прикладі із підкиданням монетки можливі два варіанти розвитку подій (іншими словами, із чого складається простір елементарних подій): аверс чи реверс. Відповідно, існує дві ймовірності, асоційовані із цими варіантами. Ці дві ймовірності утворюють <strong>розподіл ймовірності</strong> (<em>probability distribution</em>): певну функцію <span class="math inline">\(f\)</span> від кожного елементу <span class="math inline">\(x\)</span> простору елементарних подій (<span class="math inline">\(\Omega\)</span>, який виступає в якості домену функції <span class="math inline">\(f\)</span> – в цьому підрозділі <span class="math inline">\(\Omega\)</span> позначимо як <span class="math inline">\(\mathcal{X}\)</span>), яка повертає значення ймовірності. Коли уявити підкидання монетки як випадковий експеримент Бернулі, де <span class="math inline">\(1\)</span> відповідає випадінню аверсу (отже, <span class="math inline">\(\mathcal{X} = \{0, 1\}\)</span>), то функцію розподілу ймовірності можна розписати як <span class="math inline">\(f(x) = p^x (1-p)^{1-x}\)</span>, що легко скорочується в <span class="math inline">\(f(1) = p\)</span> і <span class="math inline">\(f(0) = 1 - p\)</span>.</p>
+<p>Покликання функцій розподілу ймовірності – це фундаментальний опис ідеальних випадкових змінних <span class="math inline">\(X\)</span> за <span class="math inline">\(n \rightarrow \infty\)</span>. Очевидно, існує чимало розподілів окрім Бернулі, в яких змінні можна поділити на дискретні й континуальні. Фізичний зміст функції розподілу ймовірності дещо відрізняється в цих двох випадках.</p>
+<ul>
+<li><p><strong>Дискретний розподіл</strong> описує змінну, яка може набувати лише дискретних значень: наприклад, <span class="math inline">\(x \in \mathcal{X}: \mathcal{X} = \{0, 1, 2, 3, \cdots\}\)</span>, й, відповідно, функція розподілу ймовірності обчислюється як ймовірність випадково повернути конкретне значення у випадковій змінній. Функції розподілу ймовірності для дискретних змінних називають <strong>функціями маси ймовірності</strong> (<em>probability mass function</em>, <strong>pmf</strong>). Прикладами таких змінних може виступати кількість особин, кількість подій тощо (скільки не старатись, а уявити <span class="math inline">\(1.26\)</span> людей важко - це завжди має бути <span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span>, або якесь інше ціле число). Відтак, pmf повертає ймовірність того, що випадкове значення із випадкової змінної <span class="math inline">\(X\)</span> дорівнюватиме певному значенню <span class="math inline">\(x\)</span>: <span class="math inline">\(P(X = x) = f(x)\)</span>.</p></li>
+<li><p><strong>Неперервний, або континуальний розподіл</strong> описує неперервні змінні (вага, зріст тощо). Особливістю таких змінних є те, що їх точність завжди не є кінечною. Наприклад, якщо пацієнт зважується і отримує результат 70 кг, то чи це значить що вага становить рівно 70,000 г? Можливо, можна взяти точніший зважувальний апарат, який покаже вагу 70,130 г. Але і цей показник неточний: що якщо справжня вага дорівнює <span class="math inline">\(70131.76378 \ldots\)</span> г? І це ми ще не враховуємо калібрування та похибку інструментів. Подібно до цього прикладу, в неперервній змінній <span class="math inline">\(X\)</span> ймовірність повернути будь-яке конкретне значення неможливо оцінити точно, адже воно наближається до нуля (яка ймовірність обрати людину із багатомільярдного населення планети, вага якої становитиме рівно 70,131.76378 г? Мабуть, що ця ймовірність нікчемна). Відповідно, для опису розподілів таких змінних має зміст описувати радше ймовірність отримати випадкове значення, що менше або дорівнює до певного значення: а отже, яка частка значень із випадкової змінної <span class="math inline">\(X\)</span> менше або дорівнює певному значенню <span class="math inline">\(x\)</span>? В цих випадках <strong>функції густини ймовірності</strong> (<em>probability density function</em>, <strong>pdf</strong>) мають вигляд неперервних кривих, а шукані ймовірності знаходять інтергруванням (тобто шуканням площі під кривою) цих функцій: <span class="math inline">\(P(X \leq x) = \int \limits_{-\infty}^x f(x) dx\)</span>.</p></li>
+</ul>
+<p>В обох випадках для всякої випадкової змінної <span class="math inline">\(X\)</span> можна визначити функцію розподілу ймовірності як <strong>функцію кумулятивного розподілу</strong> (<em>cumulative distribution function</em>, <strong>cdf</strong>) <span class="math inline">\(F(x) = P(X \leq x) \forall x\)</span>. Цікавою особливістю cdf є те, що її можна визначити навіть для <span class="math inline">\(x \not\subset \mathcal{X}\)</span>: наприклад, для випадку із процесом Бернулі pmf може оцінити <em>тільки</em> ймовірність того, що <span class="math inline">\(x = 0\)</span> або <span class="math inline">\(x = 1\)</span>. Яка ймовірність того, що випаде <span class="math inline">\(0.7\)</span>? Доволі абсурдне питання, адже монетка не може випасти на <span class="math inline">\(70\%\)</span> аверсу і <span class="math inline">\(30\%\)</span> реверсу. Відтак, pmf неможливо визначити, однак cdf цілком можна: <span class="math inline">\(P (X \leq 0.7) = 1-p\)</span> (за віссю значення змінної <span class="math inline">\(X\)</span> кумулятивна ймовірність становитиме <span class="math inline">\(0\)</span> до моменту поки не <span class="math inline">\(X = 0\)</span>; <span class="math inline">\((1-p)\)</span> до моменту поки не <span class="math inline">\(X = 1\)</span>; з того ж моменту, всяке значення <span class="math inline">\(x \geq 1\)</span> матиме ймовірність того що <span class="math inline">\(X \leq x\)</span> становитиме <span class="math inline">\((1 - p) + p = 1\)</span>) (Рис. <a href="3.4-pdf-pmf.html#fig:fig-3-9">3.9</a>.). Функція <span class="math inline">\(F(x)\)</span> є cmf якщо вона відповідає наступним вимогам:</p>
+<ul>
+<li><p><span class="math inline">\(\lim \limits_{x \rightarrow - \infty} F(x) = 0\)</span>, <span class="math inline">\(\lim \limits_{x \rightarrow  \infty} F(x) = 1\)</span>,</p></li>
+<li><p>приріст <span class="math inline">\(F(x)\)</span> не зменшується із <span class="math inline">\(x\)</span> (тобто для всяких <span class="math inline">\(u &gt; v\)</span> <span class="math inline">\(F(u) \geq F(v)\)</span>),</p></li>
+<li><p><span class="math inline">\(F(x)\)</span> є право-неперервною, тобто <span class="math inline">\(\lim \limits_{h \downarrow 0} F(x + h) = F(x)\)</span>.</p></li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:fig-3-9"></span>
+<img src="bookdown-demo_files/figure-html/fig-3-9-1.png" alt="Функція маси ймовірності і функція кумулятивного розподілу для процесу Бернулі із $p = 0.7$: елементарного підкидання монетки із $70 \%$ ймовірністю випадіння аверсу." width="1056" />
+<p class="caption">
+Рис. 3.9: Функція маси ймовірності і функція кумулятивного розподілу для процесу Бернулі із <span class="math inline">\(p = 0.7\)</span>: елементарного підкидання монетки із <span class="math inline">\(70 \%\)</span> ймовірністю випадіння аверсу.
+</p>
+</div>
+<p>Для дискретних змінних, pmf задана як <span class="math inline">\(f(x) = P(X = x) \forall x\)</span> і <span class="math inline">\(P(X = u) = 0\)</span> якщо <span class="math inline">\(u \notin \mathcal{X}\)</span>. Для трансформації pmf в cdf можна обчислити <span class="math inline">\(F(x) = P(X \leq x) = \sum \limits_{u: u \leq x} P(X = u) = \sum \limits_{u: u \leq x} f(u)\)</span>, а для протилежної трансформації cdf в pmf можна обчислити <span class="math inline">\(f(x) = F(u) - \lim \limits_{h \downarrow 0} F(u - h)\)</span>. Для неперервної ж змінної, <span class="math inline">\(f(u) = F(X = u) - \lim \limits_{h \downarrow 0} F(u - h) = 0\)</span>, адже <span class="math inline">\(P(X = u) = 0 \forall u\)</span>; cdf можна перевести в pdf як <span class="math inline">\(f(x) = \frac{d F(x)}{d x}\)</span>, і зворотньо pdf у cdf як <span class="math inline">\(F(x) = \int \limits_{u: u \leq x} f(u) du\)</span>.</p>
+<p>Важливим параметром для опису будь-якої функції розподілу ймовірності є <strong>математичне очікування, або математичне сподівання</strong> (<em>expectation</em>). Для всякої функції <span class="math inline">\(f(x)\)</span>, математичне очікування можна знайти як середнє усіх можливих значень <span class="math inline">\(x: x \in \mathcal{X}\)</span> зважене за ймовірністю цих значень <span class="math inline">\(f(x)\)</span>: відтак, для дискретних розподілів <span class="math inline">\(X\)</span> математичне очікування змінної оціюється як <span class="math inline">\(\mathbb{E}[X] = \sum \limits_{x \in \mathcal{X}} x f(x)\)</span>, а для неперервних – як <span class="math inline">\(\mathbb{E}[X] = \int \limits_{x \in \mathcal{X}} x f(x) dx\)</span>. Подібно до очікування змінної, можна шукати й очікування функції змінної <span class="math inline">\(g(x)\)</span>: <span class="math inline">\(\mathbb{E}[g(X)] = \sum \limits_{x \in \mathcal{X}} g(x) f(x)\)</span> або <span class="math inline">\(\mathbb{E}[g(X)] = \int \limits_{x \in \mathcal{X}} g(x) f(x) dx\)</span>. Якщо очікування існує (є такі функції, для яких неможливо аналітично вирішити суми чи інтеграли), воно матиме наступні властивості:</p>
+<ul>
+<li><p>якщо <span class="math inline">\(c\)</span> константа, то <span class="math inline">\(\mathbb{E}[c] = c\)</span>,</p></li>
+<li><p>якщо <span class="math inline">\(c\)</span> константа і <span class="math inline">\(g()\)</span> – функція, то <span class="math inline">\(\mathbb{E}[c g(X)] = c \mathbb{E} [g(X)]\)</span>,</p></li>
+<li><p>якщо <span class="math inline">\(c_1\)</span> та <span class="math inline">\(c_2\)</span> є константами і <span class="math inline">\(g_1()\)</span>, <span class="math inline">\(g_2()\)</span> – функціями, то <span class="math inline">\(\mathbb{E}[c_1 g_1 (X) + c_2 g_2(X)] = c_1 \mathbb{E}[g_1(X)] + c_2 \mathbb{E}[g_2(X)]\)</span>.</p></li>
+</ul>
+<p>Математичне очікування змінної <span class="math inline">\(\mathbb{E}[X]\)</span> ще часто називають <strong>середнім</strong> (не плутати із середнім арифметичним, яке є середнім для нормального розподілу і деяких інших розподілів). Іншим важливим окремим випадком математичного очікування функції розподілу її ймовірності є її <strong>варіація</strong> <span class="math inline">\(Var[X]\)</span> – очікування середньоквадратичного відхилення випадкової змінної від її середнього:</p>
+<p><span class="math display">\[
+\begin{aligned}
+  Var[X] = \mathbb{E} \left[ (X - \mathbb{E}[X])^2 \right] = \mathbb{E} \left[ X^2 - 2X \mathbb{E} [X] + (\mathbb{E} [X])^2 \right] = \\
+  \mathbb{E} [X^2] - 2 \mathbb{E}[X] \mathbb{E}[X] + (\mathbb{E}[X])^2 = \mathbb{E} [X^2] - 2 \mathbb{E}[X] \mathbb{E}[X] + \mathbb{E}[X] \mathbb{E}[X] = \\
+  \mathbb{E}[X^2] - \mathbb{E}[X] \mathbb{E}[X] = \mathbb{E}[X^2] - (\mathbb{E}[X])^2
+\end{aligned}
+\]</span></p>
+<p>Функції розподілу ймовірності можуть приймати будь-який вигляд<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>. Розгляньмо окремі випадки поширених розподілів ймовірності. В усіх випадках ми кажемо що випадкова змінна <span class="math inline">\(X\)</span> походить із певного розподілу <span class="math inline">\(f(x)\)</span> позначенням <span class="math inline">\(X \sim \mathcal{A}(\theta, \cdots)\)</span> де <span class="math inline">\(\theta\)</span> є параметром розподілу <span class="math inline">\(\mathcal{A}\)</span>.</p>
+<p>Нижче наведено формули розподілів ймовірності і, якщо доцільно, кумулятивних розподілів для окремих поширених статистичних розподілів. Також наведено значення середнього та варіації цих розподілів з точки зору параметрів і наявні шляхи обчислення <em>оцінки</em> параметрів (позначені як <span class="math inline">\(\hat{\theta}\)</span> для параметру <span class="math inline">\(\theta\)</span>) для вибірки <span class="math inline">\(x_i \in X\)</span> розміром <span class="math inline">\(n\)</span> <a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>.</p>
+<div id="дискретні-розподіли" class="section level4 hasAnchor" number="3.4.1.1">
+<h4><span class="header-section-number">3.4.1.1</span> Дискретні розподіли<a href="3.4-pdf-pmf.html#дискретні-розподіли" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="розподіл-бернулі" class="section level5 hasAnchor" number="3.4.1.1.1">
+<h5><span class="header-section-number">3.4.1.1.1</span> Розподіл Бернулі<a href="3.4-pdf-pmf.html#розподіл-бернулі" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Розподіл Бернулі описує дискретну змінну із лише двома класами, відтак, яку можна представити як бінарну змінну: <span class="math inline">\(x \in \mathcal{X}: \mathcal{X} = \{0, 1\}\)</span>. Прикладом слугує підкидання монетки.</p>
+<ul>
+<li><p>Позначення: <span class="math inline">\(X \sim \mathcal{Bernoulli}(p)\)</span></p></li>
+<li><p>pmf: <span class="math inline">\(f(x) = P(X = x) = p^x (1-p)^{x-1}\)</span>,</p></li>
+<li><p>cdf: <span class="math inline">\(F(x) = P(X \leq x) = 0 \mathbb{I}_x(x &lt; 0)\)</span>, <span class="math inline">\(P(X \leq x) = (1 - p) \mathbb{I}_x(0 \leq x &lt; 1)\)</span>, <span class="math inline">\(P(X \leq x) = 1 \mathbb{I}_x(1 &lt; x)\)</span>.</p></li>
+<li><p>середнє <span class="math inline">\(\mathbb{E} [X] = \frac{N+1}{2} = p\)</span>,</p></li>
+<li><p>варіація <span class="math inline">\(Var[X] = p(1 - p)\)</span>,</p></li>
+<li><p>оцінщик <span class="math inline">\(\hat{p} = \frac{1}{n} \sum \limits_{i=1}^{n}x_i\)</span>.</p></li>
+</ul>
+</div>
+<div id="дискретний-рівномірний-розподіл" class="section level5 hasAnchor" number="3.4.1.1.2">
+<h5><span class="header-section-number">3.4.1.1.2</span> Дискретний рівномірний розподіл<a href="3.4-pdf-pmf.html#дискретний-рівномірний-розподіл" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Дискретний рівномірний розподіл описує ситуацію, в якій кожна із дискретних величин (<span class="math inline">\(\mathcal{X} = \{1, 2, 3, \cdots, N\}\)</span>) має однакову ймовірність потрапити у вибірку. Прикладом можуть слугувати гральні кісточки.</p>
+<ul>
+<li><p>Позначення: <span class="math inline">\(X \sim \mathcal{DU}(N)\)</span> або <span class="math inline">\(X \sim \mathcal{DU}(a, b)\)</span> де <span class="math inline">\(N = b - a + 1 \text { } \forall b \geq a\)</span>,</p></li>
+<li><p>pmf: <span class="math inline">\(f(x) = P(X = x) = \frac{1}{N} \mathbb{I}_x (x \in \{0, 1, 2, 3, \cdots, N\})\)</span>,</p></li>
+<li><p>cdf: <span class="math inline">\(F(x) = P(X \leq x) = \frac{x - a + 1}{N}\)</span>,</p></li>
+<li><p>середнє <span class="math inline">\(\mathbb{E} [X] = \frac{N+1}{2} = \frac{a+b}{2}\)</span>,</p></li>
+<li><p>варіація <span class="math inline">\(Var[X] = \frac{N^2 - 1}{12}\)</span>,</p></li>
+<li><p>оцінщик <span class="math inline">\(\hat{N} = \frac{n+1}{n} \max (x_i)\)</span>.</p></li>
+</ul>
+</div>
+<div id="біноміальний-розподіл" class="section level5 hasAnchor" number="3.4.1.1.3">
+<h5><span class="header-section-number">3.4.1.1.3</span> Біноміальний розподіл<a href="3.4-pdf-pmf.html#біноміальний-розподіл" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Проведіть <span class="math inline">\(n\)</span> незалежних випадкових експериментів Бернулі: <span class="math inline">\(X \sim \mathcal{Bernoulli}(p)\)</span>. Якщо позначити <span class="math inline">\(y\)</span> як кількість успішних експериментів в <span class="math inline">\(X\)</span> із <span class="math inline">\(n\)</span> спроб, то <span class="math inline">\(Y\)</span> описуватиметься біноміальним розподілом.</p>
+<ul>
+<li><p>Позначення: <span class="math inline">\(Y \sim \mathcal{Binomial}(n, p)\)</span>,</p></li>
+<li><p>pmf: <span class="math inline">\(f(Y) = P(Y = y) = \binom{n}{y} p^y (1-p)^{n - y} \mathbb{I}_y (y \in \{0, 1, 2, \cdots, n\})\)</span><a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>,</p></li>
+<li><p>середнє <span class="math inline">\(\mathbb{E} [Y] = np\)</span> <a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>,</p></li>
+<li><p>варіація <span class="math inline">\(Var[Y] = np(1-p)\)</span>,</p></li>
+<li><p>оцінщик <span class="math inline">\(\hat{p} = \frac{y}{n}\)</span>.</p></li>
+</ul>
+</div>
+<div id="геометричний-розподіл" class="section level5 hasAnchor" number="3.4.1.1.4">
+<h5><span class="header-section-number">3.4.1.1.4</span> Геометричний розподіл<a href="3.4-pdf-pmf.html#геометричний-розподіл" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Уявіть повторення випадкового експерименту Бернулі із параметром <span class="math inline">\(p\)</span> до того, поки не випаде перший успіх. В такому випадку, можна розрахувати кількість безуспішних спроб <span class="math inline">\(x\)</span> до першого успіху та кількість спроб <span class="math inline">\(y\)</span> потрібних для першого успіху. Обидві змінні описуються геометричним розподілом.</p>
+<ul>
+<li>pmf:</li>
+</ul>
+<p><span class="math display">\[f(x) = P(X = x) = p(1 - p)^x \mathbb{I}_x (0, 1, 2, \cdots, \infty)\]</span></p>
+<p><span class="math display">\[f(y) = P(Y = y) = p(1-p)^{y-1} \mathbb{I}_y (0, 1, 2, \cdots, \infty)\]</span></p>
+<ul>
+<li>середні</li>
+</ul>
+<p><span class="math display">\[\mathbb{E} [X] = \frac{1-p}{p}\]</span></p>
+<p><span class="math display">\[\mathbb{E} [Y] = \frac{1}{p}\]</span></p>
+<ul>
+<li>варіації</li>
+</ul>
+<p><span class="math display">\[Var[X] = \frac{1-p}{p^2}\]</span></p>
+<p><span class="math display">\[Var[Y] = \frac{1-p}{p^2}\]</span></p>
+<ul>
+<li>оцінщик <span class="math inline">\(\hat{p} = \frac{1}{x}\)</span>.</li>
+</ul>
+</div>
+<div id="негативний-біноміальний-розподіл" class="section level5 hasAnchor" number="3.4.1.1.5">
+<h5><span class="header-section-number">3.4.1.1.5</span> Негативний біноміальний розподіл<a href="3.4-pdf-pmf.html#негативний-біноміальний-розподіл" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Негативний біноміальний розподіл описує <span class="math inline">\(X\)</span> як кількість невдач перед <span class="math inline">\(r\)</span>-тим успіхом в серії випадкових експериментів Бернулі із параметром <span class="math inline">\(p\)</span>.</p>
+<ul>
+<li><p>Позначення: <span class="math inline">\(X \sim \mathcal{NBinom} (r, p)\)</span>,</p></li>
+<li><p>pmf: <span class="math inline">\(f(x) = P(X = x) = \binom{\text{спроби}}{\text{успіхи} + x \text{ невдач}} \cdot \text{невдачі} \cdot \text{успіхи} = \binom{x + r - 1}{r-1} (1-p) ^x p^r\)</span>,</p></li>
+<li><p>середнє <span class="math inline">\(\mathbb{E} [X] = \frac{r(1-p)}{p}\)</span>,</p></li>
+<li><p>варіація <span class="math inline">\(Var[X] = \frac{r(1-p)}{p^2}\)</span>,</p></li>
+<li><p>оцінщик <span class="math inline">\(\hat{p} = \frac{r-1}{r + x - 1}\)</span>.</p></li>
+</ul>
+<p>Примітно, що геометричний розподіл є окремим випадком негативного біноміального розподілу. Якщо <span class="math inline">\(Y\)</span> – кількість спроб для отримання <span class="math inline">\(r\)</span> успіхів, то <span class="math inline">\(Y = X + r\)</span>, <span class="math inline">\(P(Y = y) = \binom{y-1}{r-1} (1-p)^{y-r} p^r\)</span>. <span class="math inline">\(\mathbb{E}[Y] = \mathbb{E}[X] + r\)</span>, <span class="math inline">\(Var[Y] = Var[X]\)</span>.</p>
+</div>
+<div id="розподіл-пуасона" class="section level5 hasAnchor" number="3.4.1.1.6">
+<h5><span class="header-section-number">3.4.1.1.6</span> Розподіл Пуасона<a href="3.4-pdf-pmf.html#розподіл-пуасона" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Мабуть, один із найменш інтуїтивно зрозумілих але найбільш поширених розподілів. Він описує кількість подій, які відбуваються протягом визначеного вікна в просторі, при тому що всі події є незалежними один від одного. Існує чимало прикладів процесів Пуасона, наприклад, кількість людей на платформі залізничної станції в момент часу чи кількість особин популяції зареєстрованих на ділянці.</p>
+<ul>
+<li><p>Позначення: <span class="math inline">\(X \sim \mathcal{Poisson}(\lambda)\)</span></p></li>
+<li><p>pmf: <span class="math inline">\(f(x) = P(X = x) = e^{-\lambda} \frac{\lambda^x}{x!}\)</span>, де <span class="math inline">\(x \in \{0, 1, 2, 3, \cdots, \infty \}\)</span>, <span class="math inline">\(\lambda &gt; 0\)</span>,</p></li>
+<li><p>середнє <span class="math inline">\(\mathbb{E} [X] = \lambda\)</span>,</p></li>
+<li><p>варіація <span class="math inline">\(Var[X] = \lambda\)</span>,</p></li>
+<li><p>оцінщик <span class="math inline">\(\hat{\lambda} = \frac{1}{n} \sum \limits_{i=1}^{n}x_i\)</span>.</p></li>
+</ul>
+<p>Цікаво, що <span class="math inline">\(Y \sim \mathcal{Binomial}(n, p)\)</span> із не-екстремальним значенням <span class="math inline">\((np)\)</span> та дуже значним <span class="math inline">\(n\)</span> може бути апроксимована до розподілу Пуасона із <span class="math inline">\(\lambda \approx np\)</span>.</p>
+</div>
+<div id="гіпергеометричний-розподіл" class="section level5 hasAnchor" number="3.4.1.1.7">
+<h5><span class="header-section-number">3.4.1.1.7</span> Гіпергеометричний розподіл<a href="3.4-pdf-pmf.html#гіпергеометричний-розподіл" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Уявіть зліченну популяцію розміром <span class="math inline">\(N\)</span> із об’єктів, що належать до різних класів, зокрема, в якій існує <span class="math inline">\(K: K \leq N\)</span> об’єктів із певною характеристикою (наприклад, особини виду, в якому ми зацікавлені, в угрупованні різних видів<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a>). Тоді можна очікувати, що вибірка розміром <span class="math inline">\(n\)</span> із цілої популяції міститиме <span class="math inline">\(x\)</span> об’єктів із шуканого класу.</p>
+<ul>
+<li><p>Позначення: <span class="math inline">\(X \sim \mathcal{HyperGeom}(N, K, n)\)</span>,</p></li>
+<li><p>pmf: <span class="math inline">\(f(x) = P(X = x) = \frac{\binom{N}{K} \binom{N-K}{n - x}}{\binom{N}{n}}\)</span>,</p></li>
+<li><p>середнє <span class="math inline">\(\mathbb{E} [X] = n \frac{K}{N}\)</span>,</p></li>
+<li><p>оцінщик для <a href="https://math.stackexchange.com/questions/40319/maximum-likelihood-estimate-of-hypergeometric-distribution-parameter">випадків апроксимації до розподілу Пуасона</a> де <span class="math inline">\(K/N &lt;&lt; 1, n &gt;&gt; 1\)</span>: <span class="math inline">\(\hat{m} = \frac{N \sum \limits_i^T x_i}{Tn}\)</span> для вибірки <span class="math inline">\(x_i \in X\)</span> розміром <span class="math inline">\(T\)</span>.</p></li>
+</ul>
+</div>
+<div id="нуль-упереджені-моделі" class="section level5 hasAnchor" number="3.4.1.1.8">
+<h5><span class="header-section-number">3.4.1.1.8</span> Нуль-упереджені моделі<a href="3.4-pdf-pmf.html#нуль-упереджені-моделі" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Доволі цікавою родиною розподілів, котрі часто застосувують в екологічних дослідженнях, є “нуль-упереджені”, або “нуль-надуті” моделі (zero-inflated models). Такі моделі описують розподіли, в котрих значна частка спостережених значень припадає на нулі. Такі розподіли можуть описувати спостережені чисельності виду у вибірці спостережень якщо, зазвичай, ми не спостерігаємо вид (відповідно, чисельність дорівнює нулю), але якщо спостерігаємо, то чисельність відповідає якомусь позитивному цілому значенню. Відтак, якщо ігнорувати всі нульові спостереження, то чисельність описуватиметься якимось симпатичним дискретним розподілом, однак, нульові спостереження не можна просто так ігнорувати.</p>
+<p>Насправді, нуль-упереджені моделі є комбінацією двох розподілів: один генерує нулі, в той час як інший генерує позитивні дискретні значення. Найбільш поширеним розподілом в цій родині є нуль-упереджений розподіл Пуасона (zero-inflated Poisson, ZIP): нуль-генеруюча частина цього процесу визачає чи випадкове значення дорівнюватиме нулю, і якщо ні, тоді випадкове значення отримується із звичайного розподілу Пуасона (який також може генерувати нулі, але набагато менше). Відтак, ZIP матиме два параметри: (1) ймовірність того, що нуль-генеруюча функція поверне нуль (<span class="math inline">\(p\)</span>), та (2) параметр розподілу Пуасона (<span class="math inline">\(\lambda\)</span>). Математично, такий розподіл можна визначити як <span class="math inline">\(X \sim \mathcal{ZIP}(p, \lambda)\)</span></p>
+<p><span class="math display">\[
+P(X = x_i) =
+\begin{cases}
+P(X = 0) = p + (1-p)e^{-\lambda}\\
+P(X = x_i) = (1 - p) \frac{\lambda^{x_i} e^{-\lambda}}{x_i!} \text{ } \forall \text{ } x_i = \{1, 2, 3, \cdots\}
+\end{cases}
+\]</span></p>
+<ul>
+<li><p>середнє <span class="math inline">\(\mathbb{E} [X] = (1-p) \lambda\)</span>,</p></li>
+<li><p>варіація <span class="math inline">\(Var[X] = (1-p)\lambda \cdot (1+p \lambda)\)</span>,</p></li>
+<li><p>оцінщики <span class="math inline">\(\hat{\lambda} = \frac{s^2 + \bar{x}^2}{\bar{x}} - 1\)</span>, <span class="math inline">\(\hat{p} = \frac{s^2 - \bar{x}}{s^2 + \bar{x}^2 - \bar{x}}\)</span> де <span class="math inline">\(\bar{x} = \frac{1}{n} \sum x_i\)</span>, <span class="math inline">\(s^2 = \frac{1}{n - 1} \sum (x_i - \bar{x})^2\)</span>.</p></li>
+</ul>
+</div>
+</div>
+<div id="континуальні-розподіли" class="section level4 hasAnchor" number="3.4.1.2">
+<h4><span class="header-section-number">3.4.1.2</span> Континуальні розподіли<a href="3.4-pdf-pmf.html#континуальні-розподіли" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="рівномірний-розподіл" class="section level5 hasAnchor" number="3.4.1.2.1">
+<h5><span class="header-section-number">3.4.1.2.1</span> Рівномірний розподіл<a href="3.4-pdf-pmf.html#рівномірний-розподіл" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Рівномірний розподіл описує ситуацію, коли будь-яке значення <span class="math inline">\(x\)</span> між <span class="math inline">\(a\)</span> і <span class="math inline">\(b\)</span> має рівну ймовірність: <span class="math inline">\(P(a \leq X \leq b) = 1\)</span>.</p>
+<ul>
+<li><p>Позначення: <span class="math inline">\(X \sim \mathcal{U}(a, b)\)</span>,</p></li>
+<li><p>pdf: <span class="math inline">\(f(x) = \frac{1}{b-a} \mathbb{I}_x (a \leq x \leq b)\)</span> (примітно, що функція є константою),</p></li>
+<li><p>cdf: <span class="math inline">\(F(x) = P(X \leq x) = \frac{x-a}{b-a} \text { } \forall (a \leq x \leq b)\)</span>, але <span class="math inline">\(F(X) = 0 \mathbb{I}_x(x &lt; 0)\)</span> і <span class="math inline">\(F(X) = 1 \mathbb{I}_x (1 &lt; x)\)</span>,</p></li>
+<li><p>середнє <span class="math inline">\(\mathbb{E} [X] = \frac{a+b}{2}\)</span>,</p></li>
+<li><p>варіація <span class="math inline">\(Var[X] = \frac{(b-a)^2}{12}\)</span>,</p></li>
+<li><p>оцінщики <span class="math inline">\(\hat{a} = \min(x_i), \hat{b} = \max(x_i)\)</span>.</p></li>
+</ul>
+</div>
+<div id="бета-розподіл" class="section level5 hasAnchor" number="3.4.1.2.2">
+<h5><span class="header-section-number">3.4.1.2.2</span> Бета-розподіл<a href="3.4-pdf-pmf.html#бета-розподіл" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Доволі різноманітна родина угпуповань із формою функції, яка контролюється двома параметрами, <span class="math inline">\(a\)</span> і <span class="math inline">\(b\)</span>. Щодо цього розподілу, мабуть, варто просто знати про його існування. Його іноді застосовують в популяційній генетиці <a href="https://doi.org/10.1007%2FBF01441146">(Balding &amp; Nichols 1995)</a> та Баєсівському аналізі <a href="https://doi.org/10.1109/MFI.2016.7849531">(Jøsang 2016)</a>.</p>
+<ul>
+<li><p>Позначення: <span class="math inline">\(X \sim \mathcal{Beta}(a, b)\)</span>,</p></li>
+<li><p>pdf: <span class="math inline">\(f(x) \propto x^{a - 1} (1-x)^{b-1} \mathbb{I}_x(0 &lt; x &lt; 1)\)</span>, <span class="math inline">\(f(x) = \frac{\Gamma (a + b)}{\Gamma (a) \Gamma (b)} x^{a - 1} (1 - x)^{b - 1}\)</span>, де <span class="math inline">\(\Gamma()\)</span> - гамма-функція <span class="math inline">\(\Gamma(\alpha) = \int \limits_0^{\infty} u^{\alpha - 1} e^{-u} du\)</span>.</p></li>
+<li><p>середнє <span class="math inline">\(\mathbb{E} [X] = \frac{a}{a + b}\)</span>,</p></li>
+<li><p>варіація <span class="math inline">\(Var[X] = \frac{ab}{(a+b)^2 (a+b+1)}\)</span>.</p></li>
+</ul>
+</div>
+<div id="експоненційний-розподіл" class="section level5 hasAnchor" number="3.4.1.2.3">
+<h5><span class="header-section-number">3.4.1.2.3</span> Експоненційний розподіл<a href="3.4-pdf-pmf.html#експоненційний-розподіл" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Експоненційний розподіл є своєрідним неперервним аналогом геометричного розподілу і описує відстань між незалежними неперервними подіями, які відбуваються із постійним темпом. Розподіл темпів смертності в природних популяціях нагадує експоненційний <a href="https://doi.org/10.1016/0022-5193(79)90098-5">(Abernethy 1979)</a>.</p>
+<ul>
+<li><p>Позначення: <span class="math inline">\(X \sim \mathcal{Exp}(\lambda)\)</span>,</p></li>
+<li><p>pdf: <span class="math inline">\(f(x) = \frac{1}{\lambda} e^{-\frac{x}{\lambda}} \mathbb{I}_x (0 \leq x \leq \infty)\)</span>,</p></li>
+<li><p>cdf: <span class="math inline">\(F(x) = 1 - e^{-\frac{x}{\lambda}}\)</span>,</p></li>
+<li><p>середнє <span class="math inline">\(\mathbb{E} [X] = \lambda\)</span>,</p></li>
+<li><p>варіація <span class="math inline">\(Var[X] = \lambda^2\)</span>,</p></li>
+<li><p>оцінщик <span class="math inline">\(\hat{(\frac{1}{\lambda})} = \frac{1}{n} \sum x_i\)</span> із упередженням, або <span class="math inline">\(\hat{(\frac{1}{\lambda})} = \frac{n-2}{\sum x_i}\)</span>.</p></li>
+</ul>
+<p>Цікавою властивістю експоненційного процесу є відсутність пам’яті: ймовірність вижити в наступний момент часу за умови виживання до цього моменту дорівнює ймовірності вижити в будь-який момент часу (<span class="math inline">\(P(X &gt; (s+t)|X &gt; s) = P(X &gt; t)\)</span>).</p>
+<p>Особливим випадком експоненційного розподілу є двопараметричний <strong>зміщений експоненційний розподіл</strong>: <span class="math inline">\(f(x) = \frac{1}{\lambda} e^{-\frac{x - \mu}{\lambda}} \mathbb{I}_x (\mu \leq x \leq \infty)\)</span>, для якого середнє дорівнює <span class="math inline">\(\mathbb{E}[X] = \mu + \lambda\)</span>.</p>
+</div>
+<div id="нормальний-розподіл" class="section level5 hasAnchor" number="3.4.1.2.4">
+<h5><span class="header-section-number">3.4.1.2.4</span> Нормальний розподіл<a href="3.4-pdf-pmf.html#нормальний-розподіл" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Мабуть, найбільш знаменитий розподіл, яким можна описати чимало змінних в біології: розміри листків рослин, зріст людей певного віку тощо. Його логіка доволі проста і каже що змінна <span class="math inline">\(X\)</span> матиме значення <span class="math inline">\(x\)</span>, які концентруються навколо якогось середнього значення <span class="math inline">\(\bar{x}\)</span>, і чим сильніше <span class="math inline">\(x\)</span> відрізняються від <span class="math inline">\(\bar{x}\)</span>, тим менш поширеними вони будуть. Цьому розподілу варто приділити дещо більше уваги, аніж іншим.</p>
+<ul>
+<li><p>Позначення: <span class="math inline">\(X \sim \mathcal{N}(\mu, \sigma^2)\)</span>, де параметр <span class="math inline">\(\mu: \{-\infty \leq \mu \leq \infty\}\)</span> відповідає середньому значенню (а також <strong><em>медіані</em></strong> <a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a> та <strong><em>моді</em></strong> <a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a>), а параметр <span class="math inline">\(\sigma^2: \sigma &gt; 0\)</span> відповідає варіації в розподілі, що виражається в ширині характерної куполоподібної кривої.</p></li>
+<li><p>pdf: <span class="math inline">\(f(x) = \frac{1}{\sqrt{2 \pi} \sigma} e^{-\left[ \frac{(x - \mu)^2}{2 \sigma^2} \right]}\)</span>,</p></li>
+<li><p>середнє <span class="math inline">\(\mathbb{E} [X] = \mu\)</span>,</p></li>
+<li><p>варіація <span class="math inline">\(Var[X] = \sigma^2\)</span>.</p></li>
+</ul>
+<p>Хорошою демонстрацією методу <a href="3.3-stats.html#mle">максимальної правдоподібності</a> є пошук параметрів із такої вибірки <span class="math inline">\(X\)</span> що <span class="math inline">\(X \sim \mathcal{N}(\mu, \sigma^2)\)</span>. Знайдемо функцію правдоподібності:</p>
+<p><span class="math display">\[\mathcal{L}(X | \mu, \sigma^2) = \prod \limits_{i=1}^n f(x_i| \mu, \sigma^2) = \prod \limits_{i=1}^n \frac{1}{\sqrt{2 \pi} \sigma} e^{-\left[ \frac{(x - \mu)^2}{2 \sigma^2} \right]} = \left( \frac{1}{\sqrt{2 \pi \sigma^2}} \right)^n \exp \left[ - \frac{\sum \limits_{i=1}^n (x_i - \mu)}{2 \sigma^2} \right]\]</span></p>
+<p>Оскільки бавитись з такою формулою виглядає тією ще задачею, візьмемо логарифм правдоподібності:</p>
+<p><span class="math display">\[\ln \mathcal{L}(X | \mu, \sigma^2) = - \frac{n}{2} \ln{(2 \pi \sigma^2)} - \frac{\sum \limits_{i=1}^n (x_i - \mu)}{2 \sigma^2}\]</span></p>
+<p>Знайдемо оцінщик <span class="math inline">\(\hat{\mu}\)</span> першим. Для цього потрібно продиференціювати попередній вираз відносно <span class="math inline">\(\mu\)</span> і прирівняти його до нуля:</p>
+<p><span class="math display">\[\frac{\partial \ln \mathcal{L}(X | \mu, \sigma^2)}{\partial \mu} = \frac{\sum \limits_{i=1}^n (x_i - \mu)}{\sigma^2} = 0\]</span>
+Відтак, рішення</p>
+<p><span class="math display">\[\sum \limits_{i=1}^n (x_i - \mu) = 0 \Rightarrow \sum \limits_{i=1}^n x_i - n \mu = 0 \Rightarrow \hat{\mu} = \frac{\sum \limits_{i=1}^n x_i}{n}\]</span>
+Що ніщо інше як середнє арифметичне. Щодо іншого параметру, <span class="math inline">\(\sigma^2\)</span>,</p>
+<p><span class="math display">\[\frac{\partial \ln \mathcal{L}(X | \mu, \sigma^2)}{\partial \sigma^2} = - \frac{n}{2} \cdot \frac{2 \pi}{2 \pi \sigma^2} + \frac{\sum \limits_{i=1}^n (x_i - \mu)^2}{2 (\sigma^2)^2} = 0 \Rightarrow -n \sigma^2 + \sum \limits_{i=1}^n (x_i - \mu)^2 = 0\]</span></p>
+<p>Можна підставити <span class="math inline">\(\hat{\mu} = \frac{1}{n} \sum \limits_{i=1}^n x_i = \bar{x}\)</span> і отримати</p>
+<p><span class="math display">\[\hat{\sigma^2} = \frac{1}{n} \sum \limits_{i=1}^n (x_i - \bar{x})^2\]</span></p>
+<p>Якщо читач дещо обізнаний в базовій статистиці, то можна помітити що цією формулою <em>не</em> користуються для оцінки дисперсії у вибірках із нормального розподілу. Все через те, що такий оцінщик не проходить перевірку на упередженість (bias: оцінщик вважається неупередженим якщо <span class="math inline">\(\mathbb{E}[\hat{\theta}] = \theta\)</span>): якщо переформулювати (подано без покрокових обчислень, можна перевірити якщо пам’ятати що <span class="math inline">\(\frac{1}{n} \sum \limits_{i=1}^n x_i \equiv \bar{x}\)</span>)</p>
+<p><span class="math display">\[\hat{\sigma^2} = \frac{1}{n} \sum \limits_{i=1}^n (x_i - \bar{x})^2 = \frac{1}{n} \sum \limits_{i=1}^n x_i^2 - (\bar{x})^2\]</span></p>
+<p>Тоді (пам’ятаючи що <span class="math inline">\(\sigma^2 = Var[X] = \mathbb{E} [X^2] - (\mathbb{E} [X])^2 = \mathbb{E} [X^2] - \mu^2\)</span>)</p>
+<p><span class="math display">\[
+\begin{aligned}
+  \mathbb{E} [\hat{\sigma^2}] = \mathbb{E} \left[ \frac{1}{n} \sum \limits_{i=1}^n x_i^2 - (\bar{x})^2 \right] = \frac{1}{n} \sum \limits_{i = 1}^n \mathbb{E} [x_i^2] - \mathbb{E} [\bar{x}^2] = \\
+  \frac{1}{n}  \sum \limits_{i = 1}^n (\sigma^2 + \mu^2) - (\frac{\sigma^2}{n} + \mu^2) = (1 - \frac{1}{n}) \sigma^2 \neq \sigma^2
+\end{aligned}
+\]</span></p>
+<p>Натомість, неупередженим оцінщиком <span class="math inline">\(\hat{\sigma^2}\)</span> є щось, що називають <strong>дисперсією вибірки</strong>: <span class="math inline">\(\hat{\sigma^2} = s^2 = \frac{1}{n-1} \sum \limits_{i=1}^n (x_i - \bar{x})^2\)</span>. Аби уникнути термінологічної плутанини (а вона чомусь завжди наявна в оцінках варіації), варто визначити наступні дескриптори варіації, що часто застосовуються до вибірок із нормальним розподілом (використовуйте тест Шапіро-Вілка (Shapiro-Wilk test) для перевірки нормальності вибірки; <span class="math inline">\(p &gt; 0.05\)</span>, на відміну від більшості статистичних тестів, є підставою вважати вибірку нормально розподіленою):</p>
+<ul>
+<li><p><strong><em>дисперсія</em></strong> (<em>sample variance</em>) є неупередженим оцінщиком параметру нормального розподілу у вибірці: <span class="math inline">\(s^2 = \frac{1}{n-1} \sum \limits_{i=1}^n (x_i - \bar{x})^2\)</span>, якому в R відповідає функція <code>var()</code>,</p></li>
+<li><p><strong><em>середньоквадратичне відхилення</em></strong> описує варіацію вибірки незалежно від її розподілу: <span class="math inline">\(v^2 = \frac{1}{n} \sum \limits_{i=1}^n (x_i - \bar{x})^2\)</span>; однак набагато частіше під цим терміном (як і будемо ми) розуміють кориговане <strong><em>стандартне відхилення</em></strong> (<em>standard deviation</em>, SD): <span class="math inline">\(s = \sqrt{\frac{1}{n-1} \sum \limits_{i=1}^n (x_i - \bar{x})^2}\)</span>, якому в R відповідає функція <code>sd()</code>,</p></li>
+<li><p><strong><em>стандартна помилка</em></strong> (<em>standard error</em>, SE) описує відхилення вибіркового середнього <span class="math inline">\(\bar{x}\)</span>: <span class="math inline">\(\frac{s}{\sqrt{n}}\)</span>.</p></li>
+</ul>
+<p>Щодо важливості нормального розподілу в статистиці, варто згадати закон великих чисел та центральну граничну теорему. <strong>Закон великих чисел</strong> стверджує, що якщо із <strong><em>генеральної сукупності</em></strong> <a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a> незалежно і багаторазово набирати окремі вибірки, то усереднена статистика<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a> цих вибірок наближається до істинного значення статистики генеральної сукупності, якщо таке існує. В контексті нормального розподілу, середні вибірок (<span class="math inline">\(\hat{\mu}\)</span>) з генеральної сукупності конвергують до середнього генеральної сукупності <span class="math inline">\(\mu\)</span>. <strong>Центральна гранична теорема</strong> ж постулює, що в множині таких незалежних <em>змінних</em> <span class="math inline">\(X_1, X_2, X_3, \cdots, X_n\)</span>, що <span class="math inline">\(\mathbb{E} [X_i] = \mu\)</span>, <span class="math inline">\(Var[X_i] = \sigma^2\)</span>, незалежно від розподілу окремих змінних <span class="math inline">\(X_i\)</span>, за <span class="math inline">\(n \rightarrow \infty\)</span> розподіл змінних <span class="math inline">\(\sqrt{n} (\frac{1}{n}\sum \limits_{i=1}^n X_i - \mu)\)</span> конвергує до <span class="math inline">\(\mathcal{N}(0,  \sigma^2)\)</span>. Іншими словами, яким би не був розподіл генеральної сукупності, розподіл середніх значень вибірок із такої генеральної сукупності буде нагадувати нормальний розподіл.</p>
+<p>Корисною технікою є <strong>z-стандартизація</strong> (<em>z-scaling</em>), за допомогою якої будь-яку вибірку можна трансформувати в таку, в якої <span class="math inline">\(\mu = 0, \sigma^2 = 1\)</span> (припускаючи, що вибірка розподілена нормально, але техніка працює для будь-якого розподілу): <span class="math inline">\(z_i = \frac{x_i - \bar{x}}{s}\)</span>. Такий нормальний розподіл, що <span class="math inline">\(\mathcal{N} (\mu = 0, \sigma^2 = 1)\)</span> називається <strong>cтандартним нормальним розподілом</strong>.</p>
+</div>
+<div id="лог-нормальний-розподіл" class="section level5 hasAnchor" number="3.4.1.2.5">
+<h5><span class="header-section-number">3.4.1.2.5</span> Лог-нормальний розподіл<a href="3.4-pdf-pmf.html#лог-нормальний-розподіл" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Змінна <span class="math inline">\(X\)</span> розподілена лог-нормально (<span class="math inline">\(X \sim L\mathcal{N}(\mu, \sigma^2)\)</span>) якщо <span class="math inline">\(\ln(X) \sim \mathcal{N}(\mu, \sigma^2)\)</span>. Відтак, якщо поглянути з іншого боку, то якщо <span class="math inline">\(Y \sim \mathcal{N}(\mu, \sigma^2)\)</span>, то <span class="math inline">\(X = e^Y \sim L\mathcal{N}(\mu, \sigma^2)\)</span>.</p>
+<ul>
+<li><p>Середнє <span class="math inline">\(\mathbb{E} [\ln (X)] = \mu, \mathbb{E}[X] = e^{\mu + \frac{\sigma^2}{2}}\)</span>,</p></li>
+<li><p>варіація <span class="math inline">\(Var[\ln(X)] = \sigma^2, Var[X] = \exp [2(\mu - \sigma^2)] - \exp [2 \mu + \sigma^2]\)</span>.</p></li>
+</ul>
+</div>
+<div id="розподіл-коші" class="section level5 hasAnchor" number="3.4.1.2.6">
+<h5><span class="header-section-number">3.4.1.2.6</span> Розподіл Коші<a href="3.4-pdf-pmf.html#розподіл-коші" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Доволі дивний розподіл, який формою нагадує нормальний із набагато гострішим піком та товстішими хвостами.</p>
+<ul>
+<li><p>Позначення: <span class="math inline">\(X \sim \mathcal{Cauchy}(x_0, \gamma)\)</span>, де <span class="math inline">\(\gamma\)</span> регулює форму кривої, а <span class="math inline">\(x_0\)</span> відповідає локації піку.</p></li>
+<li><p>pdf: <span class="math inline">\(f(x) = \frac{1}{\pi} \left[ \frac{\gamma}{(x - x_0)^2 + \gamma^2} \right]\)</span></p></li>
+</ul>
+<p>Дивність цього розподілу полягає в тому, що його середнє й варіація неможливо аналітично визначити. Оцінки середнього арифметичного і cередньоквадратичного відхилення не конвергують зі збільшенням розміру вибірки, а єдиним більш-менш точним методом оцінки параметру форми <span class="math inline">\(\hat{\gamma}\)</span> є медіана абсолютних значень вибірки.</p>
+</div>
+</div>
+</div>
+<div id="bars" class="section level3 hasAnchor" number="3.4.2">
+<h3><span class="header-section-number">3.4.2</span> Опис розподілу змінної (описова статистика)<a href="3.4-pdf-pmf.html#bars" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Уявімо вибірку змінної <span class="math inline">\(X \sim \mathcal{N}(\mu = 15, \sigma^2 = 9)\)</span> розміром <span class="math inline">\(n = 1000\)</span>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="3.4-pdf-pmf.html#cb4-1" tabindex="-1"></a><span class="co"># визначимо рандомне зерно для повторюваності коду</span></span>
+<span id="cb4-2"><a href="3.4-pdf-pmf.html#cb4-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb4-3"><a href="3.4-pdf-pmf.html#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="3.4-pdf-pmf.html#cb4-4" tabindex="-1"></a><span class="co"># визначимо змінну як випадкову вибірку із нормального розподілу із визначеними параметрами</span></span>
+<span id="cb4-5"><a href="3.4-pdf-pmf.html#cb4-5" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">1000</span>, <span class="at">mean =</span> <span class="dv">15</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="dv">9</span>))</span></code></pre></div>
+<p>Як описати тенденції цієї вибірки одним-двома параметрами? Мабуть, більшість автоматично скажуть “давайте порахуємо середнє”, хтось додасть “і варіацію у вигляді середньоквадратичного відхилення чи дисперсії”. Натомість, навіть на цьому етапі вирішення статистики для опису змінної варто задати собі питання: а що нам ці статистики дадуть? По-перше, як мінімум, ми хочемо отримати такі значимі і продумані статистики, із якими, якщо потрібно, можна спробувати відтворити вибірку. По-друге, як ми побачили в попередньому підрозділі, існує чимало розподілів ймовірності, і <em>найгірше, що можна зробити – це спробувати описати змінну із певним розподілом параметром не цього розподілу</em> (наприклад, намагатись оцінити параметри <span class="math inline">\(a\)</span> і <span class="math inline">\(b\)</span> бета-розподілу, коли вибірка відповідає Пуасонівському процесу). Дуже важливим неписаним правилом статистичного аналізу є те, що <strong>в більшості випадків оцінщик чи статистичний тест видасть якийсь результат для даних, які в нього введені, і, може, навіть видасть якесь значення <span class="math inline">\(p\)</span> (див. <a href="3.5-basic-hypotheses.html#pval">нижче</a>), але цей результат нічого не значить якщо обрано некоректну статистичну процедуру для певного набору даних</strong>. Крім того, завжди мати на увазі принцип <strong>“garbage in, garbage out”</strong> (“сміття на вході, сміття на виході”): навіть якщо логіка статистичного аналізу правильна і програма функціонує коректно, результати не можна вважати валідними якщо вхідні дані помилкові.</p>
+<p>Це дуже довгий спосіб сказати, що для вибору метрики центральної тенденції у вибірці варто враховувати розподіл цієї вибірки. Не можна розраховувати, скажімо, середнє арифметичне просто тому, що так зручно. Натомість, вибір статистики повинен бути виважений і відповідати передбаченому розподілу змінної<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a>. В нашому випадку, ми знаємо що <span class="math inline">\(X\)</span> згенеровано як нормальний процес, але давайте про всяк випадок перевіримо чи ця змінна дійсно розподілена нормально.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="3.4-pdf-pmf.html#cb5-1" tabindex="-1"></a><span class="fu">shapiro.test</span>(X)</span></code></pre></div>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  X
+## W = 0.99737, p-value = 0.1053</code></pre>
+<p>Тест Шапіро-Вілка видає <span class="math inline">\(p = 0.105 &gt; 0.05\)</span>, що у випадку цього тесту дає підстави вважати, що змінна дійсно розподілена нормально. Відтак, центральну тенденцію можна описати середнім арифметичним, адже воно відповідає оцінщику очікування нормального розподілу.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="3.4-pdf-pmf.html#cb7-1" tabindex="-1"></a><span class="fu">mean</span>(X)</span></code></pre></div>
+<pre><code>## [1] 14.92021</code></pre>
+<p>Які є альтернативи середньому арифметичному? Популярним вибором є <strong>медіана</strong>, особливо в якості <strong><em>непараметричної статистики</em></strong> – такої статистики, яка вимагає мінімальних передбачень щодо розподілу даних і може бути використана для змінних із будь-яким розподілом. В багатьох випадках змінні в даних матимуть дивний (асиметричний, бімодальний тощо) розподіл. В таких випадках можна спробувати провести тест Шапіро-Вілка, який скоріш за все не підтримає припущення про нормальний розподіл (<span class="math inline">\(p &lt; 0.05\)</span>). Якщо є припущення про якийсь інший розподіл, його можна перевірити із тестом <strong>Колмогорова-Смірнова</strong><a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>. Порівняймо нашу вибірку із нормальним розподілом (хоча ми й так вже знаємо із тесту Шапіро-Вілка відповідь).</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="3.4-pdf-pmf.html#cb9-1" tabindex="-1"></a><span class="co"># z-стандартизація вибірки потрібна, адже розподіл для порівняння є за замовчуванням стандартним нормальним розподілом</span></span>
+<span id="cb9-2"><a href="3.4-pdf-pmf.html#cb9-2" tabindex="-1"></a>Z <span class="ot">&lt;-</span> <span class="fu">scale</span>(X)</span>
+<span id="cb9-3"><a href="3.4-pdf-pmf.html#cb9-3" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="3.4-pdf-pmf.html#cb9-4" tabindex="-1"></a><span class="co"># порівняймо із ідеальним випадком, для чого наведемо назву функції кумулятивного нормального розподілу</span></span>
+<span id="cb9-5"><a href="3.4-pdf-pmf.html#cb9-5" tabindex="-1"></a><span class="fu">ks.test</span>(<span class="at">x =</span> Z, <span class="at">y =</span> <span class="st">&quot;pnorm&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+##  Asymptotic one-sample Kolmogorov-Smirnov test
+## 
+## data:  Z
+## D = 0.021443, p-value = 0.7474
+## alternative hypothesis: two-sided</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="3.4-pdf-pmf.html#cb11-1" tabindex="-1"></a><span class="co"># альтернативно, можна для порівняння використати іншу випадкову вибірку із нормальним розподілом</span></span>
+<span id="cb11-2"><a href="3.4-pdf-pmf.html#cb11-2" tabindex="-1"></a><span class="fu">ks.test</span>(Z, <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="fu">length</span>(Z)))</span></code></pre></div>
+<pre><code>## 
+##  Asymptotic two-sample Kolmogorov-Smirnov test
+## 
+## data:  Z and rnorm(n = length(Z))
+## D = 0.026, p-value = 0.8879
+## alternative hypothesis: two-sided</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="3.4-pdf-pmf.html#cb13-1" tabindex="-1"></a><span class="co"># або порівняти вихідну не-стандартизовану змінну із випадковою нормальною вибіркою із середнім та варіацією вихідної вибірки</span></span>
+<span id="cb13-2"><a href="3.4-pdf-pmf.html#cb13-2" tabindex="-1"></a><span class="fu">ks.test</span>(X, <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="fu">length</span>(X), <span class="at">mean =</span> <span class="fu">mean</span>(X), <span class="at">sd =</span> <span class="fu">sd</span>(X)))</span></code></pre></div>
+<pre><code>## 
+##  Asymptotic two-sample Kolmogorov-Smirnov test
+## 
+## data:  X and rnorm(n = length(X), mean = mean(X), sd = sd(X))
+## D = 0.036, p-value = 0.5361
+## alternative hypothesis: two-sided</code></pre>
+<p>Оскільки вибірка <span class="math inline">\(X \sim \mathcal{N}()\)</span>, можна перебачити що медіана приблизно дорівнюватиме середньому арифметичному, відтак, для нормальних вибірок немає змісту наводити інший параметр окрім середнього.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="3.4-pdf-pmf.html#cb15-1" tabindex="-1"></a><span class="fu">mean</span>(X)</span></code></pre></div>
+<pre><code>## [1] 14.92021</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="3.4-pdf-pmf.html#cb17-1" tabindex="-1"></a><span class="fu">median</span>(X)</span></code></pre></div>
+<pre><code>## [1] 14.88062</code></pre>
+<p>Якби ми підходили до непараметричного аналізу вибірки із не-нормальним розподілом, варто було би використовувати лише медіану. Класичним прикладом є уявний експеримент із вибіркою з трьох людей: одним мільйонером (зарплатня <span class="math inline">\(\$1000000\)</span> на місяць) та двома бідняками (<span class="math inline">\(\$100\)</span> на місяць). Яка середня зарплатня і яка медіана в такій популяції?</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="3.4-pdf-pmf.html#cb19-1" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">c</span>(<span class="dv">1000000</span>, <span class="dv">100</span>, <span class="dv">100</span>))</span></code></pre></div>
+<pre><code>## [1] 333400</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="3.4-pdf-pmf.html#cb21-1" tabindex="-1"></a><span class="fu">median</span>(<span class="fu">c</span>(<span class="dv">1000000</span>, <span class="dv">100</span>, <span class="dv">100</span>))</span></code></pre></div>
+<pre><code>## [1] 100</code></pre>
+<p>Очевидно, середнє значення <span class="math inline">\(\$330400\)</span> нічого не значить в цій значно асиметричній вибірці, адже біднякам така “середня температура по лікарні” аж ніяк не допомагає. Медіана ж є набагато більш репрезентативною статистикою.</p>
+<p>Скажімо, ми хочемо описати розподіл змінної, але не маємо змоги надати значення кожного значення в змінній (особливо якщо йдеться про значний розмір вибірки). Навіть у випадку нормально розподіленої змінної середнього значення недостатньо, адже воно не надає жодної ідеї про розмах кривої, тобто її варіацію. Як тоді читач може відтворити вашу змінну? Хорошою ідеєю є надати значення оцінщика варіації. Наприклад, сказати що <span class="math inline">\(X \sim \mathcal{N}(\mu = 15, \sigma^2 = 9), n = 1000\)</span> цілком достатньо аби відтворити змінну за допомогою комп’ютера, наприклад, в R як <code>rnorm(n = 1000, mean = 15, sd = sqrt(9))</code>.</p>
+<p>У випадку невідомого розподілу змінної, можна використати перцентилі – значення у вибірці, які розділяють цю сортовану вибірку на визначені частки. Наприклад, якщо ми позначимо <span class="math inline">\(\alpha\)</span>-тий перцентиль змінної <span class="math inline">\(X\)</span> як <span class="math inline">\(x_{\alpha}\)</span>, тоді <span class="math inline">\(P(X \leq x_{\alpha}) = \alpha\)</span> (тобто у вибірці <span class="math inline">\(X\)</span> <span class="math inline">\(99\%\)</span> значень <span class="math inline">\(x_i\)</span> будуть меншими або доівнюватимуть значенню <span class="math inline">\(x_{\alpha = 0.99}\)</span>). В якості непараметричного опису розподілу можна як мінімум подати перцентилі для <span class="math inline">\(\alpha = 0.025\)</span> і <span class="math inline">\(\alpha = 0.975\)</span> – тоді <span class="math inline">\(95\%\)</span> змінної перебуватимуть в межах цих двох значень. Для більш детального опису розподілу можна подати й інші межі: <span class="math inline">\(60 \%\)</span> (<span class="math inline">\(\alpha = \{0.2, 0.8\}\)</span>), <span class="math inline">\(80 \%\)</span> (<span class="math inline">\(\alpha = \{0.1, 0.9\}\)</span>) тощо. Медіана відповідає <span class="math inline">\(\alpha = 0.5\)</span>, тобто рівно половина значень у вибірці буде менша за медіану, рівно половина – більша.</p>
+<p>Якщо є вибірка із дивним розподілом і його не вдається описати жодним із перелічених вище параметричним розподілом, корисною технікою є <strong>ядрова оцінка густини розподілу</strong> (<em>kernel density estimation</em>). Існує декілька його варіацій, але в найпростішому вигляді процедура наступна: <strong>(1)</strong> для кожного спостереження <span class="math inline">\(x_i\)</span> побудуймо елементарний нормальний розподіл із фіксованою варіацією <span class="math inline">\(\sigma^2 = a\)</span> такий що <span class="math inline">\(\mathcal{N}_i = \mathcal{N}(\mu = x_i, \sigma^2 = a)\)</span>, і <strong>(2)</strong> додаймо всі такі розподіли <span class="math inline">\(\mathcal{N}_i\)</span> в один. Якщо суму цих функцій стандартизувати таким чином, щоб її інтеграл дорівнював одиниці, на виході отримаємо валідну функції густини ймовірності, яка точно описує розподіл вихідної змінної. На практиці функція (kernel function) із кроку <strong>(1)</strong> складніша за простий нормальний розподіл, що дозволяє змінювати розмір вікна, в межах якої ця функція враховує точки спостережень, котрі впливають на розмір ядра – так званий параметр пропускної здатності (bandwidth) що може змінювати “чіткість” результуючої функції.</p>
+<p>На жаль, мало хто приділяє увагу таким деталям і обмежується значеннями середнього і якогось оцінщика варіації на кшталт “<span class="math inline">\(\bar{x} = 14.920 \pm 2.992 SD\)</span>” чи “<span class="math inline">\(\bar{x} = 14.920 \pm 0.095 SE\)</span>”. В принципі, середнього і показника похибки достатньо для висновку щодо форми розподілу змінної (знову ж, якщо відомо що ця змінна розподілена нормально). Головним застереженням тут є лише те, що <strong>необхідно завжди зазначати використану статистику похибку</strong>. Крім стандартного відхилення (SD) та стандартної похибки (SE) таким можуть також слугувати <strong><em>довірчі інтервали</em></strong> (<em>сonfidence interval</em>). Довірчий інтервал статистики оцінює, в якому інтервалі лежатимуть значення статистики за багаторазового повтору експерименту із певним рівнем довіри <span class="math inline">\(\gamma\)</span> (зазвичай, <span class="math inline">\(\gamma = 0.95\)</span>, у випадку чого інтервал зветься “95% довірчим інтервалом”, “95% CI”). Цей інтервал не означає, що точність оцінки становить плюс-мінус якесь значення (відтак, інтервал необхідно позначати власне як інтервал без використання знаку плюс-мінус). Натомість, ми можемо очікувати що за багаторазового незалежного повторення експерименту значення статистики лежатиме в межах довірчих інтервалів у <span class="math inline">\(100 \cdot \gamma \%\)</span> випадків.</p>
+<p>В переважній більшості випадків оцінка довірчих інтервалів є параметричною процедурою, унікальною для окремої статистики і окремого розподілу. Поширеною помилкою є, наприклад, оцінка довірчих інтервалів середнього арифметичного нормального розподілу для частки (якогось значення між <span class="math inline">\(0\)</span> і <span class="math inline">\(1\)</span>): така оцінка передбачатиме, наприклад, існування значень частки <span class="math inline">\(&lt;0\)</span> і <span class="math inline">\(&gt;1\)</span>, що є абсурдом. В разі, якщо не вдається знайти адекватний оцінщик статистики в певному розподілі, адеватним варіантом може бути <a href="3.5-basic-hypotheses.html#paradigms">пермутаційна</a> оцінка інтервалу як перцентилів (<span class="math inline">\(2.5\%, 97.5\%\)</span>) розподілу статистики згенерованої пермутаціями.</p>
+<p>Вибір оцінки похибки видається залежним від моди в певних сферах, і, насправді, кожен із них має право на існування допоки дослідник чітко позначає, яка саме похибка використана. Найчастіше про це забувають в графіках змінних, що є доволі трагічним: від вибору метрики “розмаху” залежить весь умовивід із графіку. Нижче (Рис. <a href="3.4-pdf-pmf.html#fig:fig-3-10">3.10</a>. - код також додано, раптом комусь знадобиться) наведено потеційні візуальні відображення розподілу в одній однієї й тієї ж вибірки <span class="math inline">\(X\)</span>.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="3.4-pdf-pmf.html#cb23-1" tabindex="-1"></a>Xdf <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">X =</span> X)</span>
+<span id="cb23-2"><a href="3.4-pdf-pmf.html#cb23-2" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="3.4-pdf-pmf.html#cb23-3" tabindex="-1"></a>f_3_10_a <span class="ot">&lt;-</span> Xdf <span class="sc">%&gt;%</span> </span>
+<span id="cb23-4"><a href="3.4-pdf-pmf.html#cb23-4" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> X)) <span class="sc">+</span></span>
+<span id="cb23-5"><a href="3.4-pdf-pmf.html#cb23-5" tabindex="-1"></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span></span>
+<span id="cb23-6"><a href="3.4-pdf-pmf.html#cb23-6" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Значення X&quot;</span>) <span class="sc">+</span></span>
+<span id="cb23-7"><a href="3.4-pdf-pmf.html#cb23-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb23-8"><a href="3.4-pdf-pmf.html#cb23-8" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb23-9"><a href="3.4-pdf-pmf.html#cb23-9" tabindex="-1"></a></span>
+<span id="cb23-10"><a href="3.4-pdf-pmf.html#cb23-10" tabindex="-1"></a>f_3_10_b <span class="ot">&lt;-</span> Xdf <span class="sc">%&gt;%</span> </span>
+<span id="cb23-11"><a href="3.4-pdf-pmf.html#cb23-11" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> X)) <span class="sc">+</span></span>
+<span id="cb23-12"><a href="3.4-pdf-pmf.html#cb23-12" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb23-13"><a href="3.4-pdf-pmf.html#cb23-13" tabindex="-1"></a>  <span class="fu">scale_x_binned</span>() <span class="sc">+</span></span>
+<span id="cb23-14"><a href="3.4-pdf-pmf.html#cb23-14" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Значення X&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Частота&quot;</span>)</span>
+<span id="cb23-15"><a href="3.4-pdf-pmf.html#cb23-15" tabindex="-1"></a></span>
+<span id="cb23-16"><a href="3.4-pdf-pmf.html#cb23-16" tabindex="-1"></a>f_3_10_c <span class="ot">&lt;-</span> Xdf <span class="sc">%&gt;%</span> </span>
+<span id="cb23-17"><a href="3.4-pdf-pmf.html#cb23-17" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> X)) <span class="sc">+</span></span>
+<span id="cb23-18"><a href="3.4-pdf-pmf.html#cb23-18" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">&quot;gray&quot;</span>) <span class="sc">+</span></span>
+<span id="cb23-19"><a href="3.4-pdf-pmf.html#cb23-19" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Значення X&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Частота&quot;</span>)</span>
+<span id="cb23-20"><a href="3.4-pdf-pmf.html#cb23-20" tabindex="-1"></a></span>
+<span id="cb23-21"><a href="3.4-pdf-pmf.html#cb23-21" tabindex="-1"></a>f_3_10_d <span class="ot">&lt;-</span> Xdf <span class="sc">%&gt;%</span> </span>
+<span id="cb23-22"><a href="3.4-pdf-pmf.html#cb23-22" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> X)) <span class="sc">+</span></span>
+<span id="cb23-23"><a href="3.4-pdf-pmf.html#cb23-23" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">fill =</span> <span class="st">&quot;gray&quot;</span>) <span class="sc">+</span></span>
+<span id="cb23-24"><a href="3.4-pdf-pmf.html#cb23-24" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">4</span>, <span class="dv">25</span>) <span class="sc">+</span></span>
+<span id="cb23-25"><a href="3.4-pdf-pmf.html#cb23-25" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Значення X&quot;</span>) <span class="sc">+</span></span>
+<span id="cb23-26"><a href="3.4-pdf-pmf.html#cb23-26" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb23-27"><a href="3.4-pdf-pmf.html#cb23-27" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb23-28"><a href="3.4-pdf-pmf.html#cb23-28" tabindex="-1"></a></span>
+<span id="cb23-29"><a href="3.4-pdf-pmf.html#cb23-29" tabindex="-1"></a>f_3_10_e <span class="ot">&lt;-</span> Xdf <span class="sc">%&gt;%</span> </span>
+<span id="cb23-30"><a href="3.4-pdf-pmf.html#cb23-30" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> X)) <span class="sc">+</span></span>
+<span id="cb23-31"><a href="3.4-pdf-pmf.html#cb23-31" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb23-32"><a href="3.4-pdf-pmf.html#cb23-32" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">4</span>, <span class="dv">25</span>) <span class="sc">+</span></span>
+<span id="cb23-33"><a href="3.4-pdf-pmf.html#cb23-33" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Значення X&quot;</span>) <span class="sc">+</span></span>
+<span id="cb23-34"><a href="3.4-pdf-pmf.html#cb23-34" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb23-35"><a href="3.4-pdf-pmf.html#cb23-35" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb23-36"><a href="3.4-pdf-pmf.html#cb23-36" tabindex="-1"></a></span>
+<span id="cb23-37"><a href="3.4-pdf-pmf.html#cb23-37" tabindex="-1"></a>X_sum <span class="ot">&lt;-</span> Xdf <span class="sc">%&gt;%</span></span>
+<span id="cb23-38"><a href="3.4-pdf-pmf.html#cb23-38" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">mu =</span> <span class="fu">mean</span>(X), <span class="at">sd =</span> <span class="fu">sd</span>(X), <span class="at">se =</span> sd<span class="sc">/</span><span class="fu">sqrt</span>(n))</span>
+<span id="cb23-39"><a href="3.4-pdf-pmf.html#cb23-39" tabindex="-1"></a></span>
+<span id="cb23-40"><a href="3.4-pdf-pmf.html#cb23-40" tabindex="-1"></a>f_3_10_f <span class="ot">&lt;-</span> X_sum <span class="sc">%&gt;%</span> </span>
+<span id="cb23-41"><a href="3.4-pdf-pmf.html#cb23-41" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> mu)) <span class="sc">+</span> </span>
+<span id="cb23-42"><a href="3.4-pdf-pmf.html#cb23-42" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> mu)) <span class="sc">+</span></span>
+<span id="cb23-43"><a href="3.4-pdf-pmf.html#cb23-43" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">ymin =</span> mu <span class="sc">-</span> sd, <span class="at">ymax =</span> mu <span class="sc">+</span> sd), </span>
+<span id="cb23-44"><a href="3.4-pdf-pmf.html#cb23-44" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb23-45"><a href="3.4-pdf-pmf.html#cb23-45" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">4</span>, <span class="dv">25</span>) <span class="sc">+</span></span>
+<span id="cb23-46"><a href="3.4-pdf-pmf.html#cb23-46" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Середнє X ± SD&quot;</span>) <span class="sc">+</span></span>
+<span id="cb23-47"><a href="3.4-pdf-pmf.html#cb23-47" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb23-48"><a href="3.4-pdf-pmf.html#cb23-48" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb23-49"><a href="3.4-pdf-pmf.html#cb23-49" tabindex="-1"></a></span>
+<span id="cb23-50"><a href="3.4-pdf-pmf.html#cb23-50" tabindex="-1"></a>quantiles_95 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb23-51"><a href="3.4-pdf-pmf.html#cb23-51" tabindex="-1"></a>  r <span class="ot">&lt;-</span> <span class="fu">quantile</span>(x, <span class="at">probs=</span><span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="fl">0.95</span>))</span>
+<span id="cb23-52"><a href="3.4-pdf-pmf.html#cb23-52" tabindex="-1"></a>  <span class="fu">names</span>(r) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;ymin&quot;</span>, <span class="st">&quot;lower&quot;</span>, <span class="st">&quot;middle&quot;</span>, <span class="st">&quot;upper&quot;</span>, <span class="st">&quot;ymax&quot;</span>)</span>
+<span id="cb23-53"><a href="3.4-pdf-pmf.html#cb23-53" tabindex="-1"></a>  r</span>
+<span id="cb23-54"><a href="3.4-pdf-pmf.html#cb23-54" tabindex="-1"></a>}</span>
+<span id="cb23-55"><a href="3.4-pdf-pmf.html#cb23-55" tabindex="-1"></a></span>
+<span id="cb23-56"><a href="3.4-pdf-pmf.html#cb23-56" tabindex="-1"></a>f_3_10_g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(Xdf, <span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> X)) <span class="sc">+</span></span>
+<span id="cb23-57"><a href="3.4-pdf-pmf.html#cb23-57" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">fill =</span> F) <span class="sc">+</span></span>
+<span id="cb23-58"><a href="3.4-pdf-pmf.html#cb23-58" tabindex="-1"></a>    <span class="fu">stat_summary</span>(<span class="at">fun.data =</span> quantiles_95, <span class="at">geom =</span> <span class="st">&quot;boxplot&quot;</span>) <span class="sc">+</span></span>
+<span id="cb23-59"><a href="3.4-pdf-pmf.html#cb23-59" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">4</span>, <span class="dv">25</span>) <span class="sc">+</span></span>
+<span id="cb23-60"><a href="3.4-pdf-pmf.html#cb23-60" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Медіана ± 50%, 95% CI&quot;</span>) <span class="sc">+</span></span>
+<span id="cb23-61"><a href="3.4-pdf-pmf.html#cb23-61" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb23-62"><a href="3.4-pdf-pmf.html#cb23-62" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb23-63"><a href="3.4-pdf-pmf.html#cb23-63" tabindex="-1"></a></span>
+<span id="cb23-64"><a href="3.4-pdf-pmf.html#cb23-64" tabindex="-1"></a>f_3_10_h <span class="ot">&lt;-</span> X_sum <span class="sc">%&gt;%</span> </span>
+<span id="cb23-65"><a href="3.4-pdf-pmf.html#cb23-65" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> mu)) <span class="sc">+</span> </span>
+<span id="cb23-66"><a href="3.4-pdf-pmf.html#cb23-66" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> mu)) <span class="sc">+</span></span>
+<span id="cb23-67"><a href="3.4-pdf-pmf.html#cb23-67" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">ymin =</span> mu <span class="sc">-</span> se, <span class="at">ymax =</span> mu <span class="sc">+</span> se), </span>
+<span id="cb23-68"><a href="3.4-pdf-pmf.html#cb23-68" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb23-69"><a href="3.4-pdf-pmf.html#cb23-69" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Середнє X ± SE&quot;</span>) <span class="sc">+</span></span>
+<span id="cb23-70"><a href="3.4-pdf-pmf.html#cb23-70" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb23-71"><a href="3.4-pdf-pmf.html#cb23-71" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb23-72"><a href="3.4-pdf-pmf.html#cb23-72" tabindex="-1"></a></span>
+<span id="cb23-73"><a href="3.4-pdf-pmf.html#cb23-73" tabindex="-1"></a>f_3_10_i <span class="ot">&lt;-</span> X_sum <span class="sc">%&gt;%</span> </span>
+<span id="cb23-74"><a href="3.4-pdf-pmf.html#cb23-74" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> mu)) <span class="sc">+</span> </span>
+<span id="cb23-75"><a href="3.4-pdf-pmf.html#cb23-75" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
+<span id="cb23-76"><a href="3.4-pdf-pmf.html#cb23-76" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> mu)) <span class="sc">+</span></span>
+<span id="cb23-77"><a href="3.4-pdf-pmf.html#cb23-77" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">ymin =</span> mu <span class="sc">-</span> se, <span class="at">ymax =</span> mu <span class="sc">+</span> se), </span>
+<span id="cb23-78"><a href="3.4-pdf-pmf.html#cb23-78" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb23-79"><a href="3.4-pdf-pmf.html#cb23-79" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Значення X ± SE&quot;</span>) <span class="sc">+</span></span>
+<span id="cb23-80"><a href="3.4-pdf-pmf.html#cb23-80" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb23-81"><a href="3.4-pdf-pmf.html#cb23-81" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb23-82"><a href="3.4-pdf-pmf.html#cb23-82" tabindex="-1"></a></span>
+<span id="cb23-83"><a href="3.4-pdf-pmf.html#cb23-83" tabindex="-1"></a><span class="fu">ggarrange</span>(<span class="at">plotlist =</span> <span class="fu">list</span>(</span>
+<span id="cb23-84"><a href="3.4-pdf-pmf.html#cb23-84" tabindex="-1"></a>  f_3_10_a, f_3_10_b, f_3_10_c, f_3_10_d, f_3_10_e, f_3_10_f, f_3_10_g, f_3_10_h, f_3_10_i</span>
+<span id="cb23-85"><a href="3.4-pdf-pmf.html#cb23-85" tabindex="-1"></a>), <span class="at">labels =</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>])</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:fig-3-10"></span>
+<img src="bookdown-demo_files/figure-html/fig-3-10-1.png" alt="Різноманітні способи зобразити розподіл змінної: **(a)** хмара точок спостережень - найкращий спосіб зобразити сирі даних, якщо точок відносно небагато; **(b)** гістограма - колонки відповідають рівномірним діапазонам значень; **(c)** ядрова оцінка густини розподілу, своєрідна неперевна гістограма, що є кращою альтернативою гістограмі у випадку континуальних змінних; **(d)** 'скрипко-графік' (violin plot) є дзеркальним відображенням ядрової оцінки розподілу; **(e)** класичний 'коробко-графік' (boxplot) де жирна центральна лінія відповідає медіані, межі коробки - міжквартильному розмаху (між 25- та 75-тими перцентилями), межі вусів - розмаху даних без 'викидів', а окремі точки - власне викидам (спостереження, що потрапили за межі 1.5 міжквартильного розмаху від 25- чи 75-ого перцентилю); **(f)** відображення середнього арифметичного і відхилення у формі стандартного відхилення; **(g)** 2.5-, 25-, 50-, 75-, та 97.5-ті перцентилі, які можуть сприйматися як довірчі інтервали розподілу (але не його середнього); **(h)** відображення середнього арифметичного і відхилення у формі стандартної помилки - зверніть увагу на шкалу, розмах вусів набагато менший за інші за рахунок значного розміру вибірки; **(i)** відверто найгірший варіант - 'динаміто-графік' (dynamite plot), який малює колонку чогось (на відміну від гістограми, ця колонка рідко має будь-який зміст, наприклад, у вибірці нема значень нижче за 4, але зона від 0 до середнього все одно замальована) із 'вусами' стандартної помилки." width="960" />
+<p class="caption">
+Рис. 3.10: Різноманітні способи зобразити розподіл змінної: <strong>(a)</strong> хмара точок спостережень - найкращий спосіб зобразити сирі даних, якщо точок відносно небагато; <strong>(b)</strong> гістограма - колонки відповідають рівномірним діапазонам значень; <strong>(c)</strong> ядрова оцінка густини розподілу, своєрідна неперевна гістограма, що є кращою альтернативою гістограмі у випадку континуальних змінних; <strong>(d)</strong> ‘скрипко-графік’ (violin plot) є дзеркальним відображенням ядрової оцінки розподілу; <strong>(e)</strong> класичний ‘коробко-графік’ (boxplot) де жирна центральна лінія відповідає медіані, межі коробки - міжквартильному розмаху (між 25- та 75-тими перцентилями), межі вусів - розмаху даних без ‘викидів’, а окремі точки - власне викидам (спостереження, що потрапили за межі 1.5 міжквартильного розмаху від 25- чи 75-ого перцентилю); <strong>(f)</strong> відображення середнього арифметичного і відхилення у формі стандартного відхилення; <strong>(g)</strong> 2.5-, 25-, 50-, 75-, та 97.5-ті перцентилі, які можуть сприйматися як довірчі інтервали розподілу (але не його середнього); <strong>(h)</strong> відображення середнього арифметичного і відхилення у формі стандартної помилки - зверніть увагу на шкалу, розмах вусів набагато менший за інші за рахунок значного розміру вибірки; <strong>(i)</strong> відверто найгірший варіант - ‘динаміто-графік’ (dynamite plot), який малює колонку чогось (на відміну від гістограми, ця колонка рідко має будь-який зміст, наприклад, у вибірці нема значень нижче за 4, але зона від 0 до середнього все одно замальована) із ‘вусами’ стандартної помилки.
+</p>
+</div>
+<p>Зображення розподілу вибірок часто необхідно для порівняння двох (чи більше) вибірок. Наприклад, уявіть вибірки <span class="math inline">\(A\)</span> і <span class="math inline">\(B\)</span>, які відповідають промірам певного параметру (наприклад, маси тіла) в двох групах (скажімо, субпопуляціях виду). Залежно від того, чому відповідають вуса графіків, висновок із їх візуального зображення відрізнятиметься:</p>
+<ul>
+<li><p>якщо вуса <strong>SD</strong> двох вибірок перекриваються між собою, це не може бути достатнім доказом статистичної відмінності між вибірками (необхідні додаткові тести, наприклад, t-тест Ст’юдента або непараметричний аналог);</p></li>
+<li><p>якщо вуса <strong>SE</strong> перекриваються і дві вибірки <em>мають однакові розміри</em>, статистичної відмінності між вибірками, скоріш за все, немає; якщо вуса не перекриваються, необхідне додаткове тестування;</p></li>
+<li><p>якщо вуса <strong>95% CI</strong> перекриваються, необхідне додаткове тестування; якщо ж вони не перекриваються, скоріш за все, існує істотна різниця між вибірками.</p></li>
+</ul>
+<p>Загалом, графічне зображення розмаху вибірок викликає чимало плутанини із висновками (<a href="https://doi.org/10.1093/jis/3.1.34">Payton et al. 2003</a>, <a href="https://doi.org/10.1037/1082-989X.10.4.389">Belia et al. 2005</a>, <a href="https://doi.org/10.1083/jcb.200611141">Cumming et al. 2007</a>). Порадою слугуватиме завжди зазначати які саме метрики розмаху зображені й проводити додаткове статистичне тестування гіпотез.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="20">
+<li id="fn20"><p>особливо pdf: часто значення функції перевищує одиницю, що викликає справедливе питання “а як ймовірність може бути більша за одиницю?”. Не може, але й ця функція не повертає ймовірність. Її <em>інтеграл</em> повертає ймовірність.<a href="3.4-pdf-pmf.html#fnref20" class="footnote-back">↩︎</a></p></li>
+<li id="fn21"><p>варто зауважити, що формули оцінщиків взяті із відкритих джерел, включно із постами блогів. Кожен розподіл має своєрідну ситуацію із оцінщиками, і виведення оцінщиків не завжди проводиться методом максимальної правдоподібності чи за допомогою момент-генеруючих функцій (ми не торкаємось цього методу), ба того, такі оцінщики іноді є упередженими (biased). Використовувати оцінщики параметрів необхідно із застереженнями!<a href="3.4-pdf-pmf.html#fnref21" class="footnote-back">↩︎</a></p></li>
+<li id="fn22"><p>cdf біноміального розподілу існує, але його складно вивести і він все одно мало що скаже; варіацію біноміального розподілу також шукати відносно непросто.<a href="3.4-pdf-pmf.html#fnref22" class="footnote-back">↩︎</a></p></li>
+<li id="fn23"><p>обчислення очікування із біноміальними коефіцієнтами включає розкладання біному: <span class="math inline">\((a + b)^n = \sum \limits_{x = 0}^n \binom{n}{x} a^x b^{n - x}\)</span><a href="3.4-pdf-pmf.html#fnref23" class="footnote-back">↩︎</a></p></li>
+<li id="fn24"><p>застосування гіпергеометричного розподілу в реальних задачах екології угруповань може бути складним, адже чисельності видів можуть сягати сотень і тисяч, й обчислення біноміальних коефіцієнтів видасть дуже великі числа – іноді настільки великі, що комп’ютер не може їх обчислити і зве безкінечністю. Аби обійти обмеження стандартної комп’ютерної архітектури в нагоді можуть стати функції із бібліотеки <code>gmp</code> для R.<a href="3.4-pdf-pmf.html#fnref24" class="footnote-back">↩︎</a></p></li>
+<li id="fn25"><p><strong>медіана</strong> – значення в сортованій послідовності випадкової змінної <span class="math inline">\(X\)</span>, яке розділяє цю послідовність на дві частини однакового розміру; медіана тісно пов’язана із поняттями <strong>перцентилів</strong> <span class="math inline">\(x_{\alpha}\)</span> – такими значеннями <span class="math inline">\(x\)</span>, які більше за частку <span class="math inline">\(\alpha\)</span> випадкової змінної <span class="math inline">\(X\)</span> (наприклад, перцентиль <span class="math inline">\(x_{\alpha = 0.95}\)</span> – це таке значення, що в змінній <span class="math inline">\(X\)</span> <span class="math inline">\(95 \%\)</span> значень менше або дорівнюють <span class="math inline">\(x_{\alpha = 0.95}\)</span>). Медіана відповідає перцентилю із <span class="math inline">\(\alpha = 0.5\)</span>.<a href="3.4-pdf-pmf.html#fnref25" class="footnote-back">↩︎</a></p></li>
+<li id="fn26"><p><strong>мода</strong> – найбільш поширене значення у вибірці.<a href="3.4-pdf-pmf.html#fnref26" class="footnote-back">↩︎</a></p></li>
+<li id="fn27"><p><strong>генеральна сукупність</strong> – поширене поняття в статистиці; якщо спостерігач обрав вибірку значень (наприклад, вага особин модельного виду), ця вибірка є лише обмеженою підмножиною генеральної сукупності, розмір якої апроксимує до безкінечності. Ми припускаємо що вибірка є репрезентативною щодо генеральної сукупності, отже, розподіл ймовірності в генеральній сукупності апроксимує до розподілу в генеральній сукупності. Неможливо набрати вибірку розміром із розмір генеральної сукупності – спостерігач завжди пропустить бодай один зразок.<a href="3.4-pdf-pmf.html#fnref27" class="footnote-back">↩︎</a></p></li>
+<li id="fn28"><p>статистика – інше слово для параметру вибірки або параметру тесту. Середнє арифметичне є статистикою, дисперсія є статистикою тощо.<a href="3.4-pdf-pmf.html#fnref28" class="footnote-back">↩︎</a></p></li>
+<li id="fn29"><p>наприклад, як розрахувати узагальнену кількість особин виду для повторних спостережень на певній локації? Свого часу мені казали рахувати максимальну кількість особин між спостереженнями, однак такий підхід не є коректним. Натомість, якщо розглядати спостереження особин як біноміальний процес або процес Пуасона, за обох розподілів середнє арифметичене слугує виправданим оцінщиком. Для поглибленого погляду в цю тему, див. <a href="5.7-detectability.html#detectability">ймовірність детекції</a><a href="3.4-pdf-pmf.html#fnref29" class="footnote-back">↩︎</a></p></li>
+<li id="fn30"><p><strong>Тест Колмогорова-Смірнова</strong> використовують для перевірки гіпотези, що дві вибірки отримані із одного неперервного розподілу. Іншими словами, тестом Комогорова-Смірнова можна перевірити розподіл змінної (навіть непараметричний розподіл, якщо наявна його адекватна pdf).<a href="3.4-pdf-pmf.html#fnref30" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="3.3-stats.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="3.5-basic-hypotheses.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
