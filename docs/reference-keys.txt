@@ -108,3 +108,7 @@ fd
 islands
 env-filter
 rarefaction
+pdf-pmf
+basic-hypotheses
+stat-models
+infer
