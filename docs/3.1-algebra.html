@@ -23,7 +23,6 @@
 <meta name="author" content="Олексій Дубовик" />
 
 
-<meta name="date" content="2024-10-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -140,11 +139,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Вступ до Екології Угруповань</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Передмова</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Вітання</a></li>
+<li class="chapter" data-level="" data-path="передмова.html"><a href="передмова.html"><i class="fa fa-check"></i>Передмова</a>
 <ul>
-<li class="chapter" data-level="0.0.1" data-path="index.html"><a href="index.html#about-author"><i class="fa fa-check"></i><b>0.0.1</b> Трішки про автора</a></li>
-<li class="chapter" data-level="0.0.2" data-path="index.html"><a href="index.html#whythiswork"><i class="fa fa-check"></i><b>0.0.2</b> Навіщо ця робота</a></li>
-<li class="chapter" data-level="0.0.3" data-path="index.html"><a href="index.html#more-about-author"><i class="fa fa-check"></i><b>0.0.3</b> Ще трішки про автора</a></li>
+<li class="chapter" data-level="0.0.1" data-path="передмова.html"><a href="передмова.html#about-author"><i class="fa fa-check"></i><b>0.0.1</b> Трішки про автора</a></li>
+<li class="chapter" data-level="0.0.2" data-path="передмова.html"><a href="передмова.html#whythiswork"><i class="fa fa-check"></i><b>0.0.2</b> Навіщо ця робота</a></li>
+<li class="chapter" data-level="0.0.3" data-path="передмова.html"><a href="передмова.html#more-about-author"><i class="fa fa-check"></i><b>0.0.3</b> Ще трішки про автора</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="подяки.html"><a href="подяки.html"><i class="fa fa-check"></i>Подяки</a></li>
 <li class="chapter" data-level="1" data-path="1-introduction.html"><a href="1-introduction.html"><i class="fa fa-check"></i><b>1</b> Вступ</a>
@@ -206,8 +206,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html"><i class="fa fa-check"></i><b>3.6</b> Експеримент і модель</a>
 <ul>
-<li class="chapter" data-level="3.6.1" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html#pseudoreplication"><i class="fa fa-check"></i><b>3.6.1</b> Псевдореплікація</a></li>
-<li class="chapter" data-level="3.6.2" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html#regression"><i class="fa fa-check"></i><b>3.6.2</b> Регресія чи класифікація?</a></li>
+<li class="chapter" data-level="3.6.1" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html#pseudoreplication"><i class="fa fa-check"></i><b>3.6.1</b> Експериментальний дизайн та псевдореплікація</a></li>
+<li class="chapter" data-level="3.6.2" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html#regression"><i class="fa fa-check"></i><b>3.6.2</b> Дані та проблема моделювання</a></li>
 <li class="chapter" data-level="3.6.3" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html#aic"><i class="fa fa-check"></i><b>3.6.3</b> Парсимонійна модель та вибір моделі</a></li>
 <li class="chapter" data-level="3.6.4" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html#prcomp"><i class="fa fa-check"></i><b>3.6.4</b> Багатовимірна статистика</a></li>
 </ul></li>
@@ -359,7 +359,7 @@ ac &gt; bc\\
 <p><span class="math display">\[\frac{a^n}{b^n} = \left( \frac{a}{b}\right)^n\]</span></p>
 <p><span class="math display">\[a^{\frac{m}{n}} = \sqrt[\leftroot{5} \uproot{10} n]{a^m} \Rightarrow a^{1/2} = \sqrt{a}\]</span></p>
 <p><span class="math display">\[\frac{\sqrt[\leftroot{5} \uproot{10} n]{a}}{\sqrt[\leftroot{5} \uproot{10} n]{b}} = \sqrt[\leftroot{5} \uproot{10} n]{\frac{a}{b}} \iff \frac{\sqrt[\leftroot{5} \uproot{10} n]{a}}{\sqrt[\leftroot{5} \uproot{10} n]{b}} = \frac{a^{1/n}}{b^{1/n}} = \left( \frac{a}{b} \right)^{1/n}\]</span></p>
-<p>Зведення константи в змінний ступінь зветься екпоненціацією, яка іноді може позначатись дещо незвично:</p>
+<p>Зведення константи в змінний ступінь (експонента) іноді може позначатись дещо незвично:</p>
 <p><span class="math display">\[\exp (x_i) = e^{x_i}\]</span></p>
 <p>де <span class="math inline">\(e\)</span> – число Ейлера.</p>
 <p>В комп’ютерних системах можна також зустріти позначення на кшталт <code>1e-07</code>. В цьому випадку мається на увазі експоненціювання за основою <span class="math inline">\(10\)</span>:</p>
@@ -431,7 +431,7 @@ a \left( \frac{1-r^n}{1-r} \right) \text{ якщо } r&gt;1
 <p><span class="math display">\[\log_a x = b\iff a^b = x\]</span></p>
 <p>Найбільш поширеними є десятковий логарифм <span class="math inline">\(\log_{10}\)</span> та натуральний логарифм <span class="math inline">\(\log_e\)</span> де <span class="math inline">\(e\)</span> – число Ейлера <span class="math inline">\(e \approx 2.718\)</span>, константа, визначена як <span class="math inline">\(e = \lim\limits_{n \rightarrow \infty} (1 + \frac{1}{n})^n\)</span>.</p>
 <p>В екології особливо поширений модифікований десятковий логарифм, оскільки чисельності організмів часто мають або низькі значення на кшталт <span class="math inline">\(0, 1, 2\)</span>, або дуже високі значення порядку сотень та тисяч, на рівні яких можна знехтувати одиничними особами<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>.</p>
-<p>Модифікація логарифмічної трансформації в екології побудована таким чином, аби <span class="math inline">\(0\)</span> відповідало <span class="math inline">\(0\)</span> особин, <span class="math inline">\(1\)</span> відповідало <span class="math inline">\(1\)</span> особині, <span class="math inline">\(2\)</span> відповідало <span class="math inline">\(10\)</span> особинам, <span class="math inline">\(3\)</span> відповідало <span class="math inline">\(100\)</span> особинам, і так далі (<a href="https://doi.org/10.1111/j.1461-0248.2006.00926.x">Anderson et al. 2006</a>). Такої трансофрації легко досягнути використовуючи функцію котра враховує факт, що логарифмування від’ємних значень та нуля неможливе (<span class="math inline">\(\log0 = -\infty\)</span>):</p>
+<p>Модифікація логарифмічної трансформації в екології побудована таким чином, аби <span class="math inline">\(0\)</span> відповідало <span class="math inline">\(0\)</span> особин, <span class="math inline">\(1\)</span> відповідало <span class="math inline">\(1\)</span> особині, <span class="math inline">\(2\)</span> відповідало <span class="math inline">\(10\)</span> особинам, <span class="math inline">\(3\)</span> відповідало <span class="math inline">\(100\)</span> особинам, і так далі (<a href="https://doi.org/10.1111/j.1461-0248.2006.00926.x">Anderson et al. 2006</a>). Такої трансформації легко досягнути використовуючи функцію котра враховує факт, що логарифмування від’ємних значень та нуля неможливе (<span class="math inline">\(\log0 = -\infty\)</span>):</p>
 <p><span class="math display">\[f(x) = \begin{cases}
 [\log_{10}(x)+1] \times \mathbb{I}_x(x &gt; 0)\\
 0 \times \mathbb{I}_x(x = 0)
@@ -579,7 +579,7 @@ a \left( \frac{1-r^n}{1-r} \right) \text{ якщо } r&gt;1
 </ul>
 <p><span class="math display">\[\int u (dv) = uv - \int v (du) \iff \int f(x)g&#39;(x)dx = f(x)g(x) - \int f&#39;(x) g(x) dx\]</span></p>
 <p>де <span class="math inline">\(v = \int dv\)</span>.</p>
-<p>В цілому, в екології рідко коли потрібно аналітично вирішити інтеграл чи похідну, однак, розуміння <em>змісту</em> цих операцій необхідне для подальшого розуміння статистичних підходів. В рідкісних випадках, коли необхідно вирішити певний інтеграл, має сенс скористатися онлайн-сервісами на кшталт <a href="https://www.integral-calculator.com/">integral-calculator.com</a> або розрахувати значення визначеного інтегралу ітеративно за допомогою Рейманівської суми, як показано вище. Варто також мати на увазі, що деякі функції неможливо або дуже складно проінтегрувати.</p>
+<p>В цілому, в екології рідко коли потрібно аналітично вирішити інтеграл чи похідну, однак, розуміння <em>змісту</em> цих операцій необхідне для подальшого розуміння статистичних підходів. В рідкісних випадках, коли необхідно вирішити певний інтеграл, має сенс скористатися онлайн-сервісами на кшталт <a href="https://www.integral-calculator.com/">integral-calculator.com</a> або розрахувати значення визначеного інтегралу ітеративно за допомогою Рейманівської суми, як показано вище. Варто також мати на увазі, що деякі функції неможливо або дуже складно аналітично проінтегрувати.</p>
 </div>
 </div>
 <div class="footnotes">

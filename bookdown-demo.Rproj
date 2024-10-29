@@ -17,4 +17,6 @@ StripTrailingWhitespace: Yes
 
 BuildType: Website
 
+SpellingDictionary: uk_UA
+
 ProjectName: com-ecol-ua

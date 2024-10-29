@@ -23,7 +23,6 @@
 <meta name="author" content="Олексій Дубовик" />
 
 
-<meta name="date" content="2024-10-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -140,11 +139,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Вступ до Екології Угруповань</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Передмова</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Вітання</a></li>
+<li class="chapter" data-level="" data-path="передмова.html"><a href="передмова.html"><i class="fa fa-check"></i>Передмова</a>
 <ul>
-<li class="chapter" data-level="0.0.1" data-path="index.html"><a href="index.html#about-author"><i class="fa fa-check"></i><b>0.0.1</b> Трішки про автора</a></li>
-<li class="chapter" data-level="0.0.2" data-path="index.html"><a href="index.html#whythiswork"><i class="fa fa-check"></i><b>0.0.2</b> Навіщо ця робота</a></li>
-<li class="chapter" data-level="0.0.3" data-path="index.html"><a href="index.html#more-about-author"><i class="fa fa-check"></i><b>0.0.3</b> Ще трішки про автора</a></li>
+<li class="chapter" data-level="0.0.1" data-path="передмова.html"><a href="передмова.html#about-author"><i class="fa fa-check"></i><b>0.0.1</b> Трішки про автора</a></li>
+<li class="chapter" data-level="0.0.2" data-path="передмова.html"><a href="передмова.html#whythiswork"><i class="fa fa-check"></i><b>0.0.2</b> Навіщо ця робота</a></li>
+<li class="chapter" data-level="0.0.3" data-path="передмова.html"><a href="передмова.html#more-about-author"><i class="fa fa-check"></i><b>0.0.3</b> Ще трішки про автора</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="подяки.html"><a href="подяки.html"><i class="fa fa-check"></i>Подяки</a></li>
 <li class="chapter" data-level="1" data-path="1-introduction.html"><a href="1-introduction.html"><i class="fa fa-check"></i><b>1</b> Вступ</a>
@@ -206,8 +206,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html"><i class="fa fa-check"></i><b>3.6</b> Експеримент і модель</a>
 <ul>
-<li class="chapter" data-level="3.6.1" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html#pseudoreplication"><i class="fa fa-check"></i><b>3.6.1</b> Псевдореплікація</a></li>
-<li class="chapter" data-level="3.6.2" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html#regression"><i class="fa fa-check"></i><b>3.6.2</b> Регресія чи класифікація?</a></li>
+<li class="chapter" data-level="3.6.1" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html#pseudoreplication"><i class="fa fa-check"></i><b>3.6.1</b> Експериментальний дизайн та псевдореплікація</a></li>
+<li class="chapter" data-level="3.6.2" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html#regression"><i class="fa fa-check"></i><b>3.6.2</b> Дані та проблема моделювання</a></li>
 <li class="chapter" data-level="3.6.3" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html#aic"><i class="fa fa-check"></i><b>3.6.3</b> Парсимонійна модель та вибір моделі</a></li>
 <li class="chapter" data-level="3.6.4" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html#prcomp"><i class="fa fa-check"></i><b>3.6.4</b> Багатовимірна статистика</a></li>
 </ul></li>
@@ -293,7 +293,7 @@ a_{m, 1} &amp; a_{m,2} &amp; \cdots &amp; a_{m, n}
 </div>
 <div id="трансформації-матриць" class="section level3 hasAnchor" number="3.2.2">
 <h3><span class="header-section-number">3.2.2</span> Трансформації матриць<a href="3.2-matrices.html#трансформації-матриць" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><strong><em>Додавання матриць</em></strong>, якащо обидві матриці мають ідентичну розмірність, є доволі очевидним, адже додаються елементи із ідентичними індксами. Наприклад, <span class="math inline">\(\mathbf{A}+\mathbf{B} = a_{i,j}+b_{i, j}\)</span>.</p>
+<p><strong><em>Додавання матриць</em></strong>, якщо обидві матриці мають ідентичну розмірність, є доволі очевидним, адже додаються елементи із ідентичними індексами. Наприклад, <span class="math inline">\(\mathbf{A}+\mathbf{B} = a_{i,j}+b_{i, j}\)</span>.</p>
 <p>Наприклад, якщо</p>
 <p><span class="math display">\[\mathbf{A} = \begin{bmatrix}
 a_{1, 1} &amp; a_{1,2} &amp; \cdots &amp; a_{1, n}\\
@@ -381,7 +381,7 @@ a_{2, 1} &amp; a_{2, 2}
 <h3><span class="header-section-number">3.2.5</span> Геометричний зміст матриць<a href="3.2-matrices.html#matrices_art" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Технічні визначення операцій над матрицями можуть видаватись надмірно деталізованими і неінтуїтивними правилами, котрі просто необхідно завчити. Однак, всі ці правила мають очевидний геометричний зміст, котрий рідко використовують в поясненнях базової теорії матриць <a href="https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab">3Blue1Brown 2023</a>.</p>
 <p>В першу чергу, необхідно зрозуміти поняття вектора. В багатьох чисельних методах і, зокрема, в програмному середовищі R, векторами звуться скінченні ряди чисел, наприклад, змінна в наборі даних. Однак, зі шкільної програми математики можна пригадати, що векторами є і спрямовані відрізки. Наприклад, якщо позначити вектор <span class="math inline">\(\vec{a}\)</span> як <span class="math inline">\(\vec{a} = (1, 2)\)</span>, то ряд чисел <span class="math inline">\((1, 2)\)</span> можна зобразити як такий вектор, що починається з координат <span class="math inline">\((x_0 = 0, y_0 = 0)\)</span> і закінчується координатами <span class="math inline">\((x_1 = 1, y_1 = 2)\)</span>.</p>
-<p>Уявімо простір таких векторів. З попереднього параграфу можна помітити, що хоча й, формально, вектор має дві точки (в двовимріному просторі це <span class="math inline">\((x_0, y_0)\)</span> та <span class="math inline">\((x_1, y_1)\)</span>), для кожного вектору одна з точок буде однаковою: <span class="math inline">\((x_0 = 0, y_0 = 0)\)</span>. Відтак, ми не втратимо ніякої інформації, якщо для багатьох векторів ми забудемо про початкові точки і визначимо лише кінцеві точки. У двовимірному просторі можна визначити скільки завгодно векторів/точок <span class="math inline">\(\vec{v_1} = (x_{1, 1}, y_{1, 1}), \vec{v_2} = (x_{1, 2}, y_{1, 2}), \cdots, \vec{v_i} = (x_{1, i}, y_{1, i})\)</span>, але, звісно, це справджуватиметься і для одного виміру (<span class="math inline">\(\vec{v_1} = (x_{1, 1}), \vec{v_2} = (x_{1, 2}), \cdots, \vec{v_i} = (x_{1, i})\)</span>), і для трьох вимірів (<span class="math inline">\(\vec{v_1} = (x_{1, 1}, y_{1, 1}, z_{1, 1}), \vec{v_2} = (x_{1, 2}, y_{1, 2}, z_{1, 2}), \cdots, \vec{v_i} = (x_{1, i}, y_{1, i}, z_{1, i})\)</span>), і для будь-якої скінченної кількості вимірів. В структурі даних, відтак, хоча й ряди чисел є векторами, ми можемо уявити кожне спостереження як точку у просторі параметрів цього спостереження (т. зв. точка даних, або data point, що ж еквівалентним одиночному спостереженню).</p>
+<p>Уявімо простір таких векторів. З попереднього параграфу можна помітити, що хоча й, формально, вектор має дві точки (в двовимірному просторі це <span class="math inline">\((x_0, y_0)\)</span> та <span class="math inline">\((x_1, y_1)\)</span>), для кожного вектору одна з точок буде однаковою: <span class="math inline">\((x_0 = 0, y_0 = 0)\)</span>. Відтак, ми не втратимо ніякої інформації, якщо для багатьох векторів ми забудемо про початкові точки і визначимо лише кінцеві точки. У двовимірному просторі можна визначити скільки завгодно векторів/точок <span class="math inline">\(\vec{v_1} = (x_{1, 1}, y_{1, 1}), \vec{v_2} = (x_{1, 2}, y_{1, 2}), \cdots, \vec{v_i} = (x_{1, i}, y_{1, i})\)</span>, але, звісно, це справджуватиметься і для одного виміру (<span class="math inline">\(\vec{v_1} = (x_{1, 1}), \vec{v_2} = (x_{1, 2}), \cdots, \vec{v_i} = (x_{1, i})\)</span>), і для трьох вимірів (<span class="math inline">\(\vec{v_1} = (x_{1, 1}, y_{1, 1}, z_{1, 1}), \vec{v_2} = (x_{1, 2}, y_{1, 2}, z_{1, 2}), \cdots, \vec{v_i} = (x_{1, i}, y_{1, i}, z_{1, i})\)</span>), і для будь-якої скінченної кількості вимірів. В структурі даних, відтак, хоча й ряди чисел є векторами, ми можемо уявити кожне спостереження як точку у просторі параметрів цього спостереження (т. зв. точка даних, або data point, що ж еквівалентним одиночному спостереженню).</p>
 <p>Для простору векторів, матриця є лінійною трансформацією. Тобто, якщо помножити координати точки (або вектору, що є тим самим) на матрицю, то на виході ми отримаємо інший лінійний вектор. Подібно до математичної функції, ми можемо застосувати лінійну трансформацію до всього простору, і отримаємо інший простір, в котрому точки знаходяться та пропорційній до вихідного простору відстані одна від одної, а прямі між точками залишаються прямими<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a>.</p>
 <p>Пригадаймо правила множення матриць. Для цього потрібно кожен вектор уявити у вигляді матриці. Наприклад, для вектору <span class="math display">\[\vec{a} = (x_1 = 1, y_1 = 2) = \begin{bmatrix}
 x_1 = 1 \\
@@ -416,7 +416,7 @@ y_1 = 2 \end{bmatrix} = \begin{bmatrix}
 <p>Загалом, для всякого двовимірного простору можна уявити два незалежні базові вектори: <span class="math inline">\(\hat{i} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}\)</span> й <span class="math inline">\(\hat{j} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}\)</span>. Тоді будь-який вектор <span class="math inline">\(\vec{v}\)</span> є сумою векторів, що відображають добутки певної константи <span class="math inline">\(a\)</span> та <span class="math inline">\(\hat{i}\)</span> й <span class="math inline">\(b\)</span> та <span class="math inline">\(\hat{j}\)</span>: <span class="math inline">\(\vec{v} = a \hat{i} + b \hat{j}\)</span>, а, відтак, всяку лінійну трансформацію <span class="math inline">\(L(\cdot)\)</span> можна виразити у вигляді <span class="math display">\[L(\vec{v}) = a L(\hat{i}) + b L(\hat{j})\]</span></p>
 <p>відтак, лінійна трансформація вектору <span class="math inline">\(\begin{bmatrix} x \\ y \end{bmatrix} \rightarrow L \left( \begin{bmatrix} x \\ y \end{bmatrix} \right)\)</span> є тотожною лінійній трансформації базових векторів, шкалованих на певні константи для базових векторів:</p>
 <p><span class="math display">\[L \left( \begin{bmatrix} x \\ y \end{bmatrix} \right) = x[L (\hat{i})] + y[L(\hat{j})] = \begin{bmatrix} x L(1) &amp; xL(0) \\ y L(0) &amp; y L(1) \end{bmatrix}\]</span></p>
-<p>Тобто сутність квадратної матриці як репрезентації лінійної трансформації – це сукупність координат, на які припадають базові вектори після лінійної трансформації. Для попереденього прикладу <span class="math inline">\(\mathbf{A} = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix}\)</span>, зокрема, <span class="math inline">\(L(\hat{i})\)</span> матиме координати <span class="math inline">\((1, 3)\)</span>, а <span class="math inline">\(L(\hat{j})\)</span> – <span class="math inline">\((2, 4)\)</span>.</p>
+<p>Тобто сутність квадратної матриці як репрезентації лінійної трансформації – це сукупність координат, на які припадають базові вектори після лінійної трансформації. Для попереднього прикладу <span class="math inline">\(\mathbf{A} = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix}\)</span>, зокрема, <span class="math inline">\(L(\hat{i})\)</span> матиме координати <span class="math inline">\((1, 3)\)</span>, а <span class="math inline">\(L(\hat{j})\)</span> – <span class="math inline">\((2, 4)\)</span>.</p>
 <p>Якщо розглядати матрицю як носій інформації про лінійну трансформацію, то множення матриць є нічим іншим, як застосуванням лінійної трансформації до лінійної трансформації. Тобто, якщо уявити дві лінійні трансформації <span class="math inline">\(L_1\)</span> та <span class="math inline">\(L_2\)</span> такі що</p>
 <p><span class="math display">\[L_2 \left( L_1 \left( \begin{bmatrix}
 x \\
@@ -481,7 +481,7 @@ d_1 \\
 d_2 \\
 d_3
 \end{bmatrix} \iff \mathbf{A} \vec{x} = \vec{v}\]</span></p>
-<p>і систему можна вирішити, якщо існує така <span class="math inline">\(\mathbf{A^{-1}}\)</span>, що <span class="math inline">\((\mathbf{AA^{-1}}) \vec{w} = \vec{w}\)</span> (тобто добуток цих двох матриць відображає таку лінійну трансформацію, яка не змінює вихідні вектори - таку трансформацію і кодує одинична матриця). Тоді <span class="math inline">\(\mathbf{A^{-1} A} \vec{x} = \mathbf{A^{-1}} \vec{v}\)</span>, отже, <span class="math inline">\(\vec{x} = \mathbf{A^{-1}} \vec{v}\)</span>.</p>
+<p>і систему можна вирішити, якщо існує така <span class="math inline">\(\mathbf{A^{-1}}\)</span>, що <span class="math inline">\((\mathbf{AA^{-1}}) \vec{w} = \vec{w}\)</span> (тобто добуток цих двох матриць відображає таку лінійну трансформацію, яка не змінює вихідні вектори – таку трансформацію і кодує одинична матриця). Тоді <span class="math inline">\(\mathbf{A^{-1} A} \vec{x} = \mathbf{A^{-1}} \vec{v}\)</span>, отже, <span class="math inline">\(\vec{x} = \mathbf{A^{-1}} \vec{v}\)</span>.</p>
 </div>
 </div>
 <div class="footnotes">

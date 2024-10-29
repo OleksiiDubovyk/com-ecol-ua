@@ -11,6 +11,7 @@ fig:fig-3-10
 fig:fig-3-11
 fig:fig-3-12
 fig:fig-3-13
+fig:fig-3-14
 about-author
 whythiswork
 more-about-author
@@ -48,6 +49,7 @@ stats
 prob
 bayes
 mle
+pdf-pmf
 pdfs
 дискретні-розподіли
 розподіл-бернулі
@@ -66,6 +68,7 @@ pdfs
 лог-нормальний-розподіл
 розподіл-коші
 bars
+basic-hypotheses
 hypothesis
 nulldistr
 pval
@@ -73,10 +76,14 @@ paradigms
 частотницька-або-фреквентистська-парадигма
 баєсівська-парадигма
 пермутаційний-аналіз
+stat-models
 pseudoreplication
 regression
+регресія
+класифікація
 aic
 prcomp
+infer
 inference
 crossval
 popeco
@@ -108,7 +115,3 @@ fd
 islands
 env-filter
 rarefaction
-pdf-pmf
-basic-hypotheses
-stat-models
-infer
