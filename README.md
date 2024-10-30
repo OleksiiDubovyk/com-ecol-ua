@@ -1,5 +1,7 @@
 # Вступ до Екології Угруповань
 
+[![DOI](https://zenodo.org/badge/{github_id}.svg)](https://zenodo.org/badge/latestdoi/{github_id})
+
 (English below)
 
 Перший підручник/посібник/називайте-як-завгодно з екології угруповань українською мовою доступний для перегляду за посиланням [https://oleksiidubovyk.github.io/ComEcolUa/](https://oleksiidubovyk.github.io/ComEcolUa/). Проміжні версії оновлюються час від часу, тому стабільної pdf-версії наразі немає. 
