@@ -12,7 +12,7 @@ The first textbook/manual/call-it-whatever-you-want in Ukrainian language deploy
 
 # Історія оновлень | Update history
 
-- Built v0.9 2024-10-28
+- Build v0.3.6.3. 2024-10-30
 
 ### Built in R using `bookdown`
 
