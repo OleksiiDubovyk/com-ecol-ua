@@ -1,6 +1,6 @@
 # Вступ до Екології Угруповань
 
-[![DOI](https://zenodo.org/badge/{github_id}.svg)](https://zenodo.org/badge/latestdoi/{github_id})
+[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.14014872.svg)](https://doi.org/10.5281/zenodo.14014872)
 
 (English below)
 
