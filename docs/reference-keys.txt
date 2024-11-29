@@ -64,7 +64,7 @@ pdfs
 рівномірний-розподіл
 бета-розподіл
 експоненційний-розподіл
-нормальний-розподіл
+norm-dirstr
 лог-нормальний-розподіл
 розподіл-коші
 bars
@@ -83,6 +83,8 @@ regression
 класифікація
 aic
 prcomp
+метод-головних-компонент
+інші-методи-ординації
 infer
 inference
 crossval
@@ -114,4 +116,5 @@ similarity
 fd
 islands
 env-filter
+untb
 rarefaction

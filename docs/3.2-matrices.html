@@ -252,7 +252,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5" data-path="7.5-fd.html"><a href="7.5-fd.html"><i class="fa fa-check"></i><b>7.5</b> Функціональне й філогенетичне різноманіття</a></li>
 <li class="chapter" data-level="7.6" data-path="7.6-islands.html"><a href="7.6-islands.html"><i class="fa fa-check"></i><b>7.6</b> Острівна біогеографія</a></li>
 <li class="chapter" data-level="7.7" data-path="7.7-env-filter.html"><a href="7.7-env-filter.html"><i class="fa fa-check"></i><b>7.7</b> Середовищне фільтрування</a></li>
-<li class="chapter" data-level="7.8" data-path="7.8-rarefaction.html"><a href="7.8-rarefaction.html"><i class="fa fa-check"></i><b>7.8</b> Рарефакція та екстраполяція</a></li>
+<li class="chapter" data-level="7.8" data-path="7.8-untb.html"><a href="7.8-untb.html"><i class="fa fa-check"></i><b>7.8</b> Нейтральна теорія біорізноманіття</a></li>
+<li class="chapter" data-level="7.9" data-path="7.9-rarefaction.html"><a href="7.9-rarefaction.html"><i class="fa fa-check"></i><b>7.9</b> Рарефакція та екстраполяція</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="післяслово.html"><a href="післяслово.html"><i class="fa fa-check"></i>Післяслово</a></li>
 <li class="chapter" data-level="" data-path="контакти-автора.html"><a href="контакти-автора.html"><i class="fa fa-check"></i>Контакти автора</a></li>
@@ -326,7 +327,7 @@ c \cdot a_{m, 1} &amp; c \cdot a_{m,2} &amp; \cdots &amp; c \cdot a_{m, n}
 </div>
 <div id="операції-над-матрицями" class="section level3 hasAnchor" number="3.2.3">
 <h3><span class="header-section-number">3.2.3</span> Операції над матрицями<a href="3.2-matrices.html#операції-над-матрицями" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><strong><em>Множення матриць</em></strong> є дещо складнішим, і загальним правилом є те, що для матриць <span class="math inline">\(A\)</span> розміром <span class="math inline">\(m \times n\)</span> і <span class="math inline">\(B\)</span> розміром <span class="math inline">\(n \times p\)</span> добуток складатиме матрицю розміром <span class="math inline">\(m \times p\)</span> із елементами, що відповідають сумі добутків рядків <span class="math inline">\(A\)</span> та колонок <span class="math inline">\(B\)</span>, тобто елемент добутку матриць із індексами <span class="math inline">\(i, j\)</span> складатиме (<a href="https://books.google.com/books/about/Linear_Algebra.html?id=P8BZzAEACAAJ">Bogacki 2019</a>) (Рис. <a href="3.2-matrices.html#fig:fig-3-7">3.7</a>)</p>
+<p><strong><em>Множення матриць</em></strong> є дещо складнішим, і загальним правилом є те, що для матриць <span class="math inline">\(A\)</span> розміром <span class="math inline">\(m \times n\)</span> і <span class="math inline">\(B\)</span> розміром <span class="math inline">\(n \times p\)</span> добуток складатиме матрицю розміром <span class="math inline">\(m \times p\)</span> (відповідно, <em>кількість колонок в першій матриці повинна дорівнювати кількості рядків в другій матриці</em>) із елементами, що відповідають сумі добутків рядків <span class="math inline">\(A\)</span> та колонок <span class="math inline">\(B\)</span>, тобто елемент добутку матриць із індексами <span class="math inline">\(i, j\)</span> складатиме (<a href="https://books.google.com/books/about/Linear_Algebra.html?id=P8BZzAEACAAJ">Bogacki 2019</a>) (Рис. <a href="3.2-matrices.html#fig:fig-3-7">3.7</a>)</p>
 <p><span class="math display">\[[\mathbf{AB}]_{i, j} = \sum \limits_{r=1}^n (a_{i,r} b_{r, j}) = a_{i,1} b_{1, j} + a_{i, 2}b_{2, j} + \cdots + a_{i, n}b_{n, j}\]</span></p>
 <div class="figure"><span style="display:block;" id="fig:fig-3-7"></span>
 <img src="images/matrices.png" alt="Знаходження значення елементу добутку матриць $\mathbf{A}$ і $\mathbf{B}$."  />
@@ -334,6 +335,7 @@ c \cdot a_{m, 1} &amp; c \cdot a_{m,2} &amp; \cdots &amp; c \cdot a_{m, n}
 Рис. 3.7: Знаходження значення елементу добутку матриць <span class="math inline">\(\mathbf{A}\)</span> і <span class="math inline">\(\mathbf{B}\)</span>.
 </p>
 </div>
+<p>За додавання матриць завжди потрібно враховувати розмірність матриць. Якщо матриця <span class="math inline">\(\mathbf{A}\)</span> має розмір <span class="math inline">\(m \times n\)</span>, друга матриця <span class="math inline">\(\mathbf{B}\)</span> має розмір <span class="math inline">\(n \times p\)</span>, то їх добуток <span class="math inline">\(\mathbf{AB}\)</span> матиме розмір <span class="math inline">\(m \times p\)</span>. Відтак, для множення матриць необхідно, аби кількість колонок першої матриці дорівнювала кількості рядків другої матриці.</p>
 <p>Для добутків матриць властиво, що</p>
 <p><span class="math display">\[\mathbf{AB} \neq \mathbf{BA}\]</span></p>
 <p><span class="math display">\[(\mathbf{AB})\mathbf{C} = \mathbf{A}(\mathbf{BC})\]</span></p>
@@ -487,7 +489,7 @@ d_3
 <div class="footnotes">
 <hr />
 <ol start="15">
-<li id="fn15"><p>очевидно, ці дві умови не завжди можуть справджуватися, у випадку чого трансформація не є лінійною<a href="3.2-matrices.html#fnref15" class="footnote-back">↩︎</a></p></li>
+<li id="fn15"><p>Очевидно, ці дві умови не завжди можуть справджуватися, у випадку чого трансформація не є лінійною.<a href="3.2-matrices.html#fnref15" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

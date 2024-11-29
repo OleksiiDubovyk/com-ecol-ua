@@ -252,7 +252,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5" data-path="7.5-fd.html"><a href="7.5-fd.html"><i class="fa fa-check"></i><b>7.5</b> Функціональне й філогенетичне різноманіття</a></li>
 <li class="chapter" data-level="7.6" data-path="7.6-islands.html"><a href="7.6-islands.html"><i class="fa fa-check"></i><b>7.6</b> Острівна біогеографія</a></li>
 <li class="chapter" data-level="7.7" data-path="7.7-env-filter.html"><a href="7.7-env-filter.html"><i class="fa fa-check"></i><b>7.7</b> Середовищне фільтрування</a></li>
-<li class="chapter" data-level="7.8" data-path="7.8-rarefaction.html"><a href="7.8-rarefaction.html"><i class="fa fa-check"></i><b>7.8</b> Рарефакція та екстраполяція</a></li>
+<li class="chapter" data-level="7.8" data-path="7.8-untb.html"><a href="7.8-untb.html"><i class="fa fa-check"></i><b>7.8</b> Нейтральна теорія біорізноманіття</a></li>
+<li class="chapter" data-level="7.9" data-path="7.9-rarefaction.html"><a href="7.9-rarefaction.html"><i class="fa fa-check"></i><b>7.9</b> Рарефакція та екстраполяція</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="післяслово.html"><a href="післяслово.html"><i class="fa fa-check"></i>Післяслово</a></li>
 <li class="chapter" data-level="" data-path="контакти-автора.html"><a href="контакти-автора.html"><i class="fa fa-check"></i>Контакти автора</a></li>
@@ -414,18 +415,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb29-9"><a href="3.5-basic-hypotheses.html#cb29-9" tabindex="-1"></a>new_coms <span class="ot">&lt;-</span> <span class="fu">mix_coms</span>(coms)</span>
 <span id="cb29-10"><a href="3.5-basic-hypotheses.html#cb29-10" tabindex="-1"></a>new_coms</span></code></pre></div>
 <pre><code>##    A B
-## a  5 4
+## a  5 5
 ## b 10 4
-## c  4 4
-## d  7 3
-## e  5 5
+## c  6 4
+## d  7 7
+## e  5 7
 ## f  3 3
-## g  4 4
-## h  9 9
+## g  4 7
+## h  9 2
 ## i  4 4
 ## j  3 3</code></pre>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="3.5-basic-hypotheses.html#cb31-1" tabindex="-1"></a><span class="fu">eucl_dist</span>(new_coms<span class="sc">$</span>A, new_coms<span class="sc">$</span>B)</span></code></pre></div>
-<pre><code>## [1] 7.28011</code></pre>
+<pre><code>## [1] 10.0995</code></pre>
 <p>Тепер цю операцію можна повторити багато разів, скажімо, десять тисяч разів, аби згенерувати розподіл статистики.</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="3.5-basic-hypotheses.html#cb33-1" tabindex="-1"></a>d_null <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10000</span>)</span>
 <span id="cb33-2"><a href="3.5-basic-hypotheses.html#cb33-2" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>){</span>
@@ -438,7 +439,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>Оскільки за нульової гіпотези можна очікувати, що значення відстані наближатиметься до нуля (до того ж, дистанція не може бути негативною), екстремальні значення нульового розподілу відповідатимуть значним позитивним значенням. Ця логіка дозволяє оцінити псевдо-<span class="math inline">\(p\)</span>-значення як для одностороннього тесту:</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="3.5-basic-hypotheses.html#cb35-1" tabindex="-1"></a><span class="fu">length</span>(d_null[d_null <span class="sc">&gt;=</span> d_obs])<span class="sc">/</span><span class="fu">length</span>(d_null)</span></code></pre></div>
-<pre><code>## [1] 0.0084</code></pre>
+<pre><code>## [1] 0.0076</code></pre>
 <p>Отже, в генерованому розподілі нульової вибірки, ймовірність отримати спостережене або більше за спостережене значення статистики <span class="math inline">\(p \approx 0.01\)</span> (оскільки процес стохастичний, оцінка відрізнятиметься за кожного компілювання), що дозволяє відхилити нульову гіпотезу і стверджувати що два угруповання відрізняються між собою.</p>
 <p>Пермутаційні методи є доволі пластичними, адже їх можна застосовувати для будь-яких статистик і будь-яких розподілів вихідних даних. Великим недоліком, втім, є те, що цей метод є комп’ютер-інтенсивним, і для великих наборів даних обчислення вимагатимуть чимало комп’ютерного часу (секунди, хвилини, іноді дні).</p>
 </div>
@@ -447,8 +448,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="footnotes">
 <hr />
 <ol start="31">
-<li id="fn31"><p>нульовий розподіл може бути згенеровано в межах параметричного тесту (наприклад, як t-розподіл в t-тесті Стьюдента) або пермутаційно.<a href="3.5-basic-hypotheses.html#fnref31" class="footnote-back">↩︎</a></p></li>
-<li id="fn32"><p>наприклад, для порівняння середніх двох вибірок хорошим вибором статистичного тесту є t-тест Стьюдента. Однак якщо ваші дані не розподілені нормально, вам можуть порадити тест Вілкоксона (Wilcoxon signed-rank test) або тест Манна-Вітні (Mann–Whitney U test). Мало хто знає, втім, що ці тести дуже чутливі до власних припущень: тест Вілкоксона працює лише для незалежних пар залежних (в межах пар) значень, а тест Манна-Вітні передбачає <em>ідентичні</em> розподіли між двома групами за нульової гіпотези.<a href="3.5-basic-hypotheses.html#fnref32" class="footnote-back">↩︎</a></p></li>
+<li id="fn31"><p>Нульовий розподіл може бути згенеровано в межах параметричного тесту (наприклад, як t-розподіл в t-тесті Стьюдента) або пермутаційно.<a href="3.5-basic-hypotheses.html#fnref31" class="footnote-back">↩︎</a></p></li>
+<li id="fn32"><p>Наприклад, для порівняння середніх двох вибірок хорошим вибором статистичного тесту є t-тест Стьюдента. Однак якщо ваші дані не розподілені нормально, вам можуть порадити тест Вілкоксона (Wilcoxon signed-rank test) або тест Манна-Вітні (Mann–Whitney U test). Мало хто знає, втім, що ці тести дуже чутливі до власних припущень: тест Вілкоксона працює лише для незалежних пар залежних (в межах пар) значень, а тест Манна-Вітні передбачає <em>ідентичні</em> розподіли між двома групами за нульової гіпотези.<a href="3.5-basic-hypotheses.html#fnref32" class="footnote-back">↩︎</a></p></li>
 <li id="fn33"><p>Евклідова дистанція не є найбільш поширеним показником подібності угруповань, але в цьому контексті є зручною для прикладу.<a href="3.5-basic-hypotheses.html#fnref33" class="footnote-back">↩︎</a></p></li>
 <li id="fn34"><p>Якщо із вибірки обрати певний елемент, після чого цей елемент не можна обрати ще раз, такий відбір називається відбором без заміщення (<em>sampling without replacement</em>). Наприклад, ви намагаєтесь оцінити розподіл кольорів в кошику із кольоровими кульками: у відборі без заміщення кожну кульку дістати можна тільки раз. На противагу, якщо ви дістаєте одну кульку, записуєте її колір, і кладете назад у кошик, це є прикладом відбору із заміщенням. Очевидно, розмір вибірки не може бути більшим за розмір вихідної вибірки за відбору без заміщення, однак може бути більшим за відбору із заміщенням.<a href="3.5-basic-hypotheses.html#fnref34" class="footnote-back">↩︎</a></p></li>
 </ol>
