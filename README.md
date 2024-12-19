@@ -4,11 +4,11 @@
 
 (English below)
 
-Перший підручник/посібник/називайте-як-завгодно з екології угруповань українською мовою доступний для перегляду за посиланням [https://oleksiidubovyk.github.io/ComEcolUa/](https://oleksiidubovyk.github.io/ComEcolUa/). Проміжні версії оновлюються час від часу, тому стабільної pdf-версії наразі немає. 
+Перший підручник/посібник/називайте-як-завгодно з екології угруповань українською мовою доступний для перегляду за посиланням [https://oleksiidubovyk.github.io/ComEcolUa/](https://oleksiidubovyk.github.io/com-ecol-ua/). Проміжні версії оновлюються час від часу, тому стабільної pdf-версії наразі немає. 
 
 # An Introduction to Community Ecology
 
-The first textbook/manual/call-it-whatever-you-want in Ukrainian language deployed for reading at [https://oleksiidubovyk.github.io/ComEcolUa/](https://oleksiidubovyk.github.io/ComEcolUa/). Intermediate versions will be published from time to time, so there is no stable pdf yet.
+The first textbook/manual/call-it-whatever-you-want in Ukrainian language deployed for reading at [https://oleksiidubovyk.github.io/ComEcolUa/](https://oleksiidubovyk.github.io/com-ecol-ua/). Intermediate versions will be published from time to time, so there is no stable pdf yet.
 
 # Історія оновлень | Update history
 
