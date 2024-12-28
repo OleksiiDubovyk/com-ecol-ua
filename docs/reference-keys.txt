@@ -13,6 +13,7 @@ fig:fig-3-12
 fig:fig-3-13
 fig:fig-3-14
 fig:fig-high-bias
+fig:fig-ebd-sar
 about-author
 whythiswork
 more-about-author
@@ -94,6 +95,8 @@ crossval
 bias-variance
 popeco
 species
+поняття-виду
+види-та-площа
 population
 metapopulation
 pop-factors

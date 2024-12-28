@@ -220,13 +220,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4" data-path="4-popeco.html"><a href="4-popeco.html"><i class="fa fa-check"></i><b>4</b> Початки популяційної екології</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="4.1-species.html"><a href="4.1-species.html"><i class="fa fa-check"></i><b>4.1</b> Вид</a></li>
+<li class="chapter" data-level="4.1" data-path="4.1-species.html"><a href="4.1-species.html"><i class="fa fa-check"></i><b>4.1</b> Вид</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="4.1-species.html"><a href="4.1-species.html#поняття-виду"><i class="fa fa-check"></i><b>4.1.1</b> Поняття виду</a></li>
+<li class="chapter" data-level="4.1.2" data-path="4.1-species.html"><a href="4.1-species.html#види-та-площа"><i class="fa fa-check"></i><b>4.1.2</b> Види та площа</a></li>
+</ul></li>
 <li class="chapter" data-level="4.2" data-path="4.2-population.html"><a href="4.2-population.html"><i class="fa fa-check"></i><b>4.2</b> Популяція</a></li>
 <li class="chapter" data-level="4.3" data-path="4.3-metapopulation.html"><a href="4.3-metapopulation.html"><i class="fa fa-check"></i><b>4.3</b> Метапопуляція</a></li>
 <li class="chapter" data-level="4.4" data-path="4.4-pop-factors.html"><a href="4.4-pop-factors.html"><i class="fa fa-check"></i><b>4.4</b> Чинники, що впливають на популяції</a></li>
 <li class="chapter" data-level="4.5" data-path="4.5-intraspecific.html"><a href="4.5-intraspecific.html"><i class="fa fa-check"></i><b>4.5</b> Внутрішньовидові взаємодії</a></li>
 <li class="chapter" data-level="4.6" data-path="4.6-pop-dynamics.html"><a href="4.6-pop-dynamics.html"><i class="fa fa-check"></i><b>4.6</b> Динаміка та стабільність</a></li>
-<li class="chapter" data-level="4.7" data-path="4.7-Leslie-matrix.html"><a href="4.7-Leslie-matrix.html"><i class="fa fa-check"></i><b>4.7</b> Матриці Леслі</a></li>
+<li class="chapter" data-level="4.7" data-path="4.7-Leslie-matrix.html"><a href="4.7-Leslie-matrix.html"><i class="fa fa-check"></i><b>4.7</b> Моделювання популяцій</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="5-foundations.html"><a href="5-foundations.html"><i class="fa fa-check"></i><b>5</b> Фундаментальні поняття екології</a>
 <ul>
@@ -329,9 +333,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Два значення <span class="math inline">\(\alpha\)</span> і <span class="math inline">\(\beta\)</span> є зворотньо пов’язаними (Рис. <a href="3.5-basic-hypotheses.html#fig:fig-3-12">3.12</a>): збільшення одного значення зменшить інше. Відтак, завдання відповідального статистичного аналізу – збалансувати <span class="math inline">\(\alpha\)</span> і <span class="math inline">\(\beta\)</span>, знайти якесь максимальне значення <span class="math inline">\(\alpha\)</span>, яке ми можемо толерувати. На практиці, за таке значення часто приймають <span class="math inline">\(\alpha = 0.05\)</span> (за незалежного повторення 20 експериментів, ми очікуємо принаймні одного хибно-позитивного результату). Втім, критичне значення <span class="math inline">\(\alpha\)</span> для будь-якого тесту повинне враховувати баланс між <span class="math inline">\(\alpha\)</span> і <span class="math inline">\(\beta\)</span>, тим, наскільки небажаними є помилки першого та другого роду. Отже, потрібно завжди пам’ятати що порогове значення <span class="math inline">\(\alpha = 0.05\)</span> є лише умовністю.</p>
 <p>Цікавою метрикою тесту, яку варто побічно згадати, є також <strong>потужність тесту</strong> (<em>power</em>) <span class="math inline">\((1 - \beta)\)</span>. Аналіз потужності (<em>power analysis</em>) є поширеним методом знаходження мінімального розміру вибірки для адекватної інтерпретації результатів статистичного тесту. Цей тип аналізу допоможе відповісти на питання “якщо я хочу провести [цей конкретний статистичний тест] із рівнем значущості [<span class="math inline">\(\alpha\)</span>], то який мінімальний розмір вибірки потрібно було би набрати на стадії збору даних?”.</p>
 <div class="figure"><span style="display:block;" id="fig:fig-3-12"></span>
-<img src="bookdown-demo_files/figure-html/fig-3-12-1.png" alt="*(a)* Уявімо, що можливо оцінити розподіл статистики тесту $z$ за нульової ($H_0$) та альтернативної ($H_A$) гіпотез. Тоді було би можливо оцінити пов'язані ймовірності припуститися помилки першого роду ($\alpha$, хибно-позитивне рішення) та помилки другого роду ($\beta$, хибно-негативне рішення) як площі під кривими розподілів статистик. За спостереження статистики тесту $z_{obs}$, $p$-значення відповідає ймовірності спостерігати таке ж або більш екстремальне значення статистику за нульової гіпотези." width="1152" />
+<img src="bookdown-demo_files/figure-html/fig-3-12-1.png" alt="***(a)*** Уявімо, що можливо оцінити розподіл статистики тесту $z$ за нульової ($H_0$) та альтернативної ($H_A$) гіпотез. Тоді було би можливо оцінити пов'язані ймовірності припуститися помилки першого роду ($\alpha$, хибно-позитивне рішення) та помилки другого роду ($\beta$, хибно-негативне рішення) як площі під кривими розподілів статистик. За спостереження статистики тесту $z_{obs}$ на рисунку ***(b)***, $p$-значення відповідає ймовірності спостерігати таке ж або більш екстремальне значення статистики за нульової гіпотези." width="1152" />
 <p class="caption">
-Рис. 3.12: <em>(a)</em> Уявімо, що можливо оцінити розподіл статистики тесту <span class="math inline">\(z\)</span> за нульової (<span class="math inline">\(H_0\)</span>) та альтернативної (<span class="math inline">\(H_A\)</span>) гіпотез. Тоді було би можливо оцінити пов’язані ймовірності припуститися помилки першого роду (<span class="math inline">\(\alpha\)</span>, хибно-позитивне рішення) та помилки другого роду (<span class="math inline">\(\beta\)</span>, хибно-негативне рішення) як площі під кривими розподілів статистик. За спостереження статистики тесту <span class="math inline">\(z_{obs}\)</span>, <span class="math inline">\(p\)</span>-значення відповідає ймовірності спостерігати таке ж або більш екстремальне значення статистику за нульової гіпотези.
+Рис. 3.12: <strong><em>(a)</em></strong> Уявімо, що можливо оцінити розподіл статистики тесту <span class="math inline">\(z\)</span> за нульової (<span class="math inline">\(H_0\)</span>) та альтернативної (<span class="math inline">\(H_A\)</span>) гіпотез. Тоді було би можливо оцінити пов’язані ймовірності припуститися помилки першого роду (<span class="math inline">\(\alpha\)</span>, хибно-позитивне рішення) та помилки другого роду (<span class="math inline">\(\beta\)</span>, хибно-негативне рішення) як площі під кривими розподілів статистик. За спостереження статистики тесту <span class="math inline">\(z_{obs}\)</span> на рисунку <strong><em>(b)</em></strong>, <span class="math inline">\(p\)</span>-значення відповідає ймовірності спостерігати таке ж або більш екстремальне значення статистики за нульової гіпотези.
 </p>
 </div>
 <p>Підхід <strong><span class="math inline">\(p\)</span>-значення</strong> (p-value) у статистичному тестуванні намагається оцінити ймовірність того, що <em>значення статистики тесту за істинності нульової гіпотези дорівнюватиме або буде ще більш екстремальним порівняно із спостереженим значенням</em>. Варто зазначити, що на практиці оперують лише точковим спостереженим значенням статистики тесту (наприклад, різницею середніх значень вибірок <span class="math inline">\((\bar{a} - \bar{b})\)</span>) та нульовим розподілом (як би були розподілені <span class="math inline">\((\bar{a} - \bar{b})\)</span> якщо <span class="math inline">\(H_0: \bar{a} = \bar{b}\)</span>?). Відтак, <span class="math inline">\(p\)</span>-значення каже наскільки можна очікувати отриманого результату тесту за нульової гіпотези. Якщо ця ймовірність дуже маленька (наприклад, менше за обране порогове значення <span class="math inline">\(\alpha\)</span>), тоді варто нульову гіпотезу відхилити й існують підстави вважати, що між двома вибірками є істотна різниця. Якщо ж ця ймовірність значна, тоді немає підстав вважати, що отримані результати є чимось більшим аніж статистичним шумом за нульової гіпотези.</p>
@@ -415,19 +419,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb29-8"><a href="3.5-basic-hypotheses.html#cb29-8" tabindex="-1"></a>}</span>
 <span id="cb29-9"><a href="3.5-basic-hypotheses.html#cb29-9" tabindex="-1"></a>new_coms <span class="ot">&lt;-</span> <span class="fu">mix_coms</span>(coms)</span>
 <span id="cb29-10"><a href="3.5-basic-hypotheses.html#cb29-10" tabindex="-1"></a>new_coms</span></code></pre></div>
-<pre><code>##    A  B
-## a  5  4
-## b 10 10
-## c  6  4
-## d  7  3
-## e  5  7
-## f  3  3
-## g  7  4
-## h  2  2
-## i  4  4
-## j  3  3</code></pre>
+<pre><code>##   A B
+## a 5 5
+## b 4 4
+## c 6 6
+## d 7 3
+## e 5 7
+## f 3 3
+## g 4 7
+## h 2 9
+## i 4 4
+## j 3 3</code></pre>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="3.5-basic-hypotheses.html#cb31-1" tabindex="-1"></a><span class="fu">eucl_dist</span>(new_coms<span class="sc">$</span>A, new_coms<span class="sc">$</span>B)</span></code></pre></div>
-<pre><code>## [1] 5.830952</code></pre>
+<pre><code>## [1] 8.831761</code></pre>
 <p>Тепер цю операцію можна повторити багато разів, скажімо, десять тисяч разів, аби згенерувати розподіл статистики.</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="3.5-basic-hypotheses.html#cb33-1" tabindex="-1"></a>d_null <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10000</span>)</span>
 <span id="cb33-2"><a href="3.5-basic-hypotheses.html#cb33-2" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>){</span>
@@ -440,7 +444,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>Оскільки за нульової гіпотези можна очікувати, що значення відстані наближатиметься до нуля (до того ж, дистанція не може бути негативною), екстремальні значення нульового розподілу відповідатимуть значним позитивним значенням. Ця логіка дозволяє оцінити псевдо-<span class="math inline">\(p\)</span>-значення як для одностороннього тесту:</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="3.5-basic-hypotheses.html#cb35-1" tabindex="-1"></a><span class="fu">length</span>(d_null[d_null <span class="sc">&gt;=</span> d_obs])<span class="sc">/</span><span class="fu">length</span>(d_null)</span></code></pre></div>
-<pre><code>## [1] 0.0077</code></pre>
+<pre><code>## [1] 0.0078</code></pre>
 <p>Отже, в генерованому розподілі нульової вибірки, ймовірність отримати спостережене або більше за спостережене значення статистики <span class="math inline">\(p \approx 0.01\)</span> (оскільки процес стохастичний, оцінка відрізнятиметься за кожного компілювання), що дозволяє відхилити нульову гіпотезу і стверджувати що два угруповання відрізняються між собою.</p>
 <p>Пермутаційні методи є доволі пластичними, адже їх можна застосовувати для будь-яких статистик і будь-яких розподілів вихідних даних. Великим недоліком, втім, є те, що цей метод є комп’ютер-інтенсивним, і для великих наборів даних обчислення вимагатимуть чимало комп’ютерного часу (секунди, хвилини, іноді дні).</p>
 </div>
