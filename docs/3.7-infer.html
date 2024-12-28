@@ -155,10 +155,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2" data-path="2-about-book.html"><a href="2-about-book.html"><i class="fa fa-check"></i><b>2</b> Про книгу</a>
 <ul>
 <li class="chapter" data-level="2.0.1" data-path="2-about-book.html"><a href="2-about-book.html#readme"><i class="fa fa-check"></i><b>2.0.1</b> Дисклеймер</a></li>
-<li class="chapter" data-level="2.1" data-path="2.1-how-built.html"><a href="2.1-how-built.html"><i class="fa fa-check"></i><b>2.1</b> Як побудована ця книга</a></li>
-<li class="chapter" data-level="2.2" data-path="2.2-expect.html"><a href="2.2-expect.html"><i class="fa fa-check"></i><b>2.2</b> Чого чекати від цієї книги</a></li>
-<li class="chapter" data-level="2.3" data-path="2.3-expected.html"><a href="2.3-expected.html"><i class="fa fa-check"></i><b>2.3</b> Чого ця книга чекає від читача</a></li>
-<li class="chapter" data-level="2.4" data-path="2.4-notexpect.html"><a href="2.4-notexpect.html"><i class="fa fa-check"></i><b>2.4</b> На що не варто розраховувати</a></li>
+<li class="chapter" data-level="2.0.2" data-path="2-about-book.html"><a href="2-about-book.html#how-built"><i class="fa fa-check"></i><b>2.0.2</b> Як побудована ця книга</a></li>
+<li class="chapter" data-level="2.0.3" data-path="2-about-book.html"><a href="2-about-book.html#expect"><i class="fa fa-check"></i><b>2.0.3</b> Чого чекати від цієї книги</a></li>
+<li class="chapter" data-level="2.0.4" data-path="2-about-book.html"><a href="2-about-book.html#expected"><i class="fa fa-check"></i><b>2.0.4</b> Чого ця книга чекає від читача</a></li>
+<li class="chapter" data-level="2.0.5" data-path="2-about-book.html"><a href="2-about-book.html#notexpect"><i class="fa fa-check"></i><b>2.0.5</b> На що не варто розраховувати</a></li>
+<li class="chapter" data-level="2.1" data-path="2.1-зміст.html"><a href="2.1-зміст.html"><i class="fa fa-check"></i><b>2.1</b> Зміст</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="3-numerical-ecology.html"><a href="3-numerical-ecology.html"><i class="fa fa-check"></i><b>3</b> Базові математичні підходи в екології</a>
 <ul>
@@ -287,7 +288,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>“Всі моделі є хибними.</p>
 <p>Але деякі з них ще й корисні.”</p>
-<p>— <a href="https://doi.org/10.1080%2F01621459.1976.10480949">Джордж Бокс</a></p>
+<p>— за <a href="https://doi.org/10.1080%2F01621459.1976.10480949">Джорджем Боксом</a></p>
 </blockquote>
 <p>Здавалось би, гаразд, якщо у дослідника є базове розуміння математичних тем, усвідомлення поняття ймовірності, достатньо ґрунтовні навички використання наукового методу для тестування гіпотез, яке-не-яке розуміння статистичного аналізу, то із цим усім можна проводити доволі непогані дослідження в екології. Загалом, мабуть, воно так і є, однак ще до початку проведення аналізу (а, як так, то і до проведення експерименту) необхідно розуміти кінцеву мету дослідження — чи ми очікуємо відповідь на конкретне фундаментальне питання, чи результати матимуть більше прикладну роль для подальших розробок. Хоча ці два звірі і є двома боками боками однієї монети, у них доволі специфічні й відмінні присмаки. Цей розділ буде завершальним у цій математичній секції, і являтиме собою настанову, фінальними міркуваннями, про котрі варто іноді задуматись в аналізі даних: (1) що саме ми хочемо досягнути цим аналізом, і (2) чи проведений аналіз є притомним.</p>
 <div id="inference" class="section level3 hasAnchor" number="3.7.1">
@@ -331,9 +332,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb57-8"><a href="3.7-infer.html#cb57-8" tabindex="-1"></a><span class="co"># ми очікуємо на 1 для інтерцепту, 1 для х1, та 1 для х2</span></span>
 <span id="cb57-9"><a href="3.7-infer.html#cb57-9" tabindex="-1"></a>fit <span class="sc">%&gt;%</span> <span class="fu">summary</span>() <span class="sc">%&gt;%</span> .<span class="sc">$</span>coefficients <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>##             Estimate Std. Error t value Pr(&gt;|t|)
-## (Intercept)    0.983      0.020  48.291    0.000
-## x1             0.838      0.142   5.888    0.000
-## x2             1.700      0.478   3.558    0.001</code></pre>
+## (Intercept)    1.005      0.027  37.873    0.000
+## x1             0.937      0.186   5.024    0.000
+## x2             1.348      0.628   2.149    0.034</code></pre>
 <div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="3.7-infer.html#cb59-1" tabindex="-1"></a><span class="co"># як бачимо, оцінка параметрів неадекватна, </span></span>
 <span id="cb59-2"><a href="3.7-infer.html#cb59-2" tabindex="-1"></a><span class="co"># цю модель не можна використовувати для умовиводу</span></span>
 <span id="cb59-3"><a href="3.7-infer.html#cb59-3" tabindex="-1"></a></span>

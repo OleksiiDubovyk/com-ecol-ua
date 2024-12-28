@@ -155,10 +155,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2" data-path="2-about-book.html"><a href="2-about-book.html"><i class="fa fa-check"></i><b>2</b> Про книгу</a>
 <ul>
 <li class="chapter" data-level="2.0.1" data-path="2-about-book.html"><a href="2-about-book.html#readme"><i class="fa fa-check"></i><b>2.0.1</b> Дисклеймер</a></li>
-<li class="chapter" data-level="2.1" data-path="2.1-how-built.html"><a href="2.1-how-built.html"><i class="fa fa-check"></i><b>2.1</b> Як побудована ця книга</a></li>
-<li class="chapter" data-level="2.2" data-path="2.2-expect.html"><a href="2.2-expect.html"><i class="fa fa-check"></i><b>2.2</b> Чого чекати від цієї книги</a></li>
-<li class="chapter" data-level="2.3" data-path="2.3-expected.html"><a href="2.3-expected.html"><i class="fa fa-check"></i><b>2.3</b> Чого ця книга чекає від читача</a></li>
-<li class="chapter" data-level="2.4" data-path="2.4-notexpect.html"><a href="2.4-notexpect.html"><i class="fa fa-check"></i><b>2.4</b> На що не варто розраховувати</a></li>
+<li class="chapter" data-level="2.0.2" data-path="2-about-book.html"><a href="2-about-book.html#how-built"><i class="fa fa-check"></i><b>2.0.2</b> Як побудована ця книга</a></li>
+<li class="chapter" data-level="2.0.3" data-path="2-about-book.html"><a href="2-about-book.html#expect"><i class="fa fa-check"></i><b>2.0.3</b> Чого чекати від цієї книги</a></li>
+<li class="chapter" data-level="2.0.4" data-path="2-about-book.html"><a href="2-about-book.html#expected"><i class="fa fa-check"></i><b>2.0.4</b> Чого ця книга чекає від читача</a></li>
+<li class="chapter" data-level="2.0.5" data-path="2-about-book.html"><a href="2-about-book.html#notexpect"><i class="fa fa-check"></i><b>2.0.5</b> На що не варто розраховувати</a></li>
+<li class="chapter" data-level="2.1" data-path="2.1-зміст.html"><a href="2.1-зміст.html"><i class="fa fa-check"></i><b>2.1</b> Зміст</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="3-numerical-ecology.html"><a href="3-numerical-ecology.html"><i class="fa fa-check"></i><b>3</b> Базові математичні підходи в екології</a>
 <ul>
@@ -419,19 +420,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb29-8"><a href="3.5-basic-hypotheses.html#cb29-8" tabindex="-1"></a>}</span>
 <span id="cb29-9"><a href="3.5-basic-hypotheses.html#cb29-9" tabindex="-1"></a>new_coms <span class="ot">&lt;-</span> <span class="fu">mix_coms</span>(coms)</span>
 <span id="cb29-10"><a href="3.5-basic-hypotheses.html#cb29-10" tabindex="-1"></a>new_coms</span></code></pre></div>
-<pre><code>##   A B
-## a 5 5
-## b 4 4
-## c 6 6
-## d 7 3
-## e 5 7
-## f 3 3
-## g 4 7
-## h 2 9
-## i 4 4
-## j 3 3</code></pre>
+<pre><code>##   A  B
+## a 4  4
+## b 4 10
+## c 4  4
+## d 7  3
+## e 5  5
+## f 3  3
+## g 7  4
+## h 2  9
+## i 4  4
+## j 3  3</code></pre>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="3.5-basic-hypotheses.html#cb31-1" tabindex="-1"></a><span class="fu">eucl_dist</span>(new_coms<span class="sc">$</span>A, new_coms<span class="sc">$</span>B)</span></code></pre></div>
-<pre><code>## [1] 8.831761</code></pre>
+<pre><code>## [1] 10.48809</code></pre>
 <p>Тепер цю операцію можна повторити багато разів, скажімо, десять тисяч разів, аби згенерувати розподіл статистики.</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="3.5-basic-hypotheses.html#cb33-1" tabindex="-1"></a>d_null <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10000</span>)</span>
 <span id="cb33-2"><a href="3.5-basic-hypotheses.html#cb33-2" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>){</span>
@@ -444,7 +445,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>Оскільки за нульової гіпотези можна очікувати, що значення відстані наближатиметься до нуля (до того ж, дистанція не може бути негативною), екстремальні значення нульового розподілу відповідатимуть значним позитивним значенням. Ця логіка дозволяє оцінити псевдо-<span class="math inline">\(p\)</span>-значення як для одностороннього тесту:</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="3.5-basic-hypotheses.html#cb35-1" tabindex="-1"></a><span class="fu">length</span>(d_null[d_null <span class="sc">&gt;=</span> d_obs])<span class="sc">/</span><span class="fu">length</span>(d_null)</span></code></pre></div>
-<pre><code>## [1] 0.0078</code></pre>
+<pre><code>## [1] 0.0089</code></pre>
 <p>Отже, в генерованому розподілі нульової вибірки, ймовірність отримати спостережене або більше за спостережене значення статистики <span class="math inline">\(p \approx 0.01\)</span> (оскільки процес стохастичний, оцінка відрізнятиметься за кожного компілювання), що дозволяє відхилити нульову гіпотезу і стверджувати що два угруповання відрізняються між собою.</p>
 <p>Пермутаційні методи є доволі пластичними, адже їх можна застосовувати для будь-яких статистик і будь-яких розподілів вихідних даних. Великим недоліком, втім, є те, що цей метод є комп’ютер-інтенсивним, і для великих наборів даних обчислення вимагатимуть чимало комп’ютерного часу (секунди, хвилини, іноді дні).</p>
 </div>
