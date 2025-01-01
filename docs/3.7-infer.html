@@ -332,9 +332,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb57-8"><a href="3.7-infer.html#cb57-8" tabindex="-1"></a><span class="co"># ми очікуємо на 1 для інтерцепту, 1 для х1, та 1 для х2</span></span>
 <span id="cb57-9"><a href="3.7-infer.html#cb57-9" tabindex="-1"></a>fit <span class="sc">%&gt;%</span> <span class="fu">summary</span>() <span class="sc">%&gt;%</span> .<span class="sc">$</span>coefficients <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>##             Estimate Std. Error t value Pr(&gt;|t|)
-## (Intercept)    1.005      0.027  37.873    0.000
-## x1             0.937      0.186   5.024    0.000
-## x2             1.348      0.628   2.149    0.034</code></pre>
+## (Intercept)    1.018      0.024  41.870    0.000
+## x1             1.007      0.158   6.383    0.000
+## x2             1.076      0.571   1.884    0.063</code></pre>
 <div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="3.7-infer.html#cb59-1" tabindex="-1"></a><span class="co"># як бачимо, оцінка параметрів неадекватна, </span></span>
 <span id="cb59-2"><a href="3.7-infer.html#cb59-2" tabindex="-1"></a><span class="co"># цю модель не можна використовувати для умовиводу</span></span>
 <span id="cb59-3"><a href="3.7-infer.html#cb59-3" tabindex="-1"></a></span>
