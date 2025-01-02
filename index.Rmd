@@ -35,7 +35,9 @@ library(scales)
 
 # Вітання{-}
 
-[![cover](images/cover1-light.png){width=300px}]{style="float:right"}
+<p style="float: right; width: 35%; margin: 0 0 10px 10px;">
+  <img src="images/cover1-light.png" alt="Cover" style="width: 100%;">
+</p>
 
 **<span style="color: red;">РОБОТА КИПИТЬ, ТЕКСТ НЕ ГОТОВИЙ ДО ЧИТАННЯ, ПРИХОДЬТЕ ПІЗНІШ</span>**
 
