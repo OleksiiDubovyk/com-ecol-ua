@@ -99,10 +99,11 @@ species
 поняття-виду
 види-та-площа
 population
-metapopulation
 pop-factors
+cmr
 intraspecific
 pop-dynamics
+metapopulation
 Leslie-matrix
 foundations
 niche

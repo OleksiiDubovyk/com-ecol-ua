@@ -227,11 +227,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1.2" data-path="4.1-species.html"><a href="4.1-species.html#види-та-площа"><i class="fa fa-check"></i><b>4.1.2</b> Види та площа</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="4.2-population.html"><a href="4.2-population.html"><i class="fa fa-check"></i><b>4.2</b> Популяція</a></li>
-<li class="chapter" data-level="4.3" data-path="4.3-metapopulation.html"><a href="4.3-metapopulation.html"><i class="fa fa-check"></i><b>4.3</b> Метапопуляція</a></li>
-<li class="chapter" data-level="4.4" data-path="4.4-pop-factors.html"><a href="4.4-pop-factors.html"><i class="fa fa-check"></i><b>4.4</b> Чинники, що впливають на популяції</a></li>
+<li class="chapter" data-level="4.3" data-path="4.3-pop-factors.html"><a href="4.3-pop-factors.html"><i class="fa fa-check"></i><b>4.3</b> Чинники, що впливають на популяції</a></li>
+<li class="chapter" data-level="4.4" data-path="4.4-cmr.html"><a href="4.4-cmr.html"><i class="fa fa-check"></i><b>4.4</b> Моделі мічення-відлову</a></li>
 <li class="chapter" data-level="4.5" data-path="4.5-intraspecific.html"><a href="4.5-intraspecific.html"><i class="fa fa-check"></i><b>4.5</b> Внутрішньовидові взаємодії</a></li>
 <li class="chapter" data-level="4.6" data-path="4.6-pop-dynamics.html"><a href="4.6-pop-dynamics.html"><i class="fa fa-check"></i><b>4.6</b> Динаміка та стабільність</a></li>
-<li class="chapter" data-level="4.7" data-path="4.7-Leslie-matrix.html"><a href="4.7-Leslie-matrix.html"><i class="fa fa-check"></i><b>4.7</b> Моделювання популяцій</a></li>
+<li class="chapter" data-level="4.7" data-path="4.7-metapopulation.html"><a href="4.7-metapopulation.html"><i class="fa fa-check"></i><b>4.7</b> Метапопуляція</a></li>
+<li class="chapter" data-level="4.8" data-path="4.8-Leslie-matrix.html"><a href="4.8-Leslie-matrix.html"><i class="fa fa-check"></i><b>4.8</b> Моделювання популяцій</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="5-foundations.html"><a href="5-foundations.html"><i class="fa fa-check"></i><b>5</b> Фундаментальні поняття екології</a>
 <ul>
@@ -332,9 +333,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb57-8"><a href="3.7-infer.html#cb57-8" tabindex="-1"></a><span class="co"># ми очікуємо на 1 для інтерцепту, 1 для х1, та 1 для х2</span></span>
 <span id="cb57-9"><a href="3.7-infer.html#cb57-9" tabindex="-1"></a>fit <span class="sc">%&gt;%</span> <span class="fu">summary</span>() <span class="sc">%&gt;%</span> .<span class="sc">$</span>coefficients <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>##             Estimate Std. Error t value Pr(&gt;|t|)
-## (Intercept)    1.028      0.022  45.874    0.000
-## x1             1.000      0.157   6.369    0.000
-## x2             0.938      0.524   1.790    0.077</code></pre>
+## (Intercept)    1.037      0.023  44.517    0.000
+## x1             0.971      0.160   6.065    0.000
+## x2             1.141      0.655   1.742    0.085</code></pre>
 <div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="3.7-infer.html#cb59-1" tabindex="-1"></a><span class="co"># як бачимо, оцінка параметрів неадекватна, </span></span>
 <span id="cb59-2"><a href="3.7-infer.html#cb59-2" tabindex="-1"></a><span class="co"># цю модель не можна використовувати для умовиводу</span></span>
 <span id="cb59-3"><a href="3.7-infer.html#cb59-3" tabindex="-1"></a></span>
