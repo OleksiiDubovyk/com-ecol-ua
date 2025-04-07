@@ -103,6 +103,11 @@ pop-factors
 cmr
 intraspecific
 pop-dynamics
+експоненційний-ріст
+логістичний-ріст
+залежність-від-щільності
+динаміка-чисельності
+стабільність-популяція
 metapopulation
 Leslie-matrix
 foundations
@@ -121,6 +126,7 @@ comecol
 sad
 sad-model
 diversity
+janzen
 similarity
 fd
 islands
