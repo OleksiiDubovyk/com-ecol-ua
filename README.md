@@ -12,7 +12,12 @@ The first textbook/manual/call-it-whatever-you-want in Ukrainian language deploy
 
 # Історія оновлень | Update history
 
-- Build v0.3.6.3. 2024-10-30
+- Build v0.3.6.3. 2024-10-30 -- PCA section completed
+- Build v0.3.7.3. 2024-12-18 -- Chapter 3 (Math) completed
+- Build v0.4.1. 2024-12-28 -- Chapter 4 (Basic Population Ecology) started, section on species and species-area relationship
+- Build v0.4.2. 2025-02-16 -- Section on population definitions
+- Build v0.4.4. 2025-04-01 -- Sections on factors affecting populations and capture-mark-recapture
+- Build v0.4.5. 2025-04-07 -- Section on intraspecific interactions
 
 ### Built in R using `bookdown`
 
