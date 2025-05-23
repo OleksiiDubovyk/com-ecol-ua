@@ -48,9 +48,11 @@
 
 
 
+<link href="libs/codefolding-lua-1.1/codefolding-lua.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<meta name="google-site-verification" content="PxaldxMtVeQNl4LkXGyu2G86qsNb6QD-uPRPRfOKCBM" />
 
 
 <style type="text/css">
@@ -543,44 +545,56 @@ P(X = x_i) = (1 - p) \frac{\lambda^{x_i} e^{-\lambda}}{x_i!} \text{ } \forall \t
 <div id="bars" class="section level3 hasAnchor" number="3.4.2">
 <h3><span class="header-section-number">3.4.2</span> Опис розподілу змінної (описова статистика)<a href="3.4-pdf-pmf.html#bars" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Уявімо вибірку змінної <span class="math inline">\(X \sim \mathcal{N}(\mu = 15, \sigma^2 = 9)\)</span> розміром <span class="math inline">\(n = 1000\)</span>:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="3.4-pdf-pmf.html#cb4-1" tabindex="-1"></a><span class="co"># визначимо рандомне зерно для повторюваності коду</span></span>
 <span id="cb4-2"><a href="3.4-pdf-pmf.html#cb4-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
 <span id="cb4-3"><a href="3.4-pdf-pmf.html#cb4-3" tabindex="-1"></a></span>
 <span id="cb4-4"><a href="3.4-pdf-pmf.html#cb4-4" tabindex="-1"></a><span class="co"># визначимо змінну як випадкову вибірку із нормального розподілу із визначеними параметрами</span></span>
 <span id="cb4-5"><a href="3.4-pdf-pmf.html#cb4-5" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">1000</span>, <span class="at">mean =</span> <span class="dv">15</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="dv">9</span>))</span></code></pre></div>
+</details>
 <p>Як описати тенденції цієї вибірки одним-двома параметрами? Мабуть, більшість автоматично скажуть “давайте порахуємо середнє”, хтось додасть “і варіацію у вигляді середньоквадратичного відхилення чи дисперсії”. Натомість, навіть на цьому етапі вирішення статистики для опису змінної варто задати собі питання: а що нам ці статистики дадуть? По-перше, як мінімум, ми хочемо отримати такі значимі і продумані статистики, із якими, якщо потрібно, можна спробувати відтворити вибірку. По-друге, як ми побачили в попередньому підрозділі, існує чимало розподілів ймовірності, і <em>найгірше, що можна зробити – це спробувати описати змінну із певним розподілом параметром не цього розподілу</em> (наприклад, намагатись оцінити параметри <span class="math inline">\(a\)</span> і <span class="math inline">\(b\)</span> бета-розподілу, коли вибірка відповідає Пуасонівському процесу). Дуже важливим неписаним правилом статистичного аналізу є те, що <strong>в більшості випадків оцінщик чи статистичний тест видасть якийсь результат для даних, які в нього введені, і, може, навіть видасть якесь значення <span class="math inline">\(p\)</span> (див. <a href="3.5-basic-hypotheses.html#pval">нижче</a>), але цей результат нічого не значить якщо обрано некоректну статистичну процедуру для певного набору даних</strong>. Крім того, завжди мати на увазі принцип <strong>“garbage in, garbage out”</strong> (“сміття на вході, сміття на виході”): навіть якщо логіка статистичного аналізу правильна і програма функціонує коректно, результати не можна вважати валідними якщо вхідні дані помилкові.</p>
 <p>Це дуже довгий спосіб сказати, що для вибору метрики центральної тенденції у вибірці варто враховувати розподіл цієї вибірки. Не можна розраховувати, скажімо, середнє арифметичне просто тому, що так зручно. Натомість, вибір статистики повинен бути виважений і відповідати передбаченому розподілу змінної<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a>. В нашому випадку, ми знаємо що <span class="math inline">\(X\)</span> згенеровано як нормальний процес, але давайте про всяк випадок перевіримо чи ця змінна дійсно розподілена нормально.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="3.4-pdf-pmf.html#cb5-1" tabindex="-1"></a><span class="fu">shapiro.test</span>(X)</span></code></pre></div>
+</details>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
 ## 
 ## data:  X
 ## W = 0.99737, p-value = 0.1053</code></pre>
 <p>Тест Шапіро-Вілка видає <span class="math inline">\(p = 0.105 &gt; 0.05\)</span>, що у випадку цього тесту дає підстави вважати, що змінна дійсно розподілена нормально. Відтак, центральну тенденцію можна описати середнім арифметичним, адже воно відповідає оцінщику очікування нормального розподілу.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="3.4-pdf-pmf.html#cb7-1" tabindex="-1"></a><span class="fu">mean</span>(X)</span></code></pre></div>
+</details>
 <pre><code>## [1] 14.92021</code></pre>
 <p>Які є альтернативи середньому арифметичному? Популярним вибором є <strong>медіана</strong>, особливо в якості <strong><em>непараметричної статистики</em></strong> – такої статистики, яка вимагає мінімальних передбачень щодо розподілу даних і може бути використана для змінних із будь-яким розподілом. В багатьох випадках змінні в даних матимуть дивний (асиметричний, бімодальний тощо) розподіл. В таких випадках можна спробувати провести тест Шапіро-Вілка, який скоріш за все не підтримає припущення про нормальний розподіл (<span class="math inline">\(p &lt; 0.05\)</span>). Якщо є припущення про якийсь інший розподіл, його можна перевірити із тестом <strong>Колмогорова-Смірнова</strong><a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>. Порівняймо нашу вибірку із нормальним розподілом (хоча ми й так вже знаємо із тесту Шапіро-Вілка відповідь).</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="3.4-pdf-pmf.html#cb9-1" tabindex="-1"></a><span class="co"># z-стандартизація вибірки потрібна, адже розподіл для порівняння є за замовчуванням стандартним нормальним розподілом</span></span>
 <span id="cb9-2"><a href="3.4-pdf-pmf.html#cb9-2" tabindex="-1"></a>Z <span class="ot">&lt;-</span> <span class="fu">scale</span>(X)</span>
 <span id="cb9-3"><a href="3.4-pdf-pmf.html#cb9-3" tabindex="-1"></a></span>
 <span id="cb9-4"><a href="3.4-pdf-pmf.html#cb9-4" tabindex="-1"></a><span class="co"># порівняймо із ідеальним випадком, для чого наведемо назву функції кумулятивного нормального розподілу</span></span>
 <span id="cb9-5"><a href="3.4-pdf-pmf.html#cb9-5" tabindex="-1"></a><span class="fu">ks.test</span>(<span class="at">x =</span> Z, <span class="at">y =</span> <span class="st">&quot;pnorm&quot;</span>)</span></code></pre></div>
+</details>
 <pre><code>## 
 ##  Asymptotic one-sample Kolmogorov-Smirnov test
 ## 
 ## data:  Z
 ## D = 0.021443, p-value = 0.7474
 ## alternative hypothesis: two-sided</code></pre>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="3.4-pdf-pmf.html#cb11-1" tabindex="-1"></a><span class="co"># альтернативно, можна для порівняння використати іншу випадкову вибірку із нормальним розподілом</span></span>
 <span id="cb11-2"><a href="3.4-pdf-pmf.html#cb11-2" tabindex="-1"></a><span class="fu">ks.test</span>(Z, <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="fu">length</span>(Z)))</span></code></pre></div>
+</details>
 <pre><code>## 
 ##  Asymptotic two-sample Kolmogorov-Smirnov test
 ## 
 ## data:  Z and rnorm(n = length(Z))
 ## D = 0.026, p-value = 0.8879
 ## alternative hypothesis: two-sided</code></pre>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="3.4-pdf-pmf.html#cb13-1" tabindex="-1"></a><span class="co"># або порівняти вихідну не-стандартизовану змінну із випадковою нормальною вибіркою із середнім та варіацією вихідної вибірки</span></span>
 <span id="cb13-2"><a href="3.4-pdf-pmf.html#cb13-2" tabindex="-1"></a><span class="fu">ks.test</span>(X, <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="fu">length</span>(X), <span class="at">mean =</span> <span class="fu">mean</span>(X), <span class="at">sd =</span> <span class="fu">sd</span>(X)))</span></code></pre></div>
+</details>
 <pre><code>## 
 ##  Asymptotic two-sample Kolmogorov-Smirnov test
 ## 
@@ -588,14 +602,22 @@ P(X = x_i) = (1 - p) \frac{\lambda^{x_i} e^{-\lambda}}{x_i!} \text{ } \forall \t
 ## D = 0.036, p-value = 0.5361
 ## alternative hypothesis: two-sided</code></pre>
 <p>Оскільки вибірка <span class="math inline">\(X \sim \mathcal{N}()\)</span>, можна перебачити що медіана приблизно дорівнюватиме середньому арифметичному, відтак, для нормальних вибірок немає змісту наводити інший параметр окрім середнього.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="3.4-pdf-pmf.html#cb15-1" tabindex="-1"></a><span class="fu">mean</span>(X)</span></code></pre></div>
+</details>
 <pre><code>## [1] 14.92021</code></pre>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="3.4-pdf-pmf.html#cb17-1" tabindex="-1"></a><span class="fu">median</span>(X)</span></code></pre></div>
+</details>
 <pre><code>## [1] 14.88062</code></pre>
 <p>Якби ми підходили до непараметричного аналізу вибірки із не-нормальним розподілом, варто було би використовувати лише медіану. Класичним прикладом є уявний експеримент із вибіркою з трьох людей: одним мільйонером (зарплатня <span class="math inline">\(\$1000000\)</span> на місяць) та двома бідняками (<span class="math inline">\(\$100\)</span> на місяць). Яка середня зарплатня і яка медіана в такій популяції?</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="3.4-pdf-pmf.html#cb19-1" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">c</span>(<span class="dv">1000000</span>, <span class="dv">100</span>, <span class="dv">100</span>))</span></code></pre></div>
+</details>
 <pre><code>## [1] 333400</code></pre>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="3.4-pdf-pmf.html#cb21-1" tabindex="-1"></a><span class="fu">median</span>(<span class="fu">c</span>(<span class="dv">1000000</span>, <span class="dv">100</span>, <span class="dv">100</span>))</span></code></pre></div>
+</details>
 <pre><code>## [1] 100</code></pre>
 <p>Очевидно, середнє значення <span class="math inline">\(\$330400\)</span> нічого не значить в цій значно асиметричній вибірці, адже біднякам така “середня температура по лікарні” аж ніяк не допомагає. Медіана ж є набагато більш репрезентативною статистикою.</p>
 <p>Скажімо, ми хочемо описати розподіл змінної, але не маємо змоги надати значення кожного значення в змінній (особливо якщо йдеться про значний розмір вибірки). Навіть у випадку нормально розподіленої змінної середнього значення недостатньо, адже воно не надає жодної ідеї про розмах кривої, тобто її варіацію. Як тоді читач може відтворити вашу змінну? Хорошою ідеєю є надати значення оцінщика варіації. Наприклад, сказати що <span class="math inline">\(X \sim \mathcal{N}(\mu = 15, \sigma^2 = 9), n = 1000\)</span> цілком достатньо аби відтворити змінну за допомогою комп’ютера, наприклад, в R як <code>rnorm(n = 1000, mean = 15, sd = sqrt(9))</code>.</p>
@@ -604,6 +626,7 @@ P(X = x_i) = (1 - p) \frac{\lambda^{x_i} e^{-\lambda}}{x_i!} \text{ } \forall \t
 <p>На жаль, мало хто приділяє увагу таким деталям і обмежується значеннями середнього і якогось оцінщика варіації на кшталт “<span class="math inline">\(\bar{x} = 14.920 \pm 2.992 SD\)</span>” чи “<span class="math inline">\(\bar{x} = 14.920 \pm 0.095 SE\)</span>”. В принципі, середнього і показника похибки достатньо для висновку щодо форми розподілу змінної (знову ж, якщо відомо що ця змінна розподілена нормально). Головним застереженням тут є те, що <strong>необхідно завжди зазначати використану статистику похибку</strong>. Крім стандартного відхилення (SD) та стандартної похибки (SE) таким можуть також слугувати <strong><em>довірчі інтервали</em></strong> (<em>confidence interval</em>). Довірчий інтервал статистики оцінює, в якому інтервалі лежатимуть значення статистики за багаторазового повтору експерименту із певним рівнем довіри <span class="math inline">\(\gamma\)</span> (зазвичай, <span class="math inline">\(\gamma = 0.95\)</span>, у випадку чого інтервал зветься “95% довірчим інтервалом”, “95% CI”). Цей інтервал не означає, що точність оцінки становить плюс-мінус якесь значення, особливо коли вибірка асиметрична (відтак, інтервал необхідно позначати власне як інтервал без використання знаку плюс-мінус). Натомість, ми можемо очікувати що за багаторазового незалежного повторення експерименту значення статистики лежатиме в межах довірчих інтервалів у <span class="math inline">\(100 \cdot \gamma \%\)</span> випадків.</p>
 <p>В переважній більшості випадків оцінка довірчих інтервалів є параметричною процедурою, унікальною для окремої статистики і окремого розподілу. Поширеною помилкою є, наприклад, оцінка довірчих інтервалів середнього арифметичного нормального розподілу для частки (якогось значення між <span class="math inline">\(0\)</span> і <span class="math inline">\(1\)</span>): така оцінка передбачатиме, наприклад, існування значень частки <span class="math inline">\(&lt;0\)</span> і <span class="math inline">\(&gt;1\)</span>, що є абсурдом. В разі, якщо не вдається знайти адекватний оцінщик статистики в певному розподілі, адекватним варіантом може бути <a href="3.5-basic-hypotheses.html#paradigms">пермутаційна</a> оцінка інтервалу як перцентилів (<span class="math inline">\(2.5\%, 97.5\%\)</span>) розподілу статистики згенерованої пермутаціями.</p>
 <p>Вибір оцінки похибки видається залежним від моди в певних сферах, і, насправді, кожен із них має право на існування допоки дослідник чітко позначає, яка саме похибка використана. Найчастіше про це забувають в графіках змінних, що є доволі трагічним: від вибору метрики “розмаху” залежить весь умовивід із графіку. Нижче (Рис. <a href="3.4-pdf-pmf.html#fig:fig-3-10">3.10</a>. – код також додано, раптом комусь знадобиться) наведено потенційні візуальні відображення розподілу в одній однієї й тієї ж вибірки <span class="math inline">\(X\)</span>.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="3.4-pdf-pmf.html#cb23-1" tabindex="-1"></a>Xdf <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">X =</span> X)</span>
 <span id="cb23-2"><a href="3.4-pdf-pmf.html#cb23-2" tabindex="-1"></a></span>
 <span id="cb23-3"><a href="3.4-pdf-pmf.html#cb23-3" tabindex="-1"></a>f_3_10_a <span class="ot">&lt;-</span> Xdf <span class="sc">%&gt;%</span> </span>
@@ -689,6 +712,7 @@ P(X = x_i) = (1 - p) \frac{\lambda^{x_i} e^{-\lambda}}{x_i!} \text{ } \forall \t
 <span id="cb23-83"><a href="3.4-pdf-pmf.html#cb23-83" tabindex="-1"></a><span class="fu">ggarrange</span>(<span class="at">plotlist =</span> <span class="fu">list</span>(</span>
 <span id="cb23-84"><a href="3.4-pdf-pmf.html#cb23-84" tabindex="-1"></a>  f_3_10_a, f_3_10_b, f_3_10_c, f_3_10_d, f_3_10_e, f_3_10_f, f_3_10_g, f_3_10_h, f_3_10_i</span>
 <span id="cb23-85"><a href="3.4-pdf-pmf.html#cb23-85" tabindex="-1"></a>), <span class="at">labels =</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>])</span></code></pre></div>
+</details>
 <div class="figure"><span style="display:block;" id="fig:fig-3-10"></span>
 <img src="bookdown-demo_files/figure-html/fig-3-10-1.png" alt="Різноманітні способи зобразити розподіл змінної: **(a)** хмара точок спостережень - найкращий спосіб зобразити сирі даних, якщо точок відносно небагато; **(b)** гістограма - колонки відповідають рівномірним діапазонам значень; **(c)** ядрова оцінка густини розподілу, своєрідна неперевна гістограма, що є кращою альтернативою гістограмі у випадку континуальних змінних; **(d)** 'скрипко-графік' (violin plot) є дзеркальним відображенням ядрової оцінки розподілу; **(e)** класичний 'коробко-графік' (boxplot) де жирна центральна лінія відповідає медіані, межі коробки - міжквартильному розмаху (між 25- та 75-тими перцентилями), межі вусів - розмаху даних без 'викидів', а окремі точки - власне викидам (спостереження, що потрапили за межі 1.5 міжквартильного розмаху від 25- чи 75-ого перцентилю); **(f)** відображення середнього арифметичного і відхилення у формі стандартного відхилення; **(g)** 2.5-, 25-, 50-, 75-, та 97.5-ті перцентилі, які можуть сприйматися як довірчі інтервали розподілу (але не його середнього); **(h)** відображення середнього арифметичного і відхилення у формі стандартної помилки - зверніть увагу на шкалу, розмах вусів набагато менший за інші за рахунок значного розміру вибірки; **(i)** відверто найгірший варіант - 'динаміто-графік' (dynamite plot), який малює колонку чогось (на відміну від гістограми, ця колонка рідко має будь-який зміст, наприклад, у вибірці нема значень нижче за 4, але зона від 0 до середнього все одно замальована) із 'вусами' стандартної помилки." width="960" />
 <p class="caption">

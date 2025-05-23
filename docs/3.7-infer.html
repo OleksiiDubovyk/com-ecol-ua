@@ -48,9 +48,11 @@
 
 
 
+<link href="libs/codefolding-lua-1.1/codefolding-lua.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<meta name="google-site-verification" content="PxaldxMtVeQNl4LkXGyu2G86qsNb6QD-uPRPRfOKCBM" />
 
 
 <style type="text/css">
@@ -316,6 +318,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4><span class="header-section-number">3.7.1.2</span> Умовивід<a href="3.7-infer.html#умовивід" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Як вже можна було здогадатись, якщо для моделі <span class="math inline">\(\hat{Y} = \hat{f}(X)\)</span> задача передбачення звертає найбільше уваги на результат моделі <span class="math inline">\(\hat{Y}\)</span>, то задача умовиводу більше дивиться на саму модель <span class="math inline">\(\hat{f}\)</span>. У фундаментальних дослідженнях дослідник часто питатиме щось на кшталт “а як впливає ця змінна на нашу систему?” або “чи ця змінна є важливою?” В таких ситуаціях до моделі не можна ставитись як до чорної скриньки, а навпаки, ми намагаємось розплутати взаємозв’язки в досліджуваній системі і з’ясувати що до чого шляхом тествання чітко сформульованих статистичних гіпотез. Очікувано, чим складніші математичні методи застосовуються в аналізі, тим складніше буває інтерпретація результатів. Відтак, для умовиводу краще застосовувати простіші методи (наприклад, лінійну регресію замість узагальнених додатніх моделей) – хоча всяку модель, яку можна використати для умовиводу, можна використати і для передбачення. Звісно, завжди варто мати на увазі що статистична значущість не тотожна біологічній значущості, отже, задача умовиводу в чистому вигляді не повинна всеціло покладатись на статистичний аналіз, а, радше, використовувати його для аргументації. Чистий умовивід тісно переплітається із філософією науки та базовими методами <a href="3.5-basic-hypotheses.html#pval">перевірки гіпотез</a>. На практиці ж, наукове дослідження балансуватиме між умовиводом та передбаченням, тож варто просто мати на увазі ці два кути погляду на статистичний аналіз.</p>
 <p>На завершення, різницю між передбаченням і умовиводом із лінійною регресією можна проілюструвати простим прикладом із генерованими даними.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="3.7-infer.html#cb55-1" tabindex="-1"></a><span class="co"># створимо випадкову змінну із нормальним розподілом та 100 елементами</span></span>
 <span id="cb55-2"><a href="3.7-infer.html#cb55-2" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
 <span id="cb55-3"><a href="3.7-infer.html#cb55-3" tabindex="-1"></a></span>
@@ -331,7 +334,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb55-13"><a href="3.7-infer.html#cb55-13" tabindex="-1"></a></span>
 <span id="cb55-14"><a href="3.7-infer.html#cb55-14" tabindex="-1"></a><span class="co"># перевіримо чи кореляція між х1 і х2 становить 0.99</span></span>
 <span id="cb55-15"><a href="3.7-infer.html#cb55-15" tabindex="-1"></a><span class="fu">cor</span>(x1, x2)</span></code></pre></div>
+</details>
 <pre><code>## [1] 0.99</code></pre>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="3.7-infer.html#cb57-1" tabindex="-1"></a><span class="co"># згенеруємо залежну змінну як функцію х1 та х2 із рандомною помилкою</span></span>
 <span id="cb57-2"><a href="3.7-infer.html#cb57-2" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span><span class="sc">*</span>x1 <span class="sc">+</span> <span class="dv">1</span><span class="sc">*</span>x2 <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="fu">length</span>(x1), <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="fl">0.25</span>)</span>
 <span id="cb57-3"><a href="3.7-infer.html#cb57-3" tabindex="-1"></a></span>
@@ -341,10 +346,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb57-7"><a href="3.7-infer.html#cb57-7" tabindex="-1"></a><span class="co"># погляньмо на коефіцієнти регресії</span></span>
 <span id="cb57-8"><a href="3.7-infer.html#cb57-8" tabindex="-1"></a><span class="co"># ми очікуємо на 1 для інтерцепту, 1 для х1, та 1 для х2</span></span>
 <span id="cb57-9"><a href="3.7-infer.html#cb57-9" tabindex="-1"></a>fit <span class="sc">%&gt;%</span> <span class="fu">summary</span>() <span class="sc">%&gt;%</span> .<span class="sc">$</span>coefficients <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
+</details>
 <pre><code>##             Estimate Std. Error t value Pr(&gt;|t|)
-## (Intercept)    0.977      0.025  38.728     0.00
-## x1             0.991      0.166   5.973     0.00
-## x2             0.962      0.544   1.768     0.08</code></pre>
+## (Intercept)    1.025      0.025  40.977    0.000
+## x1             1.138      0.181   6.270    0.000
+## x2             0.556      0.604   0.921    0.359</code></pre>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="3.7-infer.html#cb59-1" tabindex="-1"></a><span class="co"># як бачимо, оцінка параметрів неадекватна, </span></span>
 <span id="cb59-2"><a href="3.7-infer.html#cb59-2" tabindex="-1"></a><span class="co"># цю модель не можна використовувати для умовиводу</span></span>
 <span id="cb59-3"><a href="3.7-infer.html#cb59-3" tabindex="-1"></a></span>
@@ -355,8 +362,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb59-8"><a href="3.7-infer.html#cb59-8" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&#39;Згенеровані (&quot;реальні&quot;) значення Y&#39;</span>, <span class="at">ylab =</span> <span class="st">&quot;Передбачені значення Y&quot;</span>,</span>
 <span id="cb59-9"><a href="3.7-infer.html#cb59-9" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">16</span>)</span>
 <span id="cb59-10"><a href="3.7-infer.html#cb59-10" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">a =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">1</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
+</details>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="3.7-infer.html#cb60-1" tabindex="-1"></a><span class="co"># виглядає, що модель передбачає Y доволі точно</span></span></code></pre></div>
+</details>
 </div>
 </div>
 <div id="crossval" class="section level3 hasAnchor" number="3.7.2">
@@ -387,6 +397,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="bias-variance" class="section level3 hasAnchor" number="3.7.3">
 <h3><span class="header-section-number">3.7.3</span> Компроміс між упередженням та варіацією<a href="3.7-infer.html#bias-variance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>На завершення, із параметризацією моделей завжди варто бути обережними, бо із цим дуже легко перестаратись. Наприклад, із використанням поліномільної регресії буває нескладно побудувати таку криву, яка майже точно проходить через всі точки. Наприклад, згенеруймо хмару випадкових точок і побудуймо поліноміальні моделі різної складності:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="3.7-infer.html#cb61-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">11</span>)</span>
 <span id="cb61-2"><a href="3.7-infer.html#cb61-2" tabindex="-1"></a></span>
 <span id="cb61-3"><a href="3.7-infer.html#cb61-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">20</span>)</span>
@@ -406,17 +417,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb61-17"><a href="3.7-infer.html#cb61-17" tabindex="-1"></a>                     <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;p = 1&quot;</span> <span class="ot">=</span> <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;p = 2&quot;</span> <span class="ot">=</span> <span class="st">&quot;darkblue&quot;</span>, </span>
 <span id="cb61-18"><a href="3.7-infer.html#cb61-18" tabindex="-1"></a>                                <span class="st">&quot;p = 5&quot;</span> <span class="ot">=</span> <span class="st">&quot;red&quot;</span>, <span class="st">&quot;p = 9&quot;</span> <span class="ot">=</span> <span class="st">&quot;darkred&quot;</span>)) <span class="sc">+</span></span>
 <span id="cb61-19"><a href="3.7-infer.html#cb61-19" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y), <span class="at">size =</span> <span class="dv">2</span>)</span></code></pre></div>
+</details>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
 <p>Очевидно, що поліноміальна регресія 9-го порядку набагато краще описує дані, аніж першого. З іншого боку, модель всього лише описує позитивний зв’язок змінних <span class="math inline">\(x\)</span> та <span class="math inline">\(y\)</span>, і дані мали би описуватись як <span class="math inline">\(y = 1 + 1 x + \epsilon\)</span>, а не як cкладний поліном на кшталт</p>
 <p><span class="math display">\[y = -0.5 + 4x + 0.6x^2 - 0.6x^3 -0.2x^4 -0.1x^5 - 0.2x^6 - 0.1x^7 + 0.2x^8 + 0.8x^9 + \epsilon\]</span></p>
 <p>Ці коефіцієнти можна знайти у відповідній моделі:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="3.7-infer.html#cb62-1" tabindex="-1"></a>fit9 <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> <span class="fu">poly</span>(x, <span class="dv">9</span>))</span>
 <span id="cb62-2"><a href="3.7-infer.html#cb62-2" tabindex="-1"></a>fit9<span class="sc">$</span>coefficients <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">1</span>)</span></code></pre></div>
+</details>
 <pre><code>## (Intercept) poly(x, 9)1 poly(x, 9)2 poly(x, 9)3 poly(x, 9)4 poly(x, 9)5 
 ##        -0.5         4.0         0.6        -0.6        -0.2        -0.1 
 ## poly(x, 9)6 poly(x, 9)7 poly(x, 9)8 poly(x, 9)9 
 ##        -0.2        -0.1         0.2         0.8</code></pre>
 <p>Тож наскільки вдалою є складна поліноміальна модель для опису цих даних? Для власне <em>цього</em> набору даних – дуже вдалою, але проблема в тому, що складна модель підходить тільки для <em>цих</em> даних, і якщо ми згенеруємо інший випадковий набір даних, то попередня модель раптом стане дуже невдалою:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="3.7-infer.html#cb64-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12</span>)</span>
 <span id="cb64-2"><a href="3.7-infer.html#cb64-2" tabindex="-1"></a></span>
 <span id="cb64-3"><a href="3.7-infer.html#cb64-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">20</span>)</span>
@@ -431,6 +446,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb64-12"><a href="3.7-infer.html#cb64-12" tabindex="-1"></a>            <span class="at">data =</span> <span class="fu">tibble</span>(<span class="at">x =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">1.538</span>, <span class="fl">1.323</span>, <span class="fl">0.01</span>),</span>
 <span id="cb64-13"><a href="3.7-infer.html#cb64-13" tabindex="-1"></a>                          <span class="at">y =</span> y9),</span>
 <span id="cb64-14"><a href="3.7-infer.html#cb64-14" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>)</span></code></pre></div>
+</details>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
 <p>Конструювання моделі, що є занадто складною для вхідних даних і, відтак, майже ідеально підбудовується до неї, є практикою що часто називають <strong>пере-пристосуванням</strong>, або перенавчанням (<em>overfitting</em>). Пере-пристосовані моделі, завдяки своїй складності, разом із реальним взаємозв’язком між змінними описують випадковий шум (який є <a href="3.7-infer.html#inference">незменшуваною помилкою</a>), і відтак не можуть бути використані для адекватного умомиводу та передбачення.</p>
 <p>Отже, якщо взяти інший набір даних із тієї ж дослідної системи, то складна пере-пристосована модель, побудована на тих же даних, матиме зовсім інший вигляд (наприклад, коефіцієнти поліноміального рівняння значно зміняться). Властивість моделі змінюватися значною мірою залежно від даних, використаних для її побудування, називають <strong>варіацією</strong> (<em>variance</em>). Модель із високою варіацією буде значно змінюватись за незначних змін у вхідному наборі даних, і високопластичні методи (на кшталт тих же поліномальних моделей високого порядку) мають, зазвичай, високу варіацію. Ідеально, ми намагаємось зменшити варіацію методу, аби побудована модель не сильно залежала від випадкового шуму в даних і не була <a href="https://en.wikipedia.org/wiki/Idiosyncrasy">ідіосинкратичною</a> до конкретного використаного набору даних.</p>
