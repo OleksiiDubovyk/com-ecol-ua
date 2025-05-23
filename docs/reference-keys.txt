@@ -25,6 +25,7 @@ readme
 how-built
 expect
 expected
+resources
 notexpect
 зміст
 numerical-ecology
