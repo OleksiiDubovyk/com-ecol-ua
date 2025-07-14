@@ -14,6 +14,11 @@ fig:fig-3-13
 fig:fig-3-14
 fig:fig-high-bias
 fig:fig-ebd-sar
+fig:fig-exp-growth
+fig:fig-log-growth
+fig:fig-log-growth-rate
+fig:fig-allee
+fig:fig-equilibria
 about-author
 whythiswork
 more-about-author
@@ -106,9 +111,11 @@ intraspecific
 pop-dynamics
 експоненційний-ріст
 логістичний-ріст
-залежність-від-щільності
-динаміка-чисельності
-стабільність-популяція
+модифікації-логістичного-росту
+максимальний-сталий-врожай
+ефект-аллі
+тета-логістичний-ріст
+динаміка-та-стабільність-популяції
 metapopulation
 Leslie-matrix
 foundations
