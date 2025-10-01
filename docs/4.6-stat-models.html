@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4.6 Експеримент і модель | Вступ до Екології Угруповань</title>
+  <meta name="description" content="Непідручник" />
+  <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4.6 Експеримент і модель | Вступ до Екології Угруповань" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Непідручник" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4.6 Експеримент і модель | Вступ до Екології Угруповань" />
+  
+  <meta name="twitter:description" content="Непідручник" />
+  
+
+<meta name="author" content="Олексій Дубовик" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="4.5-basic-hypotheses.html"/>
+<link rel="next" href="4.7-infer.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/codefolding-lua-1.1/codefolding-lua.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<meta name="google-site-verification" content="PxaldxMtVeQNl4LkXGyu2G86qsNb6QD-uPRPRfOKCBM" />
+<link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+<link rel="manifest" href="images/favicon/manifest.json">
+<link rel="shortcut icon" href="images/favicon/favicon-32x32.pn" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Вступ до Екології Угруповань</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Вітання</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="#%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%BC%D0%BE%D0%B2%D0%B0-preface"><i class="fa fa-check"></i><b>1</b> Передмова{-preface}</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="1-передмова-preface.html"><a href="1-передмова-preface.html"><i class="fa fa-check"></i><b>1.0.1</b> Трішки про автора</a></li>
+<li class="chapter" data-level="1.0.2" data-path="1-передмова-preface.html"><a href="1-передмова-preface.html#whythiswork"><i class="fa fa-check"></i><b>1.0.2</b> Навіщо ця робота</a></li>
+<li class="chapter" data-level="1.0.3" data-path="1-передмова-preface.html"><a href="1-передмова-preface.html#more-about-author"><i class="fa fa-check"></i><b>1.0.3</b> Ще трішки про автора</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="acknowledge.html"><a href="acknowledge.html"><i class="fa fa-check"></i>Подяки</a></li>
+<li class="chapter" data-level="2" data-path="2-introduction.html"><a href="2-introduction.html"><i class="fa fa-check"></i><b>2</b> Вступ</a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="2-introduction.html"><a href="2-introduction.html#community-def"><i class="fa fa-check"></i><b>2.0.1</b> Екологічне угруповання</a></li>
+<li class="chapter" data-level="2.0.2" data-path="2-introduction.html"><a href="2-introduction.html#comm-ecol-today"><i class="fa fa-check"></i><b>2.0.2</b> Екологія угруповань сьогодні</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-about-book.html"><a href="3-about-book.html"><i class="fa fa-check"></i><b>3</b> Про книгу та Зміст</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="3-about-book.html"><a href="3-about-book.html#readme"><i class="fa fa-check"></i><b>3.0.1</b> Дисклеймер</a></li>
+<li class="chapter" data-level="3.0.2" data-path="3-about-book.html"><a href="3-about-book.html#how-built"><i class="fa fa-check"></i><b>3.0.2</b> Як побудована ця книга</a></li>
+<li class="chapter" data-level="3.0.3" data-path="3-about-book.html"><a href="3-about-book.html#expect"><i class="fa fa-check"></i><b>3.0.3</b> Чого чекати від цієї книги</a></li>
+<li class="chapter" data-level="3.0.4" data-path="3-about-book.html"><a href="3-about-book.html#expected"><i class="fa fa-check"></i><b>3.0.4</b> Чого ця книга чекає від читача</a></li>
+<li class="chapter" data-level="3.0.5" data-path="3-about-book.html"><a href="3-about-book.html#resources"><i class="fa fa-check"></i><b>3.0.5</b> Додаткові ресурси</a></li>
+<li class="chapter" data-level="3.0.6" data-path="3-about-book.html"><a href="3-about-book.html#notexpect"><i class="fa fa-check"></i><b>3.0.6</b> На що не варто розраховувати</a></li>
+<li class="chapter" data-level="3.1" data-path="index.html"><a href="#%D0%B7%D0%BC%D1%96%D1%81%D1%82"><i class="fa fa-check"></i><b>3.1</b> Зміст</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="4-numerical-ecology.html"><a href="4-numerical-ecology.html"><i class="fa fa-check"></i><b>4</b> Базові математичні підходи в екології</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="4.1-algebra.html"><a href="4.1-algebra.html"><i class="fa fa-check"></i><b>4.1</b> Математична пам’ятка</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="index.html"><a href="#%D0%B4%D1%80%D0%BE%D0%B1%D0%B8"><i class="fa fa-check"></i><b>4.1.1</b> Дроби</a></li>
+<li class="chapter" data-level="4.1.2" data-path="index.html"><a href="#%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D1%96-%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D0%B8"><i class="fa fa-check"></i><b>4.1.2</b> Математичні символи</a></li>
+<li class="chapter" data-level="4.1.3" data-path="index.html"><a href="#%D0%BD%D0%B5%D1%80%D1%96%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D1%96"><i class="fa fa-check"></i><b>4.1.3</b> Нерівності</a></li>
+<li class="chapter" data-level="4.1.4" data-path="index.html"><a href="#%D1%81%D1%82%D1%83%D0%BF%D0%B5%D0%BD%D1%96"><i class="fa fa-check"></i><b>4.1.4</b> Ступені</a></li>
+<li class="chapter" data-level="4.1.5" data-path="index.html"><a href="#%D1%80%D1%8F%D0%B4%D0%B8-%D1%87%D0%B8%D1%81%D0%B5%D0%BB"><i class="fa fa-check"></i><b>4.1.5</b> Ряди чисел</a></li>
+<li class="chapter" data-level="4.1.6" data-path="index.html"><a href="#%D1%81%D1%82%D1%83%D0%BF%D0%B5%D0%BD%D1%96-%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D1%87%D0%BD%D0%B8%D1%85-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D1%96%D0%B9"><i class="fa fa-check"></i><b>4.1.6</b> Ступені арифметичних операцій</a></li>
+<li class="chapter" data-level="4.1.7" data-path="index.html"><a href="#%D0%BB%D1%96%D0%BD%D1%96%D0%B9%D0%BD%D1%96-%D1%82%D0%B0-%D0%BF%D0%BE%D0%BB%D1%96%D0%BD%D0%BE%D0%BC%D1%96%D0%B0%D0%BB%D1%8C%D0%BD%D1%96-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D1%96%D1%97"><i class="fa fa-check"></i><b>4.1.7</b> Лінійні та поліноміальні функції</a></li>
+<li class="chapter" data-level="4.1.8" data-path="4.1-algebra.html"><a href="4.1-algebra.html#logs"><i class="fa fa-check"></i><b>4.1.8</b> Логарифми</a></li>
+<li class="chapter" data-level="4.1.9" data-path="index.html"><a href="#%D0%BF%D0%BE%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D1%96-%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D1%96-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D1%96%D1%97"><i class="fa fa-check"></i><b>4.1.9</b> Поширені математичні функції</a></li>
+<li class="chapter" data-level="4.1.10" data-path="index.html"><a href="#%D0%B2%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D0%B2%D0%BE%D1%81%D1%82%D1%96-%D1%81%D1%83%D0%BC"><i class="fa fa-check"></i><b>4.1.10</b> Властивості сум</a></li>
+<li class="chapter" data-level="4.1.11" data-path="index.html"><a href="#%D0%B2%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D0%B2%D0%BE%D1%81%D1%82%D1%96-%D0%B4%D0%BE%D0%B1%D1%83%D1%82%D0%BA%D1%96%D0%B2"><i class="fa fa-check"></i><b>4.1.11</b> Властивості добутків</a></li>
+<li class="chapter" data-level="4.1.12" data-path="index.html"><a href="#%D0%B4%D0%B8%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D1%96%D1%8E%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F"><i class="fa fa-check"></i><b>4.1.12</b> Диференціювання</a></li>
+<li class="chapter" data-level="4.1.13" data-path="index.html"><a href="#%D1%96%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F"><i class="fa fa-check"></i><b>4.1.13</b> Інтегрування</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="4.2-matrices.html"><a href="4.2-matrices.html"><i class="fa fa-check"></i><b>4.2</b> Лінійна алгебра</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="index.html"><a href="#%D0%B2%D0%B8%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%BD%D1%8F-%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%96"><i class="fa fa-check"></i><b>4.2.1</b> Визначення матриці</a></li>
+<li class="chapter" data-level="4.2.2" data-path="index.html"><a href="#%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D1%96%D1%97-%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8C"><i class="fa fa-check"></i><b>4.2.2</b> Трансформації матриць</a></li>
+<li class="chapter" data-level="4.2.3" data-path="index.html"><a href="#%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D1%96%D1%97-%D0%BD%D0%B0%D0%B4-%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8F%D0%BC%D0%B8"><i class="fa fa-check"></i><b>4.2.3</b> Операції над матрицями</a></li>
+<li class="chapter" data-level="4.2.4" data-path="index.html"><a href="#%D0%B4%D0%B5%D1%82%D0%B5%D1%80%D0%BC%D1%96%D0%BD%D0%B0%D0%BD%D1%82-%D0%B2%D0%BB%D0%B0%D1%81%D0%BD%D1%96-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B8-%D1%82%D0%B0-%D0%B2%D0%BB%D0%B0%D1%81%D0%BD%D0%B5-%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%BD%D1%8F"><i class="fa fa-check"></i><b>4.2.4</b> Детермінант, власні вектори, та власне значення</a></li>
+<li class="chapter" data-level="4.2.5" data-path="4.2-matrices.html"><a href="4.2-matrices.html#matrices_art"><i class="fa fa-check"></i><b>4.2.5</b> Геометричний зміст матриць</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="4.3-stats.html"><a href="4.3-stats.html"><i class="fa fa-check"></i><b>4.3</b> Ймовірність у статистиці</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="4.3-stats.html"><a href="4.3-stats.html#prob"><i class="fa fa-check"></i><b>4.3.1</b> Ймовірність</a></li>
+<li class="chapter" data-level="4.3.2" data-path="4.3-stats.html"><a href="4.3-stats.html#bayes"><i class="fa fa-check"></i><b>4.3.2</b> Теорема Баєса</a></li>
+<li class="chapter" data-level="4.3.3" data-path="4.3-stats.html"><a href="4.3-stats.html#mle"><i class="fa fa-check"></i><b>4.3.3</b> Правдоподібність</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="4.4-pdf-pmf.html"><a href="4.4-pdf-pmf.html"><i class="fa fa-check"></i><b>4.4</b> Розподіли ймовірності</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="4.4-pdf-pmf.html"><a href="4.4-pdf-pmf.html#pdfs"><i class="fa fa-check"></i><b>4.4.1</b> Функції розподілу ймовірності</a></li>
+<li class="chapter" data-level="4.4.2" data-path="4.4-pdf-pmf.html"><a href="4.4-pdf-pmf.html#bars"><i class="fa fa-check"></i><b>4.4.2</b> Опис розподілу змінної (описова статистика)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="4.5-basic-hypotheses.html"><a href="4.5-basic-hypotheses.html"><i class="fa fa-check"></i><b>4.5</b> Тестування гіпотез</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="4.5-basic-hypotheses.html"><a href="4.5-basic-hypotheses.html#hypothesis"><i class="fa fa-check"></i><b>4.5.1</b> Статистична гіпотеза</a></li>
+<li class="chapter" data-level="4.5.2" data-path="4.5-basic-hypotheses.html"><a href="4.5-basic-hypotheses.html#nulldistr"><i class="fa fa-check"></i><b>4.5.2</b> Нульовий розподіл</a></li>
+<li class="chapter" data-level="4.5.3" data-path="4.5-basic-hypotheses.html"><a href="4.5-basic-hypotheses.html#pval"><i class="fa fa-check"></i><b>4.5.3</b> Тестування гіпотез</a></li>
+<li class="chapter" data-level="4.5.4" data-path="4.5-basic-hypotheses.html"><a href="4.5-basic-hypotheses.html#paradigms"><i class="fa fa-check"></i><b>4.5.4</b> Парадигми статистичного аналізу</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="4.6-stat-models.html"><a href="4.6-stat-models.html"><i class="fa fa-check"></i><b>4.6</b> Експеримент і модель</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="4.6-stat-models.html"><a href="4.6-stat-models.html#pseudoreplication"><i class="fa fa-check"></i><b>4.6.1</b> Експериментальний дизайн та псевдореплікація</a></li>
+<li class="chapter" data-level="4.6.2" data-path="4.6-stat-models.html"><a href="4.6-stat-models.html#regression"><i class="fa fa-check"></i><b>4.6.2</b> Дані та проблема моделювання</a></li>
+<li class="chapter" data-level="4.6.3" data-path="4.6-stat-models.html"><a href="4.6-stat-models.html#aic"><i class="fa fa-check"></i><b>4.6.3</b> Парсимонійна модель та вибір моделі</a></li>
+<li class="chapter" data-level="4.6.4" data-path="4.6-stat-models.html"><a href="4.6-stat-models.html#prcomp"><i class="fa fa-check"></i><b>4.6.4</b> Багатовимірна статистика</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="4.7-infer.html"><a href="4.7-infer.html"><i class="fa fa-check"></i><b>4.7</b> Передбачення, умовивід, та валідація</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="4.7-infer.html"><a href="4.7-infer.html#inference"><i class="fa fa-check"></i><b>4.7.1</b> Статистичний умовивід і обґрунтоване передбачення</a></li>
+<li class="chapter" data-level="4.7.2" data-path="4.7-infer.html"><a href="4.7-infer.html#crossval"><i class="fa fa-check"></i><b>4.7.2</b> Крос-валідація</a></li>
+<li class="chapter" data-level="4.7.3" data-path="4.7-infer.html"><a href="4.7-infer.html#bias-variance"><i class="fa fa-check"></i><b>4.7.3</b> Компроміс між упередженням та варіацією</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-popeco.html"><a href="5-popeco.html"><i class="fa fa-check"></i><b>5</b> Початки популяційної екології</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="5.1-species.html"><a href="5.1-species.html"><i class="fa fa-check"></i><b>5.1</b> Вид</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="index.html"><a href="#%D0%BF%D0%BE%D0%BD%D1%8F%D1%82%D1%82%D1%8F-%D0%B2%D0%B8%D0%B4%D1%83"><i class="fa fa-check"></i><b>5.1.1</b> Поняття виду</a></li>
+<li class="chapter" data-level="5.1.2" data-path="index.html"><a href="#%D0%B2%D0%B8%D0%B4%D0%B8-%D1%82%D0%B0-%D0%BF%D0%BB%D0%BE%D1%89%D0%B0"><i class="fa fa-check"></i><b>5.1.2</b> Види та площа</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="5.2-population.html"><a href="5.2-population.html"><i class="fa fa-check"></i><b>5.2</b> Популяція</a></li>
+<li class="chapter" data-level="5.3" data-path="5.3-pop-factors.html"><a href="5.3-pop-factors.html"><i class="fa fa-check"></i><b>5.3</b> Чинники, що впливають на популяції</a></li>
+<li class="chapter" data-level="5.4" data-path="5.4-cmr.html"><a href="5.4-cmr.html"><i class="fa fa-check"></i><b>5.4</b> Моделі мічення-відлову</a></li>
+<li class="chapter" data-level="5.5" data-path="5.5-intraspecific.html"><a href="5.5-intraspecific.html"><i class="fa fa-check"></i><b>5.5</b> Внутрішньовидові взаємодії</a></li>
+<li class="chapter" data-level="5.6" data-path="5.6-pop-dynamics.html"><a href="5.6-pop-dynamics.html"><i class="fa fa-check"></i><b>5.6</b> Динаміка та стабільність</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="index.html"><a href="#%D0%B5%D0%BA%D1%81%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%86%D1%96%D0%B9%D0%BD%D0%B8%D0%B9-%D1%80%D1%96%D1%81%D1%82"><i class="fa fa-check"></i><b>5.6.1</b> Експоненційний ріст</a></li>
+<li class="chapter" data-level="5.6.2" data-path="index.html"><a href="#%D0%BB%D0%BE%D0%B3%D1%96%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%B8%D0%B9-%D1%80%D1%96%D1%81%D1%82"><i class="fa fa-check"></i><b>5.6.2</b> Логістичний ріст</a></li>
+<li class="chapter" data-level="5.6.3" data-path="index.html"><a href="#%D0%BC%D0%BE%D0%B4%D0%B8%D1%84%D1%96%D0%BA%D0%B0%D1%86%D1%96%D1%97-%D0%BB%D0%BE%D0%B3%D1%96%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%BE%D0%B3%D0%BE-%D1%80%D0%BE%D1%81%D1%82%D1%83"><i class="fa fa-check"></i><b>5.6.3</b> Модифікації логістичного росту</a></li>
+<li class="chapter" data-level="5.6.4" data-path="index.html"><a href="#%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D1%96%D0%BA%D0%B0-%D1%82%D0%B0-%D1%81%D1%82%D0%B0%D0%B1%D1%96%D0%BB%D1%8C%D0%BD%D1%96%D1%81%D1%82%D1%8C-%D0%BF%D0%BE%D0%BF%D1%83%D0%BB%D1%8F%D1%86%D1%96%D1%97"><i class="fa fa-check"></i><b>5.6.4</b> Динаміка та стабільність популяції</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="5.7-metapopulation.html"><a href="5.7-metapopulation.html"><i class="fa fa-check"></i><b>5.7</b> Метапопуляція</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="index.html"><a href="#%D0%B7%D0%B0%D0%B3%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BC%D0%B5%D1%82%D0%B0%D0%BF%D0%BE%D0%BF%D1%83%D0%BB%D1%8F%D1%86%D1%96%D1%97"><i class="fa fa-check"></i><b>5.7.1</b> Загальна модель метапопуляції</a></li>
+<li class="chapter" data-level="5.7.2" data-path="index.html"><a href="#%D1%81%D1%82%D0%BE%D1%85%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D1%96%D1%81%D1%82%D1%8C-%D1%96-%D0%B4%D0%B5%D1%82%D0%B5%D1%80%D0%BC%D1%96%D0%BD%D1%96%D0%B7%D0%BC-%D0%B2-%D0%BC%D0%B5%D1%82%D0%B0%D0%BF%D0%BE%D0%BF%D1%83%D0%BB%D1%8F%D1%86%D1%96%D1%8F%D1%85"><i class="fa fa-check"></i><b>5.7.2</b> Стохастичність і детермінізм в метапопуляціях</a></li>
+<li class="chapter" data-level="5.7.3" data-path="index.html"><a href="#%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D1%96%D0%BA%D0%B0-%D0%B4%D0%B6%D0%B5%D1%80%D0%B5%D0%BB%D0%B0%D0%B4%D1%96%D1%80%D0%BA%D0%B8-%D1%82%D0%B0-%D1%85%D0%BE%D0%B4%D1%8F%D1%87%D1%96-%D0%BC%D0%B5%D1%80%D1%86%D1%96"><i class="fa fa-check"></i><b>5.7.3</b> Динаміка джерела–дірки та ходячі мерці</a></li>
+<li class="chapter" data-level="5.7.4" data-path="index.html"><a href="#%D0%BF%D1%81%D0%B5%D0%B2%D0%B4%D0%BE%D0%B4%D1%96%D1%80%D0%BA%D0%B8-%D0%B9-%D0%B5%D0%BA%D0%BE%D0%BB%D0%BE%D0%B3%D1%96%D1%87%D0%BD%D1%96-%D0%BF%D0%B0%D1%81%D1%82%D0%BA%D0%B8"><i class="fa fa-check"></i><b>5.7.4</b> Псевдодірки й екологічні пастки</a></li>
+<li class="chapter" data-level="5.7.5" data-path="index.html"><a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D1%96%D1%97-%D1%82%D1%80%D0%B0%D0%BF%D0%BB%D1%8F%D0%BD%D0%BD%D1%8F"><i class="fa fa-check"></i><b>5.7.5</b> Функції трапляння</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="5.8-Leslie-matrix.html"><a href="5.8-Leslie-matrix.html"><i class="fa fa-check"></i><b>5.8</b> Моделювання популяцій</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="index.html"><a href="#%D0%B4%D0%B8%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D1%96%D0%B9%D0%BD%D1%96-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%96"><i class="fa fa-check"></i><b>5.8.1</b> Диференційні моделі</a></li>
+<li class="chapter" data-level="5.8.2" data-path="index.html"><a href="#%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%87%D0%BD%D1%96-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%96"><i class="fa fa-check"></i><b>5.8.2</b> Матричні моделі</a></li>
+<li class="chapter" data-level="5.8.3" data-path="index.html"><a href="#%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BD%D1%96-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%96"><i class="fa fa-check"></i><b>5.8.3</b> Агентні моделі</a></li>
+<li class="chapter" data-level="5.8.4" data-path="index.html"><a href="#%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%96-%D0%BF%D0%BE%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8F-%D0%B2%D0%B8%D0%B4%D1%96%D0%B2"><i class="fa fa-check"></i><b>5.8.4</b> Моделі поширення видів</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="6-foundations.html"><a href="6-foundations.html"><i class="fa fa-check"></i><b>6</b> Фундаментальні поняття екології</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="6.1-niche.html"><a href="6.1-niche.html"><i class="fa fa-check"></i><b>6.1</b> Екологічна ніша</a></li>
+<li class="chapter" data-level="6.2" data-path="6.2-food-chain.html"><a href="6.2-food-chain.html"><i class="fa fa-check"></i><b>6.2</b> Трофічні ланцюги</a></li>
+<li class="chapter" data-level="6.3" data-path="6.3-food-webs.html"><a href="6.3-food-webs.html"><i class="fa fa-check"></i><b>6.3</b> Трофічні мережі</a></li>
+<li class="chapter" data-level="6.4" data-path="6.4-keystones.html"><a href="6.4-keystones.html"><i class="fa fa-check"></i><b>6.4</b> Ключові види</a></li>
+<li class="chapter" data-level="6.5" data-path="6.5-succession.html"><a href="6.5-succession.html"><i class="fa fa-check"></i><b>6.5</b> Сукцесія та клімакс</a></li>
+<li class="chapter" data-level="6.6" data-path="6.6-life-history.html"><a href="6.6-life-history.html"><i class="fa fa-check"></i><b>6.6</b> Історія життя</a></li>
+<li class="chapter" data-level="6.7" data-path="6.7-detectability.html"><a href="6.7-detectability.html"><i class="fa fa-check"></i><b>6.7</b> Ймовірність детекції</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="7-interspecific.html"><a href="7-interspecific.html"><i class="fa fa-check"></i><b>7</b> Міжвидові взаємодії</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="7.1-relationships.html"><a href="7.1-relationships.html"><i class="fa fa-check"></i><b>7.1</b> Типи міжвидових зв’язків</a></li>
+<li class="chapter" data-level="7.2" data-path="7.2-rstar.html"><a href="7.2-rstar.html"><i class="fa fa-check"></i><b>7.2</b> Теорія поділу ресурсів</a></li>
+<li class="chapter" data-level="7.3" data-path="7.3-cascade.html"><a href="7.3-cascade.html"><i class="fa fa-check"></i><b>7.3</b> Трофічні каскади</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="8-comecol.html"><a href="8-comecol.html"><i class="fa fa-check"></i><b>8</b> Екологічні угруповання</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="8.1-sad.html"><a href="8.1-sad.html"><i class="fa fa-check"></i><b>8.1</b> Структура угруповання</a></li>
+<li class="chapter" data-level="8.2" data-path="8.2-sad-model.html"><a href="8.2-sad-model.html"><i class="fa fa-check"></i><b>8.2</b> Моделі розподілів чисельності</a></li>
+<li class="chapter" data-level="8.3" data-path="8.3-diversity.html"><a href="8.3-diversity.html"><i class="fa fa-check"></i><b>8.3</b> Різноманіття</a></li>
+<li class="chapter" data-level="8.4" data-path="8.4-janzen.html"><a href="8.4-janzen.html"><i class="fa fa-check"></i><b>8.4</b> Гіпотеза Джензена–Конела</a></li>
+<li class="chapter" data-level="8.5" data-path="8.5-similarity.html"><a href="8.5-similarity.html"><i class="fa fa-check"></i><b>8.5</b> Подібність угруповань</a></li>
+<li class="chapter" data-level="8.6" data-path="8.6-fd.html"><a href="8.6-fd.html"><i class="fa fa-check"></i><b>8.6</b> Функціональне й філогенетичне різноманіття</a></li>
+<li class="chapter" data-level="8.7" data-path="8.7-islands.html"><a href="8.7-islands.html"><i class="fa fa-check"></i><b>8.7</b> Острівна біогеографія</a></li>
+<li class="chapter" data-level="8.8" data-path="8.8-env-filter.html"><a href="8.8-env-filter.html"><i class="fa fa-check"></i><b>8.8</b> Середовищне фільтрування</a></li>
+<li class="chapter" data-level="8.9" data-path="8.9-untb.html"><a href="8.9-untb.html"><i class="fa fa-check"></i><b>8.9</b> Нейтральна теорія біорізноманіття</a></li>
+<li class="chapter" data-level="8.10" data-path="8.10-rarefaction.html"><a href="8.10-rarefaction.html"><i class="fa fa-check"></i><b>8.10</b> Рарефакція та екстраполяція</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="goodbye.html"><a href="goodbye.html"><i class="fa fa-check"></i>Післяслово</a></li>
+<li class="chapter" data-level="" data-path="contact.html"><a href="contact.html"><i class="fa fa-check"></i>Контакти автора</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Вступ до Екології Угруповань</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="stat-models" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Експеримент і модель<a href="4.6-stat-models.html#stat-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>За визначенням, модель є спрощеним, узагальненим, концептуальним уявленням про явище реального світу. Моделі ніколи не відображають реальність всеохоплююче, адже природні процеси часто є занадто складними системами аби їх вичерпно описати. Моделі часто також мають певні межі, поза якими адекватне узагальнення не є адекватним. Втім, так чи інакше, моделювання є доволі потужним інструментом тестування гіпотез, без якого екологія не може існувати. Навіть якщо на систему впливають сотні різних чинників, комбінований вплив яких є дуже складним і неочікуваним, моделі із лише декількома змінними часто є достатніми для бодай якого та й висновку.</p>
+<p>Для побудування моделі необхідні вхідні емпіричні дані, які в ідеальних умовах мають походити із експерименту – контрольоване маніпулювання окремого чинника із супутнім спостереженням за поведінкою системи. В екології угруповань та екосистем проведення контрольованого експерименту не завжди є можливими, адже досліджувані системи є дуже великими, однак це не означає що неможливо зібрати дані. Спостереження також може генерувати корисні дані для моделювання. Процедуру збору даних для побудування моделі називають експериментальним дизайном. Адекватний статистичний аналіз неможливий без адекватного експериментального дизайну, якими би потужними чи модними не були статистичні методи.</p>
+<p>Уявіть гіпотезу, що частота співання серед самців зяблика залежить від інтенсивності освітлення навколишнього середовища. Для перевірки цієї гіпотези можна розробити дизайн експерименту. Наприклад, в декількох точках розвісити автоматичні звукові рекордери і датчики освітлення. Яких помилок можна припуститись в цьому дизайні? Можна розвісити датчики настільки близько один до одного, що декілька датчиків будуть одночасно записувати одних і тих же особин: в такому випадку спостереження не будуть незалежними, що суперечитиме припущенням більшості статистичних тестів. Можна розвісити датчики освітлення занадто далеко від рекордерів: тоді спостереження не будуть між собою пов’язані, і всякі результати не матимуть жодного сенсу. Можна повісити датчики в екотопі чи континенті, де зяблики не трапляються… Гаразд, скажімо, експериментальний дизайн адекватний, дані зібрано, і знайдено взаємозв’язок між інтенсивністю освітлення й частотою співання. Знайдений зв’язок являє собою модель. Які її межі? Наприклад, така модель може передбачити, що в умовах нульового освітлення (в печері) варто очікувати негативної частоти співання, а за дуже інтенсивного освітлення, як-то прямо під прожектором, самець буде співати і не затикатись. Обидва передбаченнями є неадекватними. Крім того, чи експеримент врахував всі можливі фактори? Адже поведінка птахів може бути пов’язаною не тільки із освітленням, а й з температурою, наявністю корму, гніздових територій, інших самців, самок тощо, і навіть коли всі ці фактори враховано, то у одного конкретного зяблика може просто не бути настрою співати. Відтак, наша модель не є вичерпною, і питання лише в тому, чи є статистично значуща роль <em>тільки</em> інтенсивності освітлення – а багатьма іншими факторами іноді варто просто знехтувати.</p>
+<div id="pseudoreplication" class="section level3 hasAnchor" number="4.6.1">
+<h3><span class="header-section-number">4.6.1</span> Експериментальний дизайн та псевдореплікація<a href="4.6-stat-models.html#pseudoreplication" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Уявіть, що ви намагаєтесь дослідити вплив якоїсь хімічної сполуки в ґрунті на процеси росту рослин. Ви відбираєте сотню особин рослин однакового віку та фізіологічного стану із однієї генетичної лінії, висаджуєте кожну рослину в окремий вазон, і виставляєте їх в дві теплиці по п’ятдесят вазонів на теплицю. В одній теплиці ви додаєте однакову кількість хімічної сполуки до кожного вазону, в іншому – ні. За декілька тижнів настає час зібрати результати, і ви обережно вимірюєте морфологічні параметри кожної рослини: ріст, кількість листків, сумарну площу листків, концентрацію хлорофілу, суху біомасу. Прийшов час проводити статистичну обробку даних, ви дбайливо перевірили розподіли кожної змінної, і еврика! Тест Стьюдента показує значущу відмінність між двома групами за всіма параметрами. Виявляється, додавання цієї хімічної сполуки пов’язане із активнішим ростом рослин. Час подавати заявку на патент?</p>
+<p>Не так швидко. Який був розмір вашої вибірки? Сотня особин, тож <span class="math inline">\(n = 100\)</span>? Чи, оскільки і кожній групі було по п’ятдесят особин, то <span class="math inline">\(n = 50\)</span>? Насправді, <span class="math inline">\(n = 2\)</span>. Можливо, теплиця із кращим ростом рослин стояла в місці із кращою експозицією до сонячних променів, або під нею зарита труба із теплою водою, або її нещодавно відремонтували і там краща термоізоляція, або вона ближче до виходу й аспіранти постійно ходили в неї на перекур. Можливостей є настільки безліч, що всі їх контролювати із таким експериментальним дизайном неможливо. Жахіття <strong>змішувальних змінних</strong> (<em>confounding variable</em>, таких змінних що впливають і на незалежну, і на залежну змінну, й відтак спричиняють коваріацію між ними без жодного причинно-наслідкового зв’язку) й помилок експериментального дизайну треба завжди мати на увазі. Цей же експеримент став жертвою невдалого дизайну із псевдореплікацією і лише довів ефект теплиці на ріст рослин.</p>
+<p>Поняття <strong>псевдореплікації</strong> (<em>pseudoreplication</em>) ввів <a href="https://doi.org/10.2307/1942661">Харлберт 1984 року</a> і визначив його як “використання статистичного умовиводу для тестування експериментального ефекту на даних із експериментів де ефект не є реплікованим (хоча вибірки можуть бути реплікованими) або репліканти не є статистично незалежними”. В цьому формулюванні, під “експериментальним ефектом” (<em>treatment</em>) мається на увазі будь-яке спеціальне відношення до зразків, яке є під питанням в експерименті (наприклад, додавання хімікатів), і яке розділяє вибірку на “експеримент” і “контроль”. Вибірки в експериментальній чи/та контрольній групах можуть бути реплікованими (тобто мати більше за один зразок), але репліканти – підмножини вибірки, в яких всі елементи отримують однаковий експериментальний ефект – не обов’язково відповідають цим групам. У прикладі вище реплікантами є не окремі зразки в експериментальній/контрольній групах, а теплиці, адже в межах теплиці експериментальний ефект однаковий. На противагу, якби всі зразки були в одній теплиці, тоді ефект теплиці можна було б елімінувати і кожен окремий вазон майже можна було б вважати реплікантом (майже, адже зразки з однієї теплиці все ще не є статистично незалежними). Ще краще, якщо цього дозволяють ресурси, було б мати множину теплиць в яких випадковим чином розподілені зразки із експериментальної та контрольної груп. В такому випадку ефект теплиць можна було б врахувати в статистичному аналізі, наприклад, за рахунок <strong>змішаних моделей</strong> (<em>mixed-effect model</em>) із рандомним ефектом теплиці.</p>
+<p>Визначення Харлберта робить акцент на статистичній незалежності, якої часто дуже складно досягнути. В ідеальному випадку псевдореплікації можна уникнути коли нема підстав вважати, що одні й ті ж чинники впливають на різні зразки. В екології особливу увагу варто приділяти просторовій та часовій незалежності. Якщо дані зібрані із різних просторових точок, можна виправдано очікувати що близькі між собою точки будуть менш незалежними одна від одної порівняно із далекими точками (наприклад, вимірювання вмісту газів в межах міста не будуть незалежними, бо всі зразки є під впливом одного мікроклімату). В таких випадках варто зважати на <strong>просторову автокореляцію</strong> (<em>spatial autocorrelation</em>) – залежність точок даних від їх взаємного розміщення в просторі – і використовувати специфічні методи аналізу що враховують цю автокореляцію<a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a>. Подібно, вимірювання змінних в часі також не є незалежними, адже значення змінної в момент часу залежить від значень цієї змінної в інші моменти часу (наприклад, середня добова температура сьогодні залежить від температури вчора – набагато ймовірніше що між цими значеннями незначна різниця, адже різкі перепади температури є відносно рідкісним явищем). Будь-які змінні в часі варто аналізувати за допомогою методів <strong>часових серій</strong> (<em>time series</em>). Варто зважати, що будь-який натяк на відсутність статистичної незалежності у вибірці зводить нанівець використання більшості класичних статистичних тестів, а відтак їх результати не є достовірними.</p>
+</div>
+<div id="regression" class="section level3 hasAnchor" number="4.6.2">
+<h3><span class="header-section-number">4.6.2</span> Дані та проблема моделювання<a href="4.6-stat-models.html#regression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>У житті кожного польовика наступає такий момент, коли стадія планування дослідження (= розробки експериментального дизайну) із усіма врахованими застереженнями щодо псевдореплікації та незалежності спостережень давно позаду, труднощі польових досліджень подолані, все, що могло піти не так, пішло не так і ці помилки виправлені, і можна гордо сказати що збір даних закінчено. В цей момент ейфорія доконаності перспективи прокидатись о 5 ранку і лізти в, як воно завжди буває, найнеочікуваніші місця по об’єкт досліджень швидко заміщується жахом від усвідомлення того, що тепер всі зібрані дані пора би аналізувати. Статистичних тестів існує безліч, і до одного набору даних можна застосувати багато різних методів, більшість із яких видадуть якийсь результат. Тож який підхід обрати? Цей підрозділ не дасть відповіді на це питання, однак може підштовхнути до перших кроків.</p>
+<p>Однією ремаркою буде <strong>формат даних</strong>. Часто на момент оцифровування польових нотаток з’являється спокуса зробити нудну таблицю більш візуально привабливою (наприклад, додати заголовок, виділити клітинки обабіч для нотаток, додати відсотки чи одиниці вимірювання коло значень, вписати декілька значень в одну клітинку тощо). Такий підхід, звісно, дещо спрощує і без того нудний процес оцифровування, однак стає помітною проблемою коли настає час ці дані аналізувати. Справа в тім, що аналіз оперуватиме <strong>змінними</strong> (variables) – послідовностями значень певного параметру, кожне з яких відповідає окремому спостереженню. Відтак, колонки в таблицях із даними повинні відповідати різним змінним, рядки – окремим спостереженням або вимірюванням, а в одній клітинці має бути лише одне значення. Такий підхід дехто називає <strong><em>“охайними даними”</em></strong> (<em>tidy data</em>, <a href="https://r4ds.had.co.nz/tidy-data.html">Wickham &amp; Grolemund (2017)</a>), адже він дозволяє зберігати дані в такому вигляді, що їх одразу можна аналізувати (Рис. <a href="4.6-stat-models.html#fig:fig-3-14">4.14</a>). Завжди варто мати на увазі, що колись ці дані доведеться зберегти у форматі *.csv, який являє собою лишень текст, де рядки таблиці записані рядками тексту, а значення клітинок розділені комами. Відтак, наприклад, варто уникати використання коми в клітинках (що ніколи не знадобиться якщо в клітинці тільки одне значення), а в якості десяткового розділювача використовувати крапку (“одна десята” має бути “0.1”, а не “0,1” – програма на кшталт R просто не зрозуміє що то за кома).</p>
+<div class="figure"><span style="display:block;" id="fig:fig-3-14"></span>
+<img src="images/tidydata.png" alt="Уявімо дослідження ефекту структури лісу на населення птахів. Приклад **(А)** відображає дещо невдалий формат даних: шапка документу займає декілька рядків (їх все одно доведеться видалити для подальшої обробки даних, тож пояснення для значень змінних варто тримати в окремому файлі, наприклад, в документації до набору даних), дата й час не однаковому форматі (їх можна вносити як текст аби уникнути автоматичного форматування, а на етапі роботи з даними можна використати функції бібліотеки `lubridate` для R), температура й хмарність є двома різними змінними із різними одиницями вимірювання (додавання одиниць вимірювання в клітинки перетворить їх вміст в текст, а додавання коми в клітинках стане на заваді адекватного зчитування даних у форматі *.csv), колонка дерев має нефіксовану кількість значень в кожній клітинці. Натомість, ті ж дані можна оцифрувати в межах парадигми охайних даних **(В)**, при чому декількома способами. Зображений тут спосіб не викличе необхідності перемикати налаштування мови під час аналізу даних, адже назви колонок прописані англійською мовою, а масив даних легко може бути імпортованим в R." width="958" />
+<p class="caption">
+Рис. 4.14: Уявімо дослідження ефекту структури лісу на населення птахів. Приклад <strong>(А)</strong> відображає дещо невдалий формат даних: шапка документу займає декілька рядків (їх все одно доведеться видалити для подальшої обробки даних, тож пояснення для значень змінних варто тримати в окремому файлі, наприклад, в документації до набору даних), дата й час не однаковому форматі (їх можна вносити як текст аби уникнути автоматичного форматування, а на етапі роботи з даними можна використати функції бібліотеки <code>lubridate</code> для R), температура й хмарність є двома різними змінними із різними одиницями вимірювання (додавання одиниць вимірювання в клітинки перетворить їх вміст в текст, а додавання коми в клітинках стане на заваді адекватного зчитування даних у форматі *.csv), колонка дерев має нефіксовану кількість значень в кожній клітинці. Натомість, ті ж дані можна оцифрувати в межах парадигми охайних даних <strong>(В)</strong>, при чому декількома способами. Зображений тут спосіб не викличе необхідності перемикати налаштування мови під час аналізу даних, адже назви колонок прописані англійською мовою, а масив даних легко може бути імпортованим в R.
+</p>
+</div>
+<p>Коли говорити про змінні, то дані можуть мати один із багатьох можливих форматів. Одна змінна може мати лише один формат даних, і, скоріш за все, це буде один із наступних:</p>
+<ul>
+<li><p><strong>логічні дані</strong> (<em>Boolean</em>), які приймають одне із двох можливих значень (1/0, правда/неправда, True/False);</p></li>
+<li><p><strong>числові дані</strong> (<em>numeric</em>), що можуть включати як континуальні значення (<em>double</em>/<em>float</em>, наприклад, вага, зріст тощо), так і дискретні числа (<em>integer</em>, наприклад, кількість особин);</p></li>
+<li><p><strong>текст</strong> (<em>character</em>), будь-який набір символів який має принаймні один символ, що не є числом (власне, чому не варто додавати одиниці вимірювання до значень, які за своєю природою є числом);</p></li>
+<li><p><strong>категорійні дані</strong> (<em>factor</em>), в яких одне спостереження може приймати одне значення із певного скінченного набору можливих значень (наприклад, вид, стадія життєвого циклу тощо);</p></li>
+<li><p><strong>дата/час</strong> (<em>date/time</em>) є особливим форматом даних із яким треба бути дуже обережним, адже форматування іноді може дивно поводитись (наприклад, автоматично переводитись в дискретну кількість секунд із якогось моменту типу 1970-01-01 00:00:00), а неповні дані бувають неочевидними (наприклад, якщо надано тільки місяць і день, то не завжди вдається вгадати рік); найповнішим форматом є “YYYY-MM-DDThh:mm:ss+hh:mm”, наприклад, “2024-10-15T22:43:25-04:00” каже “рік 2024, місяць 10, день 15, година 22, хвилина 43, секунда 25, часовий пояс мінус 4 години від стандартного часу GMT”. Часовий пояс варто наводити, адже в багатьох локаціях наявна змінна літнього і зимового часу; альтернативно, можна наводити час за всесвітнім координованим часом (GMT, позначається як “Z” від Zulu), як-то для попереднього прикладу “2024-10-16T02:43:25Z”.</p></li>
+</ul>
+<p>Тепер нарешті погляньмо на структуру статистичної моделі. Вся суть моделювання полягає в тому, що дослідник намагається змоделювати певну <strong>залежну змінну</strong> (<em>dependent variable</em>) як функцію однією або декількох незалежних змінних, або <strong>предикторів</strong> (<em>predictor</em>). Для зручності модель можна записати формулою, яка в найпростішій ситуації виглядатиме як</p>
+<p><span class="math display">\[y \sim f(x) \Longleftrightarrow y_i = f(x_i) + \epsilon_i\]</span></p>
+<p>де ми намагаємось змоделювати кожне спостереження залежної змінної <span class="math inline">\(y\)</span> як функцію змінної <span class="math inline">\(x\)</span> із врахуванням якоїсь статистичної похибки <span class="math inline">\(\epsilon\)</span>.</p>
+<p>Відповідно, проблема аналізу даних може становити або проблему <strong>регресії</strong> (<em>regression</em>) якщо залежна змінна має логічні або числові дані, або проблему <strong>класифікації</strong> (<em>classification</em>) якщо залежна змінна є категорійною.</p>
+<div id="регресія" class="section level4 hasAnchor" number="4.6.2.1">
+<h4><span class="header-section-number">4.6.2.1</span> Регресія<a href="#%D1%80%D0%B5%D0%B3%D1%80%D0%B5%D1%81%D1%96%D1%8F" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Регресія в найпростішому вигляді відповідає побудуванню прямої лінії в двовимірних координатах (Рис. <a href="4.1-algebra.html#fig:fig-3-2">4.2</a>). Таку лінію можна уявити як залежну змінну <span class="math inline">\(y\)</span> у вигляді функції предиктора <span class="math inline">\(x\)</span>:</p>
+<p><span class="math display">\[y \sim x \Longleftrightarrow y_i = \beta_0 + \beta_1 \cdot x_i + \epsilon_i\]</span></p>
+<p>і в такому разі оцінка коефіцієнтів регресії <span class="math inline">\(\beta_0\)</span> (інтерцепт, intercept) та <span class="math inline">\(\beta_1\)</span> (нахил, slope) надасть уявлення про залежність між змінними: якщо <span class="math inline">\(\beta_1 &gt; 0\)</span>, то <span class="math inline">\(y\)</span> збільшується зі збільшенням <span class="math inline">\(x\)</span>, якщо <span class="math inline">\(\beta_1 &lt; 0\)</span> – то існує негативний взаємозв’язок, а статистичне тестування можна зав’язати на нульовій гіпотезі що <span class="math inline">\(\beta_1 = 0\)</span>.</p>
+<p>Корисною особливістю лінійної регресії є те, що її можна використати і для моделювання нелінійних залежностей. Наприклад, якщо ми введемо нову змінну <span class="math inline">\(u\)</span>, яка є нелінійною функцією <span class="math inline">\(x\)</span>, скажімо, <span class="math inline">\(u = x^2\)</span>, то нічого не заважає побудувати лінійну регресію</p>
+<p><span class="math display">\[y \sim u \Longleftrightarrow y_i = \beta_0 + \beta_1 \cdot u_i + \epsilon_i\]</span></p>
+<p>хоча варто мати на увазі, що <strong>поліноміальні</strong> (<em>polynomial</em>) функції є складнішими, тож, наприклад, моделювання поліноміального зв’язку третього порядку матиме вигляд</p>
+<p><span class="math display">\[y \sim \text{poly}(x, 3) \Longleftrightarrow y_i = \beta_0 + \beta_1 \cdot x_i + \beta_2 \cdot x_i^2 + \beta_3 \cdot x_i^3 + \epsilon_i\]</span></p>
+<p>Крім того, можливо також не обмежувати себе одним предиктором і моделювати залежну змінну за допомогою декількох предикторів. Така регресія зветься <strong>множинною</strong> (<em>multiple regression</em>) і дозволяє оцінити ефект (=коефіцієнт) для кожного предиктора окремо якщо між предикикторами немає взаємної кореляції (<em>multicollinearity</em>):</p>
+<p><span class="math display">\[y \sim a + b + c \Longleftrightarrow y_i = \beta_0 + \beta_1 \cdot a_i + \beta_2 \cdot b_i + \beta_3 \cdot c_i + \epsilon_i\]</span></p>
+<p>Іншими двома важливими припущеннями базових методів регресії є те, що в моделі відсутня <strong>гетероскедастичність</strong> (<em>heteroscedasticity</em>) – варіація залежної змінної повинна бути незалежною від предикторів, – і те, що розподіл помилки <span class="math inline">\(\epsilon\)</span> є нормальним. Простіші регресійні підходи застосовують <a href="4.3-stats.html#mle">метод максимальної правдоподібності</a> для оцінки таких значень коефіцієнтів регресії, за яких сума квадратів помилок <span class="math inline">\(\epsilon_i\)</span> є мінімальною, і відтак метод іноді називають <strong>простою регресією найменших квадратів</strong> (<em>ordinary least squares regression</em>, <strong><em>OLS regression</em></strong>). Іноді залежна змінна є не континуальною, а, скажімо, логічною (тобто 0/1) або має один із дискретних розподілів (наприклад, Пуасона). В таких випадках в нагоді стають <strong>узагальнені лінійні моделі</strong> (<em>generalized linear models</em>, <strong><em>GLM</em></strong>). Існують також методи, які дозволяють будувати криві, які локально підбудовують себе під точки спостережень, однак не мають чітко визначених параметрів і використовуються переважно для візуалізації: <strong>узагальнені додатні моделі</strong> (<em>generalized additive models</em>, <strong><em>GAM</em></strong>) та <strong>локально зважені поліноміальні моделі</strong> (<em>locally estimated scatterplot smoothing, local regression</em>, <strong><em>LOESS</em></strong>).</p>
+<p>Якщо ж предиктором є не континуальна змінна, а категорійний фактор, така модель являтиме приклад дисперсійного аналізу, або <strong>аналіз варіації</strong> (<em>analysis of variance</em>, <strong><em>ANOVA</em></strong>). ANOVA розділяє залежну змінну на групи, що відповідають різним рівням фактора предиктора, і перевірка статистичної гіпотези зводиться до того, чи варіація між групами є більшою за варіацію в межах груп. Якщо так, то це лише каже що принаймні одна група має значуще відмінні значення залежної змінної від інших груп, однак не каже яка саме – для цього часто застосовують <em>post hoc</em> тест <strong>Тюкі</strong> (<em>Tukey Honestly Significant Difference test</em>, <strong><em>Tukey HSD</em></strong>). Варто пам’ятати, що технічно ANOVA є окремим випадком OLS-регресії, адже тестування гіпотез в регресії використовує то й же механізм, що аналіз варіації (тест Фішера), а фактор можна зобразити у вигляді декількох бінарних колонок, які відповідають рівням фактору (див. <a href="https://mcfromnz.wordpress.com/2011/03/02/anova-type-iiiiii-ss-explained/">коментар</a> щодо типів кодування аналізу варіації).</p>
+<p>Аби проілюструвати регресію в R, корисним набором даних може бути <code>iris</code> із стандартних супутній даних в пакеті <code>datasets</code>. В цьому наборі даних наведено проміри в см чотирьох морфологічних ознак квіток: довжина (<code>*.Length</code>) та ширина (<code>*.Width</code>) чашолистків (<code>Sepal.*</code>) та пелюсток (<code>Petal.*</code>), виміряні в 50 особин кожного з трьох видів півників (<em>Iris setosa</em>, <em>I. versicolor</em>, та <em>I. virginica</em>). Відтак, дані мають 150 рядків та 5 колонок:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="4.6-stat-models.html#cb37-1" tabindex="-1"></a><span class="co"># замість того, щоб бачити всі дані, погляньмо на перші декілька рядків</span></span>
+<span id="cb37-2"><a href="4.6-stat-models.html#cb37-2" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code></pre></div>
+</details>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="4.6-stat-models.html#cb39-1" tabindex="-1"></a><span class="co"># скільки рядків і колонок?</span></span>
+<span id="cb39-2"><a href="4.6-stat-models.html#cb39-2" tabindex="-1"></a><span class="fu">dim</span>(iris)</span></code></pre></div>
+</details>
+<pre><code>## [1] 150   5</code></pre>
+<p>Побудуймо просту лінійну регресію, в якій <code>Sepal.Length</code> є функцією від <code>Petal.Length</code>:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="4.6-stat-models.html#cb41-1" tabindex="-1"></a><span class="co"># запишемо регресію в об&#39;єкт</span></span>
+<span id="cb41-2"><a href="4.6-stat-models.html#cb41-2" tabindex="-1"></a>fit_iris1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Sepal.Length <span class="sc">~</span> Petal.Length, <span class="at">data =</span> iris)</span>
+<span id="cb41-3"><a href="4.6-stat-models.html#cb41-3" tabindex="-1"></a><span class="co"># поглягньмо на коефіцієнти регресії</span></span>
+<span id="cb41-4"><a href="4.6-stat-models.html#cb41-4" tabindex="-1"></a><span class="fu">summary</span>(fit_iris1)</span></code></pre></div>
+</details>
+<pre><code>## 
+## Call:
+## lm(formula = Sepal.Length ~ Petal.Length, data = iris)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.24675 -0.29657 -0.01515  0.27676  1.00269 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   4.30660    0.07839   54.94   &lt;2e-16 ***
+## Petal.Length  0.40892    0.01889   21.65   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.4071 on 148 degrees of freedom
+## Multiple R-squared:   0.76,  Adjusted R-squared:  0.7583 
+## F-statistic: 468.6 on 1 and 148 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Виглядає, що регресію можна описати лінією <span class="math inline">\(y = 4.307 + 0.409 \cdot x\)</span>. Перевірмо, наскільки добре це описує дані:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="4.6-stat-models.html#cb43-1" tabindex="-1"></a><span class="co"># намалюймо точки даних</span></span>
+<span id="cb43-2"><a href="4.6-stat-models.html#cb43-2" tabindex="-1"></a><span class="fu">plot</span>(iris<span class="sc">$</span>Petal.Length, iris<span class="sc">$</span>Sepal.Length, </span>
+<span id="cb43-3"><a href="4.6-stat-models.html#cb43-3" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Petal Length, cm&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Sepal Length, cm&quot;</span>, </span>
+<span id="cb43-4"><a href="4.6-stat-models.html#cb43-4" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">16</span>)</span>
+<span id="cb43-5"><a href="4.6-stat-models.html#cb43-5" tabindex="-1"></a><span class="co"># промалюймо лінію регресії</span></span>
+<span id="cb43-6"><a href="4.6-stat-models.html#cb43-6" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">a =</span> <span class="fl">4.3066</span>, <span class="at">b =</span> <span class="fl">0.40892</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+</details>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p>Подібним чином можна побудувати й множинну регресію (напр., <code>lm(Sepal.Length ~ Petal.Length + Petal.Width, data = iris)</code>), й усіляко досліджувати лінійні та криволінійні взаємозалежності. Завжди варто мати на увазі, втім, що наявність статистично значущих зв’язків не передбачає причинно-наслідкових зв’язків. Наприклад, чи можна справді вважати що довжина пелюсток визначає довжину чашолистків? Натомість, мабуть, біологічно обґрунтованим стало би припущення, що на обидві ці морфологічні ознаки впливають одні й ті ж довкіллєві чи генетичні фактори<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a>.</p>
+</div>
+<div id="classifier" class="section level4 hasAnchor" number="4.6.2.2">
+<h4><span class="header-section-number">4.6.2.2</span> Класифікація<a href="4.6-stat-models.html#classifier" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Що ж робити, якщо залежна змінна в моделі є не континуальною, а фактором? Наприклад, чи можна за комбінацією морфологічних промірів квітки передбачити вид півників? Таке завдання відповідатиме проблемі класифікації.</p>
+<p>Класифікаційна модель отримує на вхід набір дескрипторів репліканта (рядку даних), і на підставі цих даних намагається оцінити ймовірності того, що об’єкт належить до певного <em>класу</em>, наприклад, для трьох видів півників,</p>
+<p><span class="math display">\[
+\begin{cases}
+    P(y_i \in \text{setosa}) = f(x_i) \\
+    P(y_i \in \text{versicolor}) = f(x_i) \\
+    P(y_i \in \text{virginica}) = f(x_i)
+\end{cases}
+\]</span></p>
+<p>При чому варто очікувати, що <span class="math inline">\(P(y_i \in \text{setosa}) + P(y_i \in \text{versicolor}) + P(y_i \in \text{virginica}) = 1\)</span>.</p>
+<p>Існує чимало алгоритмів класифікації, і не всі з них напряму обчислюють ймовірності, але ідея подібна: для кожного рядку даних алгоритм намагається вгадати клас спостереження. Спробуймо використати один із найбільш класичних алгоритмів, <strong>k-найближчих сусідів</strong> (<em>k-nearest neighbors</em>, <strong><em>KNN</em></strong>), для класифікації півників. Механізм алгоритму дуже простий: для кожного нового спостереження, KNN дивиться на найближчі <span class="math inline">\(k\)</span> спостережень і визначає клас нового спостереження як найбільш поширений серед цих <span class="math inline">\(k\)</span> спостережень. Наприклад, якщо <span class="math inline">\(k=3\)</span>, і ми намагаємось вгадати клас для спостереження, найближчі сусіди якого є двома <em>setosa</em> і одним <em>virginica</em>, то нове спостереження визначимо як <em>setosa</em>.</p>
+<p>KNN є прикладом алгоритму <strong>машинного навчання із учителем</strong> (<em>supervised machine learning</em>). Такі алгоритми вимагають вхідного, <em>навчального</em>, набору даних із відомою класифікацією (тому й називаються <em>supervised</em>), і очікують нових точок даних для застосування щойно навченого класифікатора. Наприклад, для даних <em>iris</em>, де маємо 150 спостережень, найбільш доцільним питанням із використанням KNN було би “от ми маємо нове спостереження із промірами пелюсток та чашолистиків, але ми не знаємо виду – який це вид?” Тоді KNN пошукає найближчих сусідів і видасть результат.</p>
+<p>Вибір значення <span class="math inline">\(k\)</span> є наріжним каменем використання цього методу, адже невідомо скільки найближчих сусідів є забагато чи замало для ефективного алгоритму. Значення <span class="math inline">\(k=3\)</span> і <span class="math inline">\(k=5\)</span> є доволі поширеними, але довільними. Для виправданого вибору цього параметру, варто проводити <a href="4.7-infer.html#crossval">валідацію</a> класифікатора, про що поговоримо пізніше.</p>
+<p>Іншим застосуванням класифікатора може бути поділ простору параметрів. Справа в тім, що один класифікатор, навчений на скінченній кількості спостережень, теоретично можна використати для класифікації незліченної кількості точок, а відтак і прокласифікувати цілий простір замість декількох точок. Наприклад, погляньмо на двовимірний простір промірів пелюсток півників.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="4.6-stat-models.html#cb44-1" tabindex="-1"></a><span class="co"># намалюймо точки даних</span></span>
+<span id="cb44-2"><a href="4.6-stat-models.html#cb44-2" tabindex="-1"></a>iris <span class="sc">%&gt;%</span></span>
+<span id="cb44-3"><a href="4.6-stat-models.html#cb44-3" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Petal.Width, <span class="at">y =</span> Petal.Length, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
+<span id="cb44-4"><a href="4.6-stat-models.html#cb44-4" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+</details>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="4.6-stat-models.html#cb45-1" tabindex="-1"></a><span class="co"># побудуємо KNN класифікатор із k = 5</span></span>
+<span id="cb45-2"><a href="4.6-stat-models.html#cb45-2" tabindex="-1"></a><span class="co"># library(caret)</span></span>
+<span id="cb45-3"><a href="4.6-stat-models.html#cb45-3" tabindex="-1"></a>fit_iris2 <span class="ot">&lt;-</span> caret<span class="sc">::</span><span class="fu">train</span>(Species <span class="sc">~</span> Petal.Width <span class="sc">+</span> Petal.Length, </span>
+<span id="cb45-4"><a href="4.6-stat-models.html#cb45-4" tabindex="-1"></a>                   <span class="at">data =</span> iris, </span>
+<span id="cb45-5"><a href="4.6-stat-models.html#cb45-5" tabindex="-1"></a>                   <span class="at">method =</span> <span class="st">&quot;knn&quot;</span>, </span>
+<span id="cb45-6"><a href="4.6-stat-models.html#cb45-6" tabindex="-1"></a>                   <span class="at">tuneGrid =</span> <span class="fu">data.frame</span>(<span class="at">k =</span> <span class="dv">5</span>))</span>
+<span id="cb45-7"><a href="4.6-stat-models.html#cb45-7" tabindex="-1"></a></span>
+<span id="cb45-8"><a href="4.6-stat-models.html#cb45-8" tabindex="-1"></a><span class="co"># генерація точок в просторі параметру</span></span>
+<span id="cb45-9"><a href="4.6-stat-models.html#cb45-9" tabindex="-1"></a>xg <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(iris<span class="sc">$</span>Petal.Width), <span class="fu">max</span>(iris<span class="sc">$</span>Petal.Width), <span class="at">length.out =</span> <span class="dv">100</span>)</span>
+<span id="cb45-10"><a href="4.6-stat-models.html#cb45-10" tabindex="-1"></a>yg <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(iris<span class="sc">$</span>Petal.Length), <span class="fu">max</span>(iris<span class="sc">$</span>Petal.Length), <span class="at">length.out =</span> <span class="dv">100</span>)</span>
+<span id="cb45-11"><a href="4.6-stat-models.html#cb45-11" tabindex="-1"></a>xyg <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(xg, yg)</span>
+<span id="cb45-12"><a href="4.6-stat-models.html#cb45-12" tabindex="-1"></a><span class="fu">colnames</span>(xyg) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Petal.Width&quot;</span>, <span class="st">&quot;Petal.Length&quot;</span>)</span>
+<span id="cb45-13"><a href="4.6-stat-models.html#cb45-13" tabindex="-1"></a></span>
+<span id="cb45-14"><a href="4.6-stat-models.html#cb45-14" tabindex="-1"></a><span class="co"># застосуємо і запишемо класифікацію нових точок</span></span>
+<span id="cb45-15"><a href="4.6-stat-models.html#cb45-15" tabindex="-1"></a>xyg<span class="sc">$</span>Species <span class="ot">&lt;-</span> <span class="fu">predict</span>(fit_iris2, xyg)</span>
+<span id="cb45-16"><a href="4.6-stat-models.html#cb45-16" tabindex="-1"></a></span>
+<span id="cb45-17"><a href="4.6-stat-models.html#cb45-17" tabindex="-1"></a><span class="co"># промалюємо простір</span></span>
+<span id="cb45-18"><a href="4.6-stat-models.html#cb45-18" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb45-19"><a href="4.6-stat-models.html#cb45-19" tabindex="-1"></a>   <span class="fu">geom_raster</span>(<span class="at">data =</span> xyg,</span>
+<span id="cb45-20"><a href="4.6-stat-models.html#cb45-20" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x =</span> Petal.Width, <span class="at">y =</span> Petal.Length, <span class="at">fill =</span> Species),</span>
+<span id="cb45-21"><a href="4.6-stat-models.html#cb45-21" tabindex="-1"></a>               <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb45-22"><a href="4.6-stat-models.html#cb45-22" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> iris,</span>
+<span id="cb45-23"><a href="4.6-stat-models.html#cb45-23" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> Petal.Width, <span class="at">y =</span> Petal.Length, <span class="at">color =</span> Species))</span></code></pre></div>
+</details>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-20-2.png" width="672" /></p>
+<p>Тобто будь-яка нова точка спостережень в червоній зоні буде класифікована як <em>setosa</em>, адже для будь-якої точки в цій зоні більшість найближчих 5 сусідів із вхідного набору даних належать до цього виду; всі нові точки в зеленій зоні будуть класифіковані як <em>versicolor</em>, а в блакитній – як <em>virginica</em>. Цей приклад використав лише два параметри (<code>Petal.Width</code> і <code>Petal.Length</code>), однак KNN може працювати із будь-якою кількістю параметрів (навіть лише з одним, якщо треба).</p>
+<p>Цікаво, що KNN можна застосувати і до проблеми регресії, якщо залежна змінна є континуальною. В такому випадку, класифікатор шукатиме середнє значення (або іншу статистику) для <span class="math inline">\(k\)</span> найближчих сусідів.</p>
+<p>Загалом же, існує чимало інших алгоритмів класифікації. Деякі із них кластеризують точки без вхідних даних щодо класів спостережень і є, відтак, алгоритмами машинного навчання <em>без учителя</em> (<em>unsupervised machine learning</em>) – наприклад, метод <strong>K-середніх</strong> (<em>K-means</em>), який ітеративно шукає найкращий поділ хмари точок на <span class="math inline">\(K\)</span> кластерів. Тема машинного навчання є дуже популярною, й, відтак, нові алгоритми з’являються доволі часто.</p>
+</div>
+</div>
+<div id="aic" class="section level3 hasAnchor" number="4.6.3">
+<h3><span class="header-section-number">4.6.3</span> Парсимонійна модель та вибір моделі<a href="4.6-stat-models.html#aic" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Ми неодноразово вже проговорили, що системи в екології бувають дуже складними, мають безліч факторів що впливають один на одного та на залежні змінні, в яких ми зацікавлені. Давайте поговоримо про це ще раз, цього разу зі згадкою про класичний філософський принцип <strong>бритви Оккама</strong>: не варто ускладнювати припущення без необхідності. Коли еколог намагається описати систему дослідження у вигляді статистичної моделі, варто намагатись зробити таку модель настільки простою, наскільки це можливо без втрати змісту моделі. Пошук найкращої моделі, відтак, виглядатиме як пошук балансу між рівнем складності (скільки параметрів чи факторів можна з неї викинути?) та передбачувальної здатності (якщо модель занадто проста, чи вона хоч щось може пояснити?) моделі, і модель із найкращим таким балансом називають <strong>парсимонійною</strong> (<em>parsimonious</em>).</p>
+<p>Загалом, це все, звісно, прекрасно, але то лише філософія. Чи можна принцип Оккама застосувати на практиці? Для цього необхідно було би мати якісь математичні способи оцінити складність моделі, її передбачувальну здатність, та баланс між ними. Оскільки ми вже знаємо, що статистична модель може мати безліч параметрів (як-то <a href="4.6-stat-models.html#regression">предиктори в множинній регресії чи класифікаторі</a>, кожен зі своїм коефіцієнтом), кількість змінних в моделі (<span class="math inline">\(k\)</span>) може виступити пристойним оцінщиком ступеню складності. Водночас, оцінка лог-правдоподібності моделі (<span class="math inline">\(\ln\mathcal{L}\)</span>) надає змогу оцінити наскільки добре модель описує дані, відтак виступає гарним оцінщиком передбачувальної здатності. Існує два загальноприйнятих шляхів об’єднати ці два значення в оцінку “парсимонійності” моделі:</p>
+<ul>
+<li><p><strong>інформаційний критерій Акайке</strong> (<em>Akaike information criterion</em>, <strong><em>AIC</em></strong>): <span class="math inline">\(2k-2\ln\mathcal{L}\)</span>,</p></li>
+<li><p><strong>інформаційний критерій Баєса</strong> (<em>Bayesian information criterion</em>, <strong><em>BIC</em></strong>): <span class="math inline">\(\ln (n) \cdot k - 2\ln\mathcal{L}\)</span>.</p></li>
+</ul>
+<p>В обох випадках, ліва частина формули визначає штраф за складність моделі, виражену через кількість змінних <span class="math inline">\(k\)</span>. Єдина різниця між цими двома критеріями – це те, що BIC зважує складність моделі на логарифм розміру вибірки (<span class="math inline">\(n\)</span>), в той час як AIC має фіксовану вагу (<span class="math inline">\(2\)</span>) для кожної змінної. BIC є не надто поширеним в екології (на відміну від біоінформатики), і більшість експериментальних робіт використовують AIC. Це не лише забаганка моди в наукових дисциплінах: справа в тім, що у великих наборах даних (<span class="math inline">\(n &gt;&gt; k\)</span>, тисячі й мільйони спостережень) AIC недостатньо сильно штрафує за складність моделі, в той час будь-яка, навіть найгірша, модель підбудується до великого набору даних. Відтак, BIC є більш прийнятним вибором для роботи із великими наборами даних, а AIC – для локальних досліджень (<a href="https://biol607.github.io/readings/Aho_2014_ecolog_bic.pdf">Aho et al. 2014</a>, <a href="https://doi.org/10.1111/2041-210X.12541">Brewer et al. 2016</a>).</p>
+<p>Формули AIC та BIC є доволі простими, і з них нескладно побачити що інформаційний критерій матиме високе значення для складних моделей (<span class="math inline">\(k &gt;&gt; 1\)</span>) та низьких правдоподібностей (<span class="math inline">\(\mathcal{L} \rightarrow 0 \Rightarrow \ln (\mathcal{L}) \rightarrow - \infty\)</span>), але матиме низьке значення для простих моделей (<span class="math inline">\(k \rightarrow 1\)</span>) із високою правдоподібністю (<span class="math inline">\(\mathcal{L} \rightarrow 1 \Rightarrow \ln (\mathcal{L}) \rightarrow 0\)</span>). Тут і криється один момент щодо інформаційного підходу: значення інформаційного критерія є безрозмірними, і самі по собі нічого не кажуть про парсимонійність моделі. Скажімо, побудована модель має <code>AIC = -7653.783</code>, і що з того? Натомість, інформаційні критерії використовують для <em>порівняння моделей</em>, для пошуку найбільш парсимонійної моделі із набору моделей-кандидаток.</p>
+<p>Процедура <strong>вибору моделі</strong> (<em>model selection</em>) передбачає набір моделей-кандидаток, в яких залежна змінна є спільною, однак предиктори відрізняються. Наприклад, в множинній регресії можливо побудувати чимало комбінацій взаємодій між предикторами, наприклад, із двома предикторами:</p>
+<ul>
+<li><p><code>y ~ a</code>, <span class="math inline">\(y_i = \beta_0 + \beta_1 \cdot a_i + \epsilon_i\)</span>,</p></li>
+<li><p><code>y ~ b</code>, <span class="math inline">\(y_i = \beta_0 + \beta_2 \cdot b_i + \epsilon_i\)</span>,</p></li>
+<li><p><code>y ~ a + b</code>, <span class="math inline">\(y_i = \beta_0 + \beta_3 \cdot a_i + \beta_4 \cdot b_i + \epsilon_i\)</span>,</p></li>
+<li><p><code>y ~ a:b</code>, <span class="math inline">\(y_i = \beta_0 + \beta_5 \cdot (a_i \cdot b_i) + \epsilon_i\)</span>,</p></li>
+<li><p><code>y ~ a*b</code>, тотожно до <code>y ~ a + b + a:b</code>, <span class="math inline">\(y_i = \beta_0 + \beta_6 \cdot a_i + \beta_7 \cdot b_i + \beta_8 \cdot (a_i \cdot b_i) + \epsilon_i\)</span>.</p></li>
+</ul>
+<p>Нескладно уявити, наскільки багато комбінацій можна побудувати для регресії із багатьма предикторами. Вибір найкращої моделі, в такому випадку, дозволяє обрати найкращу комбінацію предикторів. Звісно, для пошуку найкращої моделі можна скористатися <strong>покроковою регресією</strong> (<em>stepwise regression</em>), коли ми або починаємо з найпростішої моделі й додаємо більше й більше змінних (<strong><em>прямий добір</em></strong>, <em>forward selection</em>), або починаємо із найскладнішої моделі і почергово елімінуємо з неї змінні (<strong><em>зворотній добір</em></strong>, <em>backward selection</em>), і все поки не отримаємо модель з такою комбінацією змінних, яка найкраще описує дані. Такий підхід досі використовують, однак від нього варто відмовитись через упередженість й множинне тестування гіпотез (<a href="https://doi.org/10.1111/j.1365-2656.2006.01141.x">Whittingham et al. 2006</a>). Інформаційний підхід є адекватнішою альтернативою алгоритмам, які генерують безліч моделей-кандидаток, однак варто мати на увазі одне правило: <em>всі моделі-кандидатки мають відповідати обдуманому, реалістичному сценарію</em> аби уникнути використання множини моделей із абсурдними комбінаціями змінних. Використання безлічі необґрунтованих моделей або всіх можливих комбінацій змінних є прикладами <strong>просіювання даних</strong> (<em>data dredging</em>) – небажаної тактики статистичного аналізу, яка часто закінчується знаходженням абсурдних, проте статистично значущих закономірностей (<a href="https://doi.org/10.2307/3803199">Anderson et al. 2000</a>).</p>
+<p>І от в межах інформаційного підходу (<em>informational approach</em>, термін для використання АІС або ВІС) ми маємо якийсь набір моделей. Тепер час розрахувати обраний інформаційний критерій (скоріш за все, АІС) для кожної моделі окремо, і перелічити моделі в порядку зростання АІС. Модель із найнижчим значенням АІС можна вважати найближчою до парсимонійної<a href="#fn37" class="footnote-ref" id="fnref37"><sup>37</sup></a>, а всі моделі в яких значення АІС не є більшими за дві одиниці (пам’ятаймо, що АІС та ВІС не мають одиниць вимірювання) можна вважати не набагато гіршими і теж врахувати. Ці “найкращі” моделі тепер можна сміливо використати для висновків, наприклад, із тестування гіпотез щодо коефіцієнтів регресії в моделі. Для подачі результатів аналізу в межах інформаційного підходу варто подавати формулу моделі, кількість змінних (<span class="math inline">\(k\)</span>), лог-правдоподібність (<span class="math inline">\(\ln \mathcal{L}\)</span>), значення АІС (чи ВІС), та різницю між АІС моделі та найнижчим значенням АІС в наборі кандидатів (ΔAIC). Часто моделі із <span class="math inline">\(\Delta \text{AIC} \leq 2\)</span> виділяють в таблицях жирним шрифтом.</p>
+<p>Інколи в таблицях AIC можна також побачити колонку для <strong><em>ваги моделі</em></strong> (<em>weight</em>): моделі із найнижчими значеннями AIC мають більшу вагу, і сума ваг всіх моделей дорівнює одиниці. Ці ваги використовують для техніки <strong><em>усереднення моделей</em></strong> (<em>model averaging</em>): скажімо, ви зацікавлені в значення коефіцієнту регресії для певного предиктора, однак, в кожній окремій моделі коефіцієнт для одного й того ж предиктора буде відрізнятись. Усереднення моделей полягає у знаходженні середнього значення предиктора, зваженого на інформаційний критерій моделі (див. <a href="https://doi.org/10.1002/ecm.1309">Dormann et al. 2018</a> із <a href="https://theoreticalecology.wordpress.com/2018/05/14/model-averaging-in-ecology-a-review-of-bayesian-information-theoretic-and-tactical-approaches-for-predictive-inference/">блогом від авторів</a>). Підхід зважування моделей видається дуже зручним для знаходження усередненої важливості предикторів, однак цей підхід не виключає помилок умовиводу, пов’язаних із порушеннями передбачень моделей (див. <a href="https://doi.org/10.1890/14-1639.1">Cade 2015</a> із <a href="https://atyre2.github.io/2017/06/16/rebutting_cade.html">пов’язаним блогом</a>).</p>
+</div>
+<div id="prcomp" class="section level3 hasAnchor" number="4.6.4">
+<h3><span class="header-section-number">4.6.4</span> Багатовимірна статистика<a href="4.6-stat-models.html#prcomp" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Як би не хотілося уникнути говорити занадто багато про статистику, ще однією темою, котру треба зачепити, є багатовимірність даних. Це може звучати дуже абстрактно, але у всякому аналізі трапляється проблема багатовимірності, адже кожна змінна є одним окремим виміром даних. Відтак, наприклад, знайомий вже набір даних про квітки півників має аж п’ять вимірів: <code>Sepal.Length</code>, <code>Sepal.Width</code>, <code>Petal.Length</code>, <code>Petal.Width</code>, та <code>Species</code>. В польових дослідженнях, скоріш за все, досліднику доведеться збирати проміри ще більшої кількості параметрів.</p>
+<p>Для усвідомлення багатовимірності допомагає згадування теореми Піфагора й Евклідової дистанції. Звісно, твердження “квадрат гіпотенузи дорівнює сумі квадратів катетів” може звучати не надто переконливо. Уявіть, однак, одновимірний простір. Якщо в одному вимірі <span class="math inline">\(x\)</span> ми маємо дві точки <span class="math inline">\(a = (x_a)\)</span> та <span class="math inline">\(b = (x_b)\)</span>, то дистанцію між ними можна нескладно обчислити як абсолютну різницю між їх координатами, <span class="math inline">\(d_{a, b} = |x_a - x_b|\)</span>. Ну, скажімо, добре. Як щодо двовимірного простору? Тут допоможе та ж теорема Піфагора коли уявити ці дві точки <span class="math inline">\(a = (x_a, y_a)\)</span> і <span class="math inline">\(b = (x_b, y_b)\)</span> як два кути прямокутного трикутника, і тоді дистанція між ними дорівнюватиме гіпотенузі цього трикутника: <span class="math inline">\(d_{a, b} = \sqrt{(x_a - x_b)^2 + (y_a - y_b)^2}\)</span>. Повертаючись до одновимірного простору, абсолютну різницю можна дуже легко зобразити як <span class="math inline">\(d_{a,b} = \sqrt{(x_a - x_b)^2}\)</span>. Цю формулу можна генералізувати і для тривимірного простору, для <span class="math inline">\(a = (x_a, y_a, z_a)\)</span> та <span class="math inline">\(b = (x_b, y_b, z_b)\)</span>, <span class="math inline">\(d_{a, b} = \sqrt{(x_a - x_b)^2 + (y_a - y_b)^2 + (z_a - z_b)^2}\)</span>. Краса Евклідової дистанції в тому, що навіть якщо ми можемо уявити одно-, дво-, і три-вимірний простір, але не чотири- і більш-вимірний, то обчислення дистанції все одно працюватиме в скількох завгодно вимірах. Відтак, ми можемо обчислити дистанцію між двома точками (= спостереженнями) у скількох-завгодно-вимірному (= кількість змінних для спостереження) просторі. Для точок <span class="math inline">\(p, q\)</span> в <span class="math inline">\(i = 1, 2, \cdots, n\)</span> вимірах, Евклідова дистанція становитиме <span class="math inline">\(d(p, q) = \sqrt{\sum \limits_{i=1}^{n}(p_i - q_i)^2}\)</span>.</p>
+<p>Отже, багатовимірність даних всього лише відповідає кількості змінних в наборі даних. В <a href="4.6-stat-models.html#aic">попередньому розділі</a> ми побачили, що існує спосіб вибрати лише обмежений набір змінних, який можна використати для побудови цілком пристойної моделі. Але що якщо ми вважаємо що <em>всі</em> змінні є важливими, і жодну не можна просто так взяти і викинути? Для таких випадків існують методи, що дозволяють трансформувати багато змінних в декілька – методи <strong>ординації</strong> (<em>ordination</em>).</p>
+<div id="метод-головних-компонент" class="section level4 hasAnchor" number="4.6.4.1">
+<h4><span class="header-section-number">4.6.4.1</span> Метод головних компонент<a href="#%D0%BC%D0%B5%D1%82%D0%BE%D0%B4-%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BD%D0%B8%D1%85-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Найбільш базовим і поширеним методом ординації є <strong>метод головних компонент</strong> (<em>principal component analysis</em>, <strong><em>PCA</em></strong>). Суть РСА полягає в перетворенні набору вхідних змінних <span class="math inline">\(X = \{x_1, x_2, \cdots, x_n\}\)</span> в таку їх <em>лінійну комбінацію</em> <span class="math inline">\(Z = \{z_1, z_2, \cdots, z_n\}\)</span> де <span class="math inline">\(z_i = \phi_{i,1} \cdot x_1 + \phi_{i,2} \cdot x_2 + \cdots + \phi_{i,n} \cdot x_n\)</span>, а коваріація між вихідними змінними <span class="math inline">\(\text{Cov}(z_i, z_j) \rightarrow 0\)</span>. Завдання цього методу полягає в знаходженні коефіцієнтів <span class="math inline">\(\phi_{i, j}\)</span> для кожної змінної <span class="math inline">\(z_i\)</span> та <span class="math inline">\(x_j\)</span>. Вихідні змінні <span class="math inline">\(Z = \{z_1, z_2, \cdots, z_n\}\)</span> називають <strong>головними компонентами</strong>.</p>
+<p>Хоча й методи ординації іноді й називають також методами <strong>зменшення розмірності</strong> даних, це є правдою лише частково: справа в тім, що РСА повертає стільки ж вихідних головних компонент, скільки було вхідних змінних. Корисними властивостями головних компонент є те, що, на відміну від вхідних змінних у більшості випадків, вони є <em>ортогональними</em> – між головними компонентами відсутня кореляція. Іншою корисною властивістю є те, що хоча й сумарна варіація головних компонент дорівнює сумарній варіації вхідних змінних, варіація невідворотно зменшується із порядком головної компоненти. Відтак, найвища варіація спостерігатиметься в першій головній компоненті <span class="math inline">\(z_1\)</span>, трошки менше варіації – в другій головній компоненті <span class="math inline">\(z_2\)</span>, і так далі до найнижчої варіації в останній головній компоненті <span class="math inline">\(z_n\)</span>. Це дозволяє охопити якомога більше варіації вихідних даних (в яких може бути дуже багато змінних) у всього лише декількох перших головних компонент.</p>
+<p>Аби зрозуміти логіку РСА, можна уявити що цей метод дозволяє поглянути на багатовимірні дані із найбільш інформативного кута. Наприклад, у наборі даних про квітки півників є чотири континуальні змінні:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="4.6-stat-models.html#cb46-1" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code></pre></div>
+</details>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
+<p>Як би ми не намагались, побудувати чотиривимірний графік є трохи поза межами нашого розуміння дійсності. Звісно, можна подивитись на дані в різних комбінаціях двовимірних графіків:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="4.6-stat-models.html#cb48-1" tabindex="-1"></a><span class="fu">library</span>(ggpubr) <span class="co"># бібліотека для комбінування графіків в один рисунок</span></span>
+<span id="cb48-2"><a href="4.6-stat-models.html#cb48-2" tabindex="-1"></a></span>
+<span id="cb48-3"><a href="4.6-stat-models.html#cb48-3" tabindex="-1"></a><span class="fu">ggarrange</span>(</span>
+<span id="cb48-4"><a href="4.6-stat-models.html#cb48-4" tabindex="-1"></a>  iris <span class="sc">%&gt;%</span></span>
+<span id="cb48-5"><a href="4.6-stat-models.html#cb48-5" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Sepal.Width, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
+<span id="cb48-6"><a href="4.6-stat-models.html#cb48-6" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">&quot;none&quot;</span>),</span>
+<span id="cb48-7"><a href="4.6-stat-models.html#cb48-7" tabindex="-1"></a>  iris <span class="sc">%&gt;%</span></span>
+<span id="cb48-8"><a href="4.6-stat-models.html#cb48-8" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Petal.Length, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
+<span id="cb48-9"><a href="4.6-stat-models.html#cb48-9" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">&quot;none&quot;</span>),</span>
+<span id="cb48-10"><a href="4.6-stat-models.html#cb48-10" tabindex="-1"></a>  iris <span class="sc">%&gt;%</span></span>
+<span id="cb48-11"><a href="4.6-stat-models.html#cb48-11" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Petal.Width, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
+<span id="cb48-12"><a href="4.6-stat-models.html#cb48-12" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">&quot;none&quot;</span>),</span>
+<span id="cb48-13"><a href="4.6-stat-models.html#cb48-13" tabindex="-1"></a>  iris <span class="sc">%&gt;%</span></span>
+<span id="cb48-14"><a href="4.6-stat-models.html#cb48-14" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Sepal.Width, <span class="at">y =</span> Petal.Length, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
+<span id="cb48-15"><a href="4.6-stat-models.html#cb48-15" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">&quot;none&quot;</span>),</span>
+<span id="cb48-16"><a href="4.6-stat-models.html#cb48-16" tabindex="-1"></a>  iris <span class="sc">%&gt;%</span></span>
+<span id="cb48-17"><a href="4.6-stat-models.html#cb48-17" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Sepal.Width, <span class="at">y =</span> Petal.Width, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
+<span id="cb48-18"><a href="4.6-stat-models.html#cb48-18" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">&quot;none&quot;</span>),</span>
+<span id="cb48-19"><a href="4.6-stat-models.html#cb48-19" tabindex="-1"></a>  iris <span class="sc">%&gt;%</span></span>
+<span id="cb48-20"><a href="4.6-stat-models.html#cb48-20" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">y =</span> Petal.Width, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
+<span id="cb48-21"><a href="4.6-stat-models.html#cb48-21" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">&quot;none&quot;</span>),</span>
+<span id="cb48-22"><a href="4.6-stat-models.html#cb48-22" tabindex="-1"></a>  <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">nrow =</span> <span class="dv">2</span></span>
+<span id="cb48-23"><a href="4.6-stat-models.html#cb48-23" tabindex="-1"></a>)</span></code></pre></div>
+</details>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p>Однак, як перебудувати виміри таким чином, аби поглянути на цю чотиривимірну хмару точок під таким кутом, за якого ми побачимо найбільше варіації? Тут на допомогу і приходить РСА. В наступному коді ми виконуємо декілька кроків:</p>
+<ol style="list-style-type: decimal">
+<li><p>застосовуємо <a href="4.4-pdf-pmf.html#norm-dirstr">z-стандартизацію</a> аби головні компоненти не були упереджені на користь змінних із високою варіацією<a href="#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a>;</p></li>
+<li><p>застосовуємо метод головних компонент (функція <code>prcomp</code>);</p></li>
+<li><p>малюємо хмару точок в просторі <code>Petal.Length</code>-<code>Sepal.Length</code> (ці змінні мають найбільшу варіацію до стандартизації) і осі перших двох компонент – таке зображення РСА не є типовим, але є сподівання що воно допоможе зрозуміти що відбувається, і як перші дві головні компоненти є ортогональними, хоча й кут між ними не виглядає на 90° (насправді він становить 90°, просто ми дивимось на двовимірну проекцію чотиривимірного простору);</p></li>
+<li><p>малюємо цю ж хмару точок в проекції перших двох компонент, у випадку чого класично осі позначають як номер головної компоненти (Principal Component, PC) і відсоток сумарної варіації даних, що припадає на ці головні компоненти;</p></li>
+<li><p>дивимось на розподіл варіації даних за головними компонентами – скільки інформації ми змогли захопити в перших двох компонентах?</p></li>
+</ol>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="4.6-stat-models.html#cb49-1" tabindex="-1"></a><span class="co"># Крок 1: z-стандартизація</span></span>
+<span id="cb49-2"><a href="4.6-stat-models.html#cb49-2" tabindex="-1"></a></span>
+<span id="cb49-3"><a href="4.6-stat-models.html#cb49-3" tabindex="-1"></a>iris_scaled <span class="ot">&lt;-</span> <span class="fu">scale</span>(iris[, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>()</span>
+<span id="cb49-4"><a href="4.6-stat-models.html#cb49-4" tabindex="-1"></a><span class="co"># тепер у кожної змінної середнє дорівнює 0, sd = 1</span></span>
+<span id="cb49-5"><a href="4.6-stat-models.html#cb49-5" tabindex="-1"></a></span>
+<span id="cb49-6"><a href="4.6-stat-models.html#cb49-6" tabindex="-1"></a><span class="co"># додамо змінну з видом з ориінального набору даних</span></span>
+<span id="cb49-7"><a href="4.6-stat-models.html#cb49-7" tabindex="-1"></a>iris_scaled<span class="sc">$</span>species <span class="ot">&lt;-</span> iris<span class="sc">$</span>Species</span>
+<span id="cb49-8"><a href="4.6-stat-models.html#cb49-8" tabindex="-1"></a></span>
+<span id="cb49-9"><a href="4.6-stat-models.html#cb49-9" tabindex="-1"></a><span class="co"># Крок 2: РСА</span></span>
+<span id="cb49-10"><a href="4.6-stat-models.html#cb49-10" tabindex="-1"></a></span>
+<span id="cb49-11"><a href="4.6-stat-models.html#cb49-11" tabindex="-1"></a>iris_pca <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(iris_scaled[,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>])</span>
+<span id="cb49-12"><a href="4.6-stat-models.html#cb49-12" tabindex="-1"></a></span>
+<span id="cb49-13"><a href="4.6-stat-models.html#cb49-13" tabindex="-1"></a><span class="co"># Крок 3: проекція оригінальних стандартизованих даних</span></span>
+<span id="cb49-14"><a href="4.6-stat-models.html#cb49-14" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb49-15"><a href="4.6-stat-models.html#cb49-15" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">y =</span> Sepal.Length, <span class="at">shape =</span> species), <span class="at">data =</span> iris_scaled) <span class="sc">+</span></span>
+<span id="cb49-16"><a href="4.6-stat-models.html#cb49-16" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">slope =</span> iris_pca<span class="sc">$</span>rotation[<span class="st">&quot;Sepal.Length&quot;</span>, <span class="st">&quot;PC1&quot;</span>]<span class="sc">/</span>iris_pca<span class="sc">$</span>rotation[<span class="st">&quot;Petal.Length&quot;</span>, <span class="st">&quot;PC1&quot;</span>],</span>
+<span id="cb49-17"><a href="4.6-stat-models.html#cb49-17" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">lty =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb49-18"><a href="4.6-stat-models.html#cb49-18" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">slope =</span> iris_pca<span class="sc">$</span>rotation[<span class="st">&quot;Sepal.Length&quot;</span>, <span class="st">&quot;PC2&quot;</span>]<span class="sc">/</span>iris_pca<span class="sc">$</span>rotation[<span class="st">&quot;Petal.Length&quot;</span>, <span class="st">&quot;PC2&quot;</span>],</span>
+<span id="cb49-19"><a href="4.6-stat-models.html#cb49-19" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
+</details>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="4.6-stat-models.html#cb50-1" tabindex="-1"></a><span class="co"># Крок 4: проекція перших двох головних компонент</span></span>
+<span id="cb50-2"><a href="4.6-stat-models.html#cb50-2" tabindex="-1"></a><span class="fu">autoplot</span>(iris_pca, <span class="at">data =</span> iris, <span class="at">shape =</span> <span class="st">&#39;Species&#39;</span>,</span>
+<span id="cb50-3"><a href="4.6-stat-models.html#cb50-3" tabindex="-1"></a>         <span class="at">loadings =</span> T, <span class="at">loadings.colour =</span> <span class="st">&#39;gray&#39;</span>,</span>
+<span id="cb50-4"><a href="4.6-stat-models.html#cb50-4" tabindex="-1"></a>         <span class="at">loadings.label =</span> T, <span class="at">loadings.label.size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb50-5"><a href="4.6-stat-models.html#cb50-5" tabindex="-1"></a>  <span class="fu">scale_y_reverse</span>() <span class="sc">+</span></span>
+<span id="cb50-6"><a href="4.6-stat-models.html#cb50-6" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb50-7"><a href="4.6-stat-models.html#cb50-7" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+</details>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-23-2.png" width="672" /></p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="4.6-stat-models.html#cb51-1" tabindex="-1"></a><span class="co"># Сірі стрілки позначають осі оригінальних змінних в проекції РС1-РС2.</span></span>
+<span id="cb51-2"><a href="4.6-stat-models.html#cb51-2" tabindex="-1"></a><span class="co"># Зверніть увагу що вісь РС2 інвертована,</span></span>
+<span id="cb51-3"><a href="4.6-stat-models.html#cb51-3" tabindex="-1"></a><span class="co"># просто так легше візуально знайти відповідні точки з попереднього графіку.</span></span>
+<span id="cb51-4"><a href="4.6-stat-models.html#cb51-4" tabindex="-1"></a><span class="co"># Відсотки в назвах осей відповідають розподілу варіації</span></span>
+<span id="cb51-5"><a href="4.6-stat-models.html#cb51-5" tabindex="-1"></a></span>
+<span id="cb51-6"><a href="4.6-stat-models.html#cb51-6" tabindex="-1"></a><span class="co"># Крок 5: Розподіл варіації</span></span>
+<span id="cb51-7"><a href="4.6-stat-models.html#cb51-7" tabindex="-1"></a><span class="fu">plot</span>(iris_pca)</span></code></pre></div>
+</details>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-23-3.png" width="672" /></p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="4.6-stat-models.html#cb52-1" tabindex="-1"></a><span class="co"># Скільки варіації головні компоненти мають кумулятивно?</span></span>
+<span id="cb52-2"><a href="4.6-stat-models.html#cb52-2" tabindex="-1"></a><span class="fu">cumsum</span>(iris_pca<span class="sc">$</span>sdev<span class="sc">*</span><span class="dv">100</span><span class="sc">/</span><span class="fu">sum</span>(iris_pca<span class="sc">$</span>sdev))</span></code></pre></div>
+</details>
+<pre><code>## [1]  53.52972  83.48653  95.49021 100.00000</code></pre>
+<p>Отак ми й змогли зобразити чотиривимірні дані в двох вимірах, при чому ми бачимо 83.49% варіації всіх даних із використанням тільки першої й другої головних компонент.</p>
+<p>Одним практичним застереженням до використання РСА є необхідність уникати лінійних комбінацій змінних у вхідних даних (наприклад, якщо одна змінна є сумою двох інших змінних). Це пов’язано із тим, що під капотом РСА – чутливі підходи <a href="4.2-matrices.html#matrices">лінійної алгебри</a>, і наявність лінійних комбінацій призведе до виродження матриць. Ба більше, необхідно також зважати на чутливість РСА до сильної кореляції між вхідними змінними (<a href="https://doi.org/10.1111/evo.13835">Björklund 2019</a>, див. також <a href="https://stats.stackexchange.com/questions/50537/should-one-remove-highly-correlated-variables-before-doing-pca">дискусію на цю тему</a>). Як би це не було парадоксально, адже властивість ортогональності головних компонент часто використовується для уникнення мультиколінеарності<a href="#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a>, однак бажано уникати сильно корельованих змінних у вхідних даних до РСА. На лінійно-алгебраїчну природу РСА також натякає той факт, що варіацією головних компонент є ніщо інше як власні значення (eigenvalues) матриці кореляції/коваріації вхідних змінних, а коефіцієнтами <span class="math inline">\(\phi_{i,j}\)</span> – власні вектори (eigenvectors)<a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>.</p>
+<p>Іншою поширеною помилкою є сліпе використання РСА, коли дослідник забуває про біологічний зміст кожної головної компоненти. Головні компоненти є просто лінійними комбінаціями вхідних змінних, і твердження на кшталт “головна компонента 1 значуще впливає на залежну змінну” не має жодного сенсу допоки дослідник не з’ясує, із якими вхідними змінними ця перша головна компонента пов’язана найбільше. Для висновків щодо змісту головних компонент можна використати просту кореляцію між кожною окремою головною компонентою і вхідними змінними:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="4.6-stat-models.html#cb54-1" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span>
+<span id="cb54-2"><a href="4.6-stat-models.html#cb54-2" tabindex="-1"></a></span>
+<span id="cb54-3"><a href="4.6-stat-models.html#cb54-3" tabindex="-1"></a><span class="fu">corrplot</span>(<span class="fu">cor</span>(iris[,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>], iris_pca<span class="sc">$</span>x), </span>
+<span id="cb54-4"><a href="4.6-stat-models.html#cb54-4" tabindex="-1"></a>         <span class="at">title =</span> <span class="st">&quot;&quot;</span>, <span class="at">method =</span> <span class="st">&quot;ellipse&quot;</span>)</span></code></pre></div>
+</details>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p>На цьому прикладі ми бачимо, що перша головна компонента “ввібрала” в себе найбільше інформації щодо форми пелюсток (змінні <code>Petal.Length</code>, <code>Petal.Width</code>), в той час як друга – про форму чашолистків (сильна негативна кореляція із <code>Sepal.Width</code>).</p>
+</div>
+<div id="інші-методи-ординації" class="section level4 hasAnchor" number="4.6.4.2">
+<h4><span class="header-section-number">4.6.4.2</span> Інші методи ординації<a href="#%D1%96%D0%BD%D1%88%D1%96-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%B8-%D0%BE%D1%80%D0%B4%D0%B8%D0%BD%D0%B0%D1%86%D1%96%D1%97" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Значним обмеженням РСА є те, що цей метод може бути застосований лише для континуальних змінних, а в екології дані можуть мати вигляд інших типів змінних. В той час як РСА є найбільш популярним методом, він є і найбільш базовим, на основі якого створено чимало варіацій ординації:</p>
+<ul>
+<li><p><strong>Аналіз головних координат</strong> (<em>principal coordinates analysis</em>, <strong><em>PCoA</em></strong>) замість набору даних, що описують об’єкти континуальними змінними, використовує матрицю дистанцій між об’єктами. Такий підхід є доволі зручним коли дані містять не-континуальні змінні для пар значень яких можна оцінити дистанцію між значеннями.</p></li>
+<li><p><strong>Неметричне багатовимірне шкалювання</strong> (<em>non-metric multidimensional scaling</em>, <strong><em>NMDS</em></strong>) є підтипом РСоА, особливо популярним в екології угруповань. Цей метод уявляє угруповання видів в багатовимірному просторі чисельності цих видів (тобто скільки видів, стільки й вимірів), і використовує рангування чисельностей видів для знаходження оптимальної позиції угруповань в просторі із зменшеною кількістю вимірів (зазвичай, в двовимірному просторі). Див. <a href="https://jonlefcheck.net/2012/10/24/nmds-tutorial-in-r/">це застосування методу в R</a> із трохи більш детальним описом методу.</p></li>
+<li><p><strong>Аналіз канонічної відповідності</strong> (<em>canonical correspondence analysis</em>, <strong><em>CCA</em></strong>) припускає що певні змінні (наприклад, чисельності видів) мають не лінійну, а, скоріш, куполо-подібний зв’язок із іншими змінними (наприклад, параметрами середовища). На відміну від попередніх методів, ССА вимагає два набори даних: наприклад, про чисельності видів і параметри середовища, і на виході надає змогу розглянути які змінні із двох наборів даних пов’язані між собою. Див. більше деталей <a href="https://rfunctions.blogspot.com/2016/11/canonical-correspondence-analysis-cca.html">тут</a>.</p></li>
+<li><p><strong>Аналіз надлишковості</strong> (<em>redundancy analysis</em>, <strong><em>RDA</em></strong>) є подібним методом до ССА, однак в той час як ССА визначає симетричні взаємозв’язки між змінними в двох наборах даних, RDA вимагає попередньої інформації про те який набір даних містить предиктори, а який – залежні змінні. Див. більше деталей <a href="https://r.qcbs.ca/workshop10/book-en/redundancy-analysis.html">тут</a>.</p></li>
+</ul>
+<p>В той час як РСА, РСоА, та NMDS використовуються тільки для зменшення розмірності даних, ССА та RDA можуть бути корисними і для тестування гіпотез щодо взаємозв’язків в багатовимірних даних.</p>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="35">
+<li id="fn35"><p><strong>Автокореляція</strong> – це кореляція змінної із самою собою, тобто залежність значень у вибірці від інших значень в цій вибірці.<a href="4.6-stat-models.html#fnref35" class="footnote-back">↩︎</a></p></li>
+<li id="fn36"><p>Зручним уявним експериментом для прикладу абсурдності ототожнювання кореляцій (чи інших статистичних зв’язків) та каузацій є наступна ситуація: нескладно уявити, що кількість пожежників, залучених до гасіння пожеж, позитивно пов’язана зі збитками від пожежі – то чи значить це, що пожежники завдають збитків?<a href="4.6-stat-models.html#fnref36" class="footnote-back">↩︎</a></p></li>
+<li id="fn37"><p>Це не означає що модель із найнижчим значенням АІС є парсимонійною; грубо кажучи, така модель є просто найменш не-парсимонійною.<a href="4.6-stat-models.html#fnref37" class="footnote-back">↩︎</a></p></li>
+<li id="fn38"><p>Z-стандартизація має бути обов’язковим кроком, якщо змінні мають різні одиниці вимірювання, адже варіація в, скажімо, зрості людей (м) буде нижчою за варіацію ваги (кг) суто через те що ми маємо справу із одиницями метрів та десятками кілограмів (пам’ятаймо, що одиницею вимірювання варіації змінної є одиниці самої змінної). Загалом, z-стандартизація є хорошою практикою для уникнення різних артефактів в аналізі.<a href="4.6-stat-models.html#fnref38" class="footnote-back">↩︎</a></p></li>
+<li id="fn39"><p>Наприклад, оскільки множинна регресія не може бути використана до мультиколінеарних даних, за наявності кореляції між вхідними змінними можна використати РСА і застосувати регресію до головних компонент (<a href="https://www.statlearning.com/">James et al. 2021</a>).<a href="4.6-stat-models.html#fnref39" class="footnote-back">↩︎</a></p></li>
+<li id="fn40"><p>В контексті РСА власні вектори часто називають <strong>навантаженням</strong> (<em>loading</em>, <em>rotation</em>) – ці значення й пов’язують координати нових точок головних компонент із координатами вихідних змінних.<a href="4.6-stat-models.html#fnref40" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="4.5-basic-hypotheses.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="4.7-infer.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["bookdown-demo.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

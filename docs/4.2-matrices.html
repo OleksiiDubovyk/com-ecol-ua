@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4.2 Лінійна алгебра | Вступ до Екології Угруповань</title>
+  <meta name="description" content="Непідручник" />
+  <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4.2 Лінійна алгебра | Вступ до Екології Угруповань" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Непідручник" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4.2 Лінійна алгебра | Вступ до Екології Угруповань" />
+  
+  <meta name="twitter:description" content="Непідручник" />
+  
+
+<meta name="author" content="Олексій Дубовик" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="4.1-algebra.html"/>
+<link rel="next" href="4.3-stats.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/codefolding-lua-1.1/codefolding-lua.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<meta name="google-site-verification" content="PxaldxMtVeQNl4LkXGyu2G86qsNb6QD-uPRPRfOKCBM" />
+<link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+<link rel="manifest" href="images/favicon/manifest.json">
+<link rel="shortcut icon" href="images/favicon/favicon-32x32.pn" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Вступ до Екології Угруповань</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Вітання</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="#%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%BC%D0%BE%D0%B2%D0%B0-preface"><i class="fa fa-check"></i><b>1</b> Передмова{-preface}</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="1-передмова-preface.html"><a href="1-передмова-preface.html"><i class="fa fa-check"></i><b>1.0.1</b> Трішки про автора</a></li>
+<li class="chapter" data-level="1.0.2" data-path="1-передмова-preface.html"><a href="1-передмова-preface.html#whythiswork"><i class="fa fa-check"></i><b>1.0.2</b> Навіщо ця робота</a></li>
+<li class="chapter" data-level="1.0.3" data-path="1-передмова-preface.html"><a href="1-передмова-preface.html#more-about-author"><i class="fa fa-check"></i><b>1.0.3</b> Ще трішки про автора</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="acknowledge.html"><a href="acknowledge.html"><i class="fa fa-check"></i>Подяки</a></li>
+<li class="chapter" data-level="2" data-path="2-introduction.html"><a href="2-introduction.html"><i class="fa fa-check"></i><b>2</b> Вступ</a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="2-introduction.html"><a href="2-introduction.html#community-def"><i class="fa fa-check"></i><b>2.0.1</b> Екологічне угруповання</a></li>
+<li class="chapter" data-level="2.0.2" data-path="2-introduction.html"><a href="2-introduction.html#comm-ecol-today"><i class="fa fa-check"></i><b>2.0.2</b> Екологія угруповань сьогодні</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-about-book.html"><a href="3-about-book.html"><i class="fa fa-check"></i><b>3</b> Про книгу та Зміст</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="3-about-book.html"><a href="3-about-book.html#readme"><i class="fa fa-check"></i><b>3.0.1</b> Дисклеймер</a></li>
+<li class="chapter" data-level="3.0.2" data-path="3-about-book.html"><a href="3-about-book.html#how-built"><i class="fa fa-check"></i><b>3.0.2</b> Як побудована ця книга</a></li>
+<li class="chapter" data-level="3.0.3" data-path="3-about-book.html"><a href="3-about-book.html#expect"><i class="fa fa-check"></i><b>3.0.3</b> Чого чекати від цієї книги</a></li>
+<li class="chapter" data-level="3.0.4" data-path="3-about-book.html"><a href="3-about-book.html#expected"><i class="fa fa-check"></i><b>3.0.4</b> Чого ця книга чекає від читача</a></li>
+<li class="chapter" data-level="3.0.5" data-path="3-about-book.html"><a href="3-about-book.html#resources"><i class="fa fa-check"></i><b>3.0.5</b> Додаткові ресурси</a></li>
+<li class="chapter" data-level="3.0.6" data-path="3-about-book.html"><a href="3-about-book.html#notexpect"><i class="fa fa-check"></i><b>3.0.6</b> На що не варто розраховувати</a></li>
+<li class="chapter" data-level="3.1" data-path="index.html"><a href="#%D0%B7%D0%BC%D1%96%D1%81%D1%82"><i class="fa fa-check"></i><b>3.1</b> Зміст</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="4-numerical-ecology.html"><a href="4-numerical-ecology.html"><i class="fa fa-check"></i><b>4</b> Базові математичні підходи в екології</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="4.1-algebra.html"><a href="4.1-algebra.html"><i class="fa fa-check"></i><b>4.1</b> Математична пам’ятка</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="index.html"><a href="#%D0%B4%D1%80%D0%BE%D0%B1%D0%B8"><i class="fa fa-check"></i><b>4.1.1</b> Дроби</a></li>
+<li class="chapter" data-level="4.1.2" data-path="index.html"><a href="#%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D1%96-%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D0%B8"><i class="fa fa-check"></i><b>4.1.2</b> Математичні символи</a></li>
+<li class="chapter" data-level="4.1.3" data-path="index.html"><a href="#%D0%BD%D0%B5%D1%80%D1%96%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D1%96"><i class="fa fa-check"></i><b>4.1.3</b> Нерівності</a></li>
+<li class="chapter" data-level="4.1.4" data-path="index.html"><a href="#%D1%81%D1%82%D1%83%D0%BF%D0%B5%D0%BD%D1%96"><i class="fa fa-check"></i><b>4.1.4</b> Ступені</a></li>
+<li class="chapter" data-level="4.1.5" data-path="index.html"><a href="#%D1%80%D1%8F%D0%B4%D0%B8-%D1%87%D0%B8%D1%81%D0%B5%D0%BB"><i class="fa fa-check"></i><b>4.1.5</b> Ряди чисел</a></li>
+<li class="chapter" data-level="4.1.6" data-path="index.html"><a href="#%D1%81%D1%82%D1%83%D0%BF%D0%B5%D0%BD%D1%96-%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D1%87%D0%BD%D0%B8%D1%85-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D1%96%D0%B9"><i class="fa fa-check"></i><b>4.1.6</b> Ступені арифметичних операцій</a></li>
+<li class="chapter" data-level="4.1.7" data-path="index.html"><a href="#%D0%BB%D1%96%D0%BD%D1%96%D0%B9%D0%BD%D1%96-%D1%82%D0%B0-%D0%BF%D0%BE%D0%BB%D1%96%D0%BD%D0%BE%D0%BC%D1%96%D0%B0%D0%BB%D1%8C%D0%BD%D1%96-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D1%96%D1%97"><i class="fa fa-check"></i><b>4.1.7</b> Лінійні та поліноміальні функції</a></li>
+<li class="chapter" data-level="4.1.8" data-path="4.1-algebra.html"><a href="4.1-algebra.html#logs"><i class="fa fa-check"></i><b>4.1.8</b> Логарифми</a></li>
+<li class="chapter" data-level="4.1.9" data-path="index.html"><a href="#%D0%BF%D0%BE%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D1%96-%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D1%96-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D1%96%D1%97"><i class="fa fa-check"></i><b>4.1.9</b> Поширені математичні функції</a></li>
+<li class="chapter" data-level="4.1.10" data-path="index.html"><a href="#%D0%B2%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D0%B2%D0%BE%D1%81%D1%82%D1%96-%D1%81%D1%83%D0%BC"><i class="fa fa-check"></i><b>4.1.10</b> Властивості сум</a></li>
+<li class="chapter" data-level="4.1.11" data-path="index.html"><a href="#%D0%B2%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D0%B2%D0%BE%D1%81%D1%82%D1%96-%D0%B4%D0%BE%D0%B1%D1%83%D1%82%D0%BA%D1%96%D0%B2"><i class="fa fa-check"></i><b>4.1.11</b> Властивості добутків</a></li>
+<li class="chapter" data-level="4.1.12" data-path="index.html"><a href="#%D0%B4%D0%B8%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D1%96%D1%8E%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F"><i class="fa fa-check"></i><b>4.1.12</b> Диференціювання</a></li>
+<li class="chapter" data-level="4.1.13" data-path="index.html"><a href="#%D1%96%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F"><i class="fa fa-check"></i><b>4.1.13</b> Інтегрування</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="4.2-matrices.html"><a href="4.2-matrices.html"><i class="fa fa-check"></i><b>4.2</b> Лінійна алгебра</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="index.html"><a href="#%D0%B2%D0%B8%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%BD%D1%8F-%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%96"><i class="fa fa-check"></i><b>4.2.1</b> Визначення матриці</a></li>
+<li class="chapter" data-level="4.2.2" data-path="index.html"><a href="#%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D1%96%D1%97-%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8C"><i class="fa fa-check"></i><b>4.2.2</b> Трансформації матриць</a></li>
+<li class="chapter" data-level="4.2.3" data-path="index.html"><a href="#%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D1%96%D1%97-%D0%BD%D0%B0%D0%B4-%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8F%D0%BC%D0%B8"><i class="fa fa-check"></i><b>4.2.3</b> Операції над матрицями</a></li>
+<li class="chapter" data-level="4.2.4" data-path="index.html"><a href="#%D0%B4%D0%B5%D1%82%D0%B5%D1%80%D0%BC%D1%96%D0%BD%D0%B0%D0%BD%D1%82-%D0%B2%D0%BB%D0%B0%D1%81%D0%BD%D1%96-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B8-%D1%82%D0%B0-%D0%B2%D0%BB%D0%B0%D1%81%D0%BD%D0%B5-%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%BD%D1%8F"><i class="fa fa-check"></i><b>4.2.4</b> Детермінант, власні вектори, та власне значення</a></li>
+<li class="chapter" data-level="4.2.5" data-path="4.2-matrices.html"><a href="4.2-matrices.html#matrices_art"><i class="fa fa-check"></i><b>4.2.5</b> Геометричний зміст матриць</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="4.3-stats.html"><a href="4.3-stats.html"><i class="fa fa-check"></i><b>4.3</b> Ймовірність у статистиці</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="4.3-stats.html"><a href="4.3-stats.html#prob"><i class="fa fa-check"></i><b>4.3.1</b> Ймовірність</a></li>
+<li class="chapter" data-level="4.3.2" data-path="4.3-stats.html"><a href="4.3-stats.html#bayes"><i class="fa fa-check"></i><b>4.3.2</b> Теорема Баєса</a></li>
+<li class="chapter" data-level="4.3.3" data-path="4.3-stats.html"><a href="4.3-stats.html#mle"><i class="fa fa-check"></i><b>4.3.3</b> Правдоподібність</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="4.4-pdf-pmf.html"><a href="4.4-pdf-pmf.html"><i class="fa fa-check"></i><b>4.4</b> Розподіли ймовірності</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="4.4-pdf-pmf.html"><a href="4.4-pdf-pmf.html#pdfs"><i class="fa fa-check"></i><b>4.4.1</b> Функції розподілу ймовірності</a></li>
+<li class="chapter" data-level="4.4.2" data-path="4.4-pdf-pmf.html"><a href="4.4-pdf-pmf.html#bars"><i class="fa fa-check"></i><b>4.4.2</b> Опис розподілу змінної (описова статистика)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="4.5-basic-hypotheses.html"><a href="4.5-basic-hypotheses.html"><i class="fa fa-check"></i><b>4.5</b> Тестування гіпотез</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="4.5-basic-hypotheses.html"><a href="4.5-basic-hypotheses.html#hypothesis"><i class="fa fa-check"></i><b>4.5.1</b> Статистична гіпотеза</a></li>
+<li class="chapter" data-level="4.5.2" data-path="4.5-basic-hypotheses.html"><a href="4.5-basic-hypotheses.html#nulldistr"><i class="fa fa-check"></i><b>4.5.2</b> Нульовий розподіл</a></li>
+<li class="chapter" data-level="4.5.3" data-path="4.5-basic-hypotheses.html"><a href="4.5-basic-hypotheses.html#pval"><i class="fa fa-check"></i><b>4.5.3</b> Тестування гіпотез</a></li>
+<li class="chapter" data-level="4.5.4" data-path="4.5-basic-hypotheses.html"><a href="4.5-basic-hypotheses.html#paradigms"><i class="fa fa-check"></i><b>4.5.4</b> Парадигми статистичного аналізу</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="4.6-stat-models.html"><a href="4.6-stat-models.html"><i class="fa fa-check"></i><b>4.6</b> Експеримент і модель</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="4.6-stat-models.html"><a href="4.6-stat-models.html#pseudoreplication"><i class="fa fa-check"></i><b>4.6.1</b> Експериментальний дизайн та псевдореплікація</a></li>
+<li class="chapter" data-level="4.6.2" data-path="4.6-stat-models.html"><a href="4.6-stat-models.html#regression"><i class="fa fa-check"></i><b>4.6.2</b> Дані та проблема моделювання</a></li>
+<li class="chapter" data-level="4.6.3" data-path="4.6-stat-models.html"><a href="4.6-stat-models.html#aic"><i class="fa fa-check"></i><b>4.6.3</b> Парсимонійна модель та вибір моделі</a></li>
+<li class="chapter" data-level="4.6.4" data-path="4.6-stat-models.html"><a href="4.6-stat-models.html#prcomp"><i class="fa fa-check"></i><b>4.6.4</b> Багатовимірна статистика</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="4.7-infer.html"><a href="4.7-infer.html"><i class="fa fa-check"></i><b>4.7</b> Передбачення, умовивід, та валідація</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="4.7-infer.html"><a href="4.7-infer.html#inference"><i class="fa fa-check"></i><b>4.7.1</b> Статистичний умовивід і обґрунтоване передбачення</a></li>
+<li class="chapter" data-level="4.7.2" data-path="4.7-infer.html"><a href="4.7-infer.html#crossval"><i class="fa fa-check"></i><b>4.7.2</b> Крос-валідація</a></li>
+<li class="chapter" data-level="4.7.3" data-path="4.7-infer.html"><a href="4.7-infer.html#bias-variance"><i class="fa fa-check"></i><b>4.7.3</b> Компроміс між упередженням та варіацією</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-popeco.html"><a href="5-popeco.html"><i class="fa fa-check"></i><b>5</b> Початки популяційної екології</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="5.1-species.html"><a href="5.1-species.html"><i class="fa fa-check"></i><b>5.1</b> Вид</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="index.html"><a href="#%D0%BF%D0%BE%D0%BD%D1%8F%D1%82%D1%82%D1%8F-%D0%B2%D0%B8%D0%B4%D1%83"><i class="fa fa-check"></i><b>5.1.1</b> Поняття виду</a></li>
+<li class="chapter" data-level="5.1.2" data-path="index.html"><a href="#%D0%B2%D0%B8%D0%B4%D0%B8-%D1%82%D0%B0-%D0%BF%D0%BB%D0%BE%D1%89%D0%B0"><i class="fa fa-check"></i><b>5.1.2</b> Види та площа</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="5.2-population.html"><a href="5.2-population.html"><i class="fa fa-check"></i><b>5.2</b> Популяція</a></li>
+<li class="chapter" data-level="5.3" data-path="5.3-pop-factors.html"><a href="5.3-pop-factors.html"><i class="fa fa-check"></i><b>5.3</b> Чинники, що впливають на популяції</a></li>
+<li class="chapter" data-level="5.4" data-path="5.4-cmr.html"><a href="5.4-cmr.html"><i class="fa fa-check"></i><b>5.4</b> Моделі мічення-відлову</a></li>
+<li class="chapter" data-level="5.5" data-path="5.5-intraspecific.html"><a href="5.5-intraspecific.html"><i class="fa fa-check"></i><b>5.5</b> Внутрішньовидові взаємодії</a></li>
+<li class="chapter" data-level="5.6" data-path="5.6-pop-dynamics.html"><a href="5.6-pop-dynamics.html"><i class="fa fa-check"></i><b>5.6</b> Динаміка та стабільність</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="index.html"><a href="#%D0%B5%D0%BA%D1%81%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%86%D1%96%D0%B9%D0%BD%D0%B8%D0%B9-%D1%80%D1%96%D1%81%D1%82"><i class="fa fa-check"></i><b>5.6.1</b> Експоненційний ріст</a></li>
+<li class="chapter" data-level="5.6.2" data-path="index.html"><a href="#%D0%BB%D0%BE%D0%B3%D1%96%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%B8%D0%B9-%D1%80%D1%96%D1%81%D1%82"><i class="fa fa-check"></i><b>5.6.2</b> Логістичний ріст</a></li>
+<li class="chapter" data-level="5.6.3" data-path="index.html"><a href="#%D0%BC%D0%BE%D0%B4%D0%B8%D1%84%D1%96%D0%BA%D0%B0%D1%86%D1%96%D1%97-%D0%BB%D0%BE%D0%B3%D1%96%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%BE%D0%B3%D0%BE-%D1%80%D0%BE%D1%81%D1%82%D1%83"><i class="fa fa-check"></i><b>5.6.3</b> Модифікації логістичного росту</a></li>
+<li class="chapter" data-level="5.6.4" data-path="index.html"><a href="#%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D1%96%D0%BA%D0%B0-%D1%82%D0%B0-%D1%81%D1%82%D0%B0%D0%B1%D1%96%D0%BB%D1%8C%D0%BD%D1%96%D1%81%D1%82%D1%8C-%D0%BF%D0%BE%D0%BF%D1%83%D0%BB%D1%8F%D1%86%D1%96%D1%97"><i class="fa fa-check"></i><b>5.6.4</b> Динаміка та стабільність популяції</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="5.7-metapopulation.html"><a href="5.7-metapopulation.html"><i class="fa fa-check"></i><b>5.7</b> Метапопуляція</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="index.html"><a href="#%D0%B7%D0%B0%D0%B3%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BC%D0%B5%D1%82%D0%B0%D0%BF%D0%BE%D0%BF%D1%83%D0%BB%D1%8F%D1%86%D1%96%D1%97"><i class="fa fa-check"></i><b>5.7.1</b> Загальна модель метапопуляції</a></li>
+<li class="chapter" data-level="5.7.2" data-path="index.html"><a href="#%D1%81%D1%82%D0%BE%D1%85%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D1%96%D1%81%D1%82%D1%8C-%D1%96-%D0%B4%D0%B5%D1%82%D0%B5%D1%80%D0%BC%D1%96%D0%BD%D1%96%D0%B7%D0%BC-%D0%B2-%D0%BC%D0%B5%D1%82%D0%B0%D0%BF%D0%BE%D0%BF%D1%83%D0%BB%D1%8F%D1%86%D1%96%D1%8F%D1%85"><i class="fa fa-check"></i><b>5.7.2</b> Стохастичність і детермінізм в метапопуляціях</a></li>
+<li class="chapter" data-level="5.7.3" data-path="index.html"><a href="#%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D1%96%D0%BA%D0%B0-%D0%B4%D0%B6%D0%B5%D1%80%D0%B5%D0%BB%D0%B0%D0%B4%D1%96%D1%80%D0%BA%D0%B8-%D1%82%D0%B0-%D1%85%D0%BE%D0%B4%D1%8F%D1%87%D1%96-%D0%BC%D0%B5%D1%80%D1%86%D1%96"><i class="fa fa-check"></i><b>5.7.3</b> Динаміка джерела–дірки та ходячі мерці</a></li>
+<li class="chapter" data-level="5.7.4" data-path="index.html"><a href="#%D0%BF%D1%81%D0%B5%D0%B2%D0%B4%D0%BE%D0%B4%D1%96%D1%80%D0%BA%D0%B8-%D0%B9-%D0%B5%D0%BA%D0%BE%D0%BB%D0%BE%D0%B3%D1%96%D1%87%D0%BD%D1%96-%D0%BF%D0%B0%D1%81%D1%82%D0%BA%D0%B8"><i class="fa fa-check"></i><b>5.7.4</b> Псевдодірки й екологічні пастки</a></li>
+<li class="chapter" data-level="5.7.5" data-path="index.html"><a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D1%96%D1%97-%D1%82%D1%80%D0%B0%D0%BF%D0%BB%D1%8F%D0%BD%D0%BD%D1%8F"><i class="fa fa-check"></i><b>5.7.5</b> Функції трапляння</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="5.8-Leslie-matrix.html"><a href="5.8-Leslie-matrix.html"><i class="fa fa-check"></i><b>5.8</b> Моделювання популяцій</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="index.html"><a href="#%D0%B4%D0%B8%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D1%96%D0%B9%D0%BD%D1%96-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%96"><i class="fa fa-check"></i><b>5.8.1</b> Диференційні моделі</a></li>
+<li class="chapter" data-level="5.8.2" data-path="index.html"><a href="#%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%87%D0%BD%D1%96-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%96"><i class="fa fa-check"></i><b>5.8.2</b> Матричні моделі</a></li>
+<li class="chapter" data-level="5.8.3" data-path="index.html"><a href="#%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BD%D1%96-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%96"><i class="fa fa-check"></i><b>5.8.3</b> Агентні моделі</a></li>
+<li class="chapter" data-level="5.8.4" data-path="index.html"><a href="#%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%96-%D0%BF%D0%BE%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8F-%D0%B2%D0%B8%D0%B4%D1%96%D0%B2"><i class="fa fa-check"></i><b>5.8.4</b> Моделі поширення видів</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="6-foundations.html"><a href="6-foundations.html"><i class="fa fa-check"></i><b>6</b> Фундаментальні поняття екології</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="6.1-niche.html"><a href="6.1-niche.html"><i class="fa fa-check"></i><b>6.1</b> Екологічна ніша</a></li>
+<li class="chapter" data-level="6.2" data-path="6.2-food-chain.html"><a href="6.2-food-chain.html"><i class="fa fa-check"></i><b>6.2</b> Трофічні ланцюги</a></li>
+<li class="chapter" data-level="6.3" data-path="6.3-food-webs.html"><a href="6.3-food-webs.html"><i class="fa fa-check"></i><b>6.3</b> Трофічні мережі</a></li>
+<li class="chapter" data-level="6.4" data-path="6.4-keystones.html"><a href="6.4-keystones.html"><i class="fa fa-check"></i><b>6.4</b> Ключові види</a></li>
+<li class="chapter" data-level="6.5" data-path="6.5-succession.html"><a href="6.5-succession.html"><i class="fa fa-check"></i><b>6.5</b> Сукцесія та клімакс</a></li>
+<li class="chapter" data-level="6.6" data-path="6.6-life-history.html"><a href="6.6-life-history.html"><i class="fa fa-check"></i><b>6.6</b> Історія життя</a></li>
+<li class="chapter" data-level="6.7" data-path="6.7-detectability.html"><a href="6.7-detectability.html"><i class="fa fa-check"></i><b>6.7</b> Ймовірність детекції</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="7-interspecific.html"><a href="7-interspecific.html"><i class="fa fa-check"></i><b>7</b> Міжвидові взаємодії</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="7.1-relationships.html"><a href="7.1-relationships.html"><i class="fa fa-check"></i><b>7.1</b> Типи міжвидових зв’язків</a></li>
+<li class="chapter" data-level="7.2" data-path="7.2-rstar.html"><a href="7.2-rstar.html"><i class="fa fa-check"></i><b>7.2</b> Теорія поділу ресурсів</a></li>
+<li class="chapter" data-level="7.3" data-path="7.3-cascade.html"><a href="7.3-cascade.html"><i class="fa fa-check"></i><b>7.3</b> Трофічні каскади</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="8-comecol.html"><a href="8-comecol.html"><i class="fa fa-check"></i><b>8</b> Екологічні угруповання</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="8.1-sad.html"><a href="8.1-sad.html"><i class="fa fa-check"></i><b>8.1</b> Структура угруповання</a></li>
+<li class="chapter" data-level="8.2" data-path="8.2-sad-model.html"><a href="8.2-sad-model.html"><i class="fa fa-check"></i><b>8.2</b> Моделі розподілів чисельності</a></li>
+<li class="chapter" data-level="8.3" data-path="8.3-diversity.html"><a href="8.3-diversity.html"><i class="fa fa-check"></i><b>8.3</b> Різноманіття</a></li>
+<li class="chapter" data-level="8.4" data-path="8.4-janzen.html"><a href="8.4-janzen.html"><i class="fa fa-check"></i><b>8.4</b> Гіпотеза Джензена–Конела</a></li>
+<li class="chapter" data-level="8.5" data-path="8.5-similarity.html"><a href="8.5-similarity.html"><i class="fa fa-check"></i><b>8.5</b> Подібність угруповань</a></li>
+<li class="chapter" data-level="8.6" data-path="8.6-fd.html"><a href="8.6-fd.html"><i class="fa fa-check"></i><b>8.6</b> Функціональне й філогенетичне різноманіття</a></li>
+<li class="chapter" data-level="8.7" data-path="8.7-islands.html"><a href="8.7-islands.html"><i class="fa fa-check"></i><b>8.7</b> Острівна біогеографія</a></li>
+<li class="chapter" data-level="8.8" data-path="8.8-env-filter.html"><a href="8.8-env-filter.html"><i class="fa fa-check"></i><b>8.8</b> Середовищне фільтрування</a></li>
+<li class="chapter" data-level="8.9" data-path="8.9-untb.html"><a href="8.9-untb.html"><i class="fa fa-check"></i><b>8.9</b> Нейтральна теорія біорізноманіття</a></li>
+<li class="chapter" data-level="8.10" data-path="8.10-rarefaction.html"><a href="8.10-rarefaction.html"><i class="fa fa-check"></i><b>8.10</b> Рарефакція та екстраполяція</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="goodbye.html"><a href="goodbye.html"><i class="fa fa-check"></i>Післяслово</a></li>
+<li class="chapter" data-level="" data-path="contact.html"><a href="contact.html"><i class="fa fa-check"></i>Контакти автора</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Вступ до Екології Угруповань</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="matrices" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Лінійна алгебра<a href="4.2-matrices.html#matrices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="визначення-матриці" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Визначення матриці<a href="#%D0%B2%D0%B8%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%BD%D1%8F-%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%96" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Матриця є двовимірним набором значень, що позначається як</p>
+<p><span class="math display">\[\textbf{A} = \begin{bmatrix}
+a_{1, 1} &amp; a_{1,2} &amp; \cdots &amp; a_{1, n}\\
+a_{2, 1} &amp; a_{2,2} &amp; \cdots &amp; a_{2, n}\\
+\vdots &amp; \vdots &amp; a_{i,j} &amp; \vdots \\
+a_{m, 1} &amp; a_{m,2} &amp; \cdots &amp; a_{m, n}
+\end{bmatrix}\]</span></p>
+<p>в якій <span class="math inline">\(i: 1, 2, \cdots, m-1, m\)</span> позначає індекс рядка елементу і <span class="math inline">\(j: 1, 2, \cdots, n-1, n\)</span> позначає індекс колонки елементу <span class="math inline">\(a_{i, j}\)</span>. В цій книзі матриці як об’єкти позначатимуться жирними великими літерами і визначатимуться як матриці в квадратних дужках, але варто мати на увазі, що позначення іноді варіюють в різних джерелах.</p>
+<p>Розмірність матриці визначається кількістю рядків <span class="math inline">\(m\)</span> та кількістю колонок <span class="math inline">\(n\)</span>. Якщо один із цих вимірів дорівнює одиниці, матриця являє собою <strong><em>вектор</em></strong> – послідовність значень. Поняття вектору важливе для розуміння оперування даними, адже спостереження (рядки) та параметри (колонки) в масиві даних є векторами розмірністю <span class="math inline">\(m \times 1\)</span> або <span class="math inline">\(1 \times n\)</span>. Вектори позначаються як <span class="math inline">\(\vec{a}\)</span>.</p>
+<p>В подальшому матриці визначені як жирні літери (напр., <span class="math inline">\(\mathbf{A}\)</span>), а елементи матриці – як індексовані літери <span class="math inline">\(a_{i,j}\)</span>, або <span class="math inline">\([\mathbf{A}]_{i,j}\)</span>.</p>
+</div>
+<div id="трансформації-матриць" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Трансформації матриць<a href="#%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D1%96%D1%97-%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8C" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong><em>Додавання матриць</em></strong>, якщо обидві матриці мають ідентичну розмірність, є доволі очевидним, адже додаються елементи із ідентичними індексами. Наприклад, <span class="math inline">\(\mathbf{A}+\mathbf{B} = a_{i,j}+b_{i, j}\)</span>.</p>
+<p>Наприклад, якщо</p>
+<p><span class="math display">\[\mathbf{A} = \begin{bmatrix}
+a_{1, 1} &amp; a_{1,2} &amp; \cdots &amp; a_{1, n}\\
+a_{2, 1} &amp; a_{2,2} &amp; \cdots &amp; a_{2, n}\\
+\vdots &amp; \vdots &amp; a_{i,j} &amp; \vdots \\
+a_{m, 1} &amp; a_{m,2} &amp; \cdots &amp; a_{m, n}
+\end{bmatrix},
+\mathbf{B} = \begin{bmatrix}
+b_{1, 1} &amp; b_{1,2} &amp; \cdots &amp; b_{1, n}\\
+b_{2, 1} &amp; b_{2,2} &amp; \cdots &amp; b_{2, n}\\
+\vdots &amp; \vdots &amp; b_{i,j} &amp; \vdots \\
+b_{m, 1} &amp; b_{m,2} &amp; \cdots &amp; b_{m, n}
+\end{bmatrix}\]</span></p>
+<p>тоді</p>
+<p><span class="math display">\[\mathbf{A} + \mathbf{B} = \begin{bmatrix}
+a_{1, 1}+b_{1, 1} &amp; a_{1,2}+b_{1,2} &amp; \cdots &amp; a_{1, n}+b_{1, n}\\
+a_{2, 1}+b_{2, 1} &amp; a_{2,2}+b_{2,2} &amp; \cdots &amp; a_{2, n}+b_{2, n}\\
+\vdots &amp; \vdots &amp; a_{i,j}+b_{i,j} &amp; \vdots \\
+a_{m, 1}+b_{m, 1} &amp; a_{m,2}+b_{m,2} &amp; \cdots &amp; a_{m, n}+b_{m, n}
+\end{bmatrix}\]</span></p>
+<p>Подібно до додавання, <strong><em>скалярне множення</em></strong> матриць полягає в отриманні добутку константи із кожним елементом матриці:</p>
+<p><span class="math display">\[c \cdot \mathbf{A} = c \cdot a_{i, j} = \begin{bmatrix}
+c \cdot a_{1, 1} &amp; c \cdot a_{1,2} &amp; \cdots &amp; c \cdot a_{1, n}\\
+c \cdot a_{2, 1} &amp; c \cdot  a_{2,2} &amp; \cdots &amp; c \cdot a_{2, n}\\
+\vdots &amp; \vdots &amp; c \cdot a_{i,j} &amp; \vdots \\
+c \cdot a_{m, 1} &amp; c \cdot a_{m,2} &amp; \cdots &amp; c \cdot a_{m, n}
+\end{bmatrix}\]</span></p>
+<p>Нарешті, <strong><em>транспонування</em></strong> матриці полягає в заміні індексування рядків та колонки і навпаки, <span class="math inline">\(i \rightarrow j, j \rightarrow i\)</span>, тобто,</p>
+<p><span class="math display">\[\mathbf{A&#39;} = \mathbf{A^T} = a&#39;_{j, i} \text{ } \forall \text{ } \mathbf{A} = a_{i, j}\]</span></p>
+</div>
+<div id="операції-над-матрицями" class="section level3 hasAnchor" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> Операції над матрицями<a href="#%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D1%96%D1%97-%D0%BD%D0%B0%D0%B4-%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8F%D0%BC%D0%B8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong><em>Множення матриць</em></strong> є дещо складнішим, і загальним правилом є те, що для матриць <span class="math inline">\(A\)</span> розміром <span class="math inline">\(m \times n\)</span> і <span class="math inline">\(B\)</span> розміром <span class="math inline">\(n \times p\)</span> добуток складатиме матрицю розміром <span class="math inline">\(m \times p\)</span> (відповідно, <em>кількість колонок в першій матриці повинна дорівнювати кількості рядків в другій матриці</em>) із елементами, що відповідають сумі добутків рядків <span class="math inline">\(A\)</span> та колонок <span class="math inline">\(B\)</span>, тобто елемент добутку матриць із індексами <span class="math inline">\(i, j\)</span> складатиме (<a href="https://books.google.com/books/about/Linear_Algebra.html?id=P8BZzAEACAAJ">Bogacki 2019</a>) (Рис. <a href="4.2-matrices.html#fig:fig-3-7">4.7</a>)</p>
+<p><span class="math display">\[[\mathbf{AB}]_{i, j} = \sum \limits_{r=1}^n (a_{i,r} b_{r, j}) = a_{i,1} b_{1, j} + a_{i, 2}b_{2, j} + \cdots + a_{i, n}b_{n, j}\]</span></p>
+<div class="figure"><span style="display:block;" id="fig:fig-3-7"></span>
+<img src="images/matrices.png" alt="Знаходження значення елементу добутку матриць $\mathbf{A}$ і $\mathbf{B}$." width="1200" />
+<p class="caption">
+Рис. 4.7: Знаходження значення елементу добутку матриць <span class="math inline">\(\mathbf{A}\)</span> і <span class="math inline">\(\mathbf{B}\)</span>.
+</p>
+</div>
+<p>За додавання матриць завжди потрібно враховувати розмірність матриць. Якщо матриця <span class="math inline">\(\mathbf{A}\)</span> має розмір <span class="math inline">\(m \times n\)</span>, друга матриця <span class="math inline">\(\mathbf{B}\)</span> має розмір <span class="math inline">\(n \times p\)</span>, то їх добуток <span class="math inline">\(\mathbf{AB}\)</span> матиме розмір <span class="math inline">\(m \times p\)</span>. Відтак, для множення матриць необхідно, аби кількість колонок першої матриці дорівнювала кількості рядків другої матриці.</p>
+<p>Для добутків матриць властиво, що</p>
+<p><span class="math display">\[\mathbf{AB} \neq \mathbf{BA}\]</span></p>
+<p><span class="math display">\[(\mathbf{AB})\mathbf{C} = \mathbf{A}(\mathbf{BC})\]</span></p>
+<p><span class="math display">\[(\mathbf{A+B})\mathbf{C} = \mathbf{AC} + \mathbf{BC}\]</span></p>
+<p><span class="math display">\[\mathbf{C}(\mathbf{A+B}) = \mathbf{CA} + \mathbf{CB}\]</span></p>
+<p>Очевидно, що якщо множення матриць можливе, то можливо також і звести матрицю в ступінь, наприклад,</p>
+<p><span class="math display">\[\mathbf{A}^3 = (\mathbf{AA})\mathbf{A}\]</span></p>
+<p>Уявімо квадратну <strong><em>одиничну матрицю</em></strong> <span class="math inline">\(\mathbf{I}_n\)</span> розміром <span class="math inline">\(n \times n\)</span>, де</p>
+<p><span class="math display">\[\mathbf{I}_n = \begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; \cdots &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; \cdots &amp; 0\\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots  &amp;\vdots \\
+0 &amp; 0 &amp; 0 &amp; \cdots &amp; 1
+\end{bmatrix}\]</span></p>
+<p>тобто всі, крім діагональних, елементи матриці дорівнюють нулю. Тоді</p>
+<p><span class="math display">\[\mathbf{AB} = \mathbf{I}_n = \mathbf{BA}\]</span></p>
+<p>отже, <span class="math inline">\(\mathbf{B}\)</span> є <strong><em>оберненою матрицею</em></strong> <span class="math inline">\(\mathbf{A}\)</span>:</p>
+<p><span class="math display">\[\mathbf{B} = \mathbf{A}^{-1}\]</span></p>
+<p><span class="math display">\[\mathbf{AA^{-1}} = \mathbf{I}_n\]</span></p>
+<p><span class="math display">\[\mathbf{A}^0 = \mathbf{I}_n\]</span></p>
+<p><strong>Не</strong> для будь-якої матриці може існувати обернена матриця.</p>
+<p>Подібно до математичних функцій, <strong><em>лінійні трансформації</em></strong> можуть приймати вектори чи матриці в якості аргументу:</p>
+<p><span class="math display">\[F: \mathbb{R}^n \rightarrow \mathbb{R}^m \text{ якщо}\]</span></p>
+<p><span class="math display">\[F(\vec{u} + \vec{v}) = F(\vec{u}) + F(\vec{v}) \text{ } \forall \text{ } \vec{u}, \vec{v}\]</span></p>
+<p><span class="math display">\[F(c \vec{u}) = c F(\vec{u}) \text{ } \forall \text{ } \vec{u}, c\]</span></p>
+<p><span class="math display">\[F(c_1 \vec{u_1} + \cdots + c_k \vec{u_k}) = c_1 F(\vec{u_1}) + \cdots + c_k F(\vec{u_k})\]</span></p>
+<p><span class="math display">\[F: \mathbb{R}^n \rightarrow \mathbb{R}^m \iff \exists \mathbf{A}: F(\vec{v}) = \mathbf{A} \vec{v}, \mathbf{A} = a_{i, j}, 1 &lt; i&lt;m, 1 &lt; j &lt; n\]</span></p>
+</div>
+<div id="детермінант-власні-вектори-та-власне-значення" class="section level3 hasAnchor" number="4.2.4">
+<h3><span class="header-section-number">4.2.4</span> Детермінант, власні вектори, та власне значення<a href="#%D0%B4%D0%B5%D1%82%D0%B5%D1%80%D0%BC%D1%96%D0%BD%D0%B0%D0%BD%D1%82-%D0%B2%D0%BB%D0%B0%D1%81%D0%BD%D1%96-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B8-%D1%82%D0%B0-%D0%B2%D0%BB%D0%B0%D1%81%D0%BD%D0%B5-%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%BD%D1%8F" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong><em>Детермінант</em></strong> визначається (<a href="https://books.google.com/books/about/Linear_Algebra.html?id=P8BZzAEACAAJ">Bogacki 2019</a>) для матриці <span class="math inline">\(1 \times 1\)</span> <span class="math inline">\(\mathbf{A} = [a_{1, 1}]\)</span> як</p>
+<p><span class="math display">\[\det \mathbf{A} = a_{1, 1}\]</span></p>
+<p>і для більших квадратних матриць розміром <span class="math inline">\(n \times n\)</span> рекурсивно</p>
+<p><span class="math display">\[\det \mathbf{A} = \sum \limits_{j=1}^n (-1)^{1+j} a_{1, j} \det \mathbf{M}_{1,j}\]</span></p>
+<p>де <span class="math inline">\(\mathbf{M}_{i,j}\)</span> є підматрицею від <span class="math inline">\(\mathbf{A}\)</span> розміром <span class="math inline">\((n - 1) \times (m - 1)\)</span> із видаленими рядком <span class="math inline">\(i\)</span> і колонкою <span class="math inline">\(j\)</span>, тобто,</p>
+<p><span class="math display">\[\det \mathbf{A} = a_{1,1} \det \mathbf{M}_{1,1} - a_{1,2} \det \mathbf{M}_{1,2} + a_{1,3} \det \mathbf{M}_{1,3} - \cdots + (-1)^{1+n} a_{1, n} \det \mathbf{M}_{1,n}\]</span></p>
+<p>Для матриці <span class="math inline">\(\mathbf{A}\)</span> розміром <span class="math inline">\(2 \times 2\)</span>, наприклад,</p>
+<p><span class="math display">\[\det \mathbf{A} = \det \begin{bmatrix}
+a_{1, 1} &amp; a_{1, 2} \\
+a_{2, 1} &amp; a_{2, 2}
+\end{bmatrix} = a_{1, 1} \cdot a_{2, 2} - a_{1, 2} \cdot a_{2, 1}\]</span></p>
+</div>
+<div id="matrices_art" class="section level3 hasAnchor" number="4.2.5">
+<h3><span class="header-section-number">4.2.5</span> Геометричний зміст матриць<a href="4.2-matrices.html#matrices_art" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Технічні визначення операцій над матрицями можуть видаватись надмірно деталізованими і неінтуїтивними правилами, котрі просто необхідно завчити. Однак, всі ці правила мають очевидний геометричний зміст, котрий рідко використовують в поясненнях базової теорії матриць <a href="https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab">3Blue1Brown 2023</a>.</p>
+<p>В першу чергу, необхідно зрозуміти поняття вектора. В багатьох чисельних методах і, зокрема, в програмному середовищі R, векторами звуться скінченні ряди чисел, наприклад, змінна в наборі даних. Однак, зі шкільної програми математики можна пригадати, що векторами є і спрямовані відрізки. Наприклад, якщо позначити вектор <span class="math inline">\(\vec{a}\)</span> як <span class="math inline">\(\vec{a} = (1, 2)\)</span>, то ряд чисел <span class="math inline">\((1, 2)\)</span> можна зобразити як такий вектор, що починається з координат <span class="math inline">\((x_0 = 0, y_0 = 0)\)</span> і закінчується координатами <span class="math inline">\((x_1 = 1, y_1 = 2)\)</span>.</p>
+<p>Уявімо простір таких векторів. З попереднього параграфу можна помітити, що хоча й, формально, вектор має дві точки (в двовимірному просторі це <span class="math inline">\((x_0, y_0)\)</span> та <span class="math inline">\((x_1, y_1)\)</span>), для кожного вектору одна з точок буде однаковою: <span class="math inline">\((x_0 = 0, y_0 = 0)\)</span>. Відтак, ми не втратимо ніякої інформації, якщо для багатьох векторів ми забудемо про початкові точки і визначимо лише кінцеві точки. У двовимірному просторі можна визначити скільки завгодно векторів/точок <span class="math inline">\(\vec{v_1} = (x_{1, 1}, y_{1, 1}), \vec{v_2} = (x_{1, 2}, y_{1, 2}), \cdots, \vec{v_i} = (x_{1, i}, y_{1, i})\)</span>, але, звісно, це справджуватиметься і для одного виміру (<span class="math inline">\(\vec{v_1} = (x_{1, 1}), \vec{v_2} = (x_{1, 2}), \cdots, \vec{v_i} = (x_{1, i})\)</span>), і для трьох вимірів (<span class="math inline">\(\vec{v_1} = (x_{1, 1}, y_{1, 1}, z_{1, 1}), \vec{v_2} = (x_{1, 2}, y_{1, 2}, z_{1, 2}), \cdots, \vec{v_i} = (x_{1, i}, y_{1, i}, z_{1, i})\)</span>), і для будь-якої скінченної кількості вимірів. В структурі даних, відтак, хоча й ряди чисел є векторами, ми можемо уявити кожне спостереження як точку у просторі параметрів цього спостереження (т. зв. точка даних, або data point, що ж еквівалентним одиночному спостереженню).</p>
+<p>Для простору векторів, матриця є лінійною трансформацією. Тобто, якщо помножити координати точки (або вектору, що є тим самим) на матрицю, то на виході ми отримаємо інший лінійний вектор. Подібно до математичної функції, ми можемо застосувати лінійну трансформацію до всього простору, і отримаємо інший простір, в котрому точки знаходяться та пропорційній до вихідного простору відстані одна від одної, а прямі між точками залишаються прямими<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a>.</p>
+<p>Пригадаймо правила множення матриць. Для цього потрібно кожен вектор уявити у вигляді матриці. Наприклад, для вектору <span class="math display">\[\vec{a} = (x_1 = 1, y_1 = 2) = \begin{bmatrix}
+x_1 = 1 \\
+y_1 = 2 \end{bmatrix} = \begin{bmatrix}
+1 \\
+2 \end{bmatrix}\]</span></p>
+<p>застосуймо матрицю</p>
+<p><span class="math display">\[\mathbf{A} = \begin{bmatrix}
+1 &amp; 2 \\
+3 &amp; 4
+\end{bmatrix}\]</span></p>
+<p><span class="math display">\[
+\mathbf{A} \vec{a} = \begin{bmatrix}
+1 &amp; 2 \\
+3 &amp; 4
+\end{bmatrix} \cdot \begin{bmatrix}
+1 \\ 2
+\end{bmatrix}= \begin{bmatrix}
+1 \cdot 1 + 2 \cdot 2 \\
+1 \cdot 3 + 2 \cdot 4
+\end{bmatrix} = \begin{bmatrix}
+5 \\ 11
+\end{bmatrix}
+\]</span></p>
+<p>Тобто після застосування лінійної трансформації до вектору ми отримуємо вектор такої ж розмірності, при чому ця лінійна трансформація може бути застосована для будь-якого вектору такої розмірності. Тож матриця <span class="math inline">\(\mathbf{A}\)</span> відповідає лінійній трансформації, зображеній на Рис. <a href="4.2-matrices.html#fig:fig-3-8">4.8</a>.</p>
+<div class="figure"><span style="display:block;" id="fig:fig-3-8"></span>
+<img src="bookdown-demo_files/figure-html/fig-3-8-1.png" alt="Матриця $\mathbf{A} = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix}$ як лінійна трансформація простору. Вектор $\vec{a} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}$ є лише частиною цього простору." width="672" />
+<p class="caption">
+Рис. 4.8: Матриця <span class="math inline">\(\mathbf{A} = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix}\)</span> як лінійна трансформація простору. Вектор <span class="math inline">\(\vec{a} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}\)</span> є лише частиною цього простору.
+</p>
+</div>
+<p>Загалом, для всякого двовимірного простору можна уявити два незалежні базові вектори: <span class="math inline">\(\hat{i} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}\)</span> й <span class="math inline">\(\hat{j} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}\)</span>. Тоді будь-який вектор <span class="math inline">\(\vec{v}\)</span> є сумою векторів, що відображають добутки певної константи <span class="math inline">\(a\)</span> та <span class="math inline">\(\hat{i}\)</span> й <span class="math inline">\(b\)</span> та <span class="math inline">\(\hat{j}\)</span>: <span class="math inline">\(\vec{v} = a \hat{i} + b \hat{j}\)</span>, а, відтак, всяку лінійну трансформацію <span class="math inline">\(L(\cdot)\)</span> можна виразити у вигляді <span class="math display">\[L(\vec{v}) = a L(\hat{i}) + b L(\hat{j})\]</span></p>
+<p>відтак, лінійна трансформація вектору <span class="math inline">\(\begin{bmatrix} x \\ y \end{bmatrix} \rightarrow L \left( \begin{bmatrix} x \\ y \end{bmatrix} \right)\)</span> є тотожною лінійній трансформації базових векторів, шкалованих на певні константи для базових векторів:</p>
+<p><span class="math display">\[L \left( \begin{bmatrix} x \\ y \end{bmatrix} \right) = x[L (\hat{i})] + y[L(\hat{j})] = \begin{bmatrix} x L(1) &amp; xL(0) \\ y L(0) &amp; y L(1) \end{bmatrix}\]</span></p>
+<p>Тобто сутність квадратної матриці як репрезентації лінійної трансформації – це сукупність координат, на які припадають базові вектори після лінійної трансформації. Для попереднього прикладу <span class="math inline">\(\mathbf{A} = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix}\)</span>, зокрема, <span class="math inline">\(L(\hat{i})\)</span> матиме координати <span class="math inline">\((1, 3)\)</span>, а <span class="math inline">\(L(\hat{j})\)</span> – <span class="math inline">\((2, 4)\)</span>.</p>
+<p>Якщо розглядати матрицю як носій інформації про лінійну трансформацію, то множення матриць є нічим іншим, як застосуванням лінійної трансформації до лінійної трансформації. Тобто, якщо уявити дві лінійні трансформації <span class="math inline">\(L_1\)</span> та <span class="math inline">\(L_2\)</span> такі що</p>
+<p><span class="math display">\[L_2 \left( L_1 \left( \begin{bmatrix}
+x \\
+y
+\end{bmatrix} \right) \right) =
+\begin{bmatrix}
+a &amp; c \\
+b &amp; d
+\end{bmatrix}
+\left(
+\begin{bmatrix}
+e &amp; g \\
+f &amp; h
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}
+\right) =
+\left(
+\begin{bmatrix}
+a &amp; c \\
+b &amp; d
+\end{bmatrix}
+\begin{bmatrix}
+e &amp; g \\
+f &amp; h
+\end{bmatrix}
+\right)
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix} =
+\begin{bmatrix}
+ae + bg &amp; af + bh \\
+ce + dg &amp; cf + dh
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}\]</span></p>
+<p>Із рисунку <a href="4.2-matrices.html#fig:fig-3-8">4.8</a> можна помітити, що площа фігур в просторі змінюється в результаті лінійної трансформації. Детермінант матриці відображає зміну площі квадрата зі сторонами <span class="math inline">\(\hat{i}\)</span> та <span class="math inline">\(\hat{j}\)</span> таким чином, що <span class="math inline">\(A[L(\hat{i} \times \hat{j})] = c \cdot A[(\hat{i} \times \hat{j})]\)</span>. Якщо <span class="math inline">\(c = 0\)</span>, то матриця з таким детермінантом позначає лінійну трансформацію, що призводить до зменшення розмірності вектора, а якщо <span class="math inline">\(c&lt;0\)</span>, то (подібно до того, як від’ємна площа має сенс в інтегруванні) змінюється орієнтація <span class="math inline">\(\hat{i}\)</span> відносно <span class="math inline">\(\hat{j}\)</span>.</p>
+<p>Іншим поширеним застосуванням матриць є вирішення квадратних рівнянь. Наприклад, систему вигляду</p>
+<p><span class="math display">\[\begin{cases}
+a_1 x + b_1 y + c_1 z = d_1 \\
+a_2 x + b_2 y + c_2 z = d_2 \\
+a_3 x + b_3 y + c_3 z = d_3
+\end{cases}\]</span></p>
+<p>можна зобразити у вигляді матриць:</p>
+<p><span class="math display">\[\begin{bmatrix}
+a_1 &amp; b_1 &amp; c_1 \\
+a_2 &amp; b_2 &amp; c_2 \\
+a_3 &amp; b_3 &amp; c_3
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+z
+\end{bmatrix} =
+\begin{bmatrix}
+d_1 \\
+d_2 \\
+d_3
+\end{bmatrix} \iff \mathbf{A} \vec{x} = \vec{v}\]</span></p>
+<p>і систему можна вирішити, якщо існує така <span class="math inline">\(\mathbf{A^{-1}}\)</span>, що <span class="math inline">\((\mathbf{AA^{-1}}) \vec{w} = \vec{w}\)</span> (тобто добуток цих двох матриць відображає таку лінійну трансформацію, яка не змінює вихідні вектори – таку трансформацію і кодує одинична матриця). Тоді <span class="math inline">\(\mathbf{A^{-1} A} \vec{x} = \mathbf{A^{-1}} \vec{v}\)</span>, отже, <span class="math inline">\(\vec{x} = \mathbf{A^{-1}} \vec{v}\)</span>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="15">
+<li id="fn15"><p>Очевидно, ці дві умови не завжди можуть справджуватися, у випадку чого трансформація не є лінійною.<a href="4.2-matrices.html#fnref15" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="4.1-algebra.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="4.3-stats.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["bookdown-demo.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

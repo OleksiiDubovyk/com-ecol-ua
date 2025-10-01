@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4.1 Математична пам’ятка | Вступ до Екології Угруповань</title>
+  <meta name="description" content="Непідручник" />
+  <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4.1 Математична пам’ятка | Вступ до Екології Угруповань" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Непідручник" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4.1 Математична пам’ятка | Вступ до Екології Угруповань" />
+  
+  <meta name="twitter:description" content="Непідручник" />
+  
+
+<meta name="author" content="Олексій Дубовик" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="4-numerical-ecology.html"/>
+<link rel="next" href="4.2-matrices.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/codefolding-lua-1.1/codefolding-lua.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<meta name="google-site-verification" content="PxaldxMtVeQNl4LkXGyu2G86qsNb6QD-uPRPRfOKCBM" />
+<link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+<link rel="manifest" href="images/favicon/manifest.json">
+<link rel="shortcut icon" href="images/favicon/favicon-32x32.pn" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Вступ до Екології Угруповань</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Вітання</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="#%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%BC%D0%BE%D0%B2%D0%B0-preface"><i class="fa fa-check"></i><b>1</b> Передмова{-preface}</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="1-передмова-preface.html"><a href="1-передмова-preface.html"><i class="fa fa-check"></i><b>1.0.1</b> Трішки про автора</a></li>
+<li class="chapter" data-level="1.0.2" data-path="1-передмова-preface.html"><a href="1-передмова-preface.html#whythiswork"><i class="fa fa-check"></i><b>1.0.2</b> Навіщо ця робота</a></li>
+<li class="chapter" data-level="1.0.3" data-path="1-передмова-preface.html"><a href="1-передмова-preface.html#more-about-author"><i class="fa fa-check"></i><b>1.0.3</b> Ще трішки про автора</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="acknowledge.html"><a href="acknowledge.html"><i class="fa fa-check"></i>Подяки</a></li>
+<li class="chapter" data-level="2" data-path="2-introduction.html"><a href="2-introduction.html"><i class="fa fa-check"></i><b>2</b> Вступ</a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="2-introduction.html"><a href="2-introduction.html#community-def"><i class="fa fa-check"></i><b>2.0.1</b> Екологічне угруповання</a></li>
+<li class="chapter" data-level="2.0.2" data-path="2-introduction.html"><a href="2-introduction.html#comm-ecol-today"><i class="fa fa-check"></i><b>2.0.2</b> Екологія угруповань сьогодні</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-about-book.html"><a href="3-about-book.html"><i class="fa fa-check"></i><b>3</b> Про книгу та Зміст</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="3-about-book.html"><a href="3-about-book.html#readme"><i class="fa fa-check"></i><b>3.0.1</b> Дисклеймер</a></li>
+<li class="chapter" data-level="3.0.2" data-path="3-about-book.html"><a href="3-about-book.html#how-built"><i class="fa fa-check"></i><b>3.0.2</b> Як побудована ця книга</a></li>
+<li class="chapter" data-level="3.0.3" data-path="3-about-book.html"><a href="3-about-book.html#expect"><i class="fa fa-check"></i><b>3.0.3</b> Чого чекати від цієї книги</a></li>
+<li class="chapter" data-level="3.0.4" data-path="3-about-book.html"><a href="3-about-book.html#expected"><i class="fa fa-check"></i><b>3.0.4</b> Чого ця книга чекає від читача</a></li>
+<li class="chapter" data-level="3.0.5" data-path="3-about-book.html"><a href="3-about-book.html#resources"><i class="fa fa-check"></i><b>3.0.5</b> Додаткові ресурси</a></li>
+<li class="chapter" data-level="3.0.6" data-path="3-about-book.html"><a href="3-about-book.html#notexpect"><i class="fa fa-check"></i><b>3.0.6</b> На що не варто розраховувати</a></li>
+<li class="chapter" data-level="3.1" data-path="index.html"><a href="#%D0%B7%D0%BC%D1%96%D1%81%D1%82"><i class="fa fa-check"></i><b>3.1</b> Зміст</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="4-numerical-ecology.html"><a href="4-numerical-ecology.html"><i class="fa fa-check"></i><b>4</b> Базові математичні підходи в екології</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="4.1-algebra.html"><a href="4.1-algebra.html"><i class="fa fa-check"></i><b>4.1</b> Математична пам’ятка</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="index.html"><a href="#%D0%B4%D1%80%D0%BE%D0%B1%D0%B8"><i class="fa fa-check"></i><b>4.1.1</b> Дроби</a></li>
+<li class="chapter" data-level="4.1.2" data-path="index.html"><a href="#%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D1%96-%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D0%B8"><i class="fa fa-check"></i><b>4.1.2</b> Математичні символи</a></li>
+<li class="chapter" data-level="4.1.3" data-path="index.html"><a href="#%D0%BD%D0%B5%D1%80%D1%96%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D1%96"><i class="fa fa-check"></i><b>4.1.3</b> Нерівності</a></li>
+<li class="chapter" data-level="4.1.4" data-path="index.html"><a href="#%D1%81%D1%82%D1%83%D0%BF%D0%B5%D0%BD%D1%96"><i class="fa fa-check"></i><b>4.1.4</b> Ступені</a></li>
+<li class="chapter" data-level="4.1.5" data-path="index.html"><a href="#%D1%80%D1%8F%D0%B4%D0%B8-%D1%87%D0%B8%D1%81%D0%B5%D0%BB"><i class="fa fa-check"></i><b>4.1.5</b> Ряди чисел</a></li>
+<li class="chapter" data-level="4.1.6" data-path="index.html"><a href="#%D1%81%D1%82%D1%83%D0%BF%D0%B5%D0%BD%D1%96-%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D1%87%D0%BD%D0%B8%D1%85-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D1%96%D0%B9"><i class="fa fa-check"></i><b>4.1.6</b> Ступені арифметичних операцій</a></li>
+<li class="chapter" data-level="4.1.7" data-path="index.html"><a href="#%D0%BB%D1%96%D0%BD%D1%96%D0%B9%D0%BD%D1%96-%D1%82%D0%B0-%D0%BF%D0%BE%D0%BB%D1%96%D0%BD%D0%BE%D0%BC%D1%96%D0%B0%D0%BB%D1%8C%D0%BD%D1%96-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D1%96%D1%97"><i class="fa fa-check"></i><b>4.1.7</b> Лінійні та поліноміальні функції</a></li>
+<li class="chapter" data-level="4.1.8" data-path="4.1-algebra.html"><a href="4.1-algebra.html#logs"><i class="fa fa-check"></i><b>4.1.8</b> Логарифми</a></li>
+<li class="chapter" data-level="4.1.9" data-path="index.html"><a href="#%D0%BF%D0%BE%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D1%96-%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D1%96-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D1%96%D1%97"><i class="fa fa-check"></i><b>4.1.9</b> Поширені математичні функції</a></li>
+<li class="chapter" data-level="4.1.10" data-path="index.html"><a href="#%D0%B2%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D0%B2%D0%BE%D1%81%D1%82%D1%96-%D1%81%D1%83%D0%BC"><i class="fa fa-check"></i><b>4.1.10</b> Властивості сум</a></li>
+<li class="chapter" data-level="4.1.11" data-path="index.html"><a href="#%D0%B2%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D0%B2%D0%BE%D1%81%D1%82%D1%96-%D0%B4%D0%BE%D0%B1%D1%83%D1%82%D0%BA%D1%96%D0%B2"><i class="fa fa-check"></i><b>4.1.11</b> Властивості добутків</a></li>
+<li class="chapter" data-level="4.1.12" data-path="index.html"><a href="#%D0%B4%D0%B8%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D1%96%D1%8E%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F"><i class="fa fa-check"></i><b>4.1.12</b> Диференціювання</a></li>
+<li class="chapter" data-level="4.1.13" data-path="index.html"><a href="#%D1%96%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F"><i class="fa fa-check"></i><b>4.1.13</b> Інтегрування</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="4.2-matrices.html"><a href="4.2-matrices.html"><i class="fa fa-check"></i><b>4.2</b> Лінійна алгебра</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="index.html"><a href="#%D0%B2%D0%B8%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%BD%D1%8F-%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%96"><i class="fa fa-check"></i><b>4.2.1</b> Визначення матриці</a></li>
+<li class="chapter" data-level="4.2.2" data-path="index.html"><a href="#%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D1%96%D1%97-%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8C"><i class="fa fa-check"></i><b>4.2.2</b> Трансформації матриць</a></li>
+<li class="chapter" data-level="4.2.3" data-path="index.html"><a href="#%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D1%96%D1%97-%D0%BD%D0%B0%D0%B4-%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8F%D0%BC%D0%B8"><i class="fa fa-check"></i><b>4.2.3</b> Операції над матрицями</a></li>
+<li class="chapter" data-level="4.2.4" data-path="index.html"><a href="#%D0%B4%D0%B5%D1%82%D0%B5%D1%80%D0%BC%D1%96%D0%BD%D0%B0%D0%BD%D1%82-%D0%B2%D0%BB%D0%B0%D1%81%D0%BD%D1%96-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B8-%D1%82%D0%B0-%D0%B2%D0%BB%D0%B0%D1%81%D0%BD%D0%B5-%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%BD%D1%8F"><i class="fa fa-check"></i><b>4.2.4</b> Детермінант, власні вектори, та власне значення</a></li>
+<li class="chapter" data-level="4.2.5" data-path="4.2-matrices.html"><a href="4.2-matrices.html#matrices_art"><i class="fa fa-check"></i><b>4.2.5</b> Геометричний зміст матриць</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="4.3-stats.html"><a href="4.3-stats.html"><i class="fa fa-check"></i><b>4.3</b> Ймовірність у статистиці</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="4.3-stats.html"><a href="4.3-stats.html#prob"><i class="fa fa-check"></i><b>4.3.1</b> Ймовірність</a></li>
+<li class="chapter" data-level="4.3.2" data-path="4.3-stats.html"><a href="4.3-stats.html#bayes"><i class="fa fa-check"></i><b>4.3.2</b> Теорема Баєса</a></li>
+<li class="chapter" data-level="4.3.3" data-path="4.3-stats.html"><a href="4.3-stats.html#mle"><i class="fa fa-check"></i><b>4.3.3</b> Правдоподібність</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="4.4-pdf-pmf.html"><a href="4.4-pdf-pmf.html"><i class="fa fa-check"></i><b>4.4</b> Розподіли ймовірності</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="4.4-pdf-pmf.html"><a href="4.4-pdf-pmf.html#pdfs"><i class="fa fa-check"></i><b>4.4.1</b> Функції розподілу ймовірності</a></li>
+<li class="chapter" data-level="4.4.2" data-path="4.4-pdf-pmf.html"><a href="4.4-pdf-pmf.html#bars"><i class="fa fa-check"></i><b>4.4.2</b> Опис розподілу змінної (описова статистика)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="4.5-basic-hypotheses.html"><a href="4.5-basic-hypotheses.html"><i class="fa fa-check"></i><b>4.5</b> Тестування гіпотез</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="4.5-basic-hypotheses.html"><a href="4.5-basic-hypotheses.html#hypothesis"><i class="fa fa-check"></i><b>4.5.1</b> Статистична гіпотеза</a></li>
+<li class="chapter" data-level="4.5.2" data-path="4.5-basic-hypotheses.html"><a href="4.5-basic-hypotheses.html#nulldistr"><i class="fa fa-check"></i><b>4.5.2</b> Нульовий розподіл</a></li>
+<li class="chapter" data-level="4.5.3" data-path="4.5-basic-hypotheses.html"><a href="4.5-basic-hypotheses.html#pval"><i class="fa fa-check"></i><b>4.5.3</b> Тестування гіпотез</a></li>
+<li class="chapter" data-level="4.5.4" data-path="4.5-basic-hypotheses.html"><a href="4.5-basic-hypotheses.html#paradigms"><i class="fa fa-check"></i><b>4.5.4</b> Парадигми статистичного аналізу</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="4.6-stat-models.html"><a href="4.6-stat-models.html"><i class="fa fa-check"></i><b>4.6</b> Експеримент і модель</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="4.6-stat-models.html"><a href="4.6-stat-models.html#pseudoreplication"><i class="fa fa-check"></i><b>4.6.1</b> Експериментальний дизайн та псевдореплікація</a></li>
+<li class="chapter" data-level="4.6.2" data-path="4.6-stat-models.html"><a href="4.6-stat-models.html#regression"><i class="fa fa-check"></i><b>4.6.2</b> Дані та проблема моделювання</a></li>
+<li class="chapter" data-level="4.6.3" data-path="4.6-stat-models.html"><a href="4.6-stat-models.html#aic"><i class="fa fa-check"></i><b>4.6.3</b> Парсимонійна модель та вибір моделі</a></li>
+<li class="chapter" data-level="4.6.4" data-path="4.6-stat-models.html"><a href="4.6-stat-models.html#prcomp"><i class="fa fa-check"></i><b>4.6.4</b> Багатовимірна статистика</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="4.7-infer.html"><a href="4.7-infer.html"><i class="fa fa-check"></i><b>4.7</b> Передбачення, умовивід, та валідація</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="4.7-infer.html"><a href="4.7-infer.html#inference"><i class="fa fa-check"></i><b>4.7.1</b> Статистичний умовивід і обґрунтоване передбачення</a></li>
+<li class="chapter" data-level="4.7.2" data-path="4.7-infer.html"><a href="4.7-infer.html#crossval"><i class="fa fa-check"></i><b>4.7.2</b> Крос-валідація</a></li>
+<li class="chapter" data-level="4.7.3" data-path="4.7-infer.html"><a href="4.7-infer.html#bias-variance"><i class="fa fa-check"></i><b>4.7.3</b> Компроміс між упередженням та варіацією</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-popeco.html"><a href="5-popeco.html"><i class="fa fa-check"></i><b>5</b> Початки популяційної екології</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="5.1-species.html"><a href="5.1-species.html"><i class="fa fa-check"></i><b>5.1</b> Вид</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="index.html"><a href="#%D0%BF%D0%BE%D0%BD%D1%8F%D1%82%D1%82%D1%8F-%D0%B2%D0%B8%D0%B4%D1%83"><i class="fa fa-check"></i><b>5.1.1</b> Поняття виду</a></li>
+<li class="chapter" data-level="5.1.2" data-path="index.html"><a href="#%D0%B2%D0%B8%D0%B4%D0%B8-%D1%82%D0%B0-%D0%BF%D0%BB%D0%BE%D1%89%D0%B0"><i class="fa fa-check"></i><b>5.1.2</b> Види та площа</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="5.2-population.html"><a href="5.2-population.html"><i class="fa fa-check"></i><b>5.2</b> Популяція</a></li>
+<li class="chapter" data-level="5.3" data-path="5.3-pop-factors.html"><a href="5.3-pop-factors.html"><i class="fa fa-check"></i><b>5.3</b> Чинники, що впливають на популяції</a></li>
+<li class="chapter" data-level="5.4" data-path="5.4-cmr.html"><a href="5.4-cmr.html"><i class="fa fa-check"></i><b>5.4</b> Моделі мічення-відлову</a></li>
+<li class="chapter" data-level="5.5" data-path="5.5-intraspecific.html"><a href="5.5-intraspecific.html"><i class="fa fa-check"></i><b>5.5</b> Внутрішньовидові взаємодії</a></li>
+<li class="chapter" data-level="5.6" data-path="5.6-pop-dynamics.html"><a href="5.6-pop-dynamics.html"><i class="fa fa-check"></i><b>5.6</b> Динаміка та стабільність</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="index.html"><a href="#%D0%B5%D0%BA%D1%81%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%86%D1%96%D0%B9%D0%BD%D0%B8%D0%B9-%D1%80%D1%96%D1%81%D1%82"><i class="fa fa-check"></i><b>5.6.1</b> Експоненційний ріст</a></li>
+<li class="chapter" data-level="5.6.2" data-path="index.html"><a href="#%D0%BB%D0%BE%D0%B3%D1%96%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%B8%D0%B9-%D1%80%D1%96%D1%81%D1%82"><i class="fa fa-check"></i><b>5.6.2</b> Логістичний ріст</a></li>
+<li class="chapter" data-level="5.6.3" data-path="index.html"><a href="#%D0%BC%D0%BE%D0%B4%D0%B8%D1%84%D1%96%D0%BA%D0%B0%D1%86%D1%96%D1%97-%D0%BB%D0%BE%D0%B3%D1%96%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%BE%D0%B3%D0%BE-%D1%80%D0%BE%D1%81%D1%82%D1%83"><i class="fa fa-check"></i><b>5.6.3</b> Модифікації логістичного росту</a></li>
+<li class="chapter" data-level="5.6.4" data-path="index.html"><a href="#%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D1%96%D0%BA%D0%B0-%D1%82%D0%B0-%D1%81%D1%82%D0%B0%D0%B1%D1%96%D0%BB%D1%8C%D0%BD%D1%96%D1%81%D1%82%D1%8C-%D0%BF%D0%BE%D0%BF%D1%83%D0%BB%D1%8F%D1%86%D1%96%D1%97"><i class="fa fa-check"></i><b>5.6.4</b> Динаміка та стабільність популяції</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="5.7-metapopulation.html"><a href="5.7-metapopulation.html"><i class="fa fa-check"></i><b>5.7</b> Метапопуляція</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="index.html"><a href="#%D0%B7%D0%B0%D0%B3%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BC%D0%B5%D1%82%D0%B0%D0%BF%D0%BE%D0%BF%D1%83%D0%BB%D1%8F%D1%86%D1%96%D1%97"><i class="fa fa-check"></i><b>5.7.1</b> Загальна модель метапопуляції</a></li>
+<li class="chapter" data-level="5.7.2" data-path="index.html"><a href="#%D1%81%D1%82%D0%BE%D1%85%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D1%96%D1%81%D1%82%D1%8C-%D1%96-%D0%B4%D0%B5%D1%82%D0%B5%D1%80%D0%BC%D1%96%D0%BD%D1%96%D0%B7%D0%BC-%D0%B2-%D0%BC%D0%B5%D1%82%D0%B0%D0%BF%D0%BE%D0%BF%D1%83%D0%BB%D1%8F%D1%86%D1%96%D1%8F%D1%85"><i class="fa fa-check"></i><b>5.7.2</b> Стохастичність і детермінізм в метапопуляціях</a></li>
+<li class="chapter" data-level="5.7.3" data-path="index.html"><a href="#%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D1%96%D0%BA%D0%B0-%D0%B4%D0%B6%D0%B5%D1%80%D0%B5%D0%BB%D0%B0%D0%B4%D1%96%D1%80%D0%BA%D0%B8-%D1%82%D0%B0-%D1%85%D0%BE%D0%B4%D1%8F%D1%87%D1%96-%D0%BC%D0%B5%D1%80%D1%86%D1%96"><i class="fa fa-check"></i><b>5.7.3</b> Динаміка джерела–дірки та ходячі мерці</a></li>
+<li class="chapter" data-level="5.7.4" data-path="index.html"><a href="#%D0%BF%D1%81%D0%B5%D0%B2%D0%B4%D0%BE%D0%B4%D1%96%D1%80%D0%BA%D0%B8-%D0%B9-%D0%B5%D0%BA%D0%BE%D0%BB%D0%BE%D0%B3%D1%96%D1%87%D0%BD%D1%96-%D0%BF%D0%B0%D1%81%D1%82%D0%BA%D0%B8"><i class="fa fa-check"></i><b>5.7.4</b> Псевдодірки й екологічні пастки</a></li>
+<li class="chapter" data-level="5.7.5" data-path="index.html"><a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D1%96%D1%97-%D1%82%D1%80%D0%B0%D0%BF%D0%BB%D1%8F%D0%BD%D0%BD%D1%8F"><i class="fa fa-check"></i><b>5.7.5</b> Функції трапляння</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="5.8-Leslie-matrix.html"><a href="5.8-Leslie-matrix.html"><i class="fa fa-check"></i><b>5.8</b> Моделювання популяцій</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="index.html"><a href="#%D0%B4%D0%B8%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D1%96%D0%B9%D0%BD%D1%96-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%96"><i class="fa fa-check"></i><b>5.8.1</b> Диференційні моделі</a></li>
+<li class="chapter" data-level="5.8.2" data-path="index.html"><a href="#%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%87%D0%BD%D1%96-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%96"><i class="fa fa-check"></i><b>5.8.2</b> Матричні моделі</a></li>
+<li class="chapter" data-level="5.8.3" data-path="index.html"><a href="#%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BD%D1%96-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%96"><i class="fa fa-check"></i><b>5.8.3</b> Агентні моделі</a></li>
+<li class="chapter" data-level="5.8.4" data-path="index.html"><a href="#%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%96-%D0%BF%D0%BE%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8F-%D0%B2%D0%B8%D0%B4%D1%96%D0%B2"><i class="fa fa-check"></i><b>5.8.4</b> Моделі поширення видів</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="6-foundations.html"><a href="6-foundations.html"><i class="fa fa-check"></i><b>6</b> Фундаментальні поняття екології</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="6.1-niche.html"><a href="6.1-niche.html"><i class="fa fa-check"></i><b>6.1</b> Екологічна ніша</a></li>
+<li class="chapter" data-level="6.2" data-path="6.2-food-chain.html"><a href="6.2-food-chain.html"><i class="fa fa-check"></i><b>6.2</b> Трофічні ланцюги</a></li>
+<li class="chapter" data-level="6.3" data-path="6.3-food-webs.html"><a href="6.3-food-webs.html"><i class="fa fa-check"></i><b>6.3</b> Трофічні мережі</a></li>
+<li class="chapter" data-level="6.4" data-path="6.4-keystones.html"><a href="6.4-keystones.html"><i class="fa fa-check"></i><b>6.4</b> Ключові види</a></li>
+<li class="chapter" data-level="6.5" data-path="6.5-succession.html"><a href="6.5-succession.html"><i class="fa fa-check"></i><b>6.5</b> Сукцесія та клімакс</a></li>
+<li class="chapter" data-level="6.6" data-path="6.6-life-history.html"><a href="6.6-life-history.html"><i class="fa fa-check"></i><b>6.6</b> Історія життя</a></li>
+<li class="chapter" data-level="6.7" data-path="6.7-detectability.html"><a href="6.7-detectability.html"><i class="fa fa-check"></i><b>6.7</b> Ймовірність детекції</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="7-interspecific.html"><a href="7-interspecific.html"><i class="fa fa-check"></i><b>7</b> Міжвидові взаємодії</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="7.1-relationships.html"><a href="7.1-relationships.html"><i class="fa fa-check"></i><b>7.1</b> Типи міжвидових зв’язків</a></li>
+<li class="chapter" data-level="7.2" data-path="7.2-rstar.html"><a href="7.2-rstar.html"><i class="fa fa-check"></i><b>7.2</b> Теорія поділу ресурсів</a></li>
+<li class="chapter" data-level="7.3" data-path="7.3-cascade.html"><a href="7.3-cascade.html"><i class="fa fa-check"></i><b>7.3</b> Трофічні каскади</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="8-comecol.html"><a href="8-comecol.html"><i class="fa fa-check"></i><b>8</b> Екологічні угруповання</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="8.1-sad.html"><a href="8.1-sad.html"><i class="fa fa-check"></i><b>8.1</b> Структура угруповання</a></li>
+<li class="chapter" data-level="8.2" data-path="8.2-sad-model.html"><a href="8.2-sad-model.html"><i class="fa fa-check"></i><b>8.2</b> Моделі розподілів чисельності</a></li>
+<li class="chapter" data-level="8.3" data-path="8.3-diversity.html"><a href="8.3-diversity.html"><i class="fa fa-check"></i><b>8.3</b> Різноманіття</a></li>
+<li class="chapter" data-level="8.4" data-path="8.4-janzen.html"><a href="8.4-janzen.html"><i class="fa fa-check"></i><b>8.4</b> Гіпотеза Джензена–Конела</a></li>
+<li class="chapter" data-level="8.5" data-path="8.5-similarity.html"><a href="8.5-similarity.html"><i class="fa fa-check"></i><b>8.5</b> Подібність угруповань</a></li>
+<li class="chapter" data-level="8.6" data-path="8.6-fd.html"><a href="8.6-fd.html"><i class="fa fa-check"></i><b>8.6</b> Функціональне й філогенетичне різноманіття</a></li>
+<li class="chapter" data-level="8.7" data-path="8.7-islands.html"><a href="8.7-islands.html"><i class="fa fa-check"></i><b>8.7</b> Острівна біогеографія</a></li>
+<li class="chapter" data-level="8.8" data-path="8.8-env-filter.html"><a href="8.8-env-filter.html"><i class="fa fa-check"></i><b>8.8</b> Середовищне фільтрування</a></li>
+<li class="chapter" data-level="8.9" data-path="8.9-untb.html"><a href="8.9-untb.html"><i class="fa fa-check"></i><b>8.9</b> Нейтральна теорія біорізноманіття</a></li>
+<li class="chapter" data-level="8.10" data-path="8.10-rarefaction.html"><a href="8.10-rarefaction.html"><i class="fa fa-check"></i><b>8.10</b> Рарефакція та екстраполяція</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="goodbye.html"><a href="goodbye.html"><i class="fa fa-check"></i>Післяслово</a></li>
+<li class="chapter" data-level="" data-path="contact.html"><a href="contact.html"><i class="fa fa-check"></i>Контакти автора</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Вступ до Екології Угруповань</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="algebra" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Математична пам’ятка<a href="4.1-algebra.html#algebra" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="дроби" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Дроби<a href="#%D0%B4%D1%80%D0%BE%D0%B1%D0%B8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Серед дробів можна виділити наступні закономірності:</p>
+<p><span class="math display">\[a+\frac{c}{d} = \frac{ad+c}{d}\]</span></p>
+<p><span class="math display">\[\frac{a}{b}+\frac{c}{d} = \frac{ad+cb}{bd}\]</span></p>
+<p><span class="math display">\[\frac{a}{b} - \frac{c}{d} = \frac{ad-cb}{bd}\]</span></p>
+<p><span class="math display">\[\frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd}\]</span></p>
+<p><span class="math display">\[\frac{a/b}{c/d} = \frac{a}{b} \cdot \frac{d}{c}\]</span></p>
+<p><span class="math display">\[\text{якщо } \frac{a}{b} = \frac{c}{d} \text{, то } \frac{a}{b} = \frac{c}{d} = \frac{a+b}{c+d}\]</span></p>
+</div>
+<div id="математичні-символи" class="section level3 hasAnchor" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Математичні символи<a href="#%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D1%96-%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D0%B8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>На цьому етапі варто ввести також декілька позначень, які можуть бути маловідомими, наприклад,</p>
+<ul>
+<li><span class="math inline">\(&gt;, \geq, &lt;, \leq\)</span> : більше, більше або дорівнює, менше, менше або дорівнює;</li>
+<li><span class="math inline">\(\subset, \not\subset\)</span> : є або не є підмножиною;</li>
+<li><span class="math inline">\(\in, \notin\)</span> : в або не в;</li>
+<li><span class="math inline">\(\{x : x &gt; a\}\)</span> : множина таких <span class="math inline">\(x\)</span>, що для кожного <span class="math inline">\(x\)</span> в цій множині <span class="math inline">\(x&gt;a\)</span>;</li>
+<li><span class="math inline">\(A^c\)</span> - комплемент до множини <span class="math inline">\(A\)</span>, сукупність елементів які не належать до <span class="math inline">\(A\)</span>: <span class="math inline">\(\{x: x \notin A\}\)</span>;</li>
+<li><span class="math inline">\(\emptyset\)</span> - порожня множина, в якій нічого нема.</li>
+<li><span class="math inline">\((a, b) = \{x:a&lt;x&lt;b\}\)</span>,</li>
+<li><span class="math inline">\([a, b] = \{x:a \leq x \leq b\}\)</span>;</li>
+<li><span class="math inline">\(\propto\)</span> : пропорційно до;</li>
+<li><span class="math inline">\(\simeq\)</span> : приблизно дорівнює;</li>
+<li><span class="math inline">\(\sim\)</span> : подібно до, однак часто позначає змінну, що розподілена відповідно до певного розподілу;</li>
+<li><span class="math inline">\(\cup\)</span> : об’єднання множин;</li>
+<li><span class="math inline">\(\cap\)</span> : перетин множин;</li>
+<li><span class="math inline">\(\exists\)</span> : існує;</li>
+<li><span class="math inline">\(\Rightarrow\)</span> : відтак;</li>
+<li><span class="math inline">\(\iff\)</span> : рівнозначно;</li>
+<li><span class="math inline">\(\forall\)</span> : для всіх;</li>
+<li><span class="math inline">\(\sum\limits_{i=j}^{n}x_i\)</span> : сума всіх елементів <span class="math inline">\(x_i\)</span> де <span class="math inline">\(i = j, j+1, j+2, \cdots, n-2, n-1, n\)</span>;</li>
+<li><span class="math inline">\(\prod\limits_{i=j}^{n}x_i\)</span> : добуток всіх елементів <span class="math inline">\(x_i\)</span> де <span class="math inline">\(i = j, j+1, j+2, \cdots, n-2, n-1, n\)</span>;</li>
+<li><span class="math inline">\(a!\)</span> є факторіалом, де <span class="math inline">\(a! = 1 \cdot 2 \cdot 3 \cdot \cdots \cdot (a-2) \cdot (a-1) \cdot a\)</span>;</li>
+<li><span class="math inline">\(\binom{a}{b}\)</span> є біноміальним коефіцієнтом, де <span class="math inline">\(\binom{a}{b} = \frac{a!}{b!(a-b)!}\)</span>.</li>
+</ul>
+</div>
+<div id="нерівності" class="section level3 hasAnchor" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> Нерівності<a href="#%D0%BD%D0%B5%D1%80%D1%96%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D1%96" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Перелічені символи можна використати для пояснення нерівностей, зокрема,</p>
+<p><span class="math display">\[a &lt; b, c \leq d \Rightarrow \begin{cases}
+a + c &lt; b + d\\
+a + c &lt; b + c\\
+a - c &lt; b - c
+\end{cases}\]</span></p>
+<p><span class="math display">\[a &lt; b, c &gt; 0 \Rightarrow \begin{cases}
+ac &lt; bc\\
+\frac{a}{c} &lt; \frac{b}{c}
+\end{cases}\]</span></p>
+<p><span class="math display">\[a &lt; b, c &lt; 0 \Rightarrow \begin{cases}
+ac &gt; bc\\
+\frac{a}{c} &gt; \frac{b}{c}\\
+-a &gt; -b
+\end{cases}\]</span></p>
+<p><span class="math display">\[0 &lt; a &lt; b\Rightarrow \frac{1}{a} &gt; \frac{1}{b} &gt; 0\]</span></p>
+<p><span class="math display">\[a &lt; b\Rightarrow \begin{cases}
+\frac{a+x}{b+x} &gt; \frac{a}{b} \\
+\frac{a-x}{b-x} &lt; \frac{a}{b}
+\end{cases}\]</span></p>
+<p><span class="math display">\[a &gt; b\Rightarrow \begin{cases}
+\frac{a+x}{b+x} &lt; \frac{a}{b} \\
+\frac{a-x}{b-x} &gt; \frac{a}{b}
+\end{cases}\]</span></p>
+</div>
+<div id="ступені" class="section level3 hasAnchor" number="4.1.4">
+<h3><span class="header-section-number">4.1.4</span> Ступені<a href="#%D1%81%D1%82%D1%83%D0%BF%D0%B5%D0%BD%D1%96" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Класичне визначення ступеню наступне:</p>
+<p><span class="math display">\[a^b = \underbrace{a \cdot a \cdot a \cdot \cdots \cdot a}_b\]</span>
+або, в нотації добутку<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>,</p>
+<p><span class="math display">\[a^b = \prod\limits_{i=1}^b a\]</span></p>
+<p>Для ступенів властиво наступне:</p>
+<p><span class="math display">\[a^0 = 1\]</span></p>
+<p><span class="math display">\[a^1 = a\]</span></p>
+<p><span class="math display">\[a^{-m} = \frac{1}{a^m}\]</span></p>
+<p><span class="math display">\[a^m \times a^n = a^{m+n}\]</span></p>
+<p><span class="math display">\[\frac{a^m}{a^n} = a^{m-n}\]</span></p>
+<p><span class="math display">\[(a^m)^n = a^{m \cdot n}\]</span></p>
+<p><span class="math display">\[a^n \cdot b^n = (ab)^n\]</span></p>
+<p><span class="math display">\[\frac{a^n}{b^n} = \left( \frac{a}{b}\right)^n\]</span></p>
+<p><span class="math display">\[a^{\frac{m}{n}} = \sqrt[\leftroot{5} \uproot{10} n]{a^m} \Rightarrow a^{1/2} = \sqrt{a}\]</span></p>
+<p><span class="math display">\[\frac{\sqrt[\leftroot{5} \uproot{10} n]{a}}{\sqrt[\leftroot{5} \uproot{10} n]{b}} = \sqrt[\leftroot{5} \uproot{10} n]{\frac{a}{b}} \iff \frac{\sqrt[\leftroot{5} \uproot{10} n]{a}}{\sqrt[\leftroot{5} \uproot{10} n]{b}} = \frac{a^{1/n}}{b^{1/n}} = \left( \frac{a}{b} \right)^{1/n}\]</span></p>
+<p>Зведення константи в змінний ступінь (експонента) іноді може позначатись дещо незвично:</p>
+<p><span class="math display">\[\exp (x_i) = e^{x_i}\]</span></p>
+<p>де <span class="math inline">\(e\)</span> – число Ейлера.</p>
+<p>В комп’ютерних системах можна також зустріти позначення на кшталт <code>1e-07</code>. В цьому випадку мається на увазі експоненціювання за основою <span class="math inline">\(10\)</span>:</p>
+<p><span class="math display">\[\text{1e-07} = 1 \cdot 10^{-7}\]</span></p>
+</div>
+<div id="ряди-чисел" class="section level3 hasAnchor" number="4.1.5">
+<h3><span class="header-section-number">4.1.5</span> Ряди чисел<a href="#%D1%80%D1%8F%D0%B4%D0%B8-%D1%87%D0%B8%D1%81%D0%B5%D0%BB" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Прогресії є рядами чисел, котрі підпорядковуються певним законам. Наприклад,</p>
+<ul>
+<li><strong><em>арифметична прогресія</em></strong> має вигляд <span class="math inline">\(a, a+d, a+2d, a+3d, \cdots\)</span>, де <span class="math inline">\(n\)</span>-ний член має значення <span class="math inline">\(T_n = a + (n-1)d\)</span>, а сума перших <span class="math inline">\(n\)</span> членів складає</li>
+</ul>
+<p><span class="math display">\[S_n = \sum\limits_{i=1}^n T_n = \sum\limits_{i=1}^n \left[ a + (i-1)d \right] = \frac{n}{2}[2a+(n-1)d]\]</span></p>
+<ul>
+<li><strong><em>геометрична прогресія</em></strong> має вигляд <span class="math inline">\(a, ar, ar^2, ar^3, \cdots\)</span>, де <span class="math inline">\(n\)</span>-ний член має значення <span class="math inline">\(T_n = ar^{n-1}\)</span>, а сума перших <span class="math inline">\(n\)</span> членів складає</li>
+</ul>
+<p><span class="math display">\[S_n = \sum\limits_{i=1}^n ar^{i-1} = \begin{cases}
+a \left( \frac{r^n - 1}{r-1} \right) \text{ якщо } r&lt;1 \\
+a \left( \frac{1-r^n}{1-r} \right) \text{ якщо } r&gt;1
+\end{cases}\]</span></p>
+<p>Суму перших <span class="math inline">\(n\)</span> натуральних чисел можна розрахувати як</p>
+<p><span class="math display">\[1+2+3+\cdots + n = \sum\limits_{i=1}^n i = \frac{n(n+1)}{2}\]</span></p>
+<p>Суму квадратів перших <span class="math inline">\(n\)</span> натуральних чисел можна розрахувати як</p>
+<p><span class="math display">\[1^2+2^2+3^2+\cdots + n^2 = \sum\limits_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6}\]</span></p>
+<p>Суму кубів перших <span class="math inline">\(n\)</span> натуральних чисел можна розрахувати як</p>
+<p><span class="math display">\[1^3+2^3+3^3+\cdots + n^3 = \sum\limits_{i=1}^n i^3 = \left( \frac{n(n+1)}{2} \right)^2\]</span></p>
+</div>
+<div id="ступені-арифметичних-операцій" class="section level3 hasAnchor" number="4.1.6">
+<h3><span class="header-section-number">4.1.6</span> Ступені арифметичних операцій<a href="#%D1%81%D1%82%D1%83%D0%BF%D0%B5%D0%BD%D1%96-%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D1%87%D0%BD%D0%B8%D1%85-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D1%96%D0%B9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[(a+b)^2 = a^2 + 2ab + b^2\]</span></p>
+<p><span class="math display">\[(a-b)^2 = a^2 - 2ab + b^2\]</span></p>
+<p><span class="math display">\[(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3\]</span></p>
+<p><span class="math display">\[(a-b)^3 = a^3 - 3a^2b + 3ab^2 - b^3\]</span></p>
+<p><span class="math display">\[a^2 - b^2 = (a^2 - b^2)(a^2 + b^2)\]</span></p>
+<p><span class="math display">\[a^3 + b^3 = (a+b)(a^2 - ab + b^2)\]</span></p>
+<p><span class="math display">\[a^3 - b^3 = (a-b)(a^2 + ab + b^2)\]</span></p>
+</div>
+<div id="лінійні-та-поліноміальні-функції" class="section level3 hasAnchor" number="4.1.7">
+<h3><span class="header-section-number">4.1.7</span> Лінійні та поліноміальні функції<a href="#%D0%BB%D1%96%D0%BD%D1%96%D0%B9%D0%BD%D1%96-%D1%82%D0%B0-%D0%BF%D0%BE%D0%BB%D1%96%D0%BD%D0%BE%D0%BC%D1%96%D0%B0%D0%BB%D1%8C%D0%BD%D1%96-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D1%96%D1%97" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Лінійні рівняння мають чимале значення в популярних статистичних методах, зокрема, лінійній регресії. Найпростішу лінійну функцію можна розглядати як пряму горизонтальну лінію, котра ніяк не залежить від предиктора <span class="math inline">\(x\)</span> (Рис. <a href="4.1-algebra.html#fig:fig-3-1">4.1</a>):</p>
+<p><span class="math display">\[y = f(x) = a\]</span></p>
+<div class="figure"><span style="display:block;" id="fig:fig-3-1"></span>
+<img src="bookdown-demo_files/figure-html/fig-3-1-1.png" alt="Лінійні та поліноміальні функції $y = f(x)$ де $f(x) = a$, $f(x) = a + bx$, $f(x) = a + bx + cx^2$, $f(x) = a + bx + cx^2 + dx^3$ для $a=2, b = 3, c = -4, d = -2$." width="672" />
+<p class="caption">
+Рис. 4.1: Лінійні та поліноміальні функції <span class="math inline">\(y = f(x)\)</span> де <span class="math inline">\(f(x) = a\)</span>, <span class="math inline">\(f(x) = a + bx\)</span>, <span class="math inline">\(f(x) = a + bx + cx^2\)</span>, <span class="math inline">\(f(x) = a + bx + cx^2 + dx^3\)</span> для <span class="math inline">\(a=2, b = 3, c = -4, d = -2\)</span>.
+</p>
+</div>
+<p>Більш поширеними є рівняння прямих ліній, які залежать від змінної <span class="math inline">\(x\)</span>. Найпростішим прикладом буде лінійне рівняння вигляду</p>
+<p><span class="math display">\[y = f(x) = a + bx\]</span></p>
+<p>де коефіцієнт <span class="math inline">\(a\)</span> відповідає значенню <span class="math inline">\(y\)</span> за <span class="math inline">\(x = 0\)</span> та коефіцієнт <span class="math inline">\(b\)</span> відповідає нахилу прямої, тобто відповідає на питання “на скільки одиниць змінюється <span class="math inline">\(y\)</span> за зміни <span class="math inline">\(x\)</span> на одну одиницю”.</p>
+<p>Наприклад, розгляньмо детальніше функцію <span class="math inline">\(y = f(x) = a + bx\)</span>, в якій <span class="math inline">\(a = 2, b = 3\)</span> (Рис. <a href="4.1-algebra.html#fig:fig-3-2">4.2</a>):</p>
+<div class="figure"><span style="display:block;" id="fig:fig-3-2"></span>
+<img src="bookdown-demo_files/figure-html/fig-3-2-1.png" alt="Зміст параметрів лінійної функції $y = f(x) = a + bx$ для $a=2, b = 3$." width="672" />
+<p class="caption">
+Рис. 4.2: Зміст параметрів лінійної функції <span class="math inline">\(y = f(x) = a + bx\)</span> для <span class="math inline">\(a=2, b = 3\)</span>.
+</p>
+</div>
+<p>Лінійна функція є окремим випадком поліноміальної функції, в якій ми буквенні коефіцієнти (<span class="math inline">\(a, b, c, \cdots\)</span>) позначимо через індексовані коефіцієнти (<span class="math inline">\(\beta_0, \beta_1, \beta_2, \cdots\)</span>):</p>
+<p><span class="math display">\[p(x, m) = \beta_0 + \beta_1 x + \beta_2 x^2 + \cdots + \beta_m x^m\]</span></p>
+<p>де <span class="math inline">\(m\)</span> позначає ступінь полінома. Відтак, найпростіша функція перетину є поліноміальною функцією ступеню <span class="math inline">\(m = 0\)</span>, де <span class="math inline">\(p(x, m = 0) = \beta_0\)</span>, функція прямої є поліноміальною функцією ступеню <span class="math inline">\(m = 1\)</span>, де <span class="math inline">\(p(x, m = 1) = \beta_0 + \beta_1 x\)</span>, квадратична функція є поліноміальною ступеню <span class="math inline">\(m = 2\)</span>, де <span class="math inline">\(p(x, m = 2) = \beta_0 + \beta_1 x + \beta_2 x^2\)</span> тощо.</p>
+<p>Варто зазначити, що <span class="math inline">\(y\)</span> може бути не лише лінійною функцією однієї змінної, скажімо, <span class="math inline">\(x\)</span>, а й комбінації <span class="math inline">\(m\)</span> змінних <span class="math inline">\((x_1, x_2, x_3, \cdots, x_m)\)</span>, наприклад,</p>
+<p><span class="math display">\[y = f(x_1, x_2, \cdots, x_m) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_m x_m\]</span></p>
+<p>В статистичному методі лінійної регресії одна зі змінних може являти собою трансформовану іншу змінну. Наприклад, якщо ми визначимо <span class="math inline">\(x_2\)</span> як <span class="math inline">\(x_2 = (x_1)^2\)</span>, то квадратне рівняння можна визначити як лінійну комбінацію:</p>
+<p><span class="math display">\[y = f(x_1, x_2) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 = \beta_0 + \beta_1 x_1 + \beta_2 (x_1^2) = p(x_1, 2)\]</span></p>
+<p>Таким чином, лінійна регресія може бути легко використана для моделювання нелінійних поліноміальних взаємозв’язків за рахунок трансформації змінних і їх використання в лінійних рівняннях.</p>
+</div>
+<div id="logs" class="section level3 hasAnchor" number="4.1.8">
+<h3><span class="header-section-number">4.1.8</span> Логарифми<a href="4.1-algebra.html#logs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Логарифмування є зворотним процесом то зведення в ступінь. Логарифм числа <span class="math inline">\(x\)</span> із основою <span class="math inline">\(a\)</span> є таким числом, зведення якого до ступеню <span class="math inline">\(a\)</span> поверне число <span class="math inline">\(x\)</span>, тобто,</p>
+<p><span class="math display">\[\log_a x = b\iff a^b = x\]</span></p>
+<p>Найбільш поширеними є десятковий логарифм <span class="math inline">\(\log_{10}\)</span> та натуральний логарифм <span class="math inline">\(\log_e\)</span> де <span class="math inline">\(e\)</span> – число Ейлера <span class="math inline">\(e \approx 2.718\)</span>, константа, визначена як <span class="math inline">\(e = \lim\limits_{n \rightarrow \infty} (1 + \frac{1}{n})^n\)</span>.</p>
+<p>В екології особливо поширений модифікований десятковий логарифм, оскільки чисельності організмів часто мають або низькі значення на кшталт <span class="math inline">\(0, 1, 2\)</span>, або дуже високі значення порядку сотень та тисяч, на рівні яких можна знехтувати одиничними особами<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>.</p>
+<p>Модифікація логарифмічної трансформації в екології побудована таким чином, аби <span class="math inline">\(0\)</span> відповідало <span class="math inline">\(0\)</span> особин, <span class="math inline">\(1\)</span> відповідало <span class="math inline">\(1\)</span> особині, <span class="math inline">\(2\)</span> відповідало <span class="math inline">\(10\)</span> особинам, <span class="math inline">\(3\)</span> відповідало <span class="math inline">\(100\)</span> особинам, і так далі (<a href="https://doi.org/10.1111/j.1461-0248.2006.00926.x">Anderson et al. 2006</a>). Такої трансформації легко досягнути використовуючи функцію котра враховує факт, що логарифмування від’ємних значень та нуля неможливе (<span class="math inline">\(\log0 = -\infty\)</span>):</p>
+<p><span class="math display">\[f(x) = \begin{cases}
+[\log_{10}(x)+1] \times \mathbb{I}_x(x &gt; 0)\\
+0 \times \mathbb{I}_x(x = 0)
+\end{cases}\]</span></p>
+<p>де <span class="math inline">\(\mathbb{I}_x(\cdot)\)</span> є індикаторною функцією, котра приймає значення <span class="math inline">\(1\)</span> якщо логічна умова <span class="math inline">\((\cdot)\)</span> (тут, що <span class="math inline">\(x &gt; 0\)</span>) справджується.</p>
+<p>Варто мати на увазі, що, в загальному, логарифмічне трансформування чисельностей не є оптимальною практикою, адже різниця між <span class="math inline">\(f(0) = 0\)</span> та <span class="math inline">\(f(1) = \log_{10}(1)+1\)</span> така ж, як, наприклад, між <span class="math inline">\(\log_{10}(1000)\)</span> та <span class="math inline">\(\log_{10}(10000)\)</span>, в той час як відсутність виду, котра призводить до отримання нульової чисельності, може передбачати набагато важливіші екологічні механізми порівняно із присутністю виду, котра призводить до не-нульової чисельності (<a href="https://doi.org/10.1111/j.2041-210X.2010.00021.x">O’Hara and Kotze 2010</a>).</p>
+<p>Логарифми мають наступні властивості:</p>
+<p><span class="math display">\[\log_a(xy) = \log_a(x) + \log_a(y)\]</span></p>
+<p><span class="math display">\[\log_a(\frac{x}{y}) = \log_a(x) - \log_a(y)\]</span></p>
+<p><span class="math display">\[\log_a(x^b) = b \log_a (x)\]</span></p>
+<p><span class="math display">\[\log_a(x) = \frac{\log_b (x)}{\log_b (a)} \forall b\]</span></p>
+</div>
+<div id="поширені-математичні-функції" class="section level3 hasAnchor" number="4.1.9">
+<h3><span class="header-section-number">4.1.9</span> Поширені математичні функції<a href="#%D0%BF%D0%BE%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D1%96-%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D1%96-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D1%96%D1%97" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Кількість найпростіших математичних функцій доволі обмежена, однак, їх використання для трансформації змінних може бути кардинально різним. Трансформація даних може знадобитись пізніше, наприклад, для задоволення передбачень певних статистичних методів. Наприклад, лінійна регресія передбачає, що змінні розподілені нормально. В разі, якщо це не відповідає дійсності, одним із варіантів подальших дій є трансформування змінних певною функцією (наприклад, логарифмічно), за чого результуюча змінна може мати ближчий до нормального розподіл. Форми таких функцій наведені на Рис. <a href="4.1-algebra.html#fig:fig-3-3">4.3</a>.</p>
+<div class="figure"><span style="display:block;" id="fig:fig-3-3"></span>
+<img src="bookdown-demo_files/figure-html/fig-3-3-1.png" alt="Графіки поширених функцій." width="672" />
+<p class="caption">
+Рис. 4.3: Графіки поширених функцій.
+</p>
+</div>
+<p>Варто також мати на увазі зворотні функції:</p>
+<ul>
+<li>поліноми та корені <span class="math inline">\(f(x) = x^2 \iff f^{-1}(y) = y^{1/2}\)</span>;</li>
+<li>експоненти та логарифми <span class="math inline">\(f(x) = e^x \iff f^{-1}(y) = \log_e(y)\)</span>;</li>
+<li>зворотні функції <span class="math inline">\(f(x) = 1/x \iff f^{-1}(y) = 1/y\)</span>.</li>
+</ul>
+</div>
+<div id="властивості-сум" class="section level3 hasAnchor" number="4.1.10">
+<h3><span class="header-section-number">4.1.10</span> Властивості сум<a href="#%D0%B2%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D0%B2%D0%BE%D1%81%D1%82%D1%96-%D1%81%D1%83%D0%BC" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Суму позначають як <span class="math inline">\(\sum\limits_{i=m}^{n}f(x_i)\)</span> де <span class="math inline">\(i\)</span> є індексом сумації, <span class="math inline">\(x_i\)</span> – індексованою змінною, <span class="math inline">\(m\)</span> – нижня межа сумації, <span class="math inline">\(n\)</span> – верхня межа сумації. В програмуванні таку нотацію можна пояснити через цикл:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="4.1-algebra.html#cb1-1" tabindex="-1"></a><span class="fu">sum</span>(<span class="cf">for</span> (i <span class="cf">in</span> m<span class="sc">:</span>n){</span>
+<span id="cb1-2"><a href="4.1-algebra.html#cb1-2" tabindex="-1"></a>  <span class="fu">f</span>(x[i])</span>
+<span id="cb1-3"><a href="4.1-algebra.html#cb1-3" tabindex="-1"></a>})</span></code></pre></div>
+</details>
+<p>Суми мають наступні властивості</p>
+<p><span class="math display">\[\sum\limits_{i=m}^{n}c\cdot f(x_i) = c \cdot \sum\limits_{i=m}^{n} f(x_i) \text{ } \forall \text{ } c : \text{const}\]</span></p>
+<p><span class="math display">\[\sum\limits_{i=m}^{n} \left[ f(x_i) + g(x_i)\right] = \sum\limits_{i=m}^{n} f(x_i) + \sum\limits_{i=m}^{n} g(x_i)\]</span></p>
+<p><span class="math display">\[\sum\limits_{i=m}^{n} f(x_i) = \sum\limits_{i=m}^{a} f(x_i) + \sum\limits_{i=a+1}^{n} f(x_i)\]</span></p>
+<p><span class="math display">\[\left( \sum\limits_{i = m}^n x_i \right)\left( \sum\limits_{j = m}^n y_j \right) = \sum\limits_{i = m}^n \sum\limits_{j = m}^n (x_i y_j)\]</span></p>
+<p><span class="math display">\[\sum \limits_{i=1}^n c = nc\]</span></p>
+<p><span class="math display">\[\sum \limits_{i=0}^n \log i = \log n!\]</span></p>
+<p><span class="math display">\[\sum \limits_{i=0}^n \binom{n}{i} = 2^n\]</span></p>
+<p><span class="math display">\[\sum \limits_{i=0}^n \binom{n}{i} a^{n-i} b^i = (a+b)^n\]</span></p>
+</div>
+<div id="властивості-добутків" class="section level3 hasAnchor" number="4.1.11">
+<h3><span class="header-section-number">4.1.11</span> Властивості добутків<a href="#%D0%B2%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D0%B2%D0%BE%D1%81%D1%82%D1%96-%D0%B4%D0%BE%D0%B1%D1%83%D1%82%D0%BA%D1%96%D0%B2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Зміст нотації добутків подібний до суми. Суму позначають як <span class="math inline">\(\prod\limits_{i=m}^{n}f(x_i)\)</span> де <span class="math inline">\(i\)</span> є індексом добутку, <span class="math inline">\(x_i\)</span> – індексованою змінною, <span class="math inline">\(m\)</span> – нижня межа добутку, <span class="math inline">\(n\)</span> – верхня межа добутку. Для добутків притаманні наступні властивості:</p>
+<p><span class="math display">\[\prod\limits_{i=1}^n x = x^n\]</span></p>
+<p><span class="math display">\[\prod\limits_{i=1}^n x_i y_i = \left( \prod\limits_{i=1}^n x_i\right)\left( \prod\limits_{i=1}^n y_i\right)\]</span></p>
+<p><span class="math display">\[\left( \prod\limits_{i=1}^n x_i \right)^a = \prod\limits_{i=1}^n x_i^a\]</span></p>
+<p><span class="math display">\[\log_b \left[ \prod\limits_{i = m}^n f(x_i) \right] = \sum\limits_{i=m}^n \left[ \log_b f(x_i) \right]\]</span></p>
+<p><span class="math display">\[\prod\limits_{i = m}^n [c \cdot f(x_i)] = c^{\sum_{i=m}^n f(x_i)}\]</span></p>
+</div>
+<div id="диференціювання" class="section level3 hasAnchor" number="4.1.12">
+<h3><span class="header-section-number">4.1.12</span> Диференціювання<a href="#%D0%B4%D0%B8%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D1%96%D1%8E%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Диференціювання функції – це процес знаходження похідної цієї функції. Похідна функції <span class="math inline">\(f(x)\)</span> є такою функцією <span class="math inline">\(f&#39;(x)\)</span>, котра описує зміну значення <span class="math inline">\(f(x)\)</span> за зміни значення аргументу <span class="math inline">\(x\)</span>.</p>
+<p>Наприклад, на Рис. <a href="4.1-algebra.html#fig:fig-3-2">4.2</a> зображено функцію прямої лінії <span class="math inline">\(f(x) = 2 + 3x\)</span>. В цьому випадку, приріст функції становить 3 одиниці <span class="math inline">\(y\)</span> на одну одиницю <span class="math inline">\(x\)</span>, і цей приріст залишається незмінним за будь-якого значення <span class="math inline">\(x\)</span>, оскільки функція є прямою. Цей приріст і є похідною, отже, <span class="math inline">\(f&#39;(x) = 3\)</span>.</p>
+<p>А що щодо випадків, коли <span class="math inline">\(f(x)\)</span> не є лінійною, що трапляється набагато частіше? В такому випадку, приріст <span class="math inline">\(f(x)\)</span> залежить від значення <span class="math inline">\(x\)</span>, тобто <span class="math inline">\(f&#39;(x)\)</span> теж є функцією із аргументом <span class="math inline">\(x\)</span>. Власне, знаходження цієї функції і є метою диференціювання. Формально, визначення похідної являє собою зміну <span class="math inline">\(f(x)\)</span> за найменшої різниці <span class="math inline">\(x\)</span>.</p>
+<p>Наприклад, визначмо функцію <span class="math inline">\(f(x) = -5x + x^3\)</span> (Рис. <a href="4.1-algebra.html#fig:fig-3-4">4.4</a>):</p>
+<div class="figure"><span style="display:block;" id="fig:fig-3-4"></span>
+<img src="bookdown-demo_files/figure-html/fig-3-4-1.png" alt="Функція $f(x) = -5x + x^3$. Приріст цієї функції між $x_1$ та $x_2 = x_1 + h$ складає $\frac{f(x_1 + h) - f(x_1)}{h}$." width="672" />
+<p class="caption">
+Рис. 4.4: Функція <span class="math inline">\(f(x) = -5x + x^3\)</span>. Приріст цієї функції між <span class="math inline">\(x_1\)</span> та <span class="math inline">\(x_2 = x_1 + h\)</span> складає <span class="math inline">\(\frac{f(x_1 + h) - f(x_1)}{h}\)</span>.
+</p>
+</div>
+<p>Для цієї функції, похідна буде такою функцією із аргументом <span class="math inline">\(x\)</span>, котра описуватиме <span class="math inline">\(f(x_2) - f(x_1)\)</span> на зміну <span class="math inline">\((x_2 - x_1)\)</span>. На Рис. <a href="4.1-algebra.html#fig:fig-3-4">4.4</a> показано зміну <span class="math inline">\(f(x)\)</span> для <span class="math inline">\(x_2 = 0, x_1 = -1.5\)</span>, тобто <span class="math inline">\(h = x_2 - x_1 = 1.5\)</span>, де значення функції становить <span class="math inline">\(f(x_2) = -5 \cdot 0 + 0^3 = 0\)</span>, <span class="math inline">\(f(x_1) = -5 \cdot (-1.5) + (-1.5)^3 = 4.125\)</span>, отже, <span class="math inline">\(f(x_2) - f(x_1) = f(x_1+h) - f(x_1) = -4.125\)</span>, а темп цієї зміни на одиницю <span class="math inline">\(x\)</span> становить <span class="math inline">\(\frac{f(x_1 + h) - f(x_1)}{h} = \frac{-4.125}{1.5} = -2.75\)</span>.</p>
+<p>На тій частині функції, котра відповідає <span class="math inline">\(x_1, x_1+h\)</span>, отримане значення темпу зміни може не цілком відповідати реальній картині. Ми бачимо, що функція трішки зростає після <span class="math inline">\(x_1\)</span>, потім спадає, і взагалі є нелінійною, але обчислене значення <span class="math inline">\(\frac{f(x_1 + h) - f(x_1)}{h} = \frac{-4.125}{1.5} = 2.75\)</span> відповідає ситуації, коли розглянута функція є прямою лінією (зображено зеленим). Аби відобразити справжню природу зміни значення функції, необхідно зменшити значення <span class="math inline">\(h\)</span> до найменшого можливого значення. Відтак, класичне визначення похідної – це така функція із аргументом <span class="math inline">\(x\)</span>, що описує темп зміни <span class="math inline">\(\frac{f(x+h) - f(x)}{h}\)</span> за найменшої зміни <span class="math inline">\(h\)</span>:</p>
+<p><span class="math display">\[f&#39;(x) = \frac{df(x)}{dx} = \lim\limits_{h \rightarrow 0}\frac{f(x+h) - f(x)}{h}\]</span></p>
+<p>де позначення похідної через <span class="math inline">\(\frac{df(x)}{dx}\)</span> інтуїтивно вказує на її природу, якщо позначити зміну значення змінної через <span class="math inline">\(d\)</span>: зміна значення <span class="math inline">\(f(x)\)</span> поділена на зміну значення <span class="math inline">\(x\)</span>. Похідну варто сприймати як приріст функції, котрий буде позитивним коли функція зростає, негативним коли функція спадає, і дорівнює нулю коли функція залишається сталою (таке можливе або якщо функція є прямою горизонтальною лінією, або коли в точках перегину, коли функція перестає зростати і починає спадати або навпаки).</p>
+<p>Похідні мають наступні властивості, котрі допомагають розрахувати їх для будь-якої неперервної функції:</p>
+<p><span class="math display">\[\frac{d}{dx}a = 0\]</span></p>
+<p><span class="math display">\[\frac{d}{dx}ax = a\]</span></p>
+<p><span class="math display">\[\frac{d}{dx} x^a = ax^{a-1}\]</span></p>
+<p><span class="math display">\[\frac{d}{dx} e^x = e^x\]</span></p>
+<p><span class="math display">\[\frac{d}{dx} a^x = a^x \ln (a) \text{ } \forall \text{ } a&gt;0\]</span></p>
+<p><span class="math display">\[\frac{d}{dx} \ln (x) = \frac{1}{x} \text{ } \forall \text{ } x&gt;0\]</span></p>
+<p><span class="math display">\[\frac{d}{dx} \log_a(x) = \frac{1}{x \ln(a)}\]</span></p>
+<p>В диференціюванні складних функцій (функцій, котрі складаються з інших функцій, наприклад, <span class="math inline">\(f(\cdot)\)</span> і <span class="math inline">\(g(\cdot)\)</span>) керуються наступними правилами:</p>
+<p><span class="math display">\[\frac{d}{dx} \left( af(x) + b g(x) \right) = a \frac{d}{dx}f(x) + b \frac{d}{dx}g(x) \iff (af(x) + bg(x))&#39; = af&#39;(x) + bg&#39;(x)\]</span></p>
+<p><span class="math display">\[\frac{d}{dx}(f(x)g(x)) = \frac{df(x)}{dx} g(x) + f(x) \frac{dg(x)}{dx} \iff (f(x)g(x))&#39; = f&#39;(x)g(x) + f(x)g&#39;(x)\]</span></p>
+<p><span class="math display">\[\frac{d}{dx} \left( \frac{f(x)}{g(x)}\right) = \frac{\frac{df(x)}{dx}g(x) - f(x) \frac{dg(x)}{dx}}{g(g(x))} \iff \left( \frac{f(x)}{g(x)} \right)&#39; = \frac{f&#39;(x)g(x) - f(x)g&#39;(x)}{g^2(x)}\]</span></p>
+<p>і для функції функції <span class="math inline">\(f(x) = h(g(x))\)</span>,</p>
+<p><span class="math display">\[\frac{df(x)}{dx} = \frac{dh(g(x))}{dg(x)} \cdot \frac{dg(x)}{dx} \iff f&#39;(x) = h&#39;(g(x)) \cdot g&#39;(x)\]</span></p>
+<p>Оскільки похідна є функцією сама по собі, її також можна диференціювати (тобто знайти <span class="math inline">\(n\)</span>-ну похідну, або похідну <span class="math inline">\(n\)</span>-ного порядку). Наприклад, для функції <span class="math inline">\(f(x) = -5x + x^3\)</span>,</p>
+<p><span class="math display">\[\begin{cases}
+\frac{d}{dx}f(x) = -5 + 3x^2 \\
+\frac{d^2}{dx}f(x) = 6x \\
+\frac{d^3}{dx}f(x) = 6 \\
+\frac{d^4}{dx}f(x) = 0
+\end{cases}\]</span></p>
+<div class="figure"><span style="display:block;" id="fig:fig-3-5"></span>
+<img src="bookdown-demo_files/figure-html/fig-3-5-1.png" alt="Функція $f(x) = -5x + x^3$ та її похідні." width="672" />
+<p class="caption">
+Рис. 4.5: Функція <span class="math inline">\(f(x) = -5x + x^3\)</span> та її похідні.
+</p>
+</div>
+</div>
+<div id="інтегрування" class="section level3 hasAnchor" number="4.1.13">
+<h3><span class="header-section-number">4.1.13</span> Інтегрування<a href="#%D1%96%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Інтегрування функції <span class="math inline">\(f(x)\)</span> – це процес знаходження такої функції <span class="math inline">\(F(x)\)</span>, похідна якої являє собою функцію <span class="math inline">\(f(x)\)</span>:</p>
+<p><span class="math display">\[\frac{d}{dx}F(x) = f(x) \iff \int f(x) dx = F(x) + C\]</span></p>
+<p>де <span class="math inline">\(C\)</span> – це будь-яка константа (оскільки похідна константи дорівнює нулю, ця константа не впливає на результат диференціювання).</p>
+<p>Інтеграл є, певною мірою, континуальний аналог суми: якщо означення суми оперує дискретними значеннями <span class="math inline">\(i: i = 1, 2, 3, \cdots, n\)</span>, то інтеграл, подібно до похідних, розраховується для найменших можливих інтервалів аргументу функції <span class="math inline">\(x\)</span>.</p>
+<p><strong><em>Невизначений інтеграл</em></strong> функції <span class="math inline">\(f(x)\)</span> <span class="math inline">\(\int f(x)dx = F(x)\)</span> має зміст як функція, похідна якої дорівнює вихідній функції <span class="math inline">\(f(x)\)</span>. Водночас, <strong><em>визначений інтеграл</em></strong> <span class="math inline">\(\int\limits_a^b f(x) dx = F(b) - F(a)\)</span> часто використовується для знаходження площі під кривою <span class="math inline">\(f(x)\)</span>, що обмежена значеннями <span class="math inline">\(a\)</span> і <span class="math inline">\(b\)</span>.</p>
+<p>В разі, якщо аналітичне знаходження невизначеного інтегралу складне або неможливе, корисним може видатись Рейманівське визначення визначеного інтегралу:</p>
+<p><span class="math display">\[\int\limits_a^b f(x) dx = F(a) - F(b) = \sum\limits_{i=1}^n [F(x_i) - F(x_{i-1})]\]</span></p>
+<p>де <span class="math inline">\([F(x_i) - F(x_{i-1})]\)</span> є площею прямокутника, обмеженого функцією <span class="math inline">\(f(x)\)</span> і дуже маленьким інтервалом <span class="math inline">\([x_{i-1}, x_i)\)</span> (Рис. <a href="4.1-algebra.html#fig:fig-3-6">4.6</a>).</p>
+<div class="figure"><span style="display:block;" id="fig:fig-3-6"></span>
+<img src="bookdown-demo_files/figure-html/fig-3-6-1.png" alt="Знаходження визначеного інтеграла як Рейманівську суму функції $f(x) = -5 + 3x^2$." width="672" />
+<p class="caption">
+Рис. 4.6: Знаходження визначеного інтеграла як Рейманівську суму функції <span class="math inline">\(f(x) = -5 + 3x^2\)</span>.
+</p>
+</div>
+<p>Якщо, наприклад, шукати площу під кривою як на Рис. <a href="4.1-algebra.html#fig:fig-3-6">4.6</a> поділом інтервалу між <span class="math inline">\(a = 1.5\)</span>, <span class="math inline">\(b = 2.5\)</span> на <span class="math inline">\(10\)</span> прямокутників (хоча їх може бути скільки завгодно), то це нескладно обчислити за допомогою R:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="4.1-algebra.html#cb2-1" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="sc">-</span><span class="dv">5</span> <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb2-2"><a href="4.1-algebra.html#cb2-2" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">sapply</span>(<span class="fu">seq</span>(<span class="fl">1.5</span>, <span class="fl">2.4</span>, <span class="fl">0.1</span>)<span class="sc">+</span><span class="fl">0.05</span>, <span class="cf">function</span>(x) <span class="fl">0.1</span><span class="sc">*</span><span class="fu">f</span>(x)))</span></code></pre></div>
+</details>
+<pre><code>## [1] 7.2475</code></pre>
+<p>Із прикладу на Рис. <a href="4.1-algebra.html#fig:fig-3-5">4.5</a> ми знаємо, що функція <span class="math inline">\(f(x) = -5 + 3x^2\)</span> є першою похідною функції <span class="math inline">\(F(x) = -5x + x^3\)</span>, яка, за визначенням, є невизначеним інтегралом <span class="math inline">\(\int f(x)dx\)</span>. Відповідно,</p>
+<p><span class="math display">\[
+\begin{aligned}
+  \int\limits_{1.5}^{2.5}-5 + 3x^2 dx = F(2.5) - F(1.5) = \left[ -5x + x^3 \right]_{1.5}^{2.5} = \\ [-5 \cdot 2.5 + 2.5^3] - [-5 \cdot 1.5 + 1.5^3] = 3.125 - (-4.125) = 7.25 \simeq 7.2475
+\end{aligned}
+\]</span></p>
+<p>Типові інтеграли мають наступні значення:</p>
+<p><span class="math display">\[\int x^a dx = \frac{x^{a+1}}{a+1} + C \text{ } \forall \text{ } a \neq -1\]</span></p>
+<p><span class="math display">\[\int x^{-1} dx = \int \frac{dx}{x} = \ln(|x|) + C\]</span></p>
+<p><span class="math display">\[\int axdx = ax + C\]</span></p>
+<p><span class="math display">\[\int \frac{1}{ax + b}dx = \frac{1}{a} \ln(|ax+b|) + C\]</span></p>
+<p><span class="math display">\[\int \ln(x) dx = x \ln(x) -x + C\]</span></p>
+<p><span class="math display">\[\int e^x dx = e^x + C\]</span></p>
+<p>Інтегралам притаманні наступні властивості:</p>
+<p><span class="math display">\[\int \limits_a^b c f(x) dx = c \int \limits_a^b f(x) dx\]</span></p>
+<p><span class="math display">\[\int \limits_a^b f(x) + g(x) dx = \int \limits_a^b f(x) dx + \int \limits_a^b g(x) dx\]</span></p>
+<p><span class="math display">\[\int \limits_a^a f(x)dx = 0\]</span></p>
+<p><span class="math display">\[\int \limits_a^b f(x)dx = -\int \limits_b^a f(x)dx\]</span></p>
+<p><span class="math display">\[\int \limits_a^c f(x)dx = \int \limits_a^b f(x)dx + \int \limits_b^c f(x)dx \text{ } \forall \text{ } a &lt; b &lt; c\]</span></p>
+<p>Для інтегрування складних функцій використовують наступні техніки:</p>
+<ul>
+<li>інтегрування підстановкою</li>
+</ul>
+<p><span class="math display">\[\int \limits_a^b f(g(x)) g&#39;(x)dx = \int \limits_{g(a)}^{g(b)} f(u) du\]</span></p>
+<p>де <span class="math inline">\(u = g(x)\)</span>, <span class="math inline">\(du = g&#39;(x)dx\)</span></p>
+<ul>
+<li>інтегрування частинами</li>
+</ul>
+<p><span class="math display">\[\int u (dv) = uv - \int v (du) \iff \int f(x)g&#39;(x)dx = f(x)g(x) - \int f&#39;(x) g(x) dx\]</span></p>
+<p>де <span class="math inline">\(v = \int dv\)</span>.</p>
+<p>В цілому, в екології рідко коли потрібно аналітично вирішити інтеграл чи похідну, однак, розуміння <em>змісту</em> цих операцій необхідне для подальшого розуміння статистичних підходів. В рідкісних випадках, коли необхідно вирішити певний інтеграл, має сенс скористатися онлайн-сервісами на кшталт <a href="https://www.integral-calculator.com/">integral-calculator.com</a> або розрахувати значення визначеного інтегралу ітеративно за допомогою Рейманівської суми, як показано вище. Варто також мати на увазі, що деякі функції неможливо або дуже складно аналітично проінтегрувати.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="13">
+<li id="fn13"><p>Варто помітити, що хоча й індекс <span class="math inline">\(і\)</span> присутній в діапазоні добутку, значення <span class="math inline">\(a\)</span> не має індексу і залишається незмінним.<a href="4.1-algebra.html#fnref13" class="footnote-back">↩︎</a></p></li>
+<li id="fn14"><p>На рівні однієї, двох, трьох особин плюс-мінус одна особина багато чого змінює, в той час якщо є значення, скажімо, <span class="math inline">\(1234\)</span>, то плюс-мінус одна особина не вносить значної інформації; порівняйте <span class="math inline">\(\log_{10} 1 = 0\)</span>, <span class="math inline">\(\log_{10} 2 = 0.301\)</span>, <span class="math inline">\(\log_{10} 3 = 0.477\)</span>, і <span class="math inline">\(\log_{10} 1233 = 3.091\)</span>, <span class="math inline">\(\log_{10} 1234 = 3.091\)</span>, <span class="math inline">\(\log_{10} 1235 = 3.092\)</span>.<a href="4.1-algebra.html#fnref14" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="4-numerical-ecology.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="4.2-matrices.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["bookdown-demo.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
