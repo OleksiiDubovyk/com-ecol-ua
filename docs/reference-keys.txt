@@ -24,6 +24,11 @@ fig:fig-metapop-dyn
 fig:fig-metapop-edge
 fig:fig-metapop-d
 fig:fig-metapop-types
+fig:fig-theta-pgr
+fig:fig-random-growth
+fig:fig-leslie
+fig:fig-gameoflife
+fig:fig-netlogo
 about-author
 whythiswork
 more-about-author
@@ -57,7 +62,7 @@ matrices
 визначення-матриці
 трансформації-матриць
 операції-над-матрицями
-детермінант-власні-вектори-та-власне-значення
+eigenstuff
 matrices_art
 stats
 prob
@@ -129,9 +134,13 @@ metapopulation
 функції-трапляння
 Leslie-matrix
 диференційні-моделі
+форма-щільність-залежної-регуляції
+пошук-детермінантів-росту-популяції
+врахування-стохастичності-середовища
+врахування-помилок-обліків
+внутрішньовидова-негативна-щільність-залежна-регуляція
 матричні-моделі
 агентні-моделі
-моделі-поширення-видів
 foundations
 niche
 food-chain

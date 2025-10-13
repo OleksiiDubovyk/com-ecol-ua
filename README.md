@@ -12,6 +12,7 @@ The first textbook/manual/call-it-whatever-you-want in Ukrainian language deploy
 
 # Історія оновлень | Update history
 
+- Build v0.4.8. 2025-10-13 | Section on differential, matrix models, ABMs
 - Build v0.4.7. 2025-09-30 | Section on metapopulations
 - Build v0.4.6. 2025-07-14 | Section on density-independent and density-dependent population dynamics
 - Build v0.4.5. 2025-04-07 | Section on intraspecific interactions
