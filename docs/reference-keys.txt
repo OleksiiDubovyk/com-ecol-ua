@@ -14,6 +14,7 @@ fig:fig-3-13
 fig:fig-3-14
 fig:fig-high-bias
 fig:fig-ebd-sar
+fig:fig-acwo
 fig:fig-exp-growth
 fig:fig-log-growth
 fig:fig-log-growth-rate
@@ -29,6 +30,8 @@ fig:fig-random-growth
 fig:fig-leslie
 fig:fig-gameoflife
 fig:fig-netlogo
+fig:fig-cath
+fig:fig-niche-gestalt
 about-author
 whythiswork
 more-about-author
@@ -143,6 +146,11 @@ Leslie-matrix
 агентні-моделі
 foundations
 niche
+ґріннелівська-ніша
+елтонівська-ніша
+гатчінсонівська-ніша
+bam-ніша
+просторове-моделювання-ніш
 food-chain
 food-webs
 keystones
