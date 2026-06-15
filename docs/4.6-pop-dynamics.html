@@ -300,9 +300,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="6-interspecific.html"><a href="6-interspecific.html"><i class="fa fa-check"></i><b>6</b> Міжвидові взаємодії</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="6.1-relationships.html"><a href="6.1-relationships.html"><i class="fa fa-check"></i><b>6.1</b> Типи міжвидових зв’язків</a></li>
-<li class="chapter" data-level="6.2" data-path="6.2-rstar.html"><a href="6.2-rstar.html"><i class="fa fa-check"></i><b>6.2</b> Теорія поділу ресурсів</a></li>
-<li class="chapter" data-level="6.3" data-path="6.3-oft.html"><a href="6.3-oft.html"><i class="fa fa-check"></i><b>6.3</b> Теорія оптимального харчування</a></li>
+<li class="chapter" data-level="6.1" data-path="6.1-niche-partitioning.html"><a href="6.1-niche-partitioning.html"><i class="fa fa-check"></i><b>6.1</b> Диференціація ніш</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="6.1-niche-partitioning.html"><a href="6.1-niche-partitioning.html#%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D0%BD%D0%B5-%D0%B2%D0%B8%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%BD%D1%8F"><i class="fa fa-check"></i><b>6.1.1</b> Конкурентне виключення</a></li>
+<li class="chapter" data-level="6.1.2" data-path="6.1-niche-partitioning.html"><a href="6.1-niche-partitioning.html#%D0%B4%D0%B8%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D1%96%D0%B0%D1%86%D1%96%D1%8F-%D0%BD%D1%96%D1%88-%D1%82%D0%B0-%D0%BB%D1%96%D0%BC%D1%96%D1%82%D1%83%D1%8E%D1%87%D0%B0-%D0%BF%D0%BE%D0%B4%D1%96%D0%B1%D0%BD%D1%96%D1%81%D1%82%D1%8C"><i class="fa fa-check"></i><b>6.1.2</b> Диференціація ніш та лімітуюча подібність</a></li>
+<li class="chapter" data-level="6.1.3" data-path="6.1-niche-partitioning.html"><a href="6.1-niche-partitioning.html#%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%BD%D1%96%D1%81%D1%82%D1%8C-%D1%82%D0%B0-%D0%B5%D1%84%D0%B5%D0%BA%D1%82-%D0%B2%D0%B8%D0%B1%D1%96%D1%80%D0%BA%D0%B8"><i class="fa fa-check"></i><b>6.1.3</b> Комплементарність та ефект вибірки</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="6.2-relationships.html"><a href="6.2-relationships.html"><i class="fa fa-check"></i><b>6.2</b> Типи міжвидових зв’язків</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="6.2-relationships.html"><a href="6.2-relationships.html#%D1%80%D1%96%D0%B2%D0%BD%D1%8F%D0%BD%D0%BD%D1%8F-%D0%BB%D0%BE%D1%82%D0%BA%D0%B8%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%B5%D1%80%D1%80%D0%B0"><i class="fa fa-check"></i><b>6.2.1</b> Рівняння Лотки–Вольтерра</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="6.3-rstar.html"><a href="6.3-rstar.html"><i class="fa fa-check"></i><b>6.3</b> Теорія поділу ресурсів</a></li>
+<li class="chapter" data-level="6.4" data-path="6.4-oft.html"><a href="6.4-oft.html"><i class="fa fa-check"></i><b>6.4</b> Теорія оптимального харчування</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="7-comecol.html"><a href="7-comecol.html"><i class="fa fa-check"></i><b>7</b> Екологічні угруповання</a>
 <ul>
@@ -463,60 +472,60 @@ N_t = N_0 \cdot e^{rt}
 <p>У випадку логістичного росту популяції, система є динамічною, адже чисельність популяцій змінюється із часом, однак в цій системі існує атрактор: щойно чисельність популяції досягає ємності середовища <span class="math inline">\(K\)</span>, система досягає стану стійкої рівноваги <span class="math inline">\(N=K\)</span>. Що стається, якщо щось порушує цю рівновагу (наприклад, сталася несподівана катастрофічна подія яка знищила якусь частку особин в популяції, або хтось штовхнув м’ячик на Рис. <a href="4.6-pop-dynamics.html#fig:fig-equilibria">4.8</a>-D)? Система має повернутись до стану рівноваги, і математичні методи дозволяють оцінити <strong><em>характерний час повернення до рівноваги</em></strong> (<em>characteristic return time</em>) як <span class="math inline">\(\frac{1}{r}\)</span>,<a href="#fn58" class="footnote-ref" id="fnref58"><sup>58</sup></a> а, відтак, <strong><em>характерний темп повернення до рівноваги</em></strong> (<em>characteristic return rate</em>) дорівнюватиме <span class="math inline">\(r\)</span>. Для дискретних систем, точка рівноваги є стабільною тільки якщо <span class="math inline">\(0 &lt; r &lt; 2\)</span> (<a href="https://doi.org/10.2307/3535">May et al. 1974</a>).</p>
 <p>У своїй класичній роботі <a href="https://doi.org/10.1126/science.186.4164.645">1974-го року</a>, математичний еколог Роберт Мей показав як прості дискретні моделі логістичного росту популяції можуть замість стану рівноваги досягати <strong>стабільних періодичних циклів</strong> (<em>limit cycles</em>), коли розмір популяції із часом стрибає між двома значеннями. Ба більше, за певних параметрів моделі атракторів стає все більше, і дуже швидко ріст популяції стає <strong>хаотичним</strong><a href="#fn59" class="footnote-ref" id="fnref59"><sup>59</sup></a>. Розгляньмо, як різні значення <span class="math inline">\(r\)</span> впливають на рівновагу популяції в дискретній логістичній моделі:</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="4.6-pop-dynamics.html#cb66-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb66-2"><a href="4.6-pop-dynamics.html#cb66-2" tabindex="-1"></a></span>
-<span id="cb66-3"><a href="4.6-pop-dynamics.html#cb66-3" tabindex="-1"></a><span class="co"># визначимо функцію дискретного логістичного росту</span></span>
-<span id="cb66-4"><a href="4.6-pop-dynamics.html#cb66-4" tabindex="-1"></a>logistic_discrete <span class="ot">&lt;-</span> <span class="cf">function</span>(N, r, <span class="at">K =</span> <span class="dv">1000</span>){</span>
-<span id="cb66-5"><a href="4.6-pop-dynamics.html#cb66-5" tabindex="-1"></a>  N <span class="sc">+</span> N<span class="sc">*</span>r<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> (N<span class="sc">/</span>K))</span>
-<span id="cb66-6"><a href="4.6-pop-dynamics.html#cb66-6" tabindex="-1"></a>}</span>
-<span id="cb66-7"><a href="4.6-pop-dynamics.html#cb66-7" tabindex="-1"></a></span>
-<span id="cb66-8"><a href="4.6-pop-dynamics.html#cb66-8" tabindex="-1"></a><span class="co"># ініціалізуємо вихідний датасет</span></span>
-<span id="cb66-9"><a href="4.6-pop-dynamics.html#cb66-9" tabindex="-1"></a>logistic_rates <span class="ot">&lt;-</span> <span class="fu">tibble</span>()</span>
-<span id="cb66-10"><a href="4.6-pop-dynamics.html#cb66-10" tabindex="-1"></a></span>
-<span id="cb66-11"><a href="4.6-pop-dynamics.html#cb66-11" tabindex="-1"></a><span class="co"># визначимо набір значень внутрішнього темпу росту</span></span>
-<span id="cb66-12"><a href="4.6-pop-dynamics.html#cb66-12" tabindex="-1"></a>IGRs <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="fl">0.1</span>, <span class="at">to =</span> <span class="fl">2.9</span>, <span class="at">by =</span> <span class="fl">0.0025</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb66-13"><a href="4.6-pop-dynamics.html#cb66-13" tabindex="-1"></a>  <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span>
-<span id="cb66-14"><a href="4.6-pop-dynamics.html#cb66-14" tabindex="-1"></a></span>
-<span id="cb66-15"><a href="4.6-pop-dynamics.html#cb66-15" tabindex="-1"></a>steps <span class="ot">&lt;-</span> <span class="dv">1000</span> <span class="co"># кількість кроків в кожній симуляції</span></span>
-<span id="cb66-16"><a href="4.6-pop-dynamics.html#cb66-16" tabindex="-1"></a></span>
-<span id="cb66-17"><a href="4.6-pop-dynamics.html#cb66-17" tabindex="-1"></a><span class="cf">for</span> (r <span class="cf">in</span> IGRs){ <span class="co"># для кожного значення внутрішнього темпу росту...</span></span>
-<span id="cb66-18"><a href="4.6-pop-dynamics.html#cb66-18" tabindex="-1"></a>  <span class="co"># ... ініціалізуємо вектор чисельностей на кожному кроці</span></span>
-<span id="cb66-19"><a href="4.6-pop-dynamics.html#cb66-19" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">numeric</span>(steps)</span>
-<span id="cb66-20"><a href="4.6-pop-dynamics.html#cb66-20" tabindex="-1"></a>  <span class="co"># ... чисельність на початку симуляції - одна особина</span></span>
-<span id="cb66-21"><a href="4.6-pop-dynamics.html#cb66-21" tabindex="-1"></a>  n[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb66-22"><a href="4.6-pop-dynamics.html#cb66-22" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>steps){ <span class="co"># для кожного кроку в часі...</span></span>
-<span id="cb66-23"><a href="4.6-pop-dynamics.html#cb66-23" tabindex="-1"></a>    n[i] <span class="ot">&lt;-</span> <span class="fu">logistic_discrete</span>(<span class="at">N =</span> n[i<span class="dv">-1</span>], <span class="at">r =</span> r)</span>
-<span id="cb66-24"><a href="4.6-pop-dynamics.html#cb66-24" tabindex="-1"></a>  }</span>
-<span id="cb66-25"><a href="4.6-pop-dynamics.html#cb66-25" tabindex="-1"></a>  <span class="co"># запишемо результат симуляції</span></span>
-<span id="cb66-26"><a href="4.6-pop-dynamics.html#cb66-26" tabindex="-1"></a>  logistic_rates <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
-<span id="cb66-27"><a href="4.6-pop-dynamics.html#cb66-27" tabindex="-1"></a>    logistic_rates,</span>
-<span id="cb66-28"><a href="4.6-pop-dynamics.html#cb66-28" tabindex="-1"></a>    <span class="fu">tibble</span>(</span>
-<span id="cb66-29"><a href="4.6-pop-dynamics.html#cb66-29" tabindex="-1"></a>      <span class="at">n =</span> n, </span>
-<span id="cb66-30"><a href="4.6-pop-dynamics.html#cb66-30" tabindex="-1"></a>      <span class="at">r =</span> r</span>
-<span id="cb66-31"><a href="4.6-pop-dynamics.html#cb66-31" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> <span class="fu">rowid_to_column</span>(<span class="at">var =</span> <span class="st">&quot;time&quot;</span>)</span>
-<span id="cb66-32"><a href="4.6-pop-dynamics.html#cb66-32" tabindex="-1"></a>  )</span>
-<span id="cb66-33"><a href="4.6-pop-dynamics.html#cb66-33" tabindex="-1"></a>}</span>
-<span id="cb66-34"><a href="4.6-pop-dynamics.html#cb66-34" tabindex="-1"></a></span>
-<span id="cb66-35"><a href="4.6-pop-dynamics.html#cb66-35" tabindex="-1"></a><span class="co"># побудуймо графік для вибраних значень внутрішнього темпу росту</span></span>
-<span id="cb66-36"><a href="4.6-pop-dynamics.html#cb66-36" tabindex="-1"></a>logistic_rates <span class="sc">%&gt;%</span> </span>
-<span id="cb66-37"><a href="4.6-pop-dynamics.html#cb66-37" tabindex="-1"></a>  <span class="fu">filter</span>(time <span class="sc">&lt;</span> <span class="dv">100</span>,</span>
-<span id="cb66-38"><a href="4.6-pop-dynamics.html#cb66-38" tabindex="-1"></a>         r <span class="sc">%in%</span> <span class="fu">c</span>(<span class="fl">1.9</span>, <span class="fl">2.1</span>, <span class="fl">2.9</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb66-39"><a href="4.6-pop-dynamics.html#cb66-39" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> n, <span class="at">color =</span> <span class="fu">as.factor</span>(r))) <span class="sc">+</span> </span>
-<span id="cb66-40"><a href="4.6-pop-dynamics.html#cb66-40" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb66-41"><a href="4.6-pop-dynamics.html#cb66-41" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Час&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb66-42"><a href="4.6-pop-dynamics.html#cb66-42" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Чисельність, ос.&quot;</span>) <span class="sc">+</span></span>
-<span id="cb66-43"><a href="4.6-pop-dynamics.html#cb66-43" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">&quot;r&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="4.6-pop-dynamics.html#cb68-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb68-2"><a href="4.6-pop-dynamics.html#cb68-2" tabindex="-1"></a></span>
+<span id="cb68-3"><a href="4.6-pop-dynamics.html#cb68-3" tabindex="-1"></a><span class="co"># визначимо функцію дискретного логістичного росту</span></span>
+<span id="cb68-4"><a href="4.6-pop-dynamics.html#cb68-4" tabindex="-1"></a>logistic_discrete <span class="ot">&lt;-</span> <span class="cf">function</span>(N, r, <span class="at">K =</span> <span class="dv">1000</span>){</span>
+<span id="cb68-5"><a href="4.6-pop-dynamics.html#cb68-5" tabindex="-1"></a>  N <span class="sc">+</span> N<span class="sc">*</span>r<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> (N<span class="sc">/</span>K))</span>
+<span id="cb68-6"><a href="4.6-pop-dynamics.html#cb68-6" tabindex="-1"></a>}</span>
+<span id="cb68-7"><a href="4.6-pop-dynamics.html#cb68-7" tabindex="-1"></a></span>
+<span id="cb68-8"><a href="4.6-pop-dynamics.html#cb68-8" tabindex="-1"></a><span class="co"># ініціалізуємо вихідний датасет</span></span>
+<span id="cb68-9"><a href="4.6-pop-dynamics.html#cb68-9" tabindex="-1"></a>logistic_rates <span class="ot">&lt;-</span> <span class="fu">tibble</span>()</span>
+<span id="cb68-10"><a href="4.6-pop-dynamics.html#cb68-10" tabindex="-1"></a></span>
+<span id="cb68-11"><a href="4.6-pop-dynamics.html#cb68-11" tabindex="-1"></a><span class="co"># визначимо набір значень внутрішнього темпу росту</span></span>
+<span id="cb68-12"><a href="4.6-pop-dynamics.html#cb68-12" tabindex="-1"></a>IGRs <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="fl">0.1</span>, <span class="at">to =</span> <span class="fl">2.9</span>, <span class="at">by =</span> <span class="fl">0.0025</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb68-13"><a href="4.6-pop-dynamics.html#cb68-13" tabindex="-1"></a>  <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span>
+<span id="cb68-14"><a href="4.6-pop-dynamics.html#cb68-14" tabindex="-1"></a></span>
+<span id="cb68-15"><a href="4.6-pop-dynamics.html#cb68-15" tabindex="-1"></a>steps <span class="ot">&lt;-</span> <span class="dv">1000</span> <span class="co"># кількість кроків в кожній симуляції</span></span>
+<span id="cb68-16"><a href="4.6-pop-dynamics.html#cb68-16" tabindex="-1"></a></span>
+<span id="cb68-17"><a href="4.6-pop-dynamics.html#cb68-17" tabindex="-1"></a><span class="cf">for</span> (r <span class="cf">in</span> IGRs){ <span class="co"># для кожного значення внутрішнього темпу росту...</span></span>
+<span id="cb68-18"><a href="4.6-pop-dynamics.html#cb68-18" tabindex="-1"></a>  <span class="co"># ... ініціалізуємо вектор чисельностей на кожному кроці</span></span>
+<span id="cb68-19"><a href="4.6-pop-dynamics.html#cb68-19" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">numeric</span>(steps)</span>
+<span id="cb68-20"><a href="4.6-pop-dynamics.html#cb68-20" tabindex="-1"></a>  <span class="co"># ... чисельність на початку симуляції - одна особина</span></span>
+<span id="cb68-21"><a href="4.6-pop-dynamics.html#cb68-21" tabindex="-1"></a>  n[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb68-22"><a href="4.6-pop-dynamics.html#cb68-22" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>steps){ <span class="co"># для кожного кроку в часі...</span></span>
+<span id="cb68-23"><a href="4.6-pop-dynamics.html#cb68-23" tabindex="-1"></a>    n[i] <span class="ot">&lt;-</span> <span class="fu">logistic_discrete</span>(<span class="at">N =</span> n[i<span class="dv">-1</span>], <span class="at">r =</span> r)</span>
+<span id="cb68-24"><a href="4.6-pop-dynamics.html#cb68-24" tabindex="-1"></a>  }</span>
+<span id="cb68-25"><a href="4.6-pop-dynamics.html#cb68-25" tabindex="-1"></a>  <span class="co"># запишемо результат симуляції</span></span>
+<span id="cb68-26"><a href="4.6-pop-dynamics.html#cb68-26" tabindex="-1"></a>  logistic_rates <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb68-27"><a href="4.6-pop-dynamics.html#cb68-27" tabindex="-1"></a>    logistic_rates,</span>
+<span id="cb68-28"><a href="4.6-pop-dynamics.html#cb68-28" tabindex="-1"></a>    <span class="fu">tibble</span>(</span>
+<span id="cb68-29"><a href="4.6-pop-dynamics.html#cb68-29" tabindex="-1"></a>      <span class="at">n =</span> n, </span>
+<span id="cb68-30"><a href="4.6-pop-dynamics.html#cb68-30" tabindex="-1"></a>      <span class="at">r =</span> r</span>
+<span id="cb68-31"><a href="4.6-pop-dynamics.html#cb68-31" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> <span class="fu">rowid_to_column</span>(<span class="at">var =</span> <span class="st">&quot;time&quot;</span>)</span>
+<span id="cb68-32"><a href="4.6-pop-dynamics.html#cb68-32" tabindex="-1"></a>  )</span>
+<span id="cb68-33"><a href="4.6-pop-dynamics.html#cb68-33" tabindex="-1"></a>}</span>
+<span id="cb68-34"><a href="4.6-pop-dynamics.html#cb68-34" tabindex="-1"></a></span>
+<span id="cb68-35"><a href="4.6-pop-dynamics.html#cb68-35" tabindex="-1"></a><span class="co"># побудуймо графік для вибраних значень внутрішнього темпу росту</span></span>
+<span id="cb68-36"><a href="4.6-pop-dynamics.html#cb68-36" tabindex="-1"></a>logistic_rates <span class="sc">%&gt;%</span> </span>
+<span id="cb68-37"><a href="4.6-pop-dynamics.html#cb68-37" tabindex="-1"></a>  <span class="fu">filter</span>(time <span class="sc">&lt;</span> <span class="dv">100</span>,</span>
+<span id="cb68-38"><a href="4.6-pop-dynamics.html#cb68-38" tabindex="-1"></a>         r <span class="sc">%in%</span> <span class="fu">c</span>(<span class="fl">1.9</span>, <span class="fl">2.1</span>, <span class="fl">2.9</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb68-39"><a href="4.6-pop-dynamics.html#cb68-39" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> n, <span class="at">color =</span> <span class="fu">as.factor</span>(r))) <span class="sc">+</span> </span>
+<span id="cb68-40"><a href="4.6-pop-dynamics.html#cb68-40" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb68-41"><a href="4.6-pop-dynamics.html#cb68-41" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Час&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb68-42"><a href="4.6-pop-dynamics.html#cb68-42" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Чисельність, ос.&quot;</span>) <span class="sc">+</span></span>
+<span id="cb68-43"><a href="4.6-pop-dynamics.html#cb68-43" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">&quot;r&quot;</span>)</span></code></pre></div>
 </details>
 <p><img src="images/may-cycles.png" /></p>
 <p>Ми бачимо, що за <span class="math inline">\(r = 1.9\)</span>, популяція росте дуже швидко і в якийсь момент перевищує ємність середовища (<span class="math inline">\(K = 1000\)</span>). Після цього, ріст популяції стає від’ємним, адже вона має зменшити свій розмір до <span class="math inline">\(N \leq K\)</span>. Якийсь час чисельність популяції коливається навколо атрактора <span class="math inline">\(K\)</span>, аж допоки система не досягає стану рівноваги. Коли ж <span class="math inline">\(r = 2.1\)</span>, популяція входить в стан <strong><em>стабільних періодичних циклів</em></strong>, і чисельність популяції регулярно коливається між двома значеннями. За <span class="math inline">\(r = 2.9\)</span> система стає зовсім хаотичною, і виглядає, ніби значення чисельності популяції на кожному кроці ніяк не можна передбачити. Власне, Мей (<a href="https://doi.org/10.1126/science.186.4164.645">1974</a>) виявив, що за <span class="math inline">\(0 &lt; r &lt; 2\)</span>, дискретна логістична модель має один атрактор, але їх кількість збільшується до двох-атракторного стабільного циклу за <span class="math inline">\(r &gt; 2\)</span>, і далі до чотирьох, восьми, 16, 32 атракторів, і допоки система не містить хаотичні атрактори. Із попереднім прикладом, ми можемо візуалізувати атрактори, якщо ігноруватимемо всі моменти часу, коли популяція ще росте – виглядає, що фаза росту спостерігається лише протягом перших десятків-двох кроків. Суто заради консервативності, викиньмо перші 150 кроків з усіх симуляцій.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="4.6-pop-dynamics.html#cb67-1" tabindex="-1"></a>logistic_rates <span class="sc">%&gt;%</span> </span>
-<span id="cb67-2"><a href="4.6-pop-dynamics.html#cb67-2" tabindex="-1"></a>  <span class="fu">filter</span>(time <span class="sc">&gt;</span> <span class="dv">150</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb67-3"><a href="4.6-pop-dynamics.html#cb67-3" tabindex="-1"></a>  <span class="fu">filter</span>(r <span class="sc">&gt;</span> <span class="fl">1.8</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb67-4"><a href="4.6-pop-dynamics.html#cb67-4" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> r, <span class="at">y =</span> n)) <span class="sc">+</span></span>
-<span id="cb67-5"><a href="4.6-pop-dynamics.html#cb67-5" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.75</span>, <span class="at">stroke =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
-<span id="cb67-6"><a href="4.6-pop-dynamics.html#cb67-6" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Внутрішній темп росту r&quot;</span>) <span class="sc">+</span></span>
-<span id="cb67-7"><a href="4.6-pop-dynamics.html#cb67-7" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Атрактор N&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="4.6-pop-dynamics.html#cb69-1" tabindex="-1"></a>logistic_rates <span class="sc">%&gt;%</span> </span>
+<span id="cb69-2"><a href="4.6-pop-dynamics.html#cb69-2" tabindex="-1"></a>  <span class="fu">filter</span>(time <span class="sc">&gt;</span> <span class="dv">150</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb69-3"><a href="4.6-pop-dynamics.html#cb69-3" tabindex="-1"></a>  <span class="fu">filter</span>(r <span class="sc">&gt;</span> <span class="fl">1.8</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb69-4"><a href="4.6-pop-dynamics.html#cb69-4" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> r, <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb69-5"><a href="4.6-pop-dynamics.html#cb69-5" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.75</span>, <span class="at">stroke =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb69-6"><a href="4.6-pop-dynamics.html#cb69-6" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Внутрішній темп росту r&quot;</span>) <span class="sc">+</span></span>
+<span id="cb69-7"><a href="4.6-pop-dynamics.html#cb69-7" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Атрактор N&quot;</span>)</span></code></pre></div>
 </details>
 <p><img src="images/logistic-map.png" /></p>
 <p>Ця мапа отримала назву <strong>біфуркаційної діаграми</strong> (<em>bifurcation diagram</em>) і є відомим візуальним відображенням хаотичного процесу. Отримання дуже складних, хаотичних результатів із дуже простих моделей свого часу додало палива до дискусії щодо того, чи варто вірити моделям щільність-залежного росту, адже досі незрозуміло чи реальні біологічні популяції мають властивості динамічних систем в стані рівноваги (<a href="https://doi.org/10.2307/3546876">Turchin 1995</a>). Стабільні періодичні цикли та хаотичні атрактори вчать досвідчених екологів хорошого уроку щодо динаміки популяцій: <strong><em>навіть якщо розмір популяції коливається із часом, це не завжди вказує на спрямовані зміни, але може бути наслідком періодичних коливань</em></strong>. Відтак, варто бути обережними щодо спостереженої динаміки популяції: в найгіршому випадку, якщо чисельність популяції спостережена в часі лише декілька (щонайменше двічі) разів, дуже легко можна зробити хибний висновок про збільшення чи зменшення розміру популяції навіть коли вона, насправді, стабільна.</p>

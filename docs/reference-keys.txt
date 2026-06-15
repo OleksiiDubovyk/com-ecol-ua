@@ -39,6 +39,11 @@ fig:fig-sophia
 fig:fig-nestedness
 fig:fig-cath
 fig:fig-niche-gestalt
+fig:fig-eltonian
+fig:fig-hutchinson
+fig:fig-bam1
+fig:fig-bam2
+fig:fig-bam3
 about-author
 whythiswork
 more-about-author
@@ -170,7 +175,12 @@ succession
 life-history
 detectability
 interspecific
+niche-partitioning
+конкурентне-виключення
+диференціація-ніш-та-лімітуюча-подібність
+комплементарність-та-ефект-вибірки
 relationships
+рівняння-лоткивольтерра
 rstar
 oft
 comecol

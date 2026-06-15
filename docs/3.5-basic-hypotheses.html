@@ -300,9 +300,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="6-interspecific.html"><a href="6-interspecific.html"><i class="fa fa-check"></i><b>6</b> Міжвидові взаємодії</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="6.1-relationships.html"><a href="6.1-relationships.html"><i class="fa fa-check"></i><b>6.1</b> Типи міжвидових зв’язків</a></li>
-<li class="chapter" data-level="6.2" data-path="6.2-rstar.html"><a href="6.2-rstar.html"><i class="fa fa-check"></i><b>6.2</b> Теорія поділу ресурсів</a></li>
-<li class="chapter" data-level="6.3" data-path="6.3-oft.html"><a href="6.3-oft.html"><i class="fa fa-check"></i><b>6.3</b> Теорія оптимального харчування</a></li>
+<li class="chapter" data-level="6.1" data-path="6.1-niche-partitioning.html"><a href="6.1-niche-partitioning.html"><i class="fa fa-check"></i><b>6.1</b> Диференціація ніш</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="6.1-niche-partitioning.html"><a href="6.1-niche-partitioning.html#%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D0%BD%D0%B5-%D0%B2%D0%B8%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%BD%D1%8F"><i class="fa fa-check"></i><b>6.1.1</b> Конкурентне виключення</a></li>
+<li class="chapter" data-level="6.1.2" data-path="6.1-niche-partitioning.html"><a href="6.1-niche-partitioning.html#%D0%B4%D0%B8%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D1%96%D0%B0%D1%86%D1%96%D1%8F-%D0%BD%D1%96%D1%88-%D1%82%D0%B0-%D0%BB%D1%96%D0%BC%D1%96%D1%82%D1%83%D1%8E%D1%87%D0%B0-%D0%BF%D0%BE%D0%B4%D1%96%D0%B1%D0%BD%D1%96%D1%81%D1%82%D1%8C"><i class="fa fa-check"></i><b>6.1.2</b> Диференціація ніш та лімітуюча подібність</a></li>
+<li class="chapter" data-level="6.1.3" data-path="6.1-niche-partitioning.html"><a href="6.1-niche-partitioning.html#%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%BD%D1%96%D1%81%D1%82%D1%8C-%D1%82%D0%B0-%D0%B5%D1%84%D0%B5%D0%BA%D1%82-%D0%B2%D0%B8%D0%B1%D1%96%D1%80%D0%BA%D0%B8"><i class="fa fa-check"></i><b>6.1.3</b> Комплементарність та ефект вибірки</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="6.2-relationships.html"><a href="6.2-relationships.html"><i class="fa fa-check"></i><b>6.2</b> Типи міжвидових зв’язків</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="6.2-relationships.html"><a href="6.2-relationships.html#%D1%80%D1%96%D0%B2%D0%BD%D1%8F%D0%BD%D0%BD%D1%8F-%D0%BB%D0%BE%D1%82%D0%BA%D0%B8%D0%B2%D0%BE%D0%BB%D1%8C%D1%82%D0%B5%D1%80%D1%80%D0%B0"><i class="fa fa-check"></i><b>6.2.1</b> Рівняння Лотки–Вольтерра</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="6.3-rstar.html"><a href="6.3-rstar.html"><i class="fa fa-check"></i><b>6.3</b> Теорія поділу ресурсів</a></li>
+<li class="chapter" data-level="6.4" data-path="6.4-oft.html"><a href="6.4-oft.html"><i class="fa fa-check"></i><b>6.4</b> Теорія оптимального харчування</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="7-comecol.html"><a href="7-comecol.html"><i class="fa fa-check"></i><b>7</b> Екологічні угруповання</a>
 <ul>
@@ -409,6 +418,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><p>зробити висновки щодо відхилення нульової гіпотези.</p></li>
 </ul>
+<p>Чи варто завжди зважати на значущість р-значення, коли ви перевіряєте гіпотезу? Тут варто завжди тримати на озброєнні мантру “<strong><em>статистична значущість не тотожна біологічній значущості</em></strong>”. За достатньо великої вибірки р-значення може бути маленьким навіть за незначних тенденцій в даних. Наприклад, уявіть що ви досліджуєте дві популяції зябликів, виловлюєте їх павутинним сітками в двох парках протягом багатьох років, і кожного птаха акуратно зважуєте (настільки акуратно, що можна знехтувати помилкою вимірювання). В першому парку ви сумарно зважили три тисячі зябликів, в другому – чотири тисячі (це дуже великі парки і ви нездорово працелюбні). І коли прийшов час аналізувати дані, ви бачите що між середньою вагою в різних популяціях існує невелика різниця: популяція 1 має середню вагу 24.52614 г, а друга популяція – 24.64192 г. Як старанний дослідник ви проганяєте дані через t-тест:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="3.5-basic-hypotheses.html#cb24-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20260612</span>)</span>
+<span id="cb24-2"><a href="3.5-basic-hypotheses.html#cb24-2" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="3.5-basic-hypotheses.html#cb24-3" tabindex="-1"></a>weights1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">3000</span>, <span class="at">mean =</span> <span class="fl">24.5</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb24-4"><a href="3.5-basic-hypotheses.html#cb24-4" tabindex="-1"></a>weights2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">4000</span>, <span class="at">mean =</span> <span class="fl">24.6</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb24-5"><a href="3.5-basic-hypotheses.html#cb24-5" tabindex="-1"></a><span class="co"># Welch Two Sample t-test - аналог тесту Стьюдента для великих нерівних вибірок</span></span>
+<span id="cb24-6"><a href="3.5-basic-hypotheses.html#cb24-6" tabindex="-1"></a><span class="fu">t.test</span>(weights1, weights2)</span></code></pre></div>
+</details>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  weights1 and weights2
+## t = -2.4299, df = 6530.1, p-value = 0.01513
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.20917389 -0.02237182
+## sample estimates:
+## mean of x mean of y 
+##  24.52614  24.64192</code></pre>
+<p>Погляньте, наше <span class="math inline">\(p=0.01513\)</span>, тобто <span class="math inline">\(p&lt;0.05\)</span>! Чи варто радіти? Мабуть, що не надто. Я би сказав, що різниця в 0.12 грамів навряд чи про щось каже, бо це якісь пів відсотка від ваги середньостатистичного зяблика. Однак, дійсно, різниця статистично значуща.</p>
 </div>
 <div id="paradigms" class="section level3 hasAnchor" number="3.5.4">
 <h3><span class="header-section-number">3.5.4</span> Парадигми статистичного аналізу<a href="3.5-basic-hypotheses.html#paradigms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -442,13 +472,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Принцип роботи МСМС навіює певний настрій ітеративного стилю статистичного аналізу: якщо не вдається вирішити проблему аналітично, просто напишіть алгоритм, який оцінить оптимальне рішення! Ба більше, як вже було згадано вище, параметричні та непараметричні тести працюють лише коли дані відповідають всім припущенням цих тестів. Якщо це не відповідає дійсності, то ітеративні обчислення також можуть стати в нагоді, варто лише пам’ятати процедури тестування гіпотез.</p>
 <p>Уявіть два угруповання, <span class="math inline">\(A\)</span> і <span class="math inline">\(B\)</span>. Кожне угруповання описується як кількість особин певного виду (обмежимо <span class="math inline">\(\gamma\)</span>-різноманіття, тобто сумарне різноманіття між угрупованнями, до десяти видів), що для цієї ілюстрації ми згенеруємо випадково із розподілу Пуасона.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="3.5-basic-hypotheses.html#cb24-1" tabindex="-1"></a>comA <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">10</span>, <span class="dv">5</span>)</span>
-<span id="cb24-2"><a href="3.5-basic-hypotheses.html#cb24-2" tabindex="-1"></a>comB <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">10</span>, <span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="3.5-basic-hypotheses.html#cb26-1" tabindex="-1"></a>comA <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">10</span>, <span class="dv">5</span>)</span>
+<span id="cb26-2"><a href="3.5-basic-hypotheses.html#cb26-2" tabindex="-1"></a>comB <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">10</span>, <span class="dv">5</span>)</span></code></pre></div>
 </details>
 <p>Якщо позначити кожен вид, то ми можемо поглянути на ці два угрупованні як на таблицю:</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="3.5-basic-hypotheses.html#cb25-1" tabindex="-1"></a>coms <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">A =</span> comA, <span class="at">B =</span> comB, <span class="at">row.names =</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>])</span>
-<span id="cb25-2"><a href="3.5-basic-hypotheses.html#cb25-2" tabindex="-1"></a>coms</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="3.5-basic-hypotheses.html#cb27-1" tabindex="-1"></a>coms <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">A =</span> comA, <span class="at">B =</span> comB, <span class="at">row.names =</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>])</span>
+<span id="cb27-2"><a href="3.5-basic-hypotheses.html#cb27-2" tabindex="-1"></a>coms</span></code></pre></div>
 </details>
 <pre><code>##    A B
 ## a  5 4
@@ -463,61 +493,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## j  3 3</code></pre>
 <p>І от питання: наскільки ці угруповання подібні між собою? Для відповіді є цілий набір різноманітних <a href="7.5-similarity.html#similarity">індексів подібності</a>, однак в цьому прикладі можемо обмежитись доволі стародавньою метрикою – Евклідовою відстанню. Зі школи можна пригадати, що квадрат гіпотенузи дорівнює сумі квадратів катетів. Якщо задуматись, то довжина гіпотенузи є дистанцією між двома кутами прямокутного трикутника, координати яких становлять <span class="math inline">\((x = \text{довжина катету 2}, y = 0)\)</span> та <span class="math inline">\((x = 0, y = \text{довжина катету 1})\)</span>. Відповідно, цю теорему Піфагора можна використати для розрахунку дистанції між двома точками <span class="math inline">\(p\)</span> і <span class="math inline">\(q\)</span> в двовимірному просторі із координатами <span class="math inline">\((p_1, p_2)\)</span> та <span class="math inline">\((q_1, q_2)\)</span>: <span class="math inline">\(d_{p, q}= \sqrt{(p_1 - q_1)^2 + (p_2 - q_2)^2}\)</span>. Краса Евклідової дистанції в тому, що її формулу можна екстраполювати на будь-яку кількість вимірів (позначимо вимірність як <span class="math inline">\(n: i = 1, 2, 3, \cdots, n\)</span>): <span class="math inline">\(d(p, q) = \sqrt{\sum_{i=1}^n (p_i - q_i)^2}\)</span>. Евклідова дистанція вказує на те, наскільки два об’єкти близькі один до одного в просторі, і якщо уявити угруповання такими об’єктами, то Евклідову дистанцію можна спробувати використати для оцінки того, наскільки два угруповання подібні один до одного<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a>.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="3.5-basic-hypotheses.html#cb27-1" tabindex="-1"></a>eucl_dist <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y){</span>
-<span id="cb27-2"><a href="3.5-basic-hypotheses.html#cb27-2" tabindex="-1"></a>  <span class="fu">sqrt</span>(<span class="fu">sum</span>((x <span class="sc">-</span> y)<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb27-3"><a href="3.5-basic-hypotheses.html#cb27-3" tabindex="-1"></a>}</span>
-<span id="cb27-4"><a href="3.5-basic-hypotheses.html#cb27-4" tabindex="-1"></a>d_obs <span class="ot">&lt;-</span> <span class="fu">eucl_dist</span>(coms<span class="sc">$</span>A, coms<span class="sc">$</span>B)</span>
-<span id="cb27-5"><a href="3.5-basic-hypotheses.html#cb27-5" tabindex="-1"></a>d_obs</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="3.5-basic-hypotheses.html#cb29-1" tabindex="-1"></a>eucl_dist <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y){</span>
+<span id="cb29-2"><a href="3.5-basic-hypotheses.html#cb29-2" tabindex="-1"></a>  <span class="fu">sqrt</span>(<span class="fu">sum</span>((x <span class="sc">-</span> y)<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb29-3"><a href="3.5-basic-hypotheses.html#cb29-3" tabindex="-1"></a>}</span>
+<span id="cb29-4"><a href="3.5-basic-hypotheses.html#cb29-4" tabindex="-1"></a>d_obs <span class="ot">&lt;-</span> <span class="fu">eucl_dist</span>(coms<span class="sc">$</span>A, coms<span class="sc">$</span>B)</span>
+<span id="cb29-5"><a href="3.5-basic-hypotheses.html#cb29-5" tabindex="-1"></a>d_obs</span></code></pre></div>
 </details>
 <pre><code>## [1] 10.90871</code></pre>
 <p>І отже ми отримуємо якесь значення дистанції – нашу статистику. Тепер постає інше питання, що це значення значить? Чи наші угруповання подібні між собою, чи ні? Це є гарним питанням для застосування статистичного тестування, в якому <em>нульовою гіпотезою</em> є те, що два угруповання походять із однієї генеральної сукупності (метаугруповання – множини угруповань), а <em>альтернативна гіпотеза</em> – що два угруповання походять із різних метаугруповань. Для тестування нульової гіпотези не залишається нічого, окрім як отримати нульовий розподіл для наших даних.</p>
 <p>Можливо, існує спосіб аналітично знайти розподіл очікуваних Евклідових дистанцій для вибірок із однієї генеральної сукупності, однак вирішення такої задачі вимагатиме чимало часу і ми не знаємо чи це взагалі можливо. Тут у нагоді стає метод <strong>бутстреп</strong> (<em>bootstrap</em>), який дозволяє оцінити нульовий розподіл на підставі наявних даних. Симулювати нульову гіпотезу нескладно: для цього лише необхідно перемішати чисельності видів в спостережених угрупованнях. В цій конкретній ситуації, втім, постає питання адекватних нульових розподілів, адже за нульової гіпотези чисельності видів можуть бути маніпульовані тільки для кожного виду окремо (тобто не буде коректним замінити чисельність виду a в угруповання А чисельністю виду j із угруповання В, адже чисельності видів не є незалежними; втім, це не було би проблемою для незалежних змінних на кшталт результатів морфологічних промірів випадкових особин). Відтак, визначмо функцію, яка перемішуватиме чисельності видів таким чином, що симульована чисельність виду в угрупованні може рівноймовірно походити з угруповання А чи В. Варто зазначити, що для бутстрепу необхідно використовувати процедуру відбору із заміщенням (<em>sampling with replacement</em>)<a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a>.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="3.5-basic-hypotheses.html#cb29-1" tabindex="-1"></a><span class="co"># для всяких пермутацій необхідно повернути випадкове зерно до замовчування</span></span>
-<span id="cb29-2"><a href="3.5-basic-hypotheses.html#cb29-2" tabindex="-1"></a><span class="fu">rm</span>(.Random.seed, <span class="at">envir=</span><span class="fu">globalenv</span>())</span>
-<span id="cb29-3"><a href="3.5-basic-hypotheses.html#cb29-3" tabindex="-1"></a></span>
-<span id="cb29-4"><a href="3.5-basic-hypotheses.html#cb29-4" tabindex="-1"></a>mix_coms <span class="ot">&lt;-</span> <span class="cf">function</span>(com){</span>
-<span id="cb29-5"><a href="3.5-basic-hypotheses.html#cb29-5" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">apply</span>(com, <span class="dv">1</span>, <span class="cf">function</span>(x) <span class="fu">sample</span>(<span class="at">x =</span> x, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> T)) <span class="sc">%&gt;%</span> <span class="fu">t</span>() <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>()</span>
-<span id="cb29-6"><a href="3.5-basic-hypotheses.html#cb29-6" tabindex="-1"></a>  <span class="fu">colnames</span>(out) <span class="ot">&lt;-</span> <span class="fu">colnames</span>(com)</span>
-<span id="cb29-7"><a href="3.5-basic-hypotheses.html#cb29-7" tabindex="-1"></a>  <span class="fu">return</span>(out)</span>
-<span id="cb29-8"><a href="3.5-basic-hypotheses.html#cb29-8" tabindex="-1"></a>}</span>
-<span id="cb29-9"><a href="3.5-basic-hypotheses.html#cb29-9" tabindex="-1"></a>new_coms <span class="ot">&lt;-</span> <span class="fu">mix_coms</span>(coms)</span>
-<span id="cb29-10"><a href="3.5-basic-hypotheses.html#cb29-10" tabindex="-1"></a>new_coms</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="3.5-basic-hypotheses.html#cb31-1" tabindex="-1"></a><span class="co"># для всяких пермутацій необхідно повернути випадкове зерно до замовчування</span></span>
+<span id="cb31-2"><a href="3.5-basic-hypotheses.html#cb31-2" tabindex="-1"></a><span class="fu">rm</span>(.Random.seed, <span class="at">envir=</span><span class="fu">globalenv</span>())</span>
+<span id="cb31-3"><a href="3.5-basic-hypotheses.html#cb31-3" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="3.5-basic-hypotheses.html#cb31-4" tabindex="-1"></a>mix_coms <span class="ot">&lt;-</span> <span class="cf">function</span>(com){</span>
+<span id="cb31-5"><a href="3.5-basic-hypotheses.html#cb31-5" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">apply</span>(com, <span class="dv">1</span>, <span class="cf">function</span>(x) <span class="fu">sample</span>(<span class="at">x =</span> x, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> T)) <span class="sc">%&gt;%</span> <span class="fu">t</span>() <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>()</span>
+<span id="cb31-6"><a href="3.5-basic-hypotheses.html#cb31-6" tabindex="-1"></a>  <span class="fu">colnames</span>(out) <span class="ot">&lt;-</span> <span class="fu">colnames</span>(com)</span>
+<span id="cb31-7"><a href="3.5-basic-hypotheses.html#cb31-7" tabindex="-1"></a>  <span class="fu">return</span>(out)</span>
+<span id="cb31-8"><a href="3.5-basic-hypotheses.html#cb31-8" tabindex="-1"></a>}</span>
+<span id="cb31-9"><a href="3.5-basic-hypotheses.html#cb31-9" tabindex="-1"></a>new_coms <span class="ot">&lt;-</span> <span class="fu">mix_coms</span>(coms)</span>
+<span id="cb31-10"><a href="3.5-basic-hypotheses.html#cb31-10" tabindex="-1"></a>new_coms</span></code></pre></div>
 </details>
-<pre><code>##   A  B
-## a 5  4
-## b 4 10
-## c 4  4
-## d 7  7
-## e 7  7
-## f 3  3
-## g 4  4
-## h 9  9
-## i 4  4
-## j 3  3</code></pre>
+<pre><code>##    A B
+## a  5 5
+## b 10 4
+## c  6 4
+## d  3 3
+## e  5 5
+## f  3 3
+## g  7 4
+## h  9 2
+## i  4 4
+## j  3 3</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="3.5-basic-hypotheses.html#cb31-1" tabindex="-1"></a><span class="fu">eucl_dist</span>(new_coms<span class="sc">$</span>A, new_coms<span class="sc">$</span>B)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="3.5-basic-hypotheses.html#cb33-1" tabindex="-1"></a><span class="fu">eucl_dist</span>(new_coms<span class="sc">$</span>A, new_coms<span class="sc">$</span>B)</span></code></pre></div>
 </details>
-<pre><code>## [1] 6.082763</code></pre>
+<pre><code>## [1] 9.899495</code></pre>
 <p>Тепер цю операцію можна повторити багато разів, скажімо, десять тисяч разів, аби згенерувати розподіл статистики.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="3.5-basic-hypotheses.html#cb33-1" tabindex="-1"></a>d_null <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10000</span>)</span>
-<span id="cb33-2"><a href="3.5-basic-hypotheses.html#cb33-2" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>){</span>
-<span id="cb33-3"><a href="3.5-basic-hypotheses.html#cb33-3" tabindex="-1"></a>  new_coms <span class="ot">&lt;-</span> <span class="fu">mix_coms</span>(coms)</span>
-<span id="cb33-4"><a href="3.5-basic-hypotheses.html#cb33-4" tabindex="-1"></a>  d_null[i] <span class="ot">&lt;-</span> <span class="fu">eucl_dist</span>(new_coms<span class="sc">$</span>A, new_coms<span class="sc">$</span>B)</span>
-<span id="cb33-5"><a href="3.5-basic-hypotheses.html#cb33-5" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="3.5-basic-hypotheses.html#cb35-1" tabindex="-1"></a>d_null <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10000</span>)</span>
+<span id="cb35-2"><a href="3.5-basic-hypotheses.html#cb35-2" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>){</span>
+<span id="cb35-3"><a href="3.5-basic-hypotheses.html#cb35-3" tabindex="-1"></a>  new_coms <span class="ot">&lt;-</span> <span class="fu">mix_coms</span>(coms)</span>
+<span id="cb35-4"><a href="3.5-basic-hypotheses.html#cb35-4" tabindex="-1"></a>  d_null[i] <span class="ot">&lt;-</span> <span class="fu">eucl_dist</span>(new_coms<span class="sc">$</span>A, new_coms<span class="sc">$</span>B)</span>
+<span id="cb35-5"><a href="3.5-basic-hypotheses.html#cb35-5" tabindex="-1"></a>}</span></code></pre></div>
 </details>
 <p>Погляньмо на розподіл цієї статистики (чорна лінія відповідає ядерній оцінці густини розподілу) і порівняймо його із спостереженим значенням (червона лінія).</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="3.5-basic-hypotheses.html#cb34-1" tabindex="-1"></a><span class="fu">density</span>(d_null) <span class="sc">%&gt;%</span> <span class="fu">plot</span>(<span class="at">xlab =</span> <span class="st">&quot;Евклідова відстань&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;KDE&quot;</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb34-2"><a href="3.5-basic-hypotheses.html#cb34-2" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> d_obs, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="3.5-basic-hypotheses.html#cb36-1" tabindex="-1"></a><span class="fu">density</span>(d_null) <span class="sc">%&gt;%</span> <span class="fu">plot</span>(<span class="at">xlab =</span> <span class="st">&quot;Евклідова відстань&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;KDE&quot;</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb36-2"><a href="3.5-basic-hypotheses.html#cb36-2" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> d_obs, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 </details>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <p>Оскільки за нульової гіпотези можна очікувати, що значення відстані наближатиметься до нуля (до того ж, дистанція не може бути негативною), екстремальні значення нульового розподілу відповідатимуть значним позитивним значенням. Ця логіка дозволяє оцінити псевдо-<span class="math inline">\(p\)</span>-значення як для одностороннього тесту:</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="3.5-basic-hypotheses.html#cb35-1" tabindex="-1"></a><span class="fu">length</span>(d_null[d_null <span class="sc">&gt;=</span> d_obs])<span class="sc">/</span><span class="fu">length</span>(d_null)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="3.5-basic-hypotheses.html#cb37-1" tabindex="-1"></a><span class="fu">length</span>(d_null[d_null <span class="sc">&gt;=</span> d_obs])<span class="sc">/</span><span class="fu">length</span>(d_null)</span></code></pre></div>
 </details>
-<pre><code>## [1] 0.0093</code></pre>
+<pre><code>## [1] 0.0087</code></pre>
 <p>Отже, в генерованому розподілі нульової вибірки, ймовірність отримати спостережене або більше за спостережене значення статистики <span class="math inline">\(p \approx 0.01\)</span> (оскільки процес стохастичний, оцінка відрізнятиметься за кожного компілювання), що дозволяє відхилити нульову гіпотезу і стверджувати що два угруповання відрізняються між собою.</p>
 <p>Пермутаційні методи є доволі пластичними, адже їх можна застосовувати для будь-яких статистик і будь-яких розподілів вихідних даних. Великим недоліком, втім, є те, що цей метод є комп’ютер-інтенсивним, і для великих наборів даних обчислення вимагатимуть чимало комп’ютерного часу (секунди, хвилини, іноді дні).</p>
 </div>
