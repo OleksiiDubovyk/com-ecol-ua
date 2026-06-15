@@ -12,14 +12,15 @@ The first textbook/manual/call-it-whatever-you-want in Ukrainian language deploy
 
 # Історія оновлень | Update history
 
-- Build v0.5.1. 2025-12-25 | Section on trophic webs, started niches
+- Build v0.5.2. 2026-06-15 | Section on niches
+- Build v0.5.1. 2025-12-25 | Chapter 5 (Fundamental Ecological Principles) started, Section on trophic webs, started niches
 - Build v0.4.8. 2025-10-13 | Section on differential, matrix models, ABMs
 - Build v0.4.7. 2025-09-30 | Section on metapopulations
 - Build v0.4.6. 2025-07-14 | Section on density-independent and density-dependent population dynamics
 - Build v0.4.5. 2025-04-07 | Section on intraspecific interactions
 - Build v0.4.4. 2025-04-01 | Sections on factors affecting populations and capture-mark-recapture
 - Build v0.4.2. 2025-02-16 | Section on population definitions
-- Build v0.4.1. 2024-12-28 | Chapter 4 (Basic Population Ecology) started, section on species and species-area relationship
+- Build v0.4.1. 2024-12-28 | Chapter 4 (Basic Population Ecology) started, Section on species and species-area relationship
 - Build v0.3.7.3. 2024-12-18 | Chapter 3 (Math) completed
 - Build v0.3.6.3. 2024-10-30 | PCA section completed
 - Build <v0.3.6.3 | No records keeping
