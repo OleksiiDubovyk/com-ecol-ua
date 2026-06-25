@@ -44,6 +44,8 @@ fig:fig-hutchinson
 fig:fig-bam1
 fig:fig-bam2
 fig:fig-bam3
+fig:fig-pisaster
+fig:fig-keystones
 about-author
 whythiswork
 more-about-author
@@ -171,8 +173,12 @@ niche
 bam-ніша
 просторове-моделювання-ніш
 keystones
+щодо-морських-зірок
+хто-є-ключовим-видом
+а-хто-не-є-ключовим-видом
 succession
 life-history
+functioning
 detectability
 interspecific
 niche-partitioning
@@ -181,6 +187,8 @@ niche-partitioning
 комплементарність-та-ефект-вибірки
 relationships
 рівняння-лоткивольтерра
+коефіцієнти-міжвидових-взаємодій
+невизначеність-коефіцієнтів
 rstar
 oft
 comecol
@@ -189,8 +197,8 @@ sad-model
 diversity
 janzen
 similarity
+rarefaction
 fd
 islands
 env-filter
 untb
-rarefaction
