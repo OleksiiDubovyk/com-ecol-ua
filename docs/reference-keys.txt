@@ -46,6 +46,10 @@ fig:fig-bam2
 fig:fig-bam3
 fig:fig-pisaster
 fig:fig-keystones
+fig:fig-cowles
+fig:fig-gleason
+fig:fig-succession
+fig:fig-ass
 about-author
 whythiswork
 more-about-author
@@ -177,6 +181,11 @@ keystones
 хто-є-ключовим-видом
 а-хто-не-є-ключовим-видом
 succession
+супер-організми-чи-індивідуалісти
+сукцесія
+клімаксичні-екосистеми
+альтернативні-стабільні-стани
+збурення-і-стрес
 life-history
 functioning
 detectability
@@ -200,5 +209,7 @@ similarity
 rarefaction
 fd
 islands
+sloss
+конкуренція-проти-колонізації
 env-filter
 untb
