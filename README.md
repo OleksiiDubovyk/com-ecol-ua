@@ -12,6 +12,7 @@ The first textbook/manual/call-it-whatever-you-want in Ukrainian language deploy
 
 # Історія оновлень | Update history
 
+- Build v0.5.4. 2026-08-17 | Section on succession.
 - Build v0.5.3. 2026-06-25 | Section on keystone. Thought about adding sections on ecosystem functioning (Tilman etc.)
 - Build v0.5.2. 2026-06-15 | Section on niches. Thought about elaborating on exclusion principle and niche partitioning.
 - Build v0.5.1. 2025-12-25 | Chapter 5 (Fundamental Ecological Principles) started, Section on trophic webs, started niches
