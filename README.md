@@ -12,6 +12,7 @@ The first textbook/manual/call-it-whatever-you-want in Ukrainian language deploy
 
 # Історія оновлень | Update history
 
+- Build v0.5.6. 2026-09-11 | Section on ecosystem functioning.
 - Build v0.5.5. 2026-08-23 | Section on LHT. Switched places with succession.
 - Build v0.5.4. 2026-08-17 | Section on succession.
 - Build v0.5.3. 2026-06-25 | Section on keystone. Thought about adding sections on ecosystem functioning (Tilman etc.)
