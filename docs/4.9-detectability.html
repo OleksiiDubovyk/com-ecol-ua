@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4.9 Ймовірність детекції та трапляння | Вступ до Екології Угруповань</title>
+  <meta name="description" content="Непідручник" />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4.9 Ймовірність детекції та трапляння | Вступ до Екології Угруповань" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Непідручник" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4.9 Ймовірність детекції та трапляння | Вступ до Екології Угруповань" />
+  
+  <meta name="twitter:description" content="Непідручник" />
+  
+
+<meta name="author" content="Олексій Дубовик" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="4.8-Leslie-matrix.html"/>
+<link rel="next" href="5-foundations.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/codefolding-lua-1.1/codefolding-lua.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<meta name="google-site-verification" content="PxaldxMtVeQNl4LkXGyu2G86qsNb6QD-uPRPRfOKCBM" />
+<link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+<link rel="manifest" href="images/favicon/manifest.json">
+<link rel="shortcut icon" href="images/favicon/favicon-32x32.pn" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Вступ до Екології Угруповань</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Вітання</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Передмова</a>
+<ul>
+<li class="chapter" data-level="0.0.1" data-path="preface.html"><a href="preface.html#about-author"><i class="fa fa-check"></i><b>0.0.1</b> Трішки про автора</a></li>
+<li class="chapter" data-level="0.0.2" data-path="preface.html"><a href="preface.html#whythiswork"><i class="fa fa-check"></i><b>0.0.2</b> Навіщо ця робота</a></li>
+<li class="chapter" data-level="0.0.3" data-path="preface.html"><a href="preface.html#more-about-author"><i class="fa fa-check"></i><b>0.0.3</b> Ще трішки про автора</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="acknowledge.html"><a href="acknowledge.html"><i class="fa fa-check"></i>Подяки</a></li>
+<li class="chapter" data-level="1" data-path="1-introduction.html"><a href="1-introduction.html"><i class="fa fa-check"></i><b>1</b> Вступ</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="1-introduction.html"><a href="1-introduction.html#community-def"><i class="fa fa-check"></i><b>1.0.1</b> Екологічне угруповання</a></li>
+<li class="chapter" data-level="1.0.2" data-path="1-introduction.html"><a href="1-introduction.html#comm-ecol-today"><i class="fa fa-check"></i><b>1.0.2</b> Екологія угруповань сьогодні</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="2-about-book.html"><a href="2-about-book.html"><i class="fa fa-check"></i><b>2</b> Про книгу та Зміст</a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="2-about-book.html"><a href="2-about-book.html#readme"><i class="fa fa-check"></i><b>2.0.1</b> Дисклеймер</a></li>
+<li class="chapter" data-level="2.0.2" data-path="2-about-book.html"><a href="2-about-book.html#how-built"><i class="fa fa-check"></i><b>2.0.2</b> Як побудована ця книга</a></li>
+<li class="chapter" data-level="2.0.3" data-path="2-about-book.html"><a href="2-about-book.html#expect"><i class="fa fa-check"></i><b>2.0.3</b> Чого чекати від цієї книги</a></li>
+<li class="chapter" data-level="2.0.4" data-path="2-about-book.html"><a href="2-about-book.html#expected"><i class="fa fa-check"></i><b>2.0.4</b> Чого ця книга чекає від читача</a></li>
+<li class="chapter" data-level="2.0.5" data-path="2-about-book.html"><a href="2-about-book.html#resources"><i class="fa fa-check"></i><b>2.0.5</b> Додаткові ресурси</a></li>
+<li class="chapter" data-level="2.0.6" data-path="2-about-book.html"><a href="2-about-book.html#notexpect"><i class="fa fa-check"></i><b>2.0.6</b> На що не варто розраховувати</a></li>
+<li class="chapter" data-level="2.1" data-path="2.1-зміст.html"><a href="2.1-зміст.html"><i class="fa fa-check"></i><b>2.1</b> Зміст</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-numerical-ecology.html"><a href="3-numerical-ecology.html"><i class="fa fa-check"></i><b>3</b> Базові математичні підходи в екології</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="3.1-algebra.html"><a href="3.1-algebra.html"><i class="fa fa-check"></i><b>3.1</b> Математична пам’ятка</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="3.1-algebra.html"><a href="3.1-algebra.html#%D0%B4%D1%80%D0%BE%D0%B1%D0%B8"><i class="fa fa-check"></i><b>3.1.1</b> Дроби</a></li>
+<li class="chapter" data-level="3.1.2" data-path="3.1-algebra.html"><a href="3.1-algebra.html#%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D1%96-%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D0%B8"><i class="fa fa-check"></i><b>3.1.2</b> Математичні символи</a></li>
+<li class="chapter" data-level="3.1.3" data-path="3.1-algebra.html"><a href="3.1-algebra.html#%D0%BD%D0%B5%D1%80%D1%96%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D1%96"><i class="fa fa-check"></i><b>3.1.3</b> Нерівності</a></li>
+<li class="chapter" data-level="3.1.4" data-path="3.1-algebra.html"><a href="3.1-algebra.html#%D1%81%D1%82%D1%83%D0%BF%D0%B5%D0%BD%D1%96"><i class="fa fa-check"></i><b>3.1.4</b> Ступені</a></li>
+<li class="chapter" data-level="3.1.5" data-path="3.1-algebra.html"><a href="3.1-algebra.html#%D1%80%D1%8F%D0%B4%D0%B8-%D1%87%D0%B8%D1%81%D0%B5%D0%BB"><i class="fa fa-check"></i><b>3.1.5</b> Ряди чисел</a></li>
+<li class="chapter" data-level="3.1.6" data-path="3.1-algebra.html"><a href="3.1-algebra.html#%D1%81%D1%82%D1%83%D0%BF%D0%B5%D0%BD%D1%96-%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D1%87%D0%BD%D0%B8%D1%85-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D1%96%D0%B9"><i class="fa fa-check"></i><b>3.1.6</b> Ступені арифметичних операцій</a></li>
+<li class="chapter" data-level="3.1.7" data-path="3.1-algebra.html"><a href="3.1-algebra.html#%D0%BB%D1%96%D0%BD%D1%96%D0%B9%D0%BD%D1%96-%D1%82%D0%B0-%D0%BF%D0%BE%D0%BB%D1%96%D0%BD%D0%BE%D0%BC%D1%96%D0%B0%D0%BB%D1%8C%D0%BD%D1%96-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D1%96%D1%97"><i class="fa fa-check"></i><b>3.1.7</b> Лінійні та поліноміальні функції</a></li>
+<li class="chapter" data-level="3.1.8" data-path="3.1-algebra.html"><a href="3.1-algebra.html#logs"><i class="fa fa-check"></i><b>3.1.8</b> Логарифми</a></li>
+<li class="chapter" data-level="3.1.9" data-path="3.1-algebra.html"><a href="3.1-algebra.html#%D0%BF%D0%BE%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D1%96-%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D1%96-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D1%96%D1%97"><i class="fa fa-check"></i><b>3.1.9</b> Поширені математичні функції</a></li>
+<li class="chapter" data-level="3.1.10" data-path="3.1-algebra.html"><a href="3.1-algebra.html#%D0%B2%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D0%B2%D0%BE%D1%81%D1%82%D1%96-%D1%81%D1%83%D0%BC"><i class="fa fa-check"></i><b>3.1.10</b> Властивості сум</a></li>
+<li class="chapter" data-level="3.1.11" data-path="3.1-algebra.html"><a href="3.1-algebra.html#%D0%B2%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D0%B2%D0%BE%D1%81%D1%82%D1%96-%D0%B4%D0%BE%D0%B1%D1%83%D1%82%D0%BA%D1%96%D0%B2"><i class="fa fa-check"></i><b>3.1.11</b> Властивості добутків</a></li>
+<li class="chapter" data-level="3.1.12" data-path="3.1-algebra.html"><a href="3.1-algebra.html#%D0%B4%D0%B8%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D1%96%D1%8E%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F"><i class="fa fa-check"></i><b>3.1.12</b> Диференціювання</a></li>
+<li class="chapter" data-level="3.1.13" data-path="3.1-algebra.html"><a href="3.1-algebra.html#%D1%96%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F"><i class="fa fa-check"></i><b>3.1.13</b> Інтегрування</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="3.2-matrices.html"><a href="3.2-matrices.html"><i class="fa fa-check"></i><b>3.2</b> Лінійна алгебра</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="3.2-matrices.html"><a href="3.2-matrices.html#%D0%B2%D0%B8%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%BD%D1%8F-%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%96"><i class="fa fa-check"></i><b>3.2.1</b> Визначення матриці</a></li>
+<li class="chapter" data-level="3.2.2" data-path="3.2-matrices.html"><a href="3.2-matrices.html#%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D1%96%D1%97-%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8C"><i class="fa fa-check"></i><b>3.2.2</b> Трансформації матриць</a></li>
+<li class="chapter" data-level="3.2.3" data-path="3.2-matrices.html"><a href="3.2-matrices.html#%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D1%96%D1%97-%D0%BD%D0%B0%D0%B4-%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8F%D0%BC%D0%B8"><i class="fa fa-check"></i><b>3.2.3</b> Операції над матрицями</a></li>
+<li class="chapter" data-level="3.2.4" data-path="3.2-matrices.html"><a href="3.2-matrices.html#eigenstuff"><i class="fa fa-check"></i><b>3.2.4</b> Детермінант, власні вектори, та власне значення</a></li>
+<li class="chapter" data-level="3.2.5" data-path="3.2-matrices.html"><a href="3.2-matrices.html#matrices_art"><i class="fa fa-check"></i><b>3.2.5</b> Геометричний зміст матриць</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="3.3-stats.html"><a href="3.3-stats.html"><i class="fa fa-check"></i><b>3.3</b> Ймовірність у статистиці</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="3.3-stats.html"><a href="3.3-stats.html#prob"><i class="fa fa-check"></i><b>3.3.1</b> Ймовірність</a></li>
+<li class="chapter" data-level="3.3.2" data-path="3.3-stats.html"><a href="3.3-stats.html#bayes"><i class="fa fa-check"></i><b>3.3.2</b> Теорема Баєса</a></li>
+<li class="chapter" data-level="3.3.3" data-path="3.3-stats.html"><a href="3.3-stats.html#mle"><i class="fa fa-check"></i><b>3.3.3</b> Правдоподібність</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="3.4-pdf-pmf.html"><a href="3.4-pdf-pmf.html"><i class="fa fa-check"></i><b>3.4</b> Розподіли ймовірності</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="3.4-pdf-pmf.html"><a href="3.4-pdf-pmf.html#pdfs"><i class="fa fa-check"></i><b>3.4.1</b> Функції розподілу ймовірності</a></li>
+<li class="chapter" data-level="3.4.2" data-path="3.4-pdf-pmf.html"><a href="3.4-pdf-pmf.html#bars"><i class="fa fa-check"></i><b>3.4.2</b> Опис розподілу змінної (описова статистика)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="3.5-basic-hypotheses.html"><a href="3.5-basic-hypotheses.html"><i class="fa fa-check"></i><b>3.5</b> Тестування гіпотез</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="3.5-basic-hypotheses.html"><a href="3.5-basic-hypotheses.html#hypothesis"><i class="fa fa-check"></i><b>3.5.1</b> Статистична гіпотеза</a></li>
+<li class="chapter" data-level="3.5.2" data-path="3.5-basic-hypotheses.html"><a href="3.5-basic-hypotheses.html#nulldistr"><i class="fa fa-check"></i><b>3.5.2</b> Нульовий розподіл</a></li>
+<li class="chapter" data-level="3.5.3" data-path="3.5-basic-hypotheses.html"><a href="3.5-basic-hypotheses.html#pval"><i class="fa fa-check"></i><b>3.5.3</b> Тестування гіпотез</a></li>
+<li class="chapter" data-level="3.5.4" data-path="3.5-basic-hypotheses.html"><a href="3.5-basic-hypotheses.html#paradigms"><i class="fa fa-check"></i><b>3.5.4</b> Парадигми статистичного аналізу</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html"><i class="fa fa-check"></i><b>3.6</b> Експеримент і модель</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html#pseudoreplication"><i class="fa fa-check"></i><b>3.6.1</b> Експериментальний дизайн та псевдореплікація</a></li>
+<li class="chapter" data-level="3.6.2" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html#regression"><i class="fa fa-check"></i><b>3.6.2</b> Дані та проблема моделювання</a></li>
+<li class="chapter" data-level="3.6.3" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html#aic"><i class="fa fa-check"></i><b>3.6.3</b> Парсимонійна модель та вибір моделі</a></li>
+<li class="chapter" data-level="3.6.4" data-path="3.6-stat-models.html"><a href="3.6-stat-models.html#prcomp"><i class="fa fa-check"></i><b>3.6.4</b> Багатовимірна статистика</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="3.7-infer.html"><a href="3.7-infer.html"><i class="fa fa-check"></i><b>3.7</b> Передбачення, умовивід, та валідація</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="3.7-infer.html"><a href="3.7-infer.html#inference"><i class="fa fa-check"></i><b>3.7.1</b> Статистичний умовивід і обґрунтоване передбачення</a></li>
+<li class="chapter" data-level="3.7.2" data-path="3.7-infer.html"><a href="3.7-infer.html#crossval"><i class="fa fa-check"></i><b>3.7.2</b> Крос-валідація</a></li>
+<li class="chapter" data-level="3.7.3" data-path="3.7-infer.html"><a href="3.7-infer.html#bias-variance"><i class="fa fa-check"></i><b>3.7.3</b> Компроміс між упередженням та варіацією</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="4-popeco.html"><a href="4-popeco.html"><i class="fa fa-check"></i><b>4</b> Початки популяційної екології</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="4.1-species.html"><a href="4.1-species.html"><i class="fa fa-check"></i><b>4.1</b> Вид</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="4.1-species.html"><a href="4.1-species.html#%D0%BF%D0%BE%D0%BD%D1%8F%D1%82%D1%82%D1%8F-%D0%B2%D0%B8%D0%B4%D1%83"><i class="fa fa-check"></i><b>4.1.1</b> Поняття виду</a></li>
+<li class="chapter" data-level="4.1.2" data-path="4.1-species.html"><a href="4.1-species.html#%D0%B2%D0%B8%D0%B4%D0%B8-%D1%82%D0%B0-%D0%BF%D0%BB%D0%BE%D1%89%D0%B0"><i class="fa fa-check"></i><b>4.1.2</b> Види та площа</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="4.2-population.html"><a href="4.2-population.html"><i class="fa fa-check"></i><b>4.2</b> Популяція</a></li>
+<li class="chapter" data-level="4.3" data-path="4.3-pop-factors.html"><a href="4.3-pop-factors.html"><i class="fa fa-check"></i><b>4.3</b> Чинники, що впливають на популяції</a></li>
+<li class="chapter" data-level="4.4" data-path="4.4-cmr.html"><a href="4.4-cmr.html"><i class="fa fa-check"></i><b>4.4</b> Моделі мічення-відлову</a></li>
+<li class="chapter" data-level="4.5" data-path="4.5-intraspecific.html"><a href="4.5-intraspecific.html"><i class="fa fa-check"></i><b>4.5</b> Внутрішньовидові взаємодії</a></li>
+<li class="chapter" data-level="4.6" data-path="4.6-pop-dynamics.html"><a href="4.6-pop-dynamics.html"><i class="fa fa-check"></i><b>4.6</b> Динаміка та стабільність</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="4.6-pop-dynamics.html"><a href="4.6-pop-dynamics.html#%D0%B5%D0%BA%D1%81%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%86%D1%96%D0%B9%D0%BD%D0%B8%D0%B9-%D1%80%D1%96%D1%81%D1%82"><i class="fa fa-check"></i><b>4.6.1</b> Експоненційний ріст</a></li>
+<li class="chapter" data-level="4.6.2" data-path="4.6-pop-dynamics.html"><a href="4.6-pop-dynamics.html#%D0%BB%D0%BE%D0%B3%D1%96%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%B8%D0%B9-%D1%80%D1%96%D1%81%D1%82"><i class="fa fa-check"></i><b>4.6.2</b> Логістичний ріст</a></li>
+<li class="chapter" data-level="4.6.3" data-path="4.6-pop-dynamics.html"><a href="4.6-pop-dynamics.html#%D0%BC%D0%BE%D0%B4%D0%B8%D1%84%D1%96%D0%BA%D0%B0%D1%86%D1%96%D1%97-%D0%BB%D0%BE%D0%B3%D1%96%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%BE%D0%B3%D0%BE-%D1%80%D0%BE%D1%81%D1%82%D1%83"><i class="fa fa-check"></i><b>4.6.3</b> Модифікації логістичного росту</a></li>
+<li class="chapter" data-level="4.6.4" data-path="4.6-pop-dynamics.html"><a href="4.6-pop-dynamics.html#%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D1%96%D0%BA%D0%B0-%D1%82%D0%B0-%D1%81%D1%82%D0%B0%D0%B1%D1%96%D0%BB%D1%8C%D0%BD%D1%96%D1%81%D1%82%D1%8C-%D0%BF%D0%BE%D0%BF%D1%83%D0%BB%D1%8F%D1%86%D1%96%D1%97"><i class="fa fa-check"></i><b>4.6.4</b> Динаміка та стабільність популяції</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="4.7-metapopulation.html"><a href="4.7-metapopulation.html"><i class="fa fa-check"></i><b>4.7</b> Метапопуляція</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="4.7-metapopulation.html"><a href="4.7-metapopulation.html#%D0%B7%D0%B0%D0%B3%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BC%D0%B5%D1%82%D0%B0%D0%BF%D0%BE%D0%BF%D1%83%D0%BB%D1%8F%D1%86%D1%96%D1%97"><i class="fa fa-check"></i><b>4.7.1</b> Загальна модель метапопуляції</a></li>
+<li class="chapter" data-level="4.7.2" data-path="4.7-metapopulation.html"><a href="4.7-metapopulation.html#%D1%81%D1%82%D0%BE%D1%85%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D1%96%D1%81%D1%82%D1%8C-%D1%96-%D0%B4%D0%B5%D1%82%D0%B5%D1%80%D0%BC%D1%96%D0%BD%D1%96%D0%B7%D0%BC-%D0%B2-%D0%BC%D0%B5%D1%82%D0%B0%D0%BF%D0%BE%D0%BF%D1%83%D0%BB%D1%8F%D1%86%D1%96%D1%8F%D1%85"><i class="fa fa-check"></i><b>4.7.2</b> Стохастичність і детермінізм в метапопуляціях</a></li>
+<li class="chapter" data-level="4.7.3" data-path="4.7-metapopulation.html"><a href="4.7-metapopulation.html#%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D1%96%D0%BA%D0%B0-%D0%B4%D0%B6%D0%B5%D1%80%D0%B5%D0%BB%D0%B0%D0%B4%D1%96%D1%80%D0%BA%D0%B8-%D1%82%D0%B0-%D1%85%D0%BE%D0%B4%D1%8F%D1%87%D1%96-%D0%BC%D0%B5%D1%80%D1%86%D1%96"><i class="fa fa-check"></i><b>4.7.3</b> Динаміка джерела–дірки та ходячі мерці</a></li>
+<li class="chapter" data-level="4.7.4" data-path="4.7-metapopulation.html"><a href="4.7-metapopulation.html#%D0%BF%D1%81%D0%B5%D0%B2%D0%B4%D0%BE%D0%B4%D1%96%D1%80%D0%BA%D0%B8-%D0%B9-%D0%B5%D0%BA%D0%BE%D0%BB%D0%BE%D0%B3%D1%96%D1%87%D0%BD%D1%96-%D0%BF%D0%B0%D1%81%D1%82%D0%BA%D0%B8"><i class="fa fa-check"></i><b>4.7.4</b> Псевдодірки й екологічні пастки</a></li>
+<li class="chapter" data-level="4.7.5" data-path="4.7-metapopulation.html"><a href="4.7-metapopulation.html#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D1%96%D1%97-%D1%82%D1%80%D0%B0%D0%BF%D0%BB%D1%8F%D0%BD%D0%BD%D1%8F"><i class="fa fa-check"></i><b>4.7.5</b> Функції трапляння</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="4.8-Leslie-matrix.html"><a href="4.8-Leslie-matrix.html"><i class="fa fa-check"></i><b>4.8</b> Моделювання популяцій</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="4.8-Leslie-matrix.html"><a href="4.8-Leslie-matrix.html#%D0%B4%D0%B8%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D1%96%D0%B9%D0%BD%D1%96-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%96"><i class="fa fa-check"></i><b>4.8.1</b> Диференційні моделі</a></li>
+<li class="chapter" data-level="4.8.2" data-path="4.8-Leslie-matrix.html"><a href="4.8-Leslie-matrix.html#%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%87%D0%BD%D1%96-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%96"><i class="fa fa-check"></i><b>4.8.2</b> Матричні моделі</a></li>
+<li class="chapter" data-level="4.8.3" data-path="4.8-Leslie-matrix.html"><a href="4.8-Leslie-matrix.html#%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BD%D1%96-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%96"><i class="fa fa-check"></i><b>4.8.3</b> Агентні моделі</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="4.9-detectability.html"><a href="4.9-detectability.html"><i class="fa fa-check"></i><b>4.9</b> Ймовірність детекції та трапляння</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="4.9-detectability.html"><a href="4.9-detectability.html#%D0%BD%D1%83%D0%BB%D1%8C%D0%BE%D0%B2%D1%96-%D1%81%D0%BF%D0%BE%D1%81%D1%82%D0%B5%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F-%D1%82%D0%B5%D0%B6-%D1%81%D0%BF%D0%BE%D1%81%D1%82%D0%B5%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F"><i class="fa fa-check"></i><b>4.9.1</b> Нульові спостереження теж спостереження!</a></li>
+<li class="chapter" data-level="4.9.2" data-path="4.9-detectability.html"><a href="4.9-detectability.html#%D0%B9%D0%BC%D0%BE%D0%B2%D1%96%D1%80%D0%BD%D1%96%D1%81%D1%82%D1%8C-%D1%82%D1%80%D0%B0%D0%BF%D0%BB%D1%8F%D0%BD%D0%BD%D1%8F-%D1%96-%D1%89%D0%BE-%D0%B2%D1%96%D0%B4%D0%B1%D1%83%D0%B2%D0%B0%D1%94%D1%82%D1%8C%D1%81%D1%8F-%D0%BD%D0%B0-%D0%BB%D0%BE%D0%BA%D0%B0%D1%86%D1%96%D1%97"><i class="fa fa-check"></i><b>4.9.2</b> Ймовірність трапляння і що відбувається на локації</a></li>
+<li class="chapter" data-level="4.9.3" data-path="4.9-detectability.html"><a href="4.9-detectability.html#%D0%B9%D0%BC%D0%BE%D0%B2%D1%96%D1%80%D0%BD%D1%96%D1%81%D1%82%D1%8C-%D0%B4%D0%B5%D1%82%D0%B5%D0%BA%D1%86%D1%96%D1%97-%D1%96-%D1%89%D0%BE-%D0%B2%D1%96%D0%B4%D0%B1%D1%83%D0%B2%D0%B0%D1%94%D1%82%D1%8C%D1%81%D1%8F-%D0%B7%D1%96-%D1%81%D0%BF%D0%BE%D1%81%D1%82%D0%B5%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F%D0%BC"><i class="fa fa-check"></i><b>4.9.3</b> Ймовірність детекції і що відбувається зі спостереженням</a></li>
+<li class="chapter" data-level="4.9.4" data-path="4.9-detectability.html"><a href="4.9-detectability.html#%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0-%D1%81%D0%BF%D0%BE%D1%81%D1%82%D0%B5%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F"><i class="fa fa-check"></i><b>4.9.4</b> Статистика спостереження</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-foundations.html"><a href="5-foundations.html"><i class="fa fa-check"></i><b>5</b> Фундаментальні поняття екології</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="5.1-food-chain.html"><a href="5.1-food-chain.html"><i class="fa fa-check"></i><b>5.1</b> Трофічні ланцюги і мережі</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="5.1-food-chain.html"><a href="5.1-food-chain.html#%D1%81%D1%82%D0%B0%D0%B1%D1%96%D0%BB%D1%8C%D0%BD%D1%96%D1%81%D1%82%D1%8C-%D1%82%D1%80%D0%BE%D1%84%D1%96%D1%87%D0%BD%D0%B8%D1%85-%D0%BC%D0%B5%D1%80%D0%B5%D0%B6"><i class="fa fa-check"></i><b>5.1.1</b> Стабільність трофічних мереж</a></li>
+<li class="chapter" data-level="5.1.2" data-path="5.1-food-chain.html"><a href="5.1-food-chain.html#%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%86%D1%96%D1%8F-%D0%B7%D0%B3%D0%BE%D1%80%D0%B8-%D0%B4%D0%BE%D0%BD%D0%B8%D0%B7%D1%83-%D1%96-%D0%B7%D0%BD%D0%B8%D0%B7%D1%83-%D0%B4%D0%BE%D0%B3%D0%BE%D1%80%D0%B8"><i class="fa fa-check"></i><b>5.1.2</b> Регуляція згори-донизу і знизу-догори</a></li>
+<li class="chapter" data-level="5.1.3" data-path="5.1-food-chain.html"><a href="5.1-food-chain.html#cascade"><i class="fa fa-check"></i><b>5.1.3</b> Трофічні каскади</a></li>
+<li class="chapter" data-level="5.1.4" data-path="5.1-food-chain.html"><a href="5.1-food-chain.html#%D0%B3%D1%96%D0%BF%D0%BE%D1%82%D0%B5%D0%B7%D0%B0-%D0%B7%D0%B5%D0%BB%D0%B5%D0%BD%D0%BE%D0%B3%D0%BE-%D1%81%D0%B2%D1%96%D1%82%D1%83"><i class="fa fa-check"></i><b>5.1.4</b> Гіпотеза зеленого світу</a></li>
+<li class="chapter" data-level="5.1.5" data-path="5.1-food-chain.html"><a href="5.1-food-chain.html#%D0%BD%D0%B5-%D1%82%D1%96%D0%BB%D1%8C%D0%BA%D0%B8-%D1%82%D1%80%D0%BE%D1%84%D1%96%D1%87%D0%BD%D1%96-%D0%BC%D0%B5%D1%80%D0%B5%D0%B6%D1%96"><i class="fa fa-check"></i><b>5.1.5</b> Не тільки трофічні мережі</a></li>
+<li class="chapter" data-level="5.1.6" data-path="5.1-food-chain.html"><a href="5.1-food-chain.html#%D1%83%D0%B3%D0%BD%D1%96%D0%B7%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D1%96%D1%81%D1%82%D1%8C-%D1%82%D0%B0-%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%96%D1%81%D1%82%D1%8C"><i class="fa fa-check"></i><b>5.1.6</b> Угніздованість та модулярність</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="5.2-niche.html"><a href="5.2-niche.html"><i class="fa fa-check"></i><b>5.2</b> Екологічна ніша</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="5.2-niche.html"><a href="5.2-niche.html#%D2%91%D1%80%D1%96%D0%BD%D0%BD%D0%B5%D0%BB%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0-%D0%BD%D1%96%D1%88%D0%B0"><i class="fa fa-check"></i><b>5.2.1</b> Ґріннелівська ніша</a></li>
+<li class="chapter" data-level="5.2.2" data-path="5.2-niche.html"><a href="5.2-niche.html#%D0%B5%D0%BB%D1%82%D0%BE%D0%BD%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0-%D0%BD%D1%96%D1%88%D0%B0"><i class="fa fa-check"></i><b>5.2.2</b> Елтонівська ніша</a></li>
+<li class="chapter" data-level="5.2.3" data-path="5.2-niche.html"><a href="5.2-niche.html#%D0%B3%D0%B0%D1%82%D1%87%D1%96%D0%BD%D1%81%D0%BE%D0%BD%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0-%D0%BD%D1%96%D1%88%D0%B0"><i class="fa fa-check"></i><b>5.2.3</b> Гатчінсонівська ніша</a></li>
+<li class="chapter" data-level="5.2.4" data-path="5.2-niche.html"><a href="5.2-niche.html#bam-%D0%BD%D1%96%D1%88%D0%B0"><i class="fa fa-check"></i><b>5.2.4</b> BAM-ніша</a></li>
+<li class="chapter" data-level="5.2.5" data-path="5.2-niche.html"><a href="5.2-niche.html#%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%BE%D1%80%D0%BE%D0%B2%D0%B5-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8E%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F-%D0%BD%D1%96%D1%88"><i class="fa fa-check"></i><b>5.2.5</b> Просторове моделювання ніш</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="5.3-keystones.html"><a href="5.3-keystones.html"><i class="fa fa-check"></i><b>5.3</b> Ключові види</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="5.3-keystones.html"><a href="5.3-keystones.html#%D1%89%D0%BE%D0%B4%D0%BE-%D0%BC%D0%BE%D1%80%D1%81%D1%8C%D0%BA%D0%B8%D1%85-%D0%B7%D1%96%D1%80%D0%BE%D0%BA"><i class="fa fa-check"></i><b>5.3.1</b> Щодо морських зірок</a></li>
+<li class="chapter" data-level="5.3.2" data-path="5.3-keystones.html"><a href="5.3-keystones.html#%D1%85%D1%82%D0%BE-%D1%94-%D0%BA%D0%BB%D1%8E%D1%87%D0%BE%D0%B2%D0%B8%D0%BC-%D0%B2%D0%B8%D0%B4%D0%BE%D0%BC"><i class="fa fa-check"></i><b>5.3.2</b> Хто є ключовим видом</a></li>
+<li class="chapter" data-level="5.3.3" data-path="5.3-keystones.html"><a href="5.3-keystones.html#%D0%B0-%D1%85%D1%82%D0%BE-%D0%BD%D0%B5-%D1%94-%D0%BA%D0%BB%D1%8E%D1%87%D0%BE%D0%B2%D0%B8%D0%BC-%D0%B2%D0%B8%D0%B4%D0%BE%D0%BC"><i class="fa fa-check"></i><b>5.3.3</b> А хто не є ключовим видом</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="5.4-life-history.html"><a href="5.4-life-history.html"><i class="fa fa-check"></i><b>5.4</b> Історія життя</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="5.4-life-history.html"><a href="5.4-life-history.html#r--%D1%96-k-%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B5%D0%B3%D0%B8"><i class="fa fa-check"></i><b>5.4.1</b> r- і K-стратеги</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="5.5-succession.html"><a href="5.5-succession.html"><i class="fa fa-check"></i><b>5.5</b> Сукцесія та клімакс</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="5.5-succession.html"><a href="5.5-succession.html#%D1%81%D1%83%D0%BF%D0%B5%D1%80-%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D1%96%D0%B7%D0%BC%D0%B8-%D1%87%D0%B8-%D1%96%D0%BD%D0%B4%D0%B8%D0%B2%D1%96%D0%B4%D1%83%D0%B0%D0%BB%D1%96%D1%81%D1%82%D0%B8"><i class="fa fa-check"></i><b>5.5.1</b> Супер-організми чи індивідуалісти?</a></li>
+<li class="chapter" data-level="5.5.2" data-path="5.5-succession.html"><a href="5.5-succession.html#%D1%81%D1%83%D0%BA%D1%86%D0%B5%D1%81%D1%96%D1%8F"><i class="fa fa-check"></i><b>5.5.2</b> Сукцесія</a></li>
+<li class="chapter" data-level="5.5.3" data-path="5.5-succession.html"><a href="5.5-succession.html#%D0%BA%D0%BB%D1%96%D0%BC%D0%B0%D0%BA%D1%81%D0%B8%D1%87%D0%BD%D1%96-%D0%B5%D0%BA%D0%BE%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B8"><i class="fa fa-check"></i><b>5.5.3</b> Клімаксичні екосистеми</a></li>
+<li class="chapter" data-level="5.5.4" data-path="5.5-succession.html"><a href="5.5-succession.html#%D0%B0%D0%BB%D1%8C%D1%82%D0%B5%D1%80%D0%BD%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D1%96-%D1%81%D1%82%D0%B0%D0%B1%D1%96%D0%BB%D1%8C%D0%BD%D1%96-%D1%81%D1%82%D0%B0%D0%BD%D0%B8"><i class="fa fa-check"></i><b>5.5.4</b> Альтернативні стабільні стани</a></li>
+<li class="chapter" data-level="5.5.5" data-path="5.5-succession.html"><a href="5.5-succession.html#%D0%B7%D0%B1%D1%83%D1%80%D0%B5%D0%BD%D0%BD%D1%8F-%D1%96-%D1%81%D1%82%D1%80%D0%B5%D1%81"><i class="fa fa-check"></i><b>5.5.5</b> Збурення і стрес</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="5.6-functioning.html"><a href="5.6-functioning.html"><i class="fa fa-check"></i><b>5.6</b> Функціонування, продуктивність, й екосистемні послуги</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="6-interspecific.html"><a href="6-interspecific.html"><i class="fa fa-check"></i><b>6</b> Міжвидові взаємодії</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="6.1-niche-partitioning.html"><a href="6.1-niche-partitioning.html"><i class="fa fa-check"></i><b>6.1</b> Диференціація ніш</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="6.1-niche-partitioning.html"><a href="6.1-niche-partitioning.html#%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D0%BD%D0%B5-%D0%B2%D0%B8%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%BD%D1%8F"><i class="fa fa-check"></i><b>6.1.1</b> Конкурентне виключення</a></li>
+<li class="chapter" data-level="6.1.2" data-path="6.1-niche-partitioning.html"><a href="6.1-niche-partitioning.html#%D0%B4%D0%B8%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D1%96%D0%B0%D1%86%D1%96%D1%8F-%D0%BD%D1%96%D1%88-%D1%82%D0%B0-%D0%BB%D1%96%D0%BC%D1%96%D1%82%D1%83%D1%8E%D1%87%D0%B0-%D0%BF%D0%BE%D0%B4%D1%96%D0%B1%D0%BD%D1%96%D1%81%D1%82%D1%8C"><i class="fa fa-check"></i><b>6.1.2</b> Диференціація ніш та лімітуюча подібність</a></li>
+<li class="chapter" data-level="6.1.3" data-path="6.1-niche-partitioning.html"><a href="6.1-niche-partitioning.html#%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%BD%D1%96%D1%81%D1%82%D1%8C-%D1%82%D0%B0-%D0%B5%D1%84%D0%B5%D0%BA%D1%82-%D0%B2%D0%B8%D0%B1%D1%96%D1%80%D0%BA%D0%B8"><i class="fa fa-check"></i><b>6.1.3</b> Комплементарність та ефект вибірки</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="6.2-relationships.html"><a href="6.2-relationships.html"><i class="fa fa-check"></i><b>6.2</b> Типи міжвидових зв’язків</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="6.2-relationships.html"><a href="6.2-relationships.html#%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D1%96%D0%BA%D0%B0-%D1%85%D0%B8%D0%B6%D0%B0%D0%BA%D0%B0-%D0%B6%D0%B5%D1%80%D1%82%D0%B2%D0%B8"><i class="fa fa-check"></i><b>6.2.1</b> Динаміка хижака-жертви</a></li>
+<li class="chapter" data-level="6.2.2" data-path="6.2-relationships.html"><a href="6.2-relationships.html#%D0%BA%D0%BE%D0%B5%D1%84%D1%96%D1%86%D1%96%D1%94%D0%BD%D1%82%D0%B8-%D0%BC%D1%96%D0%B6%D0%B2%D0%B8%D0%B4%D0%BE%D0%B2%D0%B8%D1%85-%D0%B2%D0%B7%D0%B0%D1%94%D0%BC%D0%BE%D0%B4%D1%96%D0%B9"><i class="fa fa-check"></i><b>6.2.2</b> Коефіцієнти міжвидових взаємодій</a></li>
+<li class="chapter" data-level="6.2.3" data-path="6.2-relationships.html"><a href="6.2-relationships.html#%D0%BD%D0%B5%D0%B2%D0%B8%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D1%96%D1%81%D1%82%D1%8C-%D0%BA%D0%BE%D0%B5%D1%84%D1%96%D1%86%D1%96%D1%94%D0%BD%D1%82%D1%96%D0%B2"><i class="fa fa-check"></i><b>6.2.3</b> Невизначеність коефіцієнтів</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="6.3-oft.html"><a href="6.3-oft.html"><i class="fa fa-check"></i><b>6.3</b> Теорія оптимального харчування</a></li>
+<li class="chapter" data-level="6.4" data-path="6.4-rstar.html"><a href="6.4-rstar.html"><i class="fa fa-check"></i><b>6.4</b> Теорія поділу ресурсів</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="7-comecol.html"><a href="7-comecol.html"><i class="fa fa-check"></i><b>7</b> Екологічні угруповання</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="7.1-sad.html"><a href="7.1-sad.html"><i class="fa fa-check"></i><b>7.1</b> Структура угруповання</a></li>
+<li class="chapter" data-level="7.2" data-path="7.2-sad-model.html"><a href="7.2-sad-model.html"><i class="fa fa-check"></i><b>7.2</b> Моделі розподілів чисельності</a></li>
+<li class="chapter" data-level="7.3" data-path="7.3-diversity.html"><a href="7.3-diversity.html"><i class="fa fa-check"></i><b>7.3</b> Різноманіття</a></li>
+<li class="chapter" data-level="7.4" data-path="7.4-janzen.html"><a href="7.4-janzen.html"><i class="fa fa-check"></i><b>7.4</b> Гіпотеза Джензена–Конела</a></li>
+<li class="chapter" data-level="7.5" data-path="7.5-similarity.html"><a href="7.5-similarity.html"><i class="fa fa-check"></i><b>7.5</b> Подібність угруповань</a></li>
+<li class="chapter" data-level="7.6" data-path="7.6-rarefaction.html"><a href="7.6-rarefaction.html"><i class="fa fa-check"></i><b>7.6</b> Рарефакція та екстраполяція</a></li>
+<li class="chapter" data-level="7.7" data-path="7.7-fd.html"><a href="7.7-fd.html"><i class="fa fa-check"></i><b>7.7</b> Функціональне й філогенетичне різноманіття</a></li>
+<li class="chapter" data-level="7.8" data-path="7.8-islands.html"><a href="7.8-islands.html"><i class="fa fa-check"></i><b>7.8</b> Острівна біогеографія</a>
+<ul>
+<li class="chapter" data-level="7.8.1" data-path="7.8-islands.html"><a href="7.8-islands.html#sloss"><i class="fa fa-check"></i><b>7.8.1</b> SLOSS</a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="7.9-конкуренція-проти-колонізації.html"><a href="7.9-конкуренція-проти-колонізації.html"><i class="fa fa-check"></i><b>7.9</b> Конкуренція проти колонізації</a></li>
+<li class="chapter" data-level="7.10" data-path="7.10-env-filter.html"><a href="7.10-env-filter.html"><i class="fa fa-check"></i><b>7.10</b> Середовищне фільтрування</a></li>
+<li class="chapter" data-level="7.11" data-path="7.11-untb.html"><a href="7.11-untb.html"><i class="fa fa-check"></i><b>7.11</b> Нейтральна теорія біорізноманіття</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="goodbye.html"><a href="goodbye.html"><i class="fa fa-check"></i>Післяслово</a></li>
+<li class="chapter" data-level="" data-path="contact.html"><a href="contact.html"><i class="fa fa-check"></i>Контакти автора</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Вступ до Екології Угруповань</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="detectability" class="section level2 hasAnchor" number="4.9">
+<h2><span class="header-section-number">4.9</span> Ймовірність детекції та трапляння<a href="4.9-detectability.html#detectability" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><em>Цей розділ багато в чому наслідує Розділ 14 “Детекція популяцій та оцінка їх розмірів” у другому виданні книги Ґотеллі та Еллісон <a href="https://learninglink.oup.com/access/gotelli-a-primer-of-ecological-statistics-2e">“Початки екологічної статистики”</a>. Їх опис є набагато інформативнішим, тож я спонукаю читачів звернутися до цієї книги по додаткові деталі.</em></p>
+<p>До цього моменту ми уявляємо й моделюємо популяцію так, наче ми оперуємо повною інформацією про неї. Наприклад, у випадку агентного моделювання таке припущення має сенс: оскільки комп’ютер симулює кожну окрему особину як індивідуальну сутність, ми можемо в будь-який момент часу порахувати скільки живих особин “існує” в межах симуляції. Всі інші моделі оперують за таким же принципом: на папері, чисельність популяції в <a href="4.6-pop-dynamics.html#pop-dynamics">логістичному рівнянні</a> чи <a href="4.7-metapopulation.html#metapopulation">функціях трапляння</a> є реальним числом, і ми навіть не задумуємось до якої міри воно відображає реальну популяцію.</p>
+<p>Якщо ж спитати всякого польового біолога скільки особин виду <span class="math inline">\(x\)</span> проживає на їх дослідній ділянці, то чи варто очікувати такої ж точної відповіді як дають моделі? У кращому випадку польові біологи нададуть діапазон їх особистої оцінки на око: “на цьому болоті живе від 50 до 100 рослин росички круглолистої <em>Drosera rotundifolia</em>”. Біологи-реалісти, мабуть, взагалі б відповіли що вони не знають. Всякий відповідальний біолог мусить чітко усвідомлювати наскільки невизначеними є їх оцінки щільності популяції, і наскільки їх спостереження та польові дані відображають реальність стану популяції. В цьому розділі ми розглянемо процес польового спостереження як ланку між об’єктивною реальністю та отриманими даними та спробуємо його математично формалізувати, аби зважити на потенційні й неминучі помилки спостереження.</p>
+<div id="нульові-спостереження-теж-спостереження" class="section level3 hasAnchor" number="4.9.1">
+<h3><span class="header-section-number">4.9.1</span> Нульові спостереження теж спостереження!<a href="4.9-detectability.html#%D0%BD%D1%83%D0%BB%D1%8C%D0%BE%D0%B2%D1%96-%D1%81%D0%BF%D0%BE%D1%81%D1%82%D0%B5%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F-%D1%82%D0%B5%D0%B6-%D1%81%D0%BF%D0%BE%D1%81%D1%82%D0%B5%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Почати, мабуть, варто здалеку – із тієї частини цієї книги, де ми говорили про <a href="3.4-pdf-pmf.html#pdfs">розподіли ймовірності змінних</a>. В тому контексті було побічно згадано таку цікаву родину розподілів, котрі ми обізвали <strong><em>нуль-упередженими</em></strong>, або <strong><em>нуль-надутими</em></strong> (<em>zero-inflated distributions</em>). Цю родину розподілів варто використовувати у випадках коли дані мають значну частку нульових спостережень.</p>
+<p>В спостереженні видів таке може траплятись доволі часто. Скажімо, дослідник(-ця) має вибірку випадкових точкових локацій, і на кожній локації він/вона записує скільки особин досліджуваного виду було спостережено. На якихось локаціях вид буде відсутнім, і що ж робити в таких випадках? Можна, звісно, викинути такі локації зі спостережень, чи піти пошукати нові локації на їх заміну. Але такий варіант не завжди прийнятний: по-перше, додаткові локації створюють додаткові логістичні проблеми, і тепер дослідникам необхідно збільшити бюджет на транспорт до нових локацій; по-друге, ніхто не гарантує що нові локації матимуть шуканий вид. По-третє (що є особливо важливим), пошук нових локацій “поки я не знайду мій вид” виключає рандомність локацій дослідження, а отже вибір локацій є заангажованим і не може вважатись випадковим й незалежним.</p>
+<p>Гаразд, але що ж тоді робити із порожніми спостереженнями? Якщо таких спостережень небагато, то може з’явитись бажання їх просто виключити із аналізу, хоча це і зменшить розмір вибірки. Але що якщо їх, скажімо, половина? Якщо залишити всі порожні спостереження, то оцінка, наприклад, середньої кількості особин на локації вийде значно заниженою; якщо ж їх викинути, то розмір вибірки не дозволятиме впевнено робити будь-які висновки. У такому випадку дослідникам варто, натомість, краще подумати про статистичну модель того як вони уявляють свою змінну (тобто кількість особин на локації).</p>
+<p>Зазвичай, змінна у котрій зацікавлене дослідження уявляється як продукт одного параметру. У найзвичнішому випадку, значення спостереженої змінної мають нормальний розподіл, котрий регулюється середнім значенням<a href="#fn79" class="footnote-ref" id="fnref79"><sup>79</sup></a>. Однак, у випадку вибірки із багатьма нулями процес генерування спостережень можна уявити як двоступеневий процес із різними параметрами:</p>
+<ul>
+<li><p>чи спостереження дорівнює нулю? цей крок може регулюватись ймовірністю нульового спостереження (<span class="math inline">\(\pi = P(x_i = 0)\)</span>);</p></li>
+<li><p>якщо спостереження не дорівнює нулю, то яке його середнє значення? цей крок регулюватиметься середнім значенням ненульових спостережень, скажімо, <span class="math inline">\(\lambda = \bar{x_i} \forall x_i &gt; 0\)</span>.</p></li>
+</ul>
+<p>Спробуймо згенерувати такий процес. Скажімо, у вибірці із сотні спостережень половина є нульовими, а ненульові спостереження мають середнє значення 20 особин. Для моделювання ненульових спостережень ми можемо припустити якийсь простий дискретний<a href="#fn80" class="footnote-ref" id="fnref80"><sup>80</sup></a> розподіл на кшталт Пуасона:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="4.9-detectability.html#cb74-1" tabindex="-1"></a>p <span class="ot">=</span> <span class="fl">0.5</span></span>
+<span id="cb74-2"><a href="4.9-detectability.html#cb74-2" tabindex="-1"></a>lambda <span class="ot">=</span> <span class="dv">20</span></span>
+<span id="cb74-3"><a href="4.9-detectability.html#cb74-3" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">100</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span>
+<span id="cb74-4"><a href="4.9-detectability.html#cb74-4" tabindex="-1"></a>N[N <span class="sc">==</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="at">n =</span> <span class="fu">length</span>(N[N <span class="sc">==</span> <span class="dv">1</span>]), <span class="at">lambda =</span> lambda)</span>
+<span id="cb74-5"><a href="4.9-detectability.html#cb74-5" tabindex="-1"></a></span>
+<span id="cb74-6"><a href="4.9-detectability.html#cb74-6" tabindex="-1"></a><span class="fu">hist</span>(N, <span class="at">main =</span> <span class="st">&quot;&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Кількість особин на локації&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Частота спостережень&quot;</span>)</span></code></pre></div>
+</details>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-32-1.png" alt="" width="672" /></p>
+<p>Оцінка параметрів такої вибірки виглядатиме оберненим чином до того, як ми її згенерували: <span class="math inline">\(\hat{\pi}\)</span> відповідатиме частці нульових значень, а <span class="math inline">\(\hat{\lambda}\)</span> – середньому значенню ненульових значень.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="4.9-detectability.html#cb75-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;pi = &quot;</span>, <span class="fu">round</span>(<span class="fu">length</span>(N[N<span class="sc">==</span><span class="dv">0</span>])<span class="sc">/</span><span class="fu">length</span>(N), <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+</details>
+<pre><code>## pi =  0.47</code></pre>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="4.9-detectability.html#cb77-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;lambda = &quot;</span>, <span class="fu">round</span>(<span class="fu">mean</span>(N[N<span class="sc">&gt;</span><span class="dv">0</span>]), <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+</details>
+<pre><code>## lambda =  20.094</code></pre>
+<p>Звісно, обчислення двох параметрів <span class="math inline">\(\hat{\pi}\)</span> і <span class="math inline">\(\hat{\lambda}\)</span> є вдвічі складнішим, аніж обчислення одного середнього арифметичного для всіх спостережень. Однак, з біологічної точки зору, ці два параметри дають набагато інформативнішу картину. Для спостережень між локаціями ми можемо інтерпретувати <span class="math inline">\(\hat{\pi}\)</span> як ймовірність <strong>трапляння</strong> – наскільки ймовірно, що випадкова локація матиме наш вид? Інший же параметр, <span class="math inline">\(\hat{\lambda}\)</span>, вказує на <strong>чисельність</strong> виду на тих локаціях де цей вид присутній.</p>
+<p>Цікаво, що в межах популяцій окремих видів чисельність та трапляння позитивно пов’язані. Широко поширені види часто є багаточисельними, а рідкісні види трапляються на небагатьох локаціях – цей зв’язок відомий як <strong><em>зв’язок між траплянням та чисельністю</em></strong> (<em>occupancy-abundance relationship</em>). Звісно, його можна спробувати пояснити статистичними артефактами (малочисельні види важко помітити, тому оцінка їх трапляння виходить заниженою), але й суто екологічні механізми можуть пояснити такий зв’язок: наприклад, чисельність виду і його трапляння між локаціями на периферії географічного поширення є меншою порівняно із ядром ареалу, рівно як часові зміни в доступності ресурсів також викликатимуть позитивний зв’язок між чисельністю та траплянням в межах виду (<a href="https://doi.org/10.1046/j.1365-2664.2000.00485.x">Gaston et al. 2002</a>). Однак, важливим моментом є і методи обчислення чисельності: будь-яка усереднена оцінка чисельності в нуль-упереджених даних викликатиме позитивний зв’язок між спостереженою чисельністю та траплянням, адже чим більше нульових спостережень в даних (тобто відсутності виду), тим більш заниженими будуть оцінки чисельності цього виду. Декомпозиція нуль-упереджених даних на <span class="math inline">\(\hat{\pi}\)</span> та <span class="math inline">\(\hat{\lambda}\)</span>, як-то описано вище, все одно вказує на значущу асоціацію між цими двома параметрами в природних популяціях, а отже навіть із врахуванням потенційних артефактів в нуль-упереджених даних варто припускати зв’язок між чисельністю та траплянням (<a href="https://doi.org/10.1890/12-0460.1">Smith et al. 2012</a>). В природних популяціях чисельність та трапляння є різними сторонами однієї монети. Ми ж можемо побачити ці сторони не тільки на рівні популяції, а й на рівні окремих спостережень.</p>
+</div>
+<div id="ймовірність-трапляння-і-що-відбувається-на-локації" class="section level3 hasAnchor" number="4.9.2">
+<h3><span class="header-section-number">4.9.2</span> Ймовірність трапляння і що відбувається на локації<a href="4.9-detectability.html#%D0%B9%D0%BC%D0%BE%D0%B2%D1%96%D1%80%D0%BD%D1%96%D1%81%D1%82%D1%8C-%D1%82%D1%80%D0%B0%D0%BF%D0%BB%D1%8F%D0%BD%D0%BD%D1%8F-%D1%96-%D1%89%D0%BE-%D0%B2%D1%96%D0%B4%D0%B1%D1%83%D0%B2%D0%B0%D1%94%D1%82%D1%8C%D1%81%D1%8F-%D0%BD%D0%B0-%D0%BB%D0%BE%D0%BA%D0%B0%D1%86%D1%96%D1%97" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Трапляння виду як подія є характеристикою локації. Вид існує чи не існує на дослідженій локації, а отже трапляння виду на локації можна уявити як процес Бернулі, що генерує бінарну змінну (“так, це вид тут є” чи “ні, його немає”). Зверніть увагу на ледь помітну відмінність постановки питання від нуль-упередженого розподілу: в попередній секції ми оцінювали <span class="math inline">\(\hat{\pi}\)</span> як ймовірність того, що випадкове спостереження у вибірці багатьох спостережень дорівнюватиме нулю, тобто відсутності виду. Тепер же ми дивимось на окрему локацію, і намагаємось оцінити ймовірність того, що вид існуватиме на цій локації. Таку ймовірність називають <strong>ймовірністю трапляння</strong> (<em>occupancy probability</em>) і в літературі позначають як <span class="math inline">\(\psi\)</span>.</p>
+<p>У найпростішому випадку, якщо припустити що ймовірність трапляння виду між локаціями є фіксованим значенням, ця ймовірність буде еквівалентною до <span class="math inline">\((1-\pi)\)</span> в нуль-упередженому розподілі. Якщо прийняти кількість досліджених локацій за <span class="math inline">\(s\)</span>, а кількість локацій зайнятих видом – за <span class="math inline">\(x\)</span> (із чого випливає що <span class="math inline">\(x \leq s\)</span>), то оцінити ймовірність трапляння можна як</p>
+<p><span class="math display">\[\hat{\psi} = \frac{x}{s}\]</span></p>
+<p>На цьому етапі можна уявити, що значення <span class="math inline">\(\psi\)</span> застосовується лише для виду чи, хіба, окремої популяції. Задля найточнішої оцінки ймовірності трапляння, можна подумати, варто охопити якомога більше випадкових локацій в межах ареалу популяції виду і подивитись скільки із цих локацій зайняті видом. Таким чином ми усереднимо характеристику цілої популяції в межах ареалу до одного значення параметру, що ігноруватиме можливі варіації самих локацій. Кожна локація може мати різні параметри—як-то висоту над рівнем моря, тип середовища, кліматичні характеристики,—і ці параметри можуть мати вплив на присутність виду. Якщо прийняти присутність чи відсутність виду на локації <span class="math inline">\(l\)</span> за <span class="math inline">\(w_l\)</span>, бінарну присутність виду можна представити як процес Бернулі на кшталт підкидання монети</p>
+<p><span class="math display">\[w_l \sim \mathcal{Bernoulli}(\psi_l)\]</span></p>
+<p>де замість одного усередненого значення <span class="math inline">\(\psi\)</span> ми визначаємо <span class="math inline">\(\psi_l\)</span>, специфічне для окремої локації. Трапляння виду на локаціях відтак можна моделювати із використанням логістичної генералізованої лінійної моделі як функцію характеристик локації <span class="math inline">\(X_l\)</span>:</p>
+<p><span class="math display">\[\psi_l = \frac{\exp[\beta_0 + \beta_1X_{1,l} + \beta_2 X_{2,l} + \cdots]}{1 + \exp[\beta_0 + \beta_1X_{1,l} + \beta_2 X_{2,l} + \cdots]}\]</span></p>
+<p>Такий підхід часто використовують для моделювання поширення видів: трапляння-нетрапляння виду можна представити як залежну змінну в статистичній моделі, де предиктори <span class="math inline">\(X\)</span> відповідають характеристикам середовища, котрі можна оцінити на значних географічних масштабах. На виході із такої моделі можна отримати передбачення ймовірності трапляння, котре доволі просто інтерпретувати (<a href="https://ecoverser.github.io/unmarked/articles/spp-dist.html">Chandler 2019</a>). Більше про просторове моделювання поширення видів ми поговоримо в розділі про <a href="5.2-niche.html#niche">моделювання ніш</a>.</p>
+</div>
+<div id="ймовірність-детекції-і-що-відбувається-зі-спостереженням" class="section level3 hasAnchor" number="4.9.3">
+<h3><span class="header-section-number">4.9.3</span> Ймовірність детекції і що відбувається зі спостереженням<a href="4.9-detectability.html#%D0%B9%D0%BC%D0%BE%D0%B2%D1%96%D1%80%D0%BD%D1%96%D1%81%D1%82%D1%8C-%D0%B4%D0%B5%D1%82%D0%B5%D0%BA%D1%86%D1%96%D1%97-%D1%96-%D1%89%D0%BE-%D0%B2%D1%96%D0%B4%D0%B1%D1%83%D0%B2%D0%B0%D1%94%D1%82%D1%8C%D1%81%D1%8F-%D0%B7%D1%96-%D1%81%D0%BF%D0%BE%D1%81%D1%82%D0%B5%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F%D0%BC" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Наразі ми досі припускаємо, що ми володіємо точною інформацією щодо присутності чи відсутності виду на локації. Відтак, у наших нуль-упереджених спостереженнях ми припускаємо, що кожен нуль точно відповідає відсутності виду на локації; але що якщо якісь із цих нулів відповідають ситуації коли вид насправді присутній на локації, але дослідники його не виявили в процесі пошуку?</p>
+<p>Проведіть наступний уявний експеримент. Ви намагаєтесь знайти певний вид на кожній локації із вашої вибірки. Ви відвідуєте кожну локацію <span class="math inline">\(T\)</span> разів, скажімо, раз на тиждень протягом <span class="math inline">\(T\)</span> тижнів. Чи ви очікуєте що значення <span class="math inline">\(T\)</span> впливатиме на отримані дані? Якщо ви відповіли що ні, тоді одиночного візиту на локацію буде достатньо – кожен раз, коли ви <em>намагаєтесь</em> знайти вид і він є присутній, то ви його <em>знаходите</em>. Якщо ж вам здається що із більшою кількістю візитів ви збільшуєте свої шанси знайти вид (коли він там присутній), то ви визнаєте що процес спостереження неідеальний. Цим ви відкриваєте двері до моделювання <strong>ймовірності виявлення, або детекції</strong> (<em>detectability</em>).</p>
+<p>Аби формально визначити ймовірність детекції, необхідно спершу позначити різницю між реальною присутністю виду і його спостереженням. Раніше ми вже визначили <span class="math inline">\(w_l\)</span> як присутність виду, тому залишмо це позначення в спокої: <span class="math inline">\(w_l = 1\)</span> позначатиме що вид справді присутній на локації <span class="math inline">\(l\)</span>, а <span class="math inline">\(w_l = 0\)</span> означатиме його відсутність. Коли <span class="math inline">\(w_l = 0\)</span>, то скільки б спостережник не старався відвідати локацію повторно, кожне окреме спостереження <span class="math inline">\(y_{t, l}\)</span> буде приносити значення <span class="math inline">\(y_{t, l} = 0\)</span>. В цій нотації ми позначаємо окреме відвідування локації як <span class="math inline">\(t\)</span>. Отже, ймовірність спостереження виду в будь-який сеанс спостереження за умови, що вид на локації відсутній, дорівнюватиме</p>
+<p><span class="math display">\[P(y_{t, l} = 0 | w_l = 0) = 0\]</span></p>
+<p>Як щодо випадків коли вид насправді присутній на локації (тобто <span class="math inline">\(w_l = 1\)</span>)? У такому випадку, спостережник має шанс на детекцію виду протягом акту спостереження із ймовірністю, котру ми позначимо як <strong><em>ймовірність детекції</em></strong> (<em>detection probability</em> = <em>detectability</em>) <span class="math inline">\(p\)</span>:</p>
+<p><span class="math display">\[P(y_{t, l} = 1 | w_l = 1) = p\]</span></p>
+<p>Знову ж, ми можемо розглядати спостереження чи неспостереження виду на локації, де він присутній, як процес Бернулі на кшталт підкидання монетки:</p>
+<p><span class="math display">\[(y_{t, l} = 1 | w_l = 1) \sim \mathcal{Bernoulli}(p)\]</span></p>
+<p>Згрубша оцінити цю ймовірність доволі нескладно: якщо на локації <span class="math inline">\(l\)</span> сумарно провели <span class="math inline">\(t = 1, 2, \cdots, T\)</span> сеансів спостереження і виявили вид <span class="math inline">\(n\)</span> разів, то ймовірність детекції можна оцінити як</p>
+<p><span class="math display">\[\hat{p} = \frac{n}{T}\]</span></p>
+<p>В поняттях статистичних розподілів ймовірності спостереження виду на локації де він присутній відповідає біноміальному розподілу (кількість успіхів <span class="math inline">\(n\)</span> за підкидання монетки із ймовірністю успіху <span class="math inline">\(p\)</span> після <span class="math inline">\(T\)</span> спроб), і оцінщик <span class="math inline">\(\hat{p}\)</span> вище еквівалентний оцінщику максимальної правдоподібності ймовірності в біноміальному розподілі.</p>
+<p>Якщо на хвильку повернутись до чисельності видів, то можна також очікувати що спостережена чисельність виду на локації становитиме лише частку від реальної чисельності <span class="math inline">\(N\)</span>. Коли ймовірність спостерігати окрему особину становить <span class="math inline">\(p\)</span>, то спостережена чисельність виду дорівнюватиме <span class="math inline">\(n =pN\)</span>. На жаль, використання цієї ідеї вимагає не тільки пошуку <span class="math inline">\(\hat{p}\)</span>, а й апроксимації <span class="math inline">\(\hat{N}\)</span> (в польових дослідженнях ми точно знаємо тільки кількість спостережених особин, але ми не знаємо ані скільки особин перебуває на локації насправді, ані яка ймовірність детекції окремої особини).</p>
+<p>На практиці, найпростішим підходом до оцінки ймовірності спостереження будуть повторні спроби спостереження виду на кожній локації. Власне, через те всякі польові дослідження вимагають повторних спостережень, якщо це можливо. Якщо принаймні одне зі спостережень на локації закінчилось виявленням виду, можна сміливо припустити що <span class="math inline">\(w_l = 1\)</span> і шукати ймовірність детекції як описано вище.</p>
+<p>Різні види мають різні ймовірності детекції. Цього можна спокійно очікувати оскільки види різняться своєю біологією, поведінкою, реакцією на людину тощо: коли об’єкти спостереження тікають від спостерігача, завмирають, чи мають криптичне забарвлення, то можна очікувати що їх ймовірності детекції матимуть низькі значення. Цей момент особливо важливий у дослідженнях угруповань, адже <em>спостереження</em> 20 особин виду А (<span class="math inline">\(n_A = 20\)</span>) і 20 особин виду В (<span class="math inline">\(n_B = 20\)</span>) не означає, що чисельності видів в угрупованнях є однаковими. Якщо <span class="math inline">\(p_A \neq p_B\)</span>, то рівняння <span class="math inline">\(n_A = p_AN_A\)</span> й <span class="math inline">\(n_B = p_BN_B\)</span> тонко натякають, що оцінка <em>реальних</em> чисельностей <span class="math inline">\(N_A\)</span> й <span class="math inline">\(N_B\)</span> вимагає зважування на видоспецифічні ймовірності детекції.</p>
+<p>Найважливіший урок із концепції ймовірності детекції для польового біолога – то ідея, що в жодному разі <strong>не можна припускати, що спостережена чисельність будь-якого виду дорівнює реальній чисельності цього виду</strong>. Спостереження видів є результатом процесу польового дослідження, котре не є ідеальним, і ймовірність детекції є меншою за одиницю – не дивно, що стаття, котра ввела цю догму в екологічні дослідження, вважається однією із найбільш впливових статей в історії дисципліни (<a href="https://doi.org/10.1890/0012-9658(2002)083%5B2248:ESORWD%5D2.0.CO;2">MacKenzie et al. 2002</a>). До речі, це проблема не тільки зоологів; ботаніки й мікологи не убезпечені від прокляття неідеальної детекції і не перебувають під захистом мантри “принаймні, мої об’єкти дослідження від мене не тікають”. Детекція чи <a href="4.4-cmr.html#cmr">“мічення-відлов”</a> особин нерухомих організмів за повторних пошуків на локації можливі за допомогою координат GPS: якщо за повторного сеансу координати не повторюються, то можна припустити що дослідник пропустив особину рослини, тим зменшуючи <span class="math inline">\(p\)</span> (<a href="https://doi.org/10.1890/0012-9658(1997)078%5B1230:AOMRMT%5D2.0.CO;2">Alexander et al. 1997</a>). Це не враховує, втім, що досвідчений дослідник може запам’ятати місцевість і повторно знайти рослини по пам’яті з минулих спостережень.</p>
+<p>Подібно до ймовірності трапляння, ймовірність детекції навряд чи є константою. Однак, на відміну від ймовірності трапляння як функції характеристик локації, ймовірність детекції, скоріш, залежить від характеристик сеансу спостереження котрі можуть вплинути на активність особин чи уважність спостережника. Такими предикторами можуть бути погодні умови (спостережник під час сильної грози, мабуть, буде не настільки уважний до своїх об’єктів як в сонячний день), час доби (намагатись спостерігати співочих птахів вночі було б не настільки ефективно порівняно зі сходом сонця) тощо. Відтак, в загальному вигляді, ми можемо моделювати ймовірність детекції як функцію предикторів <span class="math inline">\(X\)</span></p>
+<p><span class="math display">\[p_t = \frac{\exp[\beta_0 + \beta_1X_{1, t} + \beta_2 X_{2, t} + \cdots]}{1 + \exp[\beta_0 + \beta_1X_{1, t} + \beta_2 X_{2, t} + \cdots]}\]</span></p>
+</div>
+<div id="статистика-спостереження" class="section level3 hasAnchor" number="4.9.4">
+<h3><span class="header-section-number">4.9.4</span> Статистика спостереження<a href="4.9-detectability.html#%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0-%D1%81%D0%BF%D0%BE%D1%81%D1%82%D0%B5%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Коли прийняти що ймовірність детекції <span class="math inline">\(p&lt;1\)</span>, це створює значні проблеми для оцінки ймовірності трапляння <span class="math inline">\(\psi\)</span>: в спостереженнях виду між локаціями стає незрозумілим, котрі нулі відповідають реальній відсутності виду, а котрі – неуспішній детекції на локаціях де цей вид насправді присутній. Дані зі спостереження виду на певній локації <span class="math inline">\(l\)</span> в певний час <span class="math inline">\(t\)</span> є результатом двох одночасних процесів—трапляння й детекції (Рис. <a href="4.9-detectability.html#fig:fig-ppsi">4.19</a>)—кожен з яких може мати власні предиктори. Навіть без предикторів, <a href="3.3-stats.html#mle">правдоподібність</a> спостереження має доволі загрозливий вигляд (<a href="https://doi.org/10.1890/0012-9658(2002)083%5B2248:ESORWD%5D2.0.CO;2">MacKenzie et al. 2002</a>):</p>
+<p><span class="math display">\[\mathcal{L}(\psi, p) = \left[ \psi^{l^*} \prod \limits_{t=1}^{T} p_t^{l_t} (1-p_t)^{(l^*-l_t)} \right] \times \left[ \psi \prod\limits_{t=1}^{T} (1-p_t) + (1-\psi) \right]^{(L-l^*)}\]</span></p>
+<p>де <span class="math inline">\(\psi\)</span> вважається фіксованою на локації <span class="math inline">\(l\)</span> та <span class="math inline">\(p\)</span> – фіксованою в час <span class="math inline">\(t\)</span>, <span class="math inline">\(l^*\)</span> позначає кількість локацій на яких вид було спостережено під час всіх спостережень <span class="math inline">\(t = 1, 2, \cdots, T\)</span>, <span class="math inline">\(l_t\)</span> позначає кількість локації на яких вид було спостережено під час <span class="math inline">\(t\)</span>-ого спостереження, <span class="math inline">\(L\)</span> позначає сумарну кількість локацій в дослідженні, і <span class="math inline">\(T\)</span> – кількість повторних спостережень на кожній локації.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-ppsi"></span>
+<img src="images/ppsi.png" alt="Отримані дані про поширення видів на досліджених локаціях із одного спостереження є результатом трапляння виду на локаціях ($\psi$) та неідеальної детекції ($p &lt; 1$). Спостереження відсутності виду на локації може бути результатом будь-якого з цих процесів, і спостережник не може зробити висновок чому вид не було спостережено на певній локації: чи тому що він справді там відсутній, чи тому що він уникнув детекції. Повторні спостереження дозволяють точніше оцінити ймовірності трапляння ($\hat{\psi}$) і детекції ($\hat{p}$)." width="1536" />
+<p class="caption">
+Рис. 4.19: Отримані дані про поширення видів на досліджених локаціях із одного спостереження є результатом трапляння виду на локаціях (<span class="math inline">\(\psi\)</span>) та неідеальної детекції (<span class="math inline">\(p &lt; 1\)</span>). Спостереження відсутності виду на локації може бути результатом будь-якого з цих процесів, і спостережник не може зробити висновок чому вид не було спостережено на певній локації: чи тому що він справді там відсутній, чи тому що він уникнув детекції. Повторні спостереження дозволяють точніше оцінити ймовірності трапляння (<span class="math inline">\(\hat{\psi}\)</span>) і детекції (<span class="math inline">\(\hat{p}\)</span>).
+</p>
+</div>
+<p>Підхід об’єднаної моделі із <span class="math inline">\(\psi\)</span> та <span class="math inline">\(p\)</span> можна використовувати для уточнення ймовірності трапляння <span class="math inline">\(\psi\)</span> навіть коли <span class="math inline">\(p&lt;1\)</span>, що дозволяє створювати доволі точні моделі поширення видів на основі даних із неідеальних спостережень. В таких випадках ймовірність детекції <span class="math inline">\(p\)</span> сприймається як параметр-нюанс: його необхідно оцінити для оптимального обчислення, але власне його значення нас не цікавить – воно необхідне для точної оцінки ймовірності трапляння <span class="math inline">\(\psi\)</span>. Додавання ж предикторів <span class="math inline">\(\psi\)</span> та <span class="math inline">\(p\)</span> до такої загальної моделі і порівняння альтернативних моделей з різними предикторами, скажімо, за допомогою <a href="3.6-stat-models.html#aic">інформаційної парадигми (AIC)</a> дозволятиме відповісти на дуже фундаментальні питання щодо того, які фактори визначають поширення виду.</p>
+<p>Хоча одні екологи більш зацікавлені в <span class="math inline">\(\psi\)</span> і предикторах трапляння виду, інші екологи можуть бути зацікавленими і у власне ймовірності детекції <span class="math inline">\(p\)</span>. По-перше, оцінка ймовірності детекції необхідна для оцінки чисельності популяції: по закінченню досліджень ми тільки знаємо результати спостережень, які невідворотно перебувають під впливом <span class="math inline">\(p\)</span>. Коли нас цікавить тільки один вид, звісно, можна припустити що <span class="math inline">\(p\)</span> є фіксованим видоспецифічним параметром і спостережені чисельності можна порівнювати в межах виду. Такий підхід типовий для багаторічних спостережень за динамікою чисельності популяцій: ми приймаємо чисельність виду на початку спостережень за 100% і кожен рік порівнюємо спостережену чисельність із чисельністю в перший рік (наприклад, <a href="https://doi.org/10.1038/s41586-023-05833-y">Edgar et al. 2023</a>). Найбільшою критикою до такого підходу буде використання безрозмірних відсотків, котрі мало що кажуть про реальний стан популяції і залежать від початкової точки відліку.</p>
+<p>По-друге, як вже було згадано вище, екологи угруповань не можуть порівнювати спостережені види напряму, адже ймовірності детекцій різняться між видами. Це доволі значуща проблема для будь-яких обчислень <a href="7.3-diversity.html#diversity">індексів різноманіття</a>, адже всі вони припускають точні дані про розподіл чисельності між видами в угрупованні, і таких даних у дослідника після спостережень нема – вони вимагають поправку на ймовірність детекції. На допомогу можуть прийти <strong>N-змішані моделі</strong> (<em>N-mixture models</em>, NMM), котрі припускають що в повторних (<span class="math inline">\(t = 1, 2, \cdots, T\)</span>) спостереженнях на <span class="math inline">\(l = 1, 2, \cdots, L\)</span> локаціях спостережена чисельність виду <span class="math inline">\(y_{l, t}\)</span> є біноміальний процесом, котрий визначається реальною чисельністю виду на локації (<span class="math inline">\(N_l\)</span>) та ймовірністю детекції <span class="math inline">\(p\)</span>:</p>
+<p><span class="math display">\[(y_{l, t} | N_l) \sim \mathcal{Binomial}(N_l, p)\]</span></p>
+<p>При цьому, реальна чисельність виду між локаціями відповідає має розподіл Пуасона (хоча негативний біноміальний розподіл також іноді використовують):</p>
+<p><span class="math display">\[N_l \sim \mathcal{Poisson}(\lambda)\]</span></p>
+<p>За таких припущень, можливо розробити аналітичні методи (котрі нерідко застосовують <a href="3.5-basic-hypotheses.html#paradigms">Баєсівські пермутації</a>) для оцінки параметрів <span class="math inline">\(p\)</span> та <span class="math inline">\(N_l\)</span>, котрі, в свою чергу, можуть залежати від предикторів на вибір дослідника (<a href="https://doi.org/10.1111/j.0006-341X.2004.00142.x">Royle 2004</a>, <a href="https://doi.org/10.1002/wics.1625">Madsen &amp; Royle 2023</a>). Повторні спостереження на кожній локації необхідні задля достатньої варіації спостережених чисельностей <span class="math inline">\(y_{l, t}\)</span>, що дозволяє оцінити параметри <span class="math inline">\(N_l\)</span> та <span class="math inline">\(p\)</span> і їх невизначеність. Зверніть увагу, що у випадку Пуасонівського процесу ми можемо припустити що <span class="math inline">\(y_{l, t} &lt; N_l\)</span>, адже ми дуже навіть впевнені що <span class="math inline">\(p &lt; 1\)</span>. Деякі дослідники люблять по завершенню повторних обліків прийняти чисельність виду на локації за максимальну спостережену чисельність<a href="#fn81" class="footnote-ref" id="fnref81"><sup>81</sup></a>, що з точки зору N-змішаної моделі є дуже грубим методологічним порушенням.</p>
+<p>N-змішані моделі, як і моделі детекції-трапляння, мають дуже чіткі припущення щодо досліджуваної системи. Найголовніша із них – це закритість популяції до імміграції, еміграції, народжуваності, та смертності. Повторні обліки на кожній локації повинні проводитись на достатньо малих інтервалах часу, аби можна було припустити що реальна чисельність виду <span class="math inline">\(N_l\)</span> є незмінною між обліками. Коли таке припущення не можна зробити, варто застосувати іншу родину моделей – <strong><em>динамічні моделі трапляння</em></strong> (<em>dynamic occupancy models</em>, DOMs), котрі дозволяють зміни ймовірності трапляння з часом (<a href="https://doi.org/10.1002/ecog.07757">Kelleher et al. 2025</a>). Крім того, базові NMM припускають фіксоване значення ймовірності детекції в часі та відсутність повторних обліків особин (коли одну особину спостерігають більше ніж один раз і помилково записують як різні особини). Порушення цих припущень можуть зробити висновки із таких моделей ненадійними і оцінки реальної чисельності видів – помилковими (<a href="https://doi.org/10.1002/ecy.2362">Link et al. 2018</a>). Врешті, порядні екологи навряд чи колись дадуть абсолютну точну, заокруглену до однієї особини оцінку розміру будь-якої популяції: кількість повторних обліків, варіація в умовах середовища, умовах обліків, потенційні зміни розміру популяції в часі разом впливатимуть на точність оцінки реального розміру популяції. Єдиний елемент із цього списку перебуває під контролем свідомих дослідників – умови, в яких проведені обліки. Навіть якщо ми не можемо знати значення ймовірності детекції <span class="math inline">\(p\)</span>, ми можемо зменшити її варіацію якщо забезпечити послідовні та порівнювані умови обліків, зокрема, час доби та умови освітлення, погодні умови, тривалість обліку, кількість обліковців, методи обліку (точкові, трансекти тощо) та інші фактори, котрі можуть потенційно мати ефект на зусилля зі збору вибірки та детекцію особин досліджуваного виду.</p>
+</div>
+</div>
+<!-- </div> -->
+<div class="footnotes">
+<hr />
+<ol start="79">
+<li id="fn79"><p>Можна заперечити, що нормальний розподіл регулюється двома параметрами: <span class="math inline">\(\mathcal{N}(\mu, \sigma^2)\)</span>. Це правда, але <span class="math inline">\(\sigma^2\)</span> часто є параметром-нюансом, котрий нікого не цікавить.<a href="4.9-detectability.html#fnref79" class="footnote-back">↩︎</a></p></li>
+<li id="fn80"><p>Дискретний, адже кількість особин є цілим значенням.<a href="4.9-detectability.html#fnref80" class="footnote-back">↩︎</a></p></li>
+<li id="fn81"><p>Тобто припустити що <span class="math inline">\(N_l = \max(y_{l, t})\)</span>.<a href="4.9-detectability.html#fnref81" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="4.8-Leslie-matrix.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="5-foundations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["bookdown-demo.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
