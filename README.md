@@ -12,6 +12,7 @@ The first textbook/manual/call-it-whatever-you-want in Ukrainian language deploy
 
 # Історія оновлень | Update history
 
+- Build v0.5.6b. 2026-09-22 | Section on detectability but moved it to populations.
 - Build v0.5.6. 2026-09-11 | Section on ecosystem functioning.
 - Build v0.5.5. 2026-08-23 | Section on LHT. Switched places with succession.
 - Build v0.5.4. 2026-08-17 | Section on succession.
